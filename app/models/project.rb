@@ -4,5 +4,5 @@ class Project < ApplicationRecord
   has_many :scenes
 
   validates :title, presence: true, length: { minimum: 1 }
-  validates :category, presence: true, inclusion: { in: %w(Fantastic Thriller Comedy) } # !!! a implémenter les bitches
+  validates :category, presence: true, inclusion: { in: %w(Book Movie "TV Show") } # !!! a implémenter les bitches
 end
