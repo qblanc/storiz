@@ -2,11 +2,8 @@ class ScenesController < ApplicationController
   before_action: find_project, only: [:new, :create]
   before_action: find_scene, only: [:show, :edit, :update, :destroy]
 
-  def index
-    @scenes = Scene.all
-  end
-
   def show
+    @scenes = Scene.all
   end
 
   def new
