@@ -2,21 +2,22 @@ class CharactersController < ApplicationController
   before_action :set_character, only: [:show, :edit, :update, :destroy]
 
   def index
-    @character = Character.all
+    @characters = Character.all
   end
 
   def show
-    @character = Character.find(@project.character_id)
+    @character = Character.find(@character)
   end
 
   def new
-    @project = Project.find(params[:project_id])
     @character = Character.new
   end
 
   def create
     @character = Character.new(character_params)
-    if @character.save
+    @project = Project.find(params[:project_id])
+    @character.project = @project
+    if @character.save!
       redirect_to character_path(@character)
     else
       render :new
