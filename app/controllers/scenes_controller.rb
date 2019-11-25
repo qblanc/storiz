@@ -1,6 +1,6 @@
 class ScenesController < ApplicationController
-  before_action: find_project, only: [:new, :create]
-  before_action: find_scene, only: [:show, :edit, :update, :destroy]
+  before_action :find_project, only: [:new, :create]
+  before_action :find_scene, only: [:show, :edit, :update, :destroy]
 
   def show
     @scenes = Scene.all
