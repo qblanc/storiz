@@ -45,5 +45,4 @@ class ProjectsController < ApplicationController
   def project_params
     params.require(:project).permit(:title, :pitch, :category, :synopsis)
   end
-
 end
