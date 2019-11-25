@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_25_142057) do
+ActiveRecord::Schema.define(version: 2019_11_25_145833) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,48 @@ ActiveRecord::Schema.define(version: 2019_11_25_142057) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "characters", force: :cascade do |t|
+    t.bigint "project_id", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.datetime "birthdate"
+    t.string "genre"
+    t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["project_id"], name: "index_characters_on_project_id"
+  end
+
+  create_table "charascenes", force: :cascade do |t|
+    t.bigint "character_id", null: false
+    t.bigint "scene_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["character_id"], name: "index_charascenes_on_character_id"
+    t.index ["scene_id"], name: "index_charascenes_on_scene_id"
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "title"
+    t.text "pitch"
+    t.string "category"
+    t.text "synopsis"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_projects_on_user_id"
+  end
+
+  create_table "scenes", force: :cascade do |t|
+    t.bigint "project_id", null: false
+    t.string "title"
+    t.integer "number"
+    t.text "content"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["project_id"], name: "index_scenes_on_project_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -59,4 +101,9 @@ ActiveRecord::Schema.define(version: 2019_11_25_142057) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "characters", "projects"
+  add_foreign_key "charascenes", "characters"
+  add_foreign_key "charascenes", "scenes"
+  add_foreign_key "projects", "users"
+  add_foreign_key "scenes", "projects"
 end
