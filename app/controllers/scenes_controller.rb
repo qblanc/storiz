@@ -16,8 +16,11 @@ class ScenesController < ApplicationController
   def create
     @scene = Scene.new(scene_params)
     @scene.project = @project
-    @scene.save!
-    redirect_to :root
+    if @project.valid?
+      @scene.save!
+      redirect_to scene_path(@scene)
+    else
+      redirect_to :new
   end
 
   def edit
