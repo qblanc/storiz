@@ -18,6 +18,7 @@ class ScenesController < ApplicationController
       redirect_to scene_path(@scene)
     else
       redirect_to :new
+    end
   end
 
   def edit
