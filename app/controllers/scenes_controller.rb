@@ -16,7 +16,7 @@ class ScenesController < ApplicationController
   def create
     @scene = Scene.new(scene_params)
     @scene.project = @project
-    @scene.save
+    @scene.save!
     redirect_to :root
   end
 
@@ -25,6 +25,7 @@ class ScenesController < ApplicationController
 
   def update
     @scene.update(scene_params)
+    redirect_to :root
   end
 
   def destroy
