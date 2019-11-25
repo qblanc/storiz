@@ -1,7 +1,7 @@
 class RecordNotEmptyValidator < ActiveModel::Validator
   def validate(record)
     unless non_id_attributes(record).any? { |attr| record.attribute_present?(attr) }
-      record.errors.add(record.model_name.human.downcase!, 'must contain at least one attribute')
+      record.errors.add(record.model_name.human.downcase!, 'Must contain at least one attribute')
     end
   end
 
