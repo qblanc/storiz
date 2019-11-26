@@ -1,0 +1,15 @@
+@import "show_index";
+
+.index {
+  width: 200px;
+  background: white;
+  border-radius: 3px;
+  li {
+    margin-top:18px;
+    list-style: none;
+  }
+}
+
+.editor {
+  width: 900px;
+}
