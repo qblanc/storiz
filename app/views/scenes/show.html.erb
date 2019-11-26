@@ -2,11 +2,26 @@
 <p>This is a scene <strong>show</strong> page</p>
 <p>It might also be an <strong>edit</strong> page</p>
 <p><strong>Index</strong> should be displayed here as well.</p>
-<h3>🤯</h3>
-<div class="container">
-<%= simple_form_for @scene do |f| %>
-    <%= f.rich_text_area :content %>
-    <%= f.button :submit, class:"btn btn-info" %>
-<% end %>
-<%= image_tag "images/italic.svg" %>
+<div class="d-flex">
+  <div class="index mr-3">
+  <h4 class="text-center">Scenes list</h4>
+    <% @scenes.each do |scene| %>
+      <ul>
+        <li>
+          <%= scene.number %>. <%= scene.title %>
+        </li>
+      </ul>
+    <% end %>
+  </div>
+
+  <div class="editor">
+    <%= simple_form_for @scene do |f| %>
+        <%= f.rich_text_area :content %>
+        <%= f.button :submit, class:"btn btn-info mt-2" %>
+  <% end %>
+  </div>
+
+  <div class="bible">
+
+  </div>
 </div>
