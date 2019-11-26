@@ -3,3 +3,9 @@
 <p>It might also be an <strong>edit</strong> page</p>
 <p><strong>Index</strong> should be displayed here as well.</p>
 <h3>🤯</h3>
+
+<%= simple_form_for @scene do |f| %>
+    <%= f.rich_text_area :content %>
+<% end %>
+
+  <%= @scene.content %>
