@@ -1,7 +1,6 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://opelousaseunicepubliclibrarydotorg.files.wordpress.com/2015/07/book-background.jpg?w=917);">
   <div class="container">
-    <h1>Enter your project title</h1>
-    <p>__________________________</p>
+    <h1>Your project title</h1>
   </div>
 </div>
 
@@ -22,8 +21,7 @@
   </div>
 
   <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://malditosnerds.com/__export/1543347565691/sites/claro/malditosnerds/img/2016/07/29/20160729205128.jpeg)">
-    Bible
-    <% link_to "Bible", project_path(@project) %>
+    <%= link_to "Bible", project_bibles_path(@project) %>
   </div>
 
   <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://i.kym-cdn.com/entries/icons/original/000/022/524/tumblr_o16n2kBlpX1ta3qyvo1_1280.jpg)">
@@ -31,6 +29,6 @@
   </div>
 
   <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Last_Supper_by_Leonardo_da_Vinci.jpg/1200px-Last_Supper_by_Leonardo_da_Vinci.jpg)">
-    Scenes
+    <%= link_to "Scenes", project_scenes_path(@project) %>
   </div>
 </div>
