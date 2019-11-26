@@ -6,7 +6,7 @@ class CharactersController < ApplicationController
   end
 
   def show
-    @character = Character.find(@character)
+    @character = Character.find(@character.id)
   end
 
   def new
