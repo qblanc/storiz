@@ -26,11 +26,13 @@
         <div class="list col-3 pl-0">
           <ul class="list-group list-group-flush">
             <% @characters.each do |char| %>
-              <li class="list-group-item char-item" data-charac-id=<%= char.id %> ><%= char.first_name %> <%= char.last_name %></li>
+              <%= link_to character_path(char), remote: true do %>
+                <li class="list-group-item char-item" data-charac-id=<%= char.id %> ><%= char.first_name %> <%= char.last_name %></li>
+              <% end %>
             <% end %>
           </ul>
         </div>
-        <div class="col-9 pr-0">
+        <div class="col-9 pr-0" id="char-show">
           <!-- Implementer les shows ici  -->
           <!-- POURQUOI CE PUTAIN DE COL-9 DEPASSE COMME UN CONNARD??????!!!! -->
         </div>

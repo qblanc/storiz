@@ -6,7 +6,11 @@ class CharactersController < ApplicationController
   end
 
   def show
-    @character = Character.find(@character.id)
+    @character = Character.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def new

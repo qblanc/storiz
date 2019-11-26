@@ -9,15 +9,15 @@
 
     <div class="character-basics">
       <div class="character-name">
-        <h1><%= @character.first_name %></h1>
-        <h1><strong><%= @character.last_name %></strong></h1>
+        <h1><%= character.first_name %></h1>
+        <h1><strong><%= character.last_name %></strong></h1>
       </div>
       <div class="character-generals">
-        <p><i class="fas fa-venus-mars"></i> <%= @character.genre %> &nbsp;&nbsp; <i class="fas fa-birthday-cake"></i> <%= @character.birthdate.strftime("%d/%m/%Y") %></p>
+        <p><i class="fas fa-venus-mars"></i> <%= character.genre %> &nbsp;&nbsp; <i class="fas fa-birthday-cake"></i> <%= character.birthdate.strftime("%d/%m/%Y") %></p>
       </div>
       <div class="character-description">
         <p><strong>Biography</strong></p>
-        <p><%= @character.description %></p>
+        <p><%= character.description %></p>
       </div>
     </div>
   </div>
