@@ -1,6 +1,7 @@
 class BiblesController < ApplicationController
   def show
-    @characters = Character.all
-    @scenes = Scenes.all
+    @project = Project.find(params[:project_id])
+    @characters = Character.where(project_id: params[:project_id])
+    @scenes = Scene.where(project_id: params[:project_id])
   end
 end
