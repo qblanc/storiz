@@ -1,29 +1,29 @@
 <div class="bible">
-  <h1 class="text-center mb-3"> <%= @project.title %>'s bible </h1>
 
-<!-- Navigation tabs -->
-  <ul class="nav nav-tabs nav-fill justify-content-center mt-4" id="myTab" role="tablist">
-    <li class="nav-item">
-      <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Characters</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Scenes</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" id="messages-tab" data-toggle="tab" href="#messages" role="tab" aria-controls="messages" aria-selected="false">Plots</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" id="settings-tab" data-toggle="tab" href="#settings" role="tab" aria-controls="settings" aria-selected="false">Locations</a>
-    </li>
-  </ul>
-<!-- Navigation tabs end -->
+  <div class="container">
+    <h1 class="text-center mb-3"> <%= @project.title %>'s bible </h1>
 
+  <!-- Navigation tabs -->
+    <ul class="nav nav justify-content-center mt-4" id="myTab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Characters</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Plots</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="messages-tab" data-toggle="tab" href="#messages" role="tab" aria-controls="messages" aria-selected="false">Locations</a>
+      </li>
+    </ul>
+  <!-- Navigation tabs end -->
+
+  </div>
 <!-- Tab panels -->
   <div class="tab-content">
   <!-- Characters panel -->
     <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">
       <div class="row mx-0">
-        <div class="list col-3 pl-0">
+        <div class="list col-3 px-0">
           <ul class="list-group list-group-flush">
             <% @characters.each do |char| %>
               <%= link_to character_path(char), remote: true do %>
@@ -32,9 +32,8 @@
             <% end %>
           </ul>
         </div>
-        <div class="col-9 pr-0" id="char-show">
-          <!-- Implementer les shows ici  -->
-          <!-- POURQUOI CE PUTAIN DE COL-9 DEPASSE COMME UN CONNARD??????!!!! -->
+        <div class="col-9 px-0" id="char-show">
+          <!-- Ici nous yieldons le HTML de charactersController#show avec AJAX -->
         </div>
       </div>
     </div>
@@ -51,8 +50,6 @@
   <!-- Scenes panel end -->
 
     <div class="tab-pane" id="messages" role="tabpanel" aria-labelledby="messages-tab"></div>
-
-    <div class="tab-pane" id="settings" role="tabpanel" aria-labelledby="settings-tab"></div>
 
   </div>
  <!-- Tab panels end -->
