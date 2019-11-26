@@ -26,7 +26,12 @@ class ScenesController < ApplicationController
 
   def update
     @scene.update(scene_params)
-    redirect_to scene_path(@scene)
+    respond_to do |format|
+      format.html do
+        redirect_to scene_path(@scene)
+      end
+      format.js
+    end
   end
 
   def destroy
