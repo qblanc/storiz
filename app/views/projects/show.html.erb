@@ -1,8 +1,62 @@
-<h1>test</h1>
-<% @scenes.each do |scene| %>
-  <ul>
-    <li>
-      <%= link_to "Scene", scene_path(scene) %>
-    </li>
-  </ul>
-<% end %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://opelousaseunicepubliclibrarydotorg.files.wordpress.com/2015/07/book-background.jpg?w=917);">
+  <div class="container">
+    <h1>Your project title</h1>
+  </div>
+</div>
+
+<br>
+<br>
+
+<div class="cards">
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.ladn.eu/wp-content/uploads/2018/02/pitch.jpg)">
+    Pitch
+  </div>
+
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://d3e6tmgg461bic.cloudfront.net/Pictures/480xany/7/2/7/1283727_book.jpg)">
+    Synopsis
+  </div>
+
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.canva.com/learn/wp-content/uploads/2015/03/make-a-mood-board.jpg)">
+    Mood
+  </div>
+
+  <%= link_to project_bibles_path(@project) do %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://malditosnerds.com/__export/1543347565691/sites/claro/malditosnerds/img/2016/07/29/20160729205128.jpeg)">
+      Bible
+    </div>
+  <% end %>
+
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://i.kym-cdn.com/entries/icons/original/000/022/524/tumblr_o16n2kBlpX1ta3qyvo1_1280.jpg)">
+    Scenario
+  </div>
+
+  <div data-toggle="modal" data-target="#sceneModalScrollable" class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Last_Supper_by_Leonardo_da_Vinci.jpg/1200px-Last_Supper_by_Leonardo_da_Vinci.jpg)">
+      Scenes
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="sceneModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="sceneModalScrollableTitle">Choose your scene</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <% @scenes.each do |scene| %>
+          <ul>
+            <li>
+              <%= link_to "Scene #{scene.number}" , scene_path(scene) %>
+            </li>
+          </ul>
+        <% end %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

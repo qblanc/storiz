@@ -12,7 +12,7 @@
   </head>
   <body>
     <%= render 'shared/navbar' %>
-    <div class=<%= (current_page?(root_path) || current_page?(scene_path)) ? "" : "container" %>>
+    <div class=<%= (current_page?(root_path) || params[:controller] == "scenes") ? "" : "container" %>>
       <%= render 'shared/flashes' %>
       <%= yield %>
     </div>

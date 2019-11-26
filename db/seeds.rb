@@ -33,6 +33,10 @@ character2 = Character.new(first_name: "Jeanne", last_name: "Valjeanne", birthda
 character2.project = project1
 character2.save!
 
+character3 = Character.new(first_name: "Omar", last_name: "Little", birthdate: "Thu, 29 Apr 1954 11:10:03 UTC +00:00", genre: "Male", description: "Omar Devone Little is a notorious Baltimore stick-up man, who frequently robs street-level drug dealers. He is legendary around Baltimore for his characteristic duster, under which he hides his shotgun, large caliber handgun, and bulletproof vest, as well as for his facial scar. Omar has a strict moral code, which involves refusal to harm innocent civilians and distaste (usually) for profanity, setting him apart from other street-level characters.")
+character3.project = project1
+character3.save!
+
 scene1 = Scene.new(title: "Scene stylée", number: 1, content: "Ceci est une scène d'amour entre superchiotte et Jean Valjean")
 scene1.project = project1
 scene1.save!
