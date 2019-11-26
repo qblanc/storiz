@@ -29,6 +29,35 @@
   </div>
 
   <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Last_Supper_by_Leonardo_da_Vinci.jpg/1200px-Last_Supper_by_Leonardo_da_Vinci.jpg)">
-    <%= link_to "Scenes", scene_path %>
+    <%#= link_to "Scenes", scene_path %>
+    <button type="button" class="btn btn-ghost" data-toggle="modal" data-target="#exampleModalScrollable">
+      Scenes
+    </button>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalScrollableTitle">Choose your scene</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <% @scenes.each do |scene| %>
+          <ul>
+            <li>
+              <%= link_to "Scene #{scene.number}" , scene_path(scene) %>
+            </li>
+          </ul>
+        <% end %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
   </div>
 </div>
