@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     resources :scenes, only: [:new, :create]
     resources :characters, only: [:new, :create]
   end
+
+  resources :moods, only: [:show]
   resources :scenes, only: [:edit, :update, :show, :destroy]
   resources :characters, only: [:edit, :update, :show, :index, :destroy]
 end

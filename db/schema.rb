@@ -68,9 +68,9 @@ ActiveRecord::Schema.define(version: 2019_11_26_150825) do
   end
 
   create_table "moods", force: :cascade do |t|
-    t.bigint "project_id", null: false
-    t.bigint "character_id", null: false
-    t.bigint "scene_id", null: false
+    t.bigint "project_id"
+    t.bigint "character_id"
+    t.bigint "scene_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["character_id"], name: "index_moods_on_character_id"

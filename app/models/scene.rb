@@ -3,6 +3,7 @@ class Scene < ApplicationRecord
   has_many :charascenes
   has_many :characters, through: :charascenes
   has_rich_text :content
+  has_one :mood
 
   validates :number, presence: true
 end

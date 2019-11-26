@@ -16,9 +16,11 @@
     Synopsis
   </div>
 
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.canva.com/learn/wp-content/uploads/2015/03/make-a-mood-board.jpg)">
-    Mood
-  </div>
+  <%= link_to mood_path(@project.mood) do %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.canva.com/learn/wp-content/uploads/2015/03/make-a-mood-board.jpg)">
+      Mood
+    </div>
+  <% end %>
 
   <%= link_to project_bibles_path(@project) do %>
     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://malditosnerds.com/__export/1543347565691/sites/claro/malditosnerds/img/2016/07/29/20160729205128.jpeg)">
