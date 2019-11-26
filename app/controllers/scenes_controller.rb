@@ -26,18 +26,18 @@ class ScenesController < ApplicationController
 
   def update
     @scene.update(scene_params)
-    redirect_to :root
+    redirect_to scene_path(@scene)
   end
 
   def destroy
     @scene.destroy
-    redirect_to :root
+    redirect_to root_path
   end
 
   private
 
   def scene_params
-    params.require(:scenes).permit(:title, :number, :content)
+    params.require(:scene).permit(:title, :number, :content)
   end
 
   def find_project
