@@ -1,27 +1,27 @@
-<h1>SHOW CHARACTER</h1>
+ <h1>SHOW CHARACTER</h1>
 
-<div class="character-container">
-
-
+ <div class="character-container">
 
   <div class="character-infos">   <!-- Partie supèrieure (infos générales et photo) -->
-    <div class="character-image">
-      <!-- INSRER IMAGE CARRE -->
+    <div class="character-image pr-3 pl-3 pt-5 pb-5">
+      <img src="https://vignette.wikia.nocookie.net/uvm-mock-trial/images/8/89/00060bq0.jpg/revision/latest?cb=20140817200436" alt="<%= @character.last_name %>" class="charavatar"><!-- INSRER IMAGE CARRE -->
     </div>
 
     <div class="character-basics">
       <div class="character-name">
-
-      </div>
-      <div class="character-description">
-
+        <h1><%= @character.first_name %></h1>
+        <h1><strong><%= @character.last_name %></strong></h1>
       </div>
       <div class="character-generals">
-
+        <p><i class="fas fa-venus-mars"></i> <%= @character.genre %> &nbsp;&nbsp; <i class="fas fa-birthday-cake"></i> <%= @character.birthdate.strftime("%d/%m/%Y") %></p>
+      </div>
+      <div class="character-description">
+        <p><strong>Biography</strong></p>
+        <p><%= @character.description %></p>
       </div>
     </div>
   </div>
 
-<!-- Partie infèrieure (incrémentée par l'utilisateur) -->
+  <!-- Partie infèrieure (incrémentée par l'utilisateur) -->
 
 </div>

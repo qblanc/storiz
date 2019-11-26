@@ -1,10 +1,34 @@
 .character-container{
-  height: 400px;
-  width: 600px;
-  border: solid 1px;
+  height: 500px;
+  width: 900px;
+  border: 1px solid ;
 }
 
 .character-infos{
+  border: 1px solid ;
   display: flex;
 }
 
+.character-image {
+ border: 1px solid ;
+}
+
+.charavatar{
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 4px;
+  width: 250px;
+  height: 250px;
+}
+
+.character-basics{
+  flex-grow: 1;
+}
+
+.character-name {
+  font-family: "Lekton", sans-serif;
+}
+
+.character-description {
+  border: 1px solid ;
+
+}
