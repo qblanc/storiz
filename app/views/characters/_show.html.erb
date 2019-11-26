@@ -4,7 +4,6 @@
     <div class="left-part">
 
       <!-- Partie supèrieure (infos générales et photo) -->
-
       <div class="character-infos">
 
         <div class="character-image pr-3">
@@ -13,12 +12,12 @@
 
         <div class="character-basics">
           <div class="character-name">
-            <h1><%= @character.first_name %></h1>
-            <h1><strong><%= @character.last_name.upcase %></strong></h1>
+            <h1><%= character.first_name %></h1>
+            <h1><strong><%= character.last_name.upcase %></strong></h1>
           </div>
 
           <div class="character-generals mt-2 mb-2">
-            <i class="fas fa-venus-mars"></i> <%= @character.genre %> &nbsp;&nbsp; <i class="fas fa-birthday-cake"></i> <%= @character.birthdate.strftime("%d/%m/%Y") %>
+            <i class="fas fa-venus-mars"></i> <%= character.genre %> &nbsp;&nbsp; <i class="fas fa-birthday-cake"></i> <%= character.birthdate.strftime("%d/%m/%Y") %>
           </div>
         </div>
       </div>
@@ -28,13 +27,15 @@
       <!-- Description -->
 
       <div class="character-description">
-        <p><%= @character.description %></p>
+        <p><strong>Biography</strong></p>
+        <p><%= character.description %></p>
       </div>
 
       <!-- Logs -->
       <div class="logs-area">
 
       </div>
+
     </div>
   </div>
   <!-- Events (AJAX à faire) -->
