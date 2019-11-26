@@ -4,7 +4,7 @@
 
 .tab-pane {
   min-height: 50vh;
-  background-color: gray; // temporaire
+  // background-color: gray; // temporaire
 }
 
 ul {
@@ -12,4 +12,13 @@ ul {
 }
 
 .list {
+}
+
+#char-show {
+  display: flex;
+  min-height: 50vh;
+  max-height: 60vh;
+  background-color: white;
+  // border-radius: 6px;
+  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
