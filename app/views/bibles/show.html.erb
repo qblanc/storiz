@@ -1,6 +1,7 @@
 <div class="bible">
   <h1 class="text-center mb-3"> <%= @project.title %>'s bible </h1>
-  <!-- Nav tabs -->
+
+<!-- Navigation tabs -->
   <ul class="nav nav-tabs nav-fill justify-content-center mt-4" id="myTab" role="tablist">
     <li class="nav-item">
       <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Characters</a>
@@ -15,19 +16,43 @@
       <a class="nav-link" id="settings-tab" data-toggle="tab" href="#settings" role="tab" aria-controls="settings" aria-selected="false">Locations</a>
     </li>
   </ul>
+<!-- Navigation tabs end -->
 
-  <!-- Tab panes -->
+<!-- Tab panels -->
   <div class="tab-content">
+  <!-- Characters panel -->
     <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">
+      <div class="row mx-0">
+        <div class="list col-3 pl-0">
+          <ul class="list-group list-group-flush">
+            <% @characters.each do |char| %>
+              <li class="list-group-item char-item" data-charac-id=<%= char.id %> ><%= char.first_name %> <%= char.last_name %></li>
+            <% end %>
+          </ul>
+        </div>
+        <div class="col-9 pr-0">
+          <!-- Implementer les shows ici  -->
+          <!-- POURQUOI CE PUTAIN DE COL-9 DEPASSE COMME UN CONNARD??????!!!! -->
+        </div>
+      </div>
+    </div>
+  <!-- Characters panel end -->
+
+  <!-- Scenes panel -->
+    <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">
       <ul>
-        <% @characters.each do |char| %>
-          <li><%= char.first_name %> <%= char.last_name %></li>
+        <% @scenes.each do |scene| %>
+          <li><strong><%= scene.number %></strong> - <%= scene.title if scene.title.present? %></li>
         <% end %>
       </ul>
     </div>
-    <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
-    <div class="tab-pane" id="messages" role="tabpanel" aria-labelledby="messages-tab">...</div>
-    <div class="tab-pane" id="settings" role="tabpanel" aria-labelledby="settings-tab">...</div>
+  <!-- Scenes panel end -->
+
+    <div class="tab-pane" id="messages" role="tabpanel" aria-labelledby="messages-tab"></div>
+
+    <div class="tab-pane" id="settings" role="tabpanel" aria-labelledby="settings-tab"></div>
+
   </div>
+ <!-- Tab panels end -->
 
 </div>
