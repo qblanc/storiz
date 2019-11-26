@@ -1,17 +1,17 @@
 .bible {
   margin-top: 20px;
 }
+.reduced-container {
+  max-width: 75vh;
+  margin: 0 auto;
+}
 
 .tab-pane {
   min-height: 50vh;
-  // background-color: gray; // temporaire
 }
 
 ul {
   list-style-type: none;
-}
-
-.list {
 }
 
 #char-show {
@@ -19,6 +19,41 @@ ul {
   min-height: 50vh;
   max-height: 60vh;
   background-color: white;
-  // border-radius: 6px;
-  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+a.nav-link {
+  text-decoration: none;
+  color: $gray-600;
+
+  &.active {
+    border-bottom: 2px solid black;
+    color: black;
+  }
+}
+
+a.char-item {
+  text-decoration: none;
+  color: $gray-600;
+  &:hover {
+    color: $gray-900;
+  }
+}
+
+.name-active {            // Ne fonctionne pas :(
+  background-color: red;  // Ne fonctionne pas :(
+  color: red;             // Ne fonctionne pas :(
+}                         // Ne fonctionne pas :(
+
+// Create scroolBar and hide it
+.list {
+  overflow-y: scroll;
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+.list::-webkit-scrollbar {
+    display: none;  /* Safari and Chrome */
+}
+
+.tab-content {
+  background-color: white;
 }
