@@ -1,1 +1,8 @@
 <h1>test</h1>
+<% @scenes.each do |scene| %>
+  <ul>
+    <li>
+      <%= link_to "Scene", scene_path(scene) %>
+    </li>
+  </ul>
+<% end %>
