@@ -4,17 +4,19 @@
     <h1 class="text-center mb-3"> <%= @project.title %>'s bible </h1>
 
   <!-- Navigation tabs -->
-    <ul class="nav nav justify-content-center mt-4" id="myTab" role="tablist">
-      <li class="nav-item">
-        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Characters</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Plots</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" id="messages-tab" data-toggle="tab" href="#messages" role="tab" aria-controls="messages" aria-selected="false">Locations</a>
-      </li>
-    </ul>
+    <div class="reduced-container mb-5">
+      <ul class="nav nav justify-content-between mt-4" id="myTab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Characters</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Plots</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="messages-tab" data-toggle="tab" href="#messages" role="tab" aria-controls="messages" aria-selected="false">Locations</a>
+        </li>
+      </ul>
+    </div>
   <!-- Navigation tabs end -->
 
   </div>
@@ -23,16 +25,16 @@
   <!-- Characters panel -->
     <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">
       <div class="row mx-0">
-        <div class="list col-3 px-0">
-          <ul class="list-group list-group-flush">
+        <div class="list col-2 px-0">
+          <ul class="list-group list-group-flush list-characters">
             <% @characters.each do |char| %>
-              <%= link_to character_path(char), remote: true do %>
+              <%= link_to character_path(char), class: "char-item", remote: true do %>
                 <li class="list-group-item char-item" data-charac-id=<%= char.id %> ><%= char.first_name %> <%= char.last_name %></li>
               <% end %>
             <% end %>
           </ul>
         </div>
-        <div class="col-9 px-0" id="char-show">
+        <div class="col-10 px-0" id="char-show">
           <!-- Ici nous yieldons le HTML de charactersController#show avec AJAX -->
         </div>
       </div>
