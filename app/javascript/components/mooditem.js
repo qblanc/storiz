@@ -15,7 +15,6 @@ function set_drag_drop(dragObj){
   })
 
   document.addEventListener('mouseup', function(e){
-    // TODO AJAX persist top et left attribute
     console.log(dragObj.style.left.replace('px',''))
     console.log(dragObj.style.top.replace('px',''))
     dragObj.isDown = false;
