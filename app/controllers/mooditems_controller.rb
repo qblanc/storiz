@@ -41,6 +41,11 @@ class MooditemsController < ApplicationController
     end
   end
 
+  def destroy
+    @mooditem.destroy
+    redirect_to mood_path(@mood)
+  end
+
   private
 
   def mooditem_params

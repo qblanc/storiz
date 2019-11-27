@@ -5,6 +5,9 @@
       <%= f.input :top %>
       <%= f.input :left %>
       <%= f.submit "update coordinates", class: "btn btn-primary" %>
+      <%= link_to "Delete", mood_path(@mood),
+        method: :delete,
+        data: { confirm: "Are you sure?" } %>
       <% end %>
   <% end %>
 
