@@ -1,6 +1,6 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://opelousaseunicepubliclibrarydotorg.files.wordpress.com/2015/07/book-background.jpg?w=917);">
   <div class="container">
-    <h1>Your project title</h1>
+    <h1><%= @project.title %></h1>
   </div>
 </div>
 
@@ -46,13 +46,14 @@
         </button>
       </div>
       <div class="modal-body">
-        <% @scenes.each do |scene| %>
-          <ul>
+        <ul>
+          <li><i class="fas fa-plus"></i> Add a new scene</li>
+          <% @scenes.each do |scene| %>
             <li>
               <%= link_to "Scene #{scene.number}" , scene_path(scene) %>
             </li>
-          </ul>
-        <% end %>
+          <% end %>
+        </ul>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
