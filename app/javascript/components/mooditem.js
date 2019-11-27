@@ -14,7 +14,7 @@ function set_drag_drop(dragObj){
     dragObj.isDown = true;
   })
 
-  dragObj.addEventListener('mouseup', function(e){
+  document.addEventListener('mouseup', function(e){
     // TODO AJAX persist top et left attribute
     console.log(dragObj.style.left.replace('px',''))
     console.log(dragObj.style.top.replace('px',''))
@@ -41,4 +41,4 @@ function initMoodBoard(){
   })
 }
 
-initMoodBoard();
+export { initMoodBoard };
