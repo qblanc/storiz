@@ -2,7 +2,7 @@ function set_drag_drop(dragObj){
   dragObj.adx = 0;
   // distance en pixel entre le top de la window et
   // la div qui contient ton element
-  dragObj.ady = 172;
+  dragObj.ady = 0;
 
   dragObj.addEventListener('mousedown', function(e){
     var rect = dragObj.getBoundingClientRect();
@@ -39,6 +39,18 @@ function initMoodBoard(){
     positionItem(draggable)
     set_drag_drop(draggable);
   })
+
+function throttled(delay, fn) {
+  let lastCall = 0;
+  return function (...args) {
+    const now = (new Date).getTime();
+    if (now - lastCall < delay) {
+      return;
+    }
+    lastCall = now;
+    return fn(...args);
+  }
+}
 }
 
 export { initMoodBoard };

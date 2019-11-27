@@ -12,11 +12,12 @@ class MooditemsController < ApplicationController
   end
 
   def create
-    @moooditem = Mooditem.new(mooditem_params)
+    @mooditem = Mooditem.new(mooditem_params)
+    # raise
     @mooditem.mood = @mood
     if @mood.valid?
       @mood.save!
-      redirect_to mooditem_path(@mooditem)
+      redirect_to mood_path(@mood)
     else
       redirect_to :new
     end
