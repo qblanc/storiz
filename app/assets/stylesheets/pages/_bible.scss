@@ -1,6 +1,11 @@
+ul {
+  list-style-type: none;
+}
+
 .bible {
   margin-top: 20px;
 }
+
 .reduced-container {
   max-width: 75vh;
   margin: 0 auto;
@@ -10,18 +15,36 @@
   min-height: 50vh;
 }
 
-ul {
-  list-style-type: none;
-}
-
 #char-show {
   display: flex;
   min-height: 50vh;
   max-height: 60vh;
   background-color: white;
+  transform: translate(100%);
+  // animation-name: card-bounce;
+  transition: all 0.7s ease-in-out;
 }
 
-a.nav-link {
+
+// @keyframes card-bounce {
+//   0% {
+//   transform: translate(100%);
+
+//   }
+
+//   50% {
+//   transform: translate(-100%);
+
+//   }
+
+//   100% {
+//   transform: translate(-100%);
+
+//   }
+// }
+
+/* TABS */
+.nav-link {
   text-decoration: none;
   color: $gray-600;
 
@@ -31,9 +54,23 @@ a.nav-link {
   }
 }
 
+
+.list-group-item {
+  text-decoration: none;
+  border: none;
+
+  &.link-active {
+    background-color: $gray-600;
+    border-bottom: 2px solid black;
+    border-top: 2px solid black;
+    color: black;
+  }
+}
+
 a.char-item {
   text-decoration: none;
   color: $gray-600;
+  display: block;
   &:hover {
     color: $gray-900;
   }
@@ -47,11 +84,11 @@ a.char-item {
 // Create scroolBar and hide it
 .list {
   overflow-y: scroll;
-  -ms-overflow-style: none;  /* Internet Explorer 10+ */
-  scrollbar-width: none;  /* Firefox */
-}
-.list::-webkit-scrollbar {
-    display: none;  /* Safari and Chrome */
+//   -ms-overflow-style: none;  /* Internet Explorer 10+ */
+//   scrollbar-width: none;  /* Firefox */
+// }
+// .list::-webkit-scrollbar {
+//     display: none;  /* Safari and Chrome */
 }
 
 .tab-content {

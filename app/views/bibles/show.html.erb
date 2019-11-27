@@ -3,7 +3,7 @@
   <div class="container">
     <h1 class="text-center mb-3"> <%= @project.title %>'s bible </h1>
 
-  <!-- Navigation tabs -->
+    <!-- Navigation tabs -->
     <div class="reduced-container mb-5">
       <ul class="nav nav justify-content-between mt-4" id="myTab" role="tablist">
         <li class="nav-item">
@@ -17,43 +17,105 @@
         </li>
       </ul>
     </div>
-  <!-- Navigation tabs end -->
+    <!-- Navigation tabs end -->
 
   </div>
-<!-- Tab panels -->
+  <!-- Tab panels -->
   <div class="tab-content">
-  <!-- Characters panel -->
+    <!-- Characters panel -->
     <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">
       <div class="row mx-0">
         <div class="list col-2 px-0">
           <ul class="list-group list-group-flush list-characters">
             <% @characters.each do |char| %>
+            <li class="list-group-item" data-charac-id=<%= char.id %> >
               <%= link_to character_path(char), class: "char-item", remote: true do %>
-                <li class="list-group-item char-item" data-charac-id=<%= char.id %> ><%= char.first_name %> <%= char.last_name %></li>
+              <%= char.first_name %> <%= char.last_name %>
               <% end %>
+            </li>
             <% end %>
           </ul>
         </div>
+        <% @characters.each do |character| %>
         <div class="col-10 px-0" id="char-show">
           <!-- Ici nous yieldons le HTML de charactersController#show avec AJAX -->
+          <div class="character-container p-4">
+
+            <!---------------------- Avatar & infos générales -------------------->
+            <div class="character-infos mb-3">
+
+              <div class="character-image pr-3">
+                <img src="https://vignette.wikia.nocookie.net/uvm-mock-trial/images/8/89/00060bq0.jpg/revision/latest?cb=20140817200436" alt="<%= character.last_name %>" class="charavatar"><!-- INSRER IMAGE CARRE -->
+              </div>
+
+              <div class="character-basics">
+                <div class="character-name mt-3">
+                  <h1><%= character.first_name %> <strong><%= character.last_name.upcase %></strong></h1>
+                </div>
+
+                <div class="character-generals mt-2 mb-2">
+                  <i class="fas fa-venus-mars"></i> <%= character.genre %> &nbsp;&nbsp; <i class="fas fa-birthday-cake"></i> <%= character.birthdate.strftime("%d/%m/%Y") %>
+                </div>
+              </div>
+            </div>
+
+            <!-------------------- Description -------------------->
+
+            <div class="character-description">
+              <p><%= character.description %></p>
+            </div>
+
+            <hr class="dashed-separator"> <!-- Separateur -->
+
+            <!-------------------- Logs -------------------->
+
+            <div class="logs-area">
+              <!-- Insérer tableau des logs ici -->
+            </div>
+          </div>
+
+          <!-------------------- Character Events -------------------->
+
+          <div class="right-part">
+            <div class="right-part-title pt-3"> <!-- Liste des events -->
+              <h4>Main Character events</h4>
+            </div>
+
+            <div class="right-part-events pt-3 pl-4">
+              <% if character.character_events.blank? %>
+              <p><i>No main event yet for <%= character.first_name %></i></p>
+              <% else %>
+              <% character.character_events.each do |character_event| %>
+              <%= render 'character_events/show', character_event: character_event %>
+              <% end %>
+              <% end %>
+            </div>
+
+            <div class="right-part-add-event p-4"> <!-- Formulaire -->
+              <%= render 'character_events/form', character: character, character_event: character_event %>
+            </div>
+          </div>
+
+
         </div>
+        <% end %>
       </div>
     </div>
-  <!-- Characters panel end -->
+    <!-- Characters panel end -->
 
-  <!-- Scenes panel -->
+    <!-- Scenes panel -->
     <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">
       <ul>
         <% @scenes.each do |scene| %>
-          <li><strong><%= scene.number %></strong> - <%= scene.title if scene.title.present? %></li>
+        <li><strong><%= scene.number %></strong> - <%= scene.title if scene.title.present? %></li>
         <% end %>
       </ul>
     </div>
-  <!-- Scenes panel end -->
+    <!-- Scenes panel end -->
 
     <div class="tab-pane" id="messages" role="tabpanel" aria-labelledby="messages-tab"></div>
 
   </div>
- <!-- Tab panels end -->
+  <!-- Tab panels end -->
 
 </div>
