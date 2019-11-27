@@ -4,6 +4,7 @@ class CharacterEventsController < ApplicationController
   def create
     @character_event = CharacterEvent.new(character_event_params)
     @character_event.character = @character
+
     if @character_event.save
       respond_to do |format|
         format.html { redirect_to character_path(@character) }
@@ -15,15 +16,6 @@ class CharacterEventsController < ApplicationController
         format.js
       end
     end
-
-
-
-
-
-    respond_to do |format|
-      format.html { redirect_to character_path(@character) }
-      format.js
-    end
   end
 
   private
@@ -33,6 +25,6 @@ class CharacterEventsController < ApplicationController
   end
 
   def character_event_params
-    params.require(:character_events).permit(:character_id, :content, :scene_id)
+    params.require(:character_event).permit(:character_id, :content, :scene_id)
   end
 end

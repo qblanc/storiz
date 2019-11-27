@@ -78,11 +78,13 @@
   -ms-overflow-style: none;  /* Internet Explorer 10+ */
   scrollbar-width: none;  /* Firefox */
 }
+
 .right-part-events::-webkit-scrollbar {
     display: none;  /* Safari and Chrome */
 }
 
 .right-part-add-event{
   height:20%;
-
 }
+
+

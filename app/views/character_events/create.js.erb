@@ -1,16 +1,16 @@
 function refreshForm(innerHTML) {
-  const newCharacterEventForm = document.getElementById('right-part-add-event');
+  const newCharacterEventForm = document.querySelector('.right-part-add-event');
   newCharacterEventForm.innerHTML = innerHTML;
 }
 
 function addCharacterEvent(characterEventHTML) {
-  const characterEvents = document.getElementById('right-part-events');
+  const characterEvents = document.querySelector('.right-part-events');
   characterEvents.insertAdjacentHTML('beforeend', characterEventHTML);
 }
 
 <% if @character_event.errors.any? %>
   refreshForm('<%= j render "character_events/form", character: @character, character_event: @character_event %>');
 <% else %>
-  addCharacterEvent('<%= j render "chaaracter_event/show", character_event: @character_event %>');
+  addCharacterEvent('<%= j render "character_events/show", character_event: @character_event %>');
   refreshForm('<%= j render "character_events/form", character: @character, character_event: CharacterEvent.new %>');
 <% end %>
