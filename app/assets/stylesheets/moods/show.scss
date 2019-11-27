@@ -80,3 +80,136 @@
   height:20%;
 
 }
+
+/*
+==============================================
+Fonts Installation
+==============================================
+*/
+
+@import 'https://fonts.googleapis.com/css?family=Droid+Serif';
+
+@font-face {
+  font-family: 'Bodoni';
+  src: url('//static1.squarespace.com/static/543870a5e4b0a877b5a652d9/t/57dad241414fb5d694751ab7/1473958465275/BodoniFLF-Roman.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Bodoni Bold';
+  src: url('//static1.squarespace.com/static/543870a5e4b0a877b5a652d9/t/57dad236414fb5d694751a44/1473958454896/BodoniFLF-Bold.ttf');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Bodoni Italic';
+  src: url('//static1.squarespace.com/static/543870a5e4b0a877b5a652d9/t/57dad23b414fb5d694751a73/1473958460144/BodoniFLF-Italic.ttf');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Bodoni Bold Italic';
+  src: url('//static1.squarespace.com/static/543870a5e4b0a877b5a652d9/t/57dad231414fb5d694751a13/1473958449544/BodoniFLF-BoldItalic.ttf');
+  font-weight: bold;
+  font-style: italic;
+}
+
+
+/*
+==============================================
+Variables
+==============================================
+*/
+
+//Layout
+
+//Color variables
+$black: #000;
+$light-orange: #ffeecc;
+//Font size variables
+//Typography variables
+
+$main-serif: 'Bodoni Bold', Garamond, 'Times New Roman', serif;
+$paragraph-serif: 'Bodoni Italic', Garamond, 'Times New Roman', serif;
+
+/*
+==============================================
+Mixins
+==============================================
+*/
+
+@mixin absolute($height, $top: 0, $bottom: 0, $left: 0, $right: 0){
+  position: absolute;
+  top: $top;
+  bottom: $bottom;
+  left: $left;
+  right: $right;
+  margin: auto;
+  width: 100%;
+  height: $height
+}
+
+@mixin mainHeading($color: $black) {
+  font-family: $main-serif;
+  font-size: 7vw;
+  color: $color;
+  letter-spacing: -0.02em;
+}
+
+
+
+/*
+==============================================
+Overall styles
+==============================================
+*/
+
+.align-center {
+  text-align: center;
+}
+
+h1 {
+  @include mainHeading;
+}
+
+p {
+  font-family: $paragraph-serif;
+  font-size: 0.8em;
+  font-style: italic;
+  padding-top: 0.5em;
+  letter-spacing: 0.09em;
+}
+.description {
+  display: none;
+}
+.mood-board {
+  width: 100%;
+  height: 100vh;
+  background: $light-orange;
+  position: relative;
+  .title {
+    @include absolute(40vh);
+  }
+  .images {
+    @include absolute(100%, 0, auto, 0, auto );
+    max-height: 100%;
+    overflow: hidden;
+  }
+  .element {
+    &:hover {
+      .description {
+        display: block;
+      }
+    }
+    position: absolute;
+    z-index: 0;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+}
