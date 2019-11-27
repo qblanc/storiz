@@ -7,7 +7,7 @@ trix-editor {
   outline: none;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-
+  z-index: 1;
 }
 
 trix-toolbar {
@@ -16,4 +16,5 @@ trix-toolbar {
   padding:10px 10px 0 10px;
   background:#f4f4f4;
   // border-bottom: 1px solid #bbb;
+  z-index: 2;
 }
