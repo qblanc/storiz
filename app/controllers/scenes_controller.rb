@@ -11,7 +11,8 @@ class ScenesController < ApplicationController
   end
 
   def create
-    @scene = Scene.new(scene_params)
+    @scenes = Scene.all
+    @scene = Scene.new(title: params[:scene][:title], number: @scenes.length + 1)
     @scene.project = @project
     if @project.valid?
       @scene.save!
@@ -22,6 +23,7 @@ class ScenesController < ApplicationController
   end
 
   def edit
+    @scenes = Scene.all
   end
 
   def update
@@ -35,8 +37,20 @@ class ScenesController < ApplicationController
   end
 
   def destroy
+    num = @scene.number
     @scene.destroy
-    redirect_to root_path
+    @scenes = Scene.all.order(:number)
+    x = 1
+    @scenes.order(:number).each do |scene|
+      scene.number = x
+      if num == x && num < @scenes.length
+        @id = scene.id
+      else
+        @id = @scenes[num - 2].id
+      end
+      x += 1
+    end
+    redirect_to scene_path(@id)
   end
 
   private
