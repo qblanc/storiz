@@ -23,3 +23,14 @@
 @import "components/trix/attachments";
 @import "components/trix/selection";
 @import "components/trix/toolbar";
+
+
+a {
+  text-decoration: none;
+  color:black;
+  &:hover{
+    text-decoration: none;
+    color:black;
+    opacity: 0.6;
+  }
+}

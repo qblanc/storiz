@@ -3,6 +3,7 @@ class ProjectsController < ApplicationController
 
   def show
     @scenes = @project.scenes.all
+    @scene = Scene.new
   end
 
   def index
