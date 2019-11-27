@@ -9,7 +9,6 @@ $opacity-active: 1;
 .toolbar-shadow {
     border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
-
   // padding: 10px 0;
   // border-radius: 3px;
   // border-left: 1px solid #bbb;
@@ -17,6 +16,31 @@ $opacity-active: 1;
   // border-bottom: 1px solid #bbb;
   // transition: 0.3s;
     // box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.editor {
+  position: relative;
+}
+
+.edit-btn {
+  position: absolute;
+  z-index: 3;
+  left: 551px;
+  top: 9px;
+}
+
+.confirm-btn {
+  position: absolute;
+  z-index: 3;
+  left: 551px;
+  top: 9px;
+}
+
+.delete-btn {
+  position: absolute;
+  z-index: 3;
+  left: 621px;
+  top: 9px;
 }
 
 trix-toolbar {

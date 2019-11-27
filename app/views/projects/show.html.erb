@@ -55,10 +55,7 @@
                   <%# <div class="card card-body"> %>
                   <%= simple_form_for [@project, @scene] do |f| %>
                     <div class = 'form-row justify-content-between' >
-                      <div class="col-2 justify-content-end">
-                        <%= f.input :number, :label => false, :placeholder => "N°" %>
-                      </div>
-                      <div class="col-8">
+                      <div class="col-10">
                         <%= f.input :title, :label => false, :placeholder => "Title" %>
                       </div>
                       <div class="col-2">
