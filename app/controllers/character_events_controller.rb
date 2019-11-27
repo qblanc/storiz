@@ -1,17 +1,30 @@
-class CharactersController < ApplicationController
-  before_action :set_character, only: [:show, :edit, :update, :destroy]
+class CharacterEventsController < ApplicationController
+  before_action :set_character, only: [:create]
 
   def create
-    CharacterEvent.create!(character_params)
+    @character_event = CharacterEvent.new(character_event_params)
+    @character_event.character = @character
+
+    if @character_event.save
+      respond_to do |format|
+        format.html { redirect_to character_path(@character) }
+        format.js
+      end
+    else
+      respond_to do |format|
+        format.html { render 'characters/show' }
+        format.js
+      end
+    end
   end
 
   private
 
   def set_character
-    @character = Character.find(params[:id])
+    @character = Character.find(params[:character_id])
   end
 
-  def character_params
-    params.require(:character_events).permit(:character_id, :content, :scene_id)
+  def character_event_params
+    params.require(:character_event).permit(:character_id, :content, :scene_id)
   end
 end
