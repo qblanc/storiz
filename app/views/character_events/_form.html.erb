@@ -1,4 +1,4 @@
-<%= simple_form_for([ character, character_event ]) do |form| %>
+<%= simple_form_for([ character, character_event ], remote: true) do |form| %>
   <%= form.input :content, as: :text %>
   <% if @scene %>
     <%= form.input :scene_id, as: :hidden, input_html: {value: @scene.id} %>
