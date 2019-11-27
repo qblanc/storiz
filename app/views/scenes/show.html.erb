@@ -18,7 +18,7 @@
   <div class="editor" data-scene-id="<%= @scene.id %>">
     <%= simple_form_for @scene, remote: true do |f| %>
         <%= f.rich_text_area :content %>
-        <%= f.button :submit, class: 'btn btn-info' %>
+        <%= f.button :submit, class: 'btn btn-info update-btn' %>
     <% end %>
   </div>
 
