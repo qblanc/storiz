@@ -1,10 +1,12 @@
 .index {
   width: 200px;
   background: white;
-  border-radius: 3px;
+  border-radius: 5px;
   height: 100%;
   position: sticky;
   top:10px;
+  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
+
   li {
     margin-top:18px;
     list-style: none;

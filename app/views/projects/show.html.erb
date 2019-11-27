@@ -73,7 +73,7 @@
           </li>
           <% @scenes.order(:number).each do |scene| %>
             <li>
-              <%= link_to "Scene #{scene.number}. #{scene.title}" , scene_path(scene), class:"btn btn-info m-1 text-left" %>
+              <%= link_to "#{scene.number}. #{scene.title}" , scene_path(scene), class:"btn btn-info m-1 text-left" %>
             </li>
           <% end %>
         </ul>

@@ -1,7 +1,7 @@
 
 <div class="character-container p-4">
 
-  <!-- Partie supèrieure (infos générales et photo) -->
+  <!---------------------- Avatar & infos générales -------------------->
   <div class="character-infos mb-3">
 
     <div class="character-image pr-3">
@@ -19,57 +19,39 @@
     </div>
   </div>
 
-  <!-- Description -->
+  <!-------------------- Description -------------------->
 
   <div class="character-description">
     <p><%= character.description %></p>
   </div>
 
-  <hr class="dashed-separator">
+  <hr class="dashed-separator"> <!-- Separateur -->
 
-  <!-- Logs -->
+  <!-------------------- Logs -------------------->
+
   <div class="logs-area">
+    <!-- Insérer tableau des logs ici -->
   </div>
 </div>
-<!-- Events (AJAX à faire) -->
 
+<!-------------------- Character Events -------------------->
 
 <div class="right-part">
-  <div class="right-part-title pt-3">
+  <div class="right-part-title pt-3"> <!-- Liste des events -->
     <h4>Main Character events</h4>
   </div>
-  <div class="right-part-events pt-3">
-    <ul>
-        <li>J'aime le bruit blanc de l'eau</li>
-        <li>J'aime le bruit blanc de l'eau</li>
-        <li>J'aime le bruit blanc de l'eau</li>
-        <li>J'aime le bruit blanc de l'eau</li>
-        <li>J'aime le bruit blanc de l'eau</li>
-        <li>J'aime le bruit blanc de l'eau</li>
-        <li>J'aime le bruit blanc de l'eau</li>
-        <li>J'aime le bruit blanc de l'eau</li>
-        <li>J'aime le bruit blanc de l'eau</li>
-        <li>J'aime le bruit blanc de l'eau</li>
-        <li>J'aime le bruit blanc de l'eau</li>
-        <li>J'aime le bruit blanc de l'eau</li>
-        <li>J'aime le bruit blanc de l'eau</li>
-        <li>J'aime le bruit blanc de l'eau</li>
-        <li>J'aime le bruit blanc de l'eau</li>
-        <li>J'aime le bruit blanc de l'eau</li>
-        <li>J'aime le bruit blanc de l'eau</li>
-        <li>J'aime le bruit blanc de l'eau</li>
-        <li>J'aime le bruit blanc de l'eau</li>
-        <li>J'aime le bruit blanc de l'eau</li>
-        <li>J'aime le bruit blanc de l'eau</li>
-        <li>J'aime le bruit blanc de l'eau</li>
-        <li>J'aime le bruit blanc de l'eau</li>
-        <li>J'aime le bruit blanc de l'eau</li>
-        <li>J'aime le bruit blanc de l'eau</li>
-        <li>J'aime le bruit blanc de l'eau</li>
-        <li>J'aime le bruit blanc de l'eau</li>
-    </ul>
+
+  <div class="right-part-events pt-3 pl-4">
+    <% if @character.character_events.blank? %>
+      <p><i>No main event yet for <%= @character.first_name %></i></p>
+    <% else %>
+        <% @character.character_events.each do |character_event| %>
+          <%= render 'character_events/show', character_event: character_event %>
+        <% end %>
+    <% end %>
   </div>
-  <div class="right-part-add-event p-4">
+
+  <div class="right-part-add-event p-4"> <!-- Formulaire -->
     <%= render 'character_events/form', character: @character, character_event: @character_event %>
   </div>
 </div>
