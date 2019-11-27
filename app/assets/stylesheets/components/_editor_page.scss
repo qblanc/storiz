@@ -1,19 +1,33 @@
+.indexx {
+  position: sticky;
+  top:50px;
+  height: 100%;
+}
+
 .index {
   width: 200px;
   background: white;
   border-radius: 5px;
   height: 100%;
-  position: sticky;
-  top:10px;
+  max-height: calc(100vh - 270px);
+  overflow-y: scroll;
   // box-shadow: 0 0 15px rgba(0,0,0,0.2);
 
   li {
     margin-top:18px;
     list-style: none;
   }
+
+  .index-btn {
+    display: inline-block;
+  }
 }
 
 .editor {
   width: 900px;
   margin-bottom: 20px;
+}
+
+.update-btn {
+  display: none;
 }
