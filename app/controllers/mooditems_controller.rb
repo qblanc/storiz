@@ -35,7 +35,7 @@ class MooditemsController < ApplicationController
     @mooditem.update(mooditem_params)
     respond_to do |format|
       format.html do
-        redirect_to mood_path(@mood)
+        redirect_to mood_path(@mooditem.mood)
       end
       format.js
     end
@@ -43,7 +43,7 @@ class MooditemsController < ApplicationController
 
   def destroy
     @mooditem.destroy
-    redirect_to mood_path(@mood)
+    redirect_to mood_path(@mooditem.mood)
   end
 
   private

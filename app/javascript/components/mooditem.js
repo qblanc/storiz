@@ -4,6 +4,10 @@ function set_drag_drop(dragObj){
   // la div qui contient ton element
   dragObj.ady = 0;
 
+  const form = document.querySelector(dragObj.dataset.form)
+  const topInput = form.querySelector('#mooditem_top')
+  const leftInput = form.querySelector('#mooditem_left')
+
   dragObj.addEventListener('mousedown', function(e){
     var rect = dragObj.getBoundingClientRect();
     // obj.dx distance entre border gauche du rect
@@ -18,12 +22,17 @@ function set_drag_drop(dragObj){
     console.log(dragObj.style.left.replace('px',''))
     console.log(dragObj.style.top.replace('px',''))
     dragObj.isDown = false;
+    form.submit()
   })
 
   document.addEventListener('mousemove', function(e){
     if(dragObj && dragObj.isDown){
-      dragObj.style.left = e.pageX - dragObj.adx + dragObj.dx + "px";
-      dragObj.style.top = e.pageY - dragObj.ady + dragObj.dy + "px";
+      let deltaX = e.pageX - dragObj.adx + dragObj.dx
+      let deltaY = e.pageY - dragObj.ady + dragObj.dy
+      leftInput.value = deltaX
+      topInput.value = deltaY
+      dragObj.style.left =  `${deltaX}px`;
+      dragObj.style.top = `${deltaY}px`;
     }
   })
 }

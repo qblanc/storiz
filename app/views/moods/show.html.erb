@@ -1,20 +1,22 @@
-<body>
+<%= simple_form_for([@mood, Mooditem.new], remote: true) do |f| %>
+  <%= f.input :photo, as: :file %>
+  <%= f.button :submit, class: 'btn btn-primary' %>
+<% end %>
+<div class="position-relative moodimages">
   <% @mood.mooditems.each do |item| %>
-    <%= cl_image_tag(item.photo.key, class: 'draggable position-absolute', data: { x: item.left, y: item.top}) %>
-    <%= simple_form_for [@mood, item] do |f| %>
-      <%= f.input :top %>
-      <%= f.input :left %>
-      <%= f.submit "update coordinates", class: "btn btn-primary" %>
-      <%= link_to "Delete", mood_path(@mood),
-        method: :delete,
-        data: { confirm: "Are you sure?" } %>
-      <% end %>
-  <% end %>
-
-  <div class="moodimages draggable position-absolute">
-    <%= simple_form_for([@mood, Mooditem.new], remote: true) do |f| %>
-      <%= f.input :photo, as: :file %>
-      <%= f.button :submit, class: 'btn btn-primary' %>
+    <%= cl_image_tag(item.photo.key, class: 'draggable position-absolute',
+        data: { x: item.left, y: item.top, form: "#edit_mooditem_#{item.id}"}) %>
+      <div class="d-none">
+      <%= simple_form_for [@mood, item] do |f| %>
+        <%= f.input :top %>
+        <%= f.input :left %>
+        <%= f.submit "update coordinates" %>
+        <%= link_to "Delete", mooditem_path(item),
+          method: :delete,
+          data: { confirm: "Are you sure?" } %>
+      </div>
     <% end %>
-  </div>
-</body>
+  <% end %>
+</div>
+
+
