@@ -1,4 +1,7 @@
 <body>
+   <script>initMoodBoard();</script>
+   <element onclick="initMoodBoard()">
+
   <%= cl_image_tag("xg8irtf0xzebwkvomm8c",
         width: 400, height: 300, crop: :fill) %>
 
@@ -8,73 +11,38 @@
   <%= simple_form_for(@mood) do |f| %>
     <!-- [...] -->
     <%= f.input :photo, as: :file %>
+    <%= f.button :submit, class: 'btn btn-primary' %>
     <!-- [...] -->
   <% end %>
 
   <%#= cl_image_tag @mooditem1.photo.key, height: 300, width: 400, crop: :fill %>
 
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%#= cl_image_path @mooditem1.photo.key, height: 300, width: 400, crop: :fill %>')">
-    ool article
+  <div class="card-category" onclick="initMoodBoard()" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%#= cl_image_path @mooditem1.photo.key, height: 300, width: 400, crop: :fill %>')">
+    What the Fluff
   </div>
 
 
-<div class="bible">
-
+<div>
   <div class="container">
-    <h1 class="text-center mb-3"> <%#= @project.title %>'s bible </h1>
-
-  <!-- Navigation tabs -->
-    <div class="reduced-container mb-5">
-      <ul class="nav nav justify-content-between mt-4" id="myTab" role="tablist">
-        <li class="nav-item">
-          <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Characters</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Plots</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" id="messages-tab" data-toggle="tab" href="#messages" role="tab" aria-controls="messages" aria-selected="false">Locations</a>
-        </li>
-      </ul>
-    </div>
-  <!-- Navigation tabs end -->
-
+    <h1 class="text-center mb-3"> Some Stuff </h1>
   </div>
-<!-- Tab panels -->
-  <div class="tab-content">
-  <!-- Characters panel -->
-    <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">
-      <div class="row mx-0">
-        <div class="list col-2 px-0">
-          <ul class="list-group list-group-flush list-characters">
-            <%# @characters.each do |char| %>
-              <%#= link_to character_path(char), class: "char-item", remote: true do %>
-                <li class="list-group-item char-item" data-charac-id=<%#= char.id %> ><%#= char.first_name %> <%#= char.last_name %></li>
-              <%# end %>
-            <%# end %>
-          </ul>
-        </div>
-        <div class="col-10 px-0" id="char-show">
-          <!-- Ici nous yieldons le HTML de charactersController#show avec AJAX -->
-        </div>
-      </div>
-    </div>
-  <!-- Characters panel end -->
+    <button id="upload_widget" class="cloudinary-button">Upload files</button>
 
-  <!-- Scenes panel -->
-    <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-      <ul>
-        <%# @scenes.each do |scene| %>
-          <li><strong><%#= scene.number %></strong> - <%#= scene.title if scene.title.present? %></li>
-        <%# end %>
-      </ul>
-    </div>
-  <!-- Scenes panel end -->
+    <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
 
-    <div class="tab-pane" id="messages" role="tabpanel" aria-labelledby="messages-tab"></div>
+    <script type="text/javascript">
+    var myWidget = cloudinary.createUploadWidget({
+      cloudName: 'my_cloud_name',
+      uploadPreset: 'my_preset'}, (error, result) => {
+        if (!error && result && result.event === "success") {
+          console.log('Done! Here is the image info: ', result.info);
+        }
+      }
+    )
 
-  </div>
- <!-- Tab panels end -->
-
+    document.getElementById("upload_widget").addEventListener("click", function(){
+        myWidget.open();
+      }, false);
+    </script>
 </div>
 </body>

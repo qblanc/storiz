@@ -41,4 +41,4 @@ function initMoodBoard(){
   })
 }
 
-initMoodBoard()
+initMoodBoard();

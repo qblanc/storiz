@@ -1,6 +1,6 @@
 import "bootstrap";
 import { initDisplayCharShowOnClick } from '../pages/bible';
-import { initMoodBoard } from '../pages/mood';
+import { initMoodBoard } from '../components/mooditem';
 import { TextSave } from '../components/text_save';
 import Rails from '@rails/ujs';
 
@@ -10,5 +10,5 @@ initDisplayCharShowOnClick();
 initMoodBoard();
 TextSave();
 
-require("trix")
-require("@rails/actiontext")
+require("trix");
+require("@rails/actiontext");

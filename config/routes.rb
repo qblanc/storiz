@@ -10,7 +10,9 @@ Rails.application.routes.draw do
     resources :characters, only: [:new, :create]
   end
 
-  resources :moods, only: [:show]
+  resources :moods, only: [:new, :create, :show, :edit, :update] do
+    resources :mooditems, only: [:show, :new, :create, :edit, :update, :destroy]
+  end
   resources :scenes, only: [:edit, :update, :show, :destroy]
   resources :characters, only: [:edit, :update, :show, :index, :destroy]
 end
