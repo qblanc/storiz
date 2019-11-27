@@ -14,7 +14,8 @@
 @import "pages/index";
 @import "projects/index";
 @import "characters/index";
-@import "scenes/index";
+
+// Trix stylesheets
 @import "components/trix/editor";
 @import "components/trix/icons";
 @import "components/trix/media-queries";
@@ -22,3 +23,14 @@
 @import "components/trix/attachments";
 @import "components/trix/selection";
 @import "components/trix/toolbar";
+
+
+a {
+  text-decoration: none;
+  color:black;
+  &:hover{
+    text-decoration: none;
+    color:black;
+    opacity: 0.6;
+  }
+}

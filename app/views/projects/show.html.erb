@@ -48,13 +48,35 @@
         </button>
       </div>
       <div class="modal-body">
-        <% @scenes.each do |scene| %>
-          <ul>
+        <ul>
+          <li class="m-1">
+            <a class="btn btn-warning" data-toggle="collapse" href="#newScene" role="button" aria-expanded="false" aria-controls="newScene">
+              <i class="fas fa-plus"></i> Add a new scene
+            </a>
+                <div class="collapse mt-3" id="newScene">
+                  <%# <div class="card card-body"> %>
+                  <%= simple_form_for [@project, @scene] do |f| %>
+                    <div class = 'form-row justify-content-between' >
+                      <div class="col-2 justify-content-end">
+                        <%= f.input :number, :label => false, :placeholder => "N°" %>
+                      </div>
+                      <div class="col-8">
+                        <%= f.input :title, :label => false, :placeholder => "Title" %>
+                      </div>
+                      <div class="col-2">
+                        <%= f.button :submit, "Create", class:"btn btn-warning" %>
+                      </div>
+                    </div>
+                  <% end %>
+                  <%# </div> %>
+                </div>
+          </li>
+          <% @scenes.order(:number).each do |scene| %>
             <li>
-              <%= link_to "Scene #{scene.number}" , scene_path(scene) %>
+              <%= link_to "Scene #{scene.number}. #{scene.title}" , scene_path(scene), class:"btn btn-info m-1 text-left" %>
             </li>
-          </ul>
-        <% end %>
+          <% end %>
+        </ul>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -62,3 +84,5 @@
     </div>
   </div>
 </div>
+
+

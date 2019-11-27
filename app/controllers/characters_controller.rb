@@ -7,6 +7,7 @@ class CharactersController < ApplicationController
 
   def show
     @character = Character.find(params[:id])
+    @character_event = CharacterEvent.new
     respond_to do |format|
       format.html
       format.js
