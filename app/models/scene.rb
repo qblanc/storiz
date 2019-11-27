@@ -6,4 +6,9 @@ class Scene < ApplicationRecord
   has_rich_text :content
 
   validates :number, presence: true
+  after_initialize :set_defaults
+
+  def set_defaults
+    self.content = "<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>" if self.new_record?
+  end
 end
