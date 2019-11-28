@@ -29,6 +29,12 @@ const initDisplayCharShowOnClick = () => {
 
 };
 
+// const deleteEmptyNoticeCharEvents = () => {
+//   if (document.querySelector('#empty-notice')) {
+//     document.querySelector('#empty-notice').remove();
+//   };
+// };
+
 export { initDisplayCharShowOnClick };
 
 

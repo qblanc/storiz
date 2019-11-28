@@ -18,6 +18,10 @@ class CharacterEventsController < ApplicationController
     end
   end
 
+  def delete
+
+  end
+
   private
 
   def set_character

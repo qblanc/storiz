@@ -74,12 +74,12 @@
               </div>
               <!-------------------- CHARACTER EVENTS -------------------->
               <div class="right-part"> <!-- Liste des events -->
-                <div class="right-part-title"> <!-- Titre et bouton -->
-                  <p><button type="button" class="btn btn-dark" data-toggle="modal" data-target="#charModal<%= character.id %>"><i class="fas fa-plus"></i></button> Add event</p>
+                <div class="right-part-title d-flex"> <!-- Titre et bouton -->
+                  <button id="btn-addevent" type="button" class="btn btn-outline-dark flex-fill" data-toggle="modal" data-target="#charModal<%= character.id %>"><i class="fas fa-plus"></i> Add event</button>
                 </div>
                 <div data-event="<%= character.id %>" class="right-part-events pt-3 pl-4">
                   <% if character.character_events.blank? %>
-                    <p><i>No main event yet for <%= character.first_name %></i></p>
+                    <p id="empty-notice"><i>No main event yet for <%= character.first_name %></i></p>
                   <% else %>
                     <% character.character_events.each do |character_event| %>
                       <%= render 'character_events/show', character_event: character_event %>
