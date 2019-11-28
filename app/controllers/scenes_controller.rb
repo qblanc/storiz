@@ -14,7 +14,7 @@ class ScenesController < ApplicationController
 
   def create
     @scenes = @project.scenes.order(:number)
-    @scene = Scene.new(title: params[:scene][:title], number: @scenes.length + 1)
+    @scene = Scene.new(title: params[:scene][:title], content: "<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>", number: @scenes.length + 1)
     @scene.project = @project
     if @project.valid?
       @scene.save!
