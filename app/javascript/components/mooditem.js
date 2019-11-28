@@ -9,6 +9,8 @@ function set_drag_drop(dragObj){
   const topInput = form.querySelector('#mooditem_top')
   const leftInput = form.querySelector('#mooditem_left')
 
+
+
   dragObj.addEventListener('mousedown', function(e){
     var rect = dragObj.getBoundingClientRect();
     // obj.dx distance entre border gauche du rect

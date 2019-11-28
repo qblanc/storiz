@@ -16,7 +16,7 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'cloudinary', '~> 1.12.0'
-
+gem 'rack-cors'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
