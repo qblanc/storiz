@@ -1,32 +1,57 @@
+@keyframes fade-in {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.tab-pane.active {
+    animation: fade-in 0.7s ease-out;
+}
+
 ul {
   list-style-type: none;
 }
 
 .bible {
-  margin-top: 20px;
+  margin-top: 2vh;
 }
 
 .reduced-container {
-  max-width: 75vh;
+  max-width: 60vw;
   margin: 0 auto;
 }
 
 .tab-pane {
   min-height: 50vh;
+  max-height: 75vh;
+  height: 60vh;
+    transition: all 0.7s ease-in-out;
+}
+
+.charac-div {
+  height: 100%;
+}
+
+.tab-content {
+  min-height: 60vh;
+  max-height: 75vh;
+  background-color: white;
+
 }
 
 #char-show {
-  min-height: 60vh;
-  max-height: 75vh;
   background-color: white;
   position: relative;
 }
 
-
-/* TABS */
+/* NAV - TABS */
 .nav-link {
   text-decoration: none;
   color: $gray-600;
+  &:hover{
+    transition: all 0.1s ease-in-out;
+    color: black;
+    border-bottom: 1px solid black;
+  }
 
   &.active {
     border-bottom: 2px solid black;
@@ -42,8 +67,6 @@ ul {
   color: $gray-600;
   &.actif {
     background-color: $gray-200;
-    // border-bottom: 1px solid black;
-    // border-top: 1px solid black;
     color: black;
   }
   p {
@@ -51,13 +74,11 @@ ul {
   }
 }
 
-a.char-item {
-  text-decoration: none;
-  color: $gray-600;
-  display: block;
-  &:hover {
-    color: $gray-900;
-  }
+.list-characters{
+  height: 100%;
+  overflow-y: scroll;
+  // -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  // scrollbar-width: none;  /* Firefox */
 }
 
 .char-description {
@@ -75,29 +96,9 @@ a.char-item {
   transition: all 0.7s ease-in-out;
 }
 
-.name-active {            // Ne fonctionne pas :(
-  background-color: red;  // Ne fonctionne pas :(
-  color: red;             // Ne fonctionne pas :(
-}                         // Ne fonctionne pas :(
-
-// Create scroolBar and hide it
+// Create scroolBar
 .list {
   overflow-y: scroll;
-//   -ms-overflow-style: none;  /* Internet Explorer 10+ */
-//   scrollbar-width: none;  /* Firefox */
-// }
-// .list::-webkit-scrollbar {
-//     display: none;  /* Safari and Chrome */
+  height: 100%;
 }
-
-.tab-content {
-  background-color: white;
-}
-
-#exampleModal {
-top:33%;
-left: 5%;
-outline: none;
-}
-
 

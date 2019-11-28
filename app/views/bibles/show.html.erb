@@ -5,7 +5,7 @@
 
     <!-- Navigation tabs -->
     <div class="reduced-container mb-5">
-      <ul class="nav nav justify-content-between mt-4" id="myTab" role="tablist">
+      <ul class="nav justify-content-between mt-4" id="myTab" role="tablist">
         <li class="nav-item">
           <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Characters</a>
         </li>
@@ -25,9 +25,10 @@
 
     <!-- Characters panel -->
     <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">
-      <div class="row mx-0">
+      <div class="row charac-div mx-0">
         <div class="list col-2 px-0">
-          <ul class="list-group list-group-flush list-characters">
+          <ul class="list-group list-group-flush list-characters example">
+
             <% @characters.each_with_index do |char, index| %>
               <li class="list-group-item" data-char="char-<%= index+1 %>" >
                 <%#= link_to character_path(char), class: "char-item", remote: true do %>
@@ -63,6 +64,9 @@
                   <p><%= character.description %></p>
                 </div>
                 <hr class="dashed-separator"> <!-- Separateur -->
+
+
+
                 <!-------------------- Logs -------------------->
                 <div class="logs-area">
                   <!-- Insérer tableau des logs ici -->
@@ -71,35 +75,18 @@
               <!-------------------- CHARACTER EVENTS -------------------->
               <div class="right-part"> <!-- Liste des events -->
                 <div class="right-part-title"> <!-- Titre et bouton -->
-                  <p><button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-plus"></i></button> Main Character events</p>
+                  <p><button type="button" class="btn btn-dark" data-toggle="modal" data-target="#charModal<%= character.id %>"><i class="fas fa-plus"></i></button> Add event</p>
                 </div>
-                <div class="right-part-events pt-3 pl-4">
+                <div data-event="<%= character.id %>" class="right-part-events pt-3 pl-4">
                   <% if character.character_events.blank? %>
-                  <p><i>No main event yet for <%= character.first_name %></i></p>
+                    <p><i>No main event yet for <%= character.first_name %></i></p>
                   <% else %>
-                  <% character.character_events.each do |character_event| %>
-                  <%= render 'character_events/show', character_event: character_event %>
-                  <% end %>
+                    <% character.character_events.each do |character_event| %>
+                      <%= render 'character_events/show', character_event: character_event %>
+                    <% end %>
                   <% end %>
                 </div>
               </div>
-              <!-- Modal Formulaire -->
-              <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">What's happening to <%= character.first_name %> <%= character.last_name %>?</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="modal-body">
-                      <%= render 'character_events/form', character: character, character_event: @character_event %>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- Modal Formulaire end-->
             </div>
           <% end %>
         <!-- _________________________________________Character show iteration end____________________________________________ -->
@@ -125,3 +112,24 @@
   <!-- Tab panels end -->
 
 </div>
+
+<!-- Modal Formulaire -->
+<% @characters.each do |character| %>
+
+  <div class="modal fade modalCharEvent" id="charModal<%= character.id %>" tabindex="-1" role="dialog" aria-labelledby="charModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="charModalLabel">What's happening to <%= character.first_name %> <%= character.last_name %>?</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <%= render 'character_events/form', character: character, character_event: @character_event %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+<!-- Modal Formulaire end-->

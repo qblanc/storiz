@@ -74,7 +74,7 @@ character6 = Character.new(first_name: "Barbe", last_name: "Bleue", birthdate: "
 character6.project = project1
 character6.save!
 
-character7 = Character.new(first_name: "Raymond", last_name: "Depardon", birthdate: "Thu, 29 Apr 1954 11:10:03 UTC +00:00", genre: "Male", description: "Raymond il est né et puis après il est mort, plus tard. Entre temps il a fait quelques photos stylées. En même temps à son époque c'était pas dur de faire des photos 'stylée', vu que y avait genre 3 photographes à tout péter dans le monde entier. Mais bon, chapeau bas, m'sieur Depardon")
+character7 = Character.new(first_name: "Raymond", last_name: "Depardon", birthdate: "Thu, 29 Apr 1954 11:10:03 UTC +00:00", genre: "Male", description: "Raymond il est né et puis après il est mort, plus tard. Entre temps il a fait quelques photos stylées. En même temps à son époque c'était pas dur de faire des photos 'stylés', vu que y avait genre 3 photographes à tout péter dans le monde entier. Mais bon, chapeau bas, m'sieur Depardon")
 character7.project = project1
 character7.save!
 
@@ -94,13 +94,33 @@ character11 = Character.new(first_name: "Superchiotte", last_name: "", birthdate
 character11.project = project1
 character11.save!
 
-character12 = Character.new(first_name: "Jim", last_name: "Carrey", birthdate: "Thu, 29 Apr 1954 11:10:03 UTC +00:00", genre: "Male", description: "Un acteur lambda")
+character12 = Character.new(first_name: "Jim", last_name: "Carrey", birthdate: "Thu, 29 Apr 1954 11:10:03 UTC +00:00", genre: "Male", description: "Decription personnage test")
 character12.project = project1
 character12.save!
 
 character13 = Character.new(first_name: "Victor", last_name: "Hugo", birthdate: "Thu, 29 Apr 1954 11:10:03 UTC +00:00", genre: "Male", description: "L'auteur de cette histoire, merci Vic")
 character13.project = project1
 character13.save!
+
+character14 = Character.new(first_name: "Romorantin", last_name: "Jeannot", birthdate: "Thu, 29 Apr 1954 11:10:03 UTC +00:00", genre: "Female", description: "Decription personnage test")
+character14.project = project1
+character14.save!
+
+character15 = Character.new(first_name: "Theo", last_name: "Jason", birthdate: "Thu, 29 Apr 1954 11:10:03 UTC +00:00", genre: "Male", description: "Decription personnage test félicitations Mireille.")
+character15.project = project1
+character15.save!
+
+character16 = Character.new(first_name: "Briac", last_name: "Maird", birthdate: "Thu, 29 Apr 1954 11:10:03 UTC +00:00", genre: "Male", description: "Decription personnage test")
+character16.project = project1
+character16.save!
+
+character17 = Character.new(first_name: "Jean", last_name: "Bon", birthdate: "Thu, 29 Apr 1954 11:10:03 UTC +00:00", genre: "Male", description: "Decription personnage test")
+character17.project = project1
+character17.save!
+
+character18 = Character.new(first_name: "Vincent", last_name: "Tim", birthdate: "Thu, 29 Apr 1954 11:10:03 UTC +00:00", genre: "Male", description: "Decription personnage test")
+character18.project = project1
+character18.save!
 
 
 scene1 = Scene.new(title: "Scene stylée", number: 1, content: "Ceci est une scène d'amour entre superchiotte et Jean Valjean")
@@ -115,7 +135,7 @@ scene3 = Scene.new(title: "Rebondissement innatendu", number: 3, content: "Dans 
 scene3.project = project1
 scene3.save!
 
-scene4 = Scene.new(title: "Scene mega stylée", number: 1, content: "Ceci est une scène qui se passe dans l'espace")
+scene4 = Scene.new(title: "Scene super pourrie", number: 1, content: "Ceci est une scène qui se passe dans l'espace")
 scene4.project = project2
 scene4.save!
 
