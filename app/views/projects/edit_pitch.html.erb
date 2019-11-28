@@ -1,0 +1,8 @@
+<div id="full-background2">
+  <div class="d-none">
+  <%= simple_form_for(@project) do |f| %>
+    <%= f.input :pitch, label: false, placeholder: "Describe your project in a few words..." %>
+    <%= f.button :submit, "  OK  ", class: 'btn btn-dark' %>
+  <% end %>
+  </div>
+</div>
