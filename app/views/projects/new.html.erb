@@ -3,25 +3,25 @@
     <form class="simple_form new_project" id="new_project" novalidate="novalidate" action="/projects" accept-charset="UTF-8" method="post">
       <input type="hidden" name="authenticity_token" value="n7iPYQQ3BbnHIhiZOZ5sgNnNXnQ1zb9haWUij2kQUqawiDXmktcRMTZ6HJlQy+GNQ+JalpdvedLR043+7A0a6A==">
       <div class="form-group string required project_title" data-children-count="1">
-        <input class="form-control string required transparent-input" placeholder="Project title" type="text" name="project[title]" id="project_title">
+        <input class="form-control string required transparent-input" placeholder="Give your project a title" type="text" name="project[title]" id="project_title">
       </div>
       <fieldset class="form-group radio_buttons required project_category">
         <legend class="col-form-label pt-0">
           <abbr title="required"></abbr>
         </legend>
         <input type="hidden" name="project[category]" value="">
-        <div class="row">
-          <div class="form-check" data-children-count="1">
-            <input class="form-check-input radio_buttons required" type="radio" value="Book" name="project[category]" id="project_category_book">
-            <label class="form-check-label collection_radio_buttons radio-inline" for="project_category_book">Book</label>
+        <div class="row mt-3 mb-3">
+          <div class="form-check col-3" data-children-count="1">
+            <input class="form-check-input radio_buttons required btn-block" type="radio" value="Book" name="project[category]" id="project_category_book">
+            <label class="form-check-label collection_radio_buttons radio-inline btn-block" for="project_category_book">Book</label>
           </div>
-          <div class="form-check" data-children-count="1">
-            <input class="form-check-input radio_buttons required" type="radio" value="Movie" name="project[category]" id="project_category_movie">
-            <label class="form-check-label collection_radio_buttons radio-inline" for="project_category_movie">Movie</label>
+          <div class="form-check col-3" data-children-count="1">
+            <input class="form-check-input radio_buttons required btn-block" type="radio" value="Movie" name="project[category]" id="project_category_movie">
+            <label class="form-check-label collection_radio_buttons radio-inline btn-block" for="project_category_movie">Movie</label>
           </div>
-          <div class="form-check" data-children-count="1">
-            <input class="form-check-input radio_buttons required" type="radio" value="TV Show" name="project[category]" id="project_category_tv_show">
-            <label class="form-check-label collection_radio_buttons radio-inline" for="project_category_tv_show">TV Show</label>
+          <div class="form-check col-3" data-children-count="1">
+            <input class="form-check-input radio_buttons required btn-block" type="radio" value="TV Show" name="project[category]" id="project_category_tv_show">
+            <label class="form-check-label collection_radio_buttons radio-inline btn-block" for="project_category_tv_show">TV Show</label>
           </div>
         </div>
       </fieldset>

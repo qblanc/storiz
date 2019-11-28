@@ -54,13 +54,15 @@
 input.transparent-input{
   background-color:transparent !important;
   border:none !important;
-  font-size: 50px;
-  font-family: 'Lekton', sans-serif;}
+  font-size: 40px;
+  font-family: 'Lekton', sans-serif;
+  width: 600px;
+}
 
 .title-form{
   position: absolute;
   top: 200px;
-  right: 80px;
+  left: 600px;
 }
 
 #project_title:focus {
@@ -89,3 +91,6 @@ input.transparent-input{
   }
 }
 
+.custom-width-btn {
+    width: 100px !important;
+}
