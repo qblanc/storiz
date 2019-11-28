@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     resource :bibles, only: [:show]
     resources :scenes, only: [:new, :create]
     resources :characters, only: [:new, :create]
+    get 'pitch', to: 'projects#pitch'
+    get 'pitch/edit', to: "projects#edit_pitch"
   end
 
   resources :moods, only: [:new, :create, :show, :edit, :update] do

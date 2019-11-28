@@ -10,15 +10,17 @@
   <br>
 
   <div class="cards">
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.ladn.eu/wp-content/uploads/2018/02/pitch.jpg)">
-      Pitch
-    </div>
+    <%= link_to project_pitch_path(@project) do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.ladn.eu/wp-content/uploads/2018/02/pitch.jpg)">
+        Pitch
+      </div>
+    <% end %>
 
     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://d3e6tmgg461bic.cloudfront.net/Pictures/480xany/7/2/7/1283727_book.jpg)">
       Synopsis
     </div>
 
-    <%= link_to mood_path(@project.mood) do %>
+    <%= link_to mood_path(@project) do %>
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.canva.com/learn/wp-content/uploads/2015/03/make-a-mood-board.jpg)">
         Mood
       </div>
