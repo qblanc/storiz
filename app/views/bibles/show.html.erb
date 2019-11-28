@@ -74,12 +74,12 @@
               </div>
               <!-------------------- CHARACTER EVENTS -------------------->
               <div class="right-part"> <!-- Liste des events -->
-                <div class="right-part-title"> <!-- Titre et bouton -->
-                  <p><button type="button" class="btn btn-dark" data-toggle="modal" data-target="#charModal<%= character.id %>"><i class="fas fa-plus"></i></button> Add event</p>
+                <div class="right-part-title d-flex"> <!-- Titre et bouton -->
+                  <button id="btn-addevent" type="button" class="btn btn-outline-dark flex-fill" data-toggle="modal" data-target="#charModal<%= character.id %>"><i class="fas fa-plus"></i> Add event</button>
                 </div>
                 <div data-event="<%= character.id %>" class="right-part-events pt-3 pl-4">
                   <% if character.character_events.blank? %>
-                    <p><i>No main event yet for <%= character.first_name %></i></p>
+                    <p id="empty-notice"><i>No main event yet for <%= character.first_name %></i></p>
                   <% else %>
                     <% character.character_events.each do |character_event| %>
                       <%= render 'character_events/show', character_event: character_event %>
@@ -106,7 +106,8 @@
     </div>
     <!-- Scenes panel end -->
 
-    <div class="tab-pane" id="messages" role="tabpanel" aria-labelledby="messages-tab"></div>
+    <div class="tab-pane" id="messages" role="tabpanel" aria-labelledby="messages-tab">
+    </div>
 
   </div>
   <!-- Tab panels end -->
@@ -116,8 +117,8 @@
 <!-- Modal Formulaire -->
 <% @characters.each do |character| %>
 
-  <div class="modal fade modalCharEvent" id="charModal<%= character.id %>" tabindex="-1" role="dialog" aria-labelledby="charModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+  <div class="modal fade bd-example-modal-lg" id="charModal<%= character.id %>" tabindex="-1" role="dialog" aria-labelledby="charModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="charModalLabel">What's happening to <%= character.first_name %> <%= character.last_name %>?</h5>
@@ -133,3 +134,25 @@
   </div>
 <% end %>
 <!-- Modal Formulaire end-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

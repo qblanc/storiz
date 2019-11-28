@@ -1,33 +1,40 @@
 const initDisplayCharShowOnClick = () => {
+  if(document.querySelector(".list-group li")){
+    const menuLinks = document.querySelectorAll(".list-group li");
 
-  const menuLinks = document.querySelectorAll(".list-group li");
+    document.querySelector("#char-show .char-description:first-child").classList.add("slide");
+    document.querySelector(".list-group-item:first-child").classList.add("actif");
 
-  document.querySelector("#char-show .char-description:first-child").classList.add("slide");
-  document.querySelector(".list-group-item:first-child").classList.add("actif");
+    menuLinks.forEach((link) => {
 
-  menuLinks.forEach((link) => {
+      link.addEventListener('click', (event) => {
 
-    link.addEventListener('click', (event) => {
+        if (document.querySelector(".actif") == null) {
+          event.currentTarget.classList.add("actif");
+        } else {
+          document.querySelector(".actif").classList.remove("actif");
+          document.querySelector(".slide").classList.remove("slide");
 
-      if (document.querySelector(".actif") == null) {
-        event.currentTarget.classList.add("actif");
-      } else {
-        document.querySelector(".actif").classList.remove("actif");
-        document.querySelector(".slide").classList.remove("slide");
+          event.currentTarget.classList.add("actif");
 
-        event.currentTarget.classList.add("actif");
+          const charId = event.currentTarget.dataset.char;
+          const charDetails = document.querySelector(`#char-show #${charId}`);
 
-        const charId = event.currentTarget.dataset.char;
-        const charDetails = document.querySelector(`#char-show #${charId}`);
+          charDetails.classList.add("slide");
+        }
 
-        charDetails.classList.add("slide");
-      }
+      });
 
     });
-
-  });
+  }
 
 };
+
+// const deleteEmptyNoticeCharEvents = () => {
+//   if (document.querySelector('#empty-notice')) {
+//     document.querySelector('#empty-notice').remove();
+//   };
+// };
 
 export { initDisplayCharShowOnClick };
 
