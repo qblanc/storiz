@@ -1,4 +1,4 @@
-var closeButton = document.querySelector('#charModal<%= @character.id %> .close');
+const closeButton = document.querySelector('.close');
 
 closeButton.click();
 
@@ -8,7 +8,7 @@ function refreshForm(innerHTML) {
 }
 
 function addCharacterEvent(characterEventHTML) {
-  const characterEvents = document.querySelector(".right-part-events[data-event='<%= @character.id %>']");
+  const characterEvents = document.querySelector('.right-part-events');
   characterEvents.insertAdjacentHTML('beforeend', characterEventHTML);
 }
 
