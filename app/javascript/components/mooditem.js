@@ -1,8 +1,9 @@
 function set_drag_drop(dragObj){
-  dragObj.adx = 0;
   // distance en pixel entre le top de la window et
   // la div qui contient ton element
-  dragObj.ady = 0;
+  dragObj.adx = 0;
+  // hauteur de la navbar
+  dragObj.ady = 66;
 
   const form = document.querySelector(dragObj.dataset.form)
   const topInput = form.querySelector('#mooditem_top')
@@ -18,7 +19,7 @@ function set_drag_drop(dragObj){
     dragObj.isDown = true;
   })
 
-  document.addEventListener('mouseup', function(e){
+  dragObj.addEventListener('mouseup', function(e){
     console.log(dragObj.style.left.replace('px',''))
     console.log(dragObj.style.top.replace('px',''))
     dragObj.isDown = false;
