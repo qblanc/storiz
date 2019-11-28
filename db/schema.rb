@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_26_173043) do
+ActiveRecord::Schema.define(version: 2019_11_27_112853) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -77,6 +77,26 @@ ActiveRecord::Schema.define(version: 2019_11_26_173043) do
     t.index ["scene_id"], name: "index_charascenes_on_scene_id"
   end
 
+  create_table "mooditems", force: :cascade do |t|
+    t.integer "left"
+    t.integer "top"
+    t.bigint "mood_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["mood_id"], name: "index_mooditems_on_mood_id"
+  end
+
+  create_table "moods", force: :cascade do |t|
+    t.bigint "project_id"
+    t.bigint "character_id"
+    t.bigint "scene_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["character_id"], name: "index_moods_on_character_id"
+    t.index ["project_id"], name: "index_moods_on_project_id"
+    t.index ["scene_id"], name: "index_moods_on_scene_id"
+  end
+
   create_table "projects", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "title"
@@ -116,6 +136,10 @@ ActiveRecord::Schema.define(version: 2019_11_26_173043) do
   add_foreign_key "characters", "projects"
   add_foreign_key "charascenes", "characters"
   add_foreign_key "charascenes", "scenes"
+  add_foreign_key "mooditems", "moods"
+  add_foreign_key "moods", "characters"
+  add_foreign_key "moods", "projects"
+  add_foreign_key "moods", "scenes"
   add_foreign_key "projects", "users"
   add_foreign_key "scenes", "projects"
 end

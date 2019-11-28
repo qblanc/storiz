@@ -3,7 +3,9 @@ class ScenesController < ApplicationController
   before_action :find_scene, only: [:show, :edit, :update, :destroy]
 
   def show
-    @scenes = Scene.all
+    @project = @scene.project
+    @scenes = @project.scenes.order(:number)
+
   end
 
   def new
@@ -11,7 +13,7 @@ class ScenesController < ApplicationController
   end
 
   def create
-    @scenes = Scene.all
+    @scenes = @project.scenes.order(:number)
     @scene = Scene.new(title: params[:scene][:title], number: @scenes.length + 1)
     @scene.project = @project
     if @project.valid?
@@ -23,7 +25,9 @@ class ScenesController < ApplicationController
   end
 
   def edit
-    @scenes = Scene.all
+    @project = @scene.project
+    @scenes = @project.scenes.order(:number)
+
   end
 
   def update
@@ -38,15 +42,17 @@ class ScenesController < ApplicationController
 
   def destroy
     num = @scene.number
+    @project = @scene.project
     @scene.destroy
-    @scenes = Scene.all.order(:number)
+    @scenes = @project.scenes.order(:number)
     x = 1
-    @scenes.order(:number).each do |scene|
+    @scenes.each do |scene|
       scene.number = x
-      if num == x && num < @scenes.length
-        @id = scene.id
-      else
+      scene.save!
+      if num == @scenes.length + 1
         @id = @scenes[num - 2].id
+      else
+        @id = scene.id
       end
       x += 1
     end

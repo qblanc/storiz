@@ -1,0 +1,9 @@
+console.log('hello from create.js.erb');
+
+function renderHTML() {
+  const pictures = document.querySelector(".moodimages");
+  let image = '<%= j render "mooditems/image", mooditem: @mooditem %>';
+  pictures.insertAdjacentHTML("beforeend", image);
+}
+
+renderHTML();
