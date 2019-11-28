@@ -36,6 +36,7 @@
     font-family: 'Bitter', serif;
     font-size: 45px;
     letter-spacing: 3px;
+    color: #343A40;
   } p {
     font-family: 'Work Sans', sans-serif;
   } li {
@@ -48,7 +49,7 @@
 }
 
 .dashed-separator{
-  border-top: 2px dashed #15b7b9;
+  border-top: 2px dashed #343A40;
   margin-top: 20px;
   margin-bottom: 20px;
   margin-left: 100px;
@@ -59,7 +60,7 @@
 .right-part{
   height: 100%;
   width: 30%;
-  border-left: 1px solid #15b7b9;
+  border-left: 1px solid #343A40;
     h4 {
     font-family: 'Bitter', serif;
     text-align: center;
@@ -67,13 +68,12 @@
 }
 
 .right-part-title{
-  padding-top: 10px;
-  height:10%;
-
+  background-color: #343A40;
+  color: white;
 }
 
 .right-part-events{
-  height:70%;
+  height: 80%;
   overflow-y: scroll;
   -ms-overflow-style: none;  /* Internet Explorer 10+ */
   scrollbar-width: none;  /* Firefox */
@@ -82,9 +82,3 @@
 .right-part-events::-webkit-scrollbar {
     display: none;  /* Safari and Chrome */
 }
-
-.right-part-add-event{
-  height:20%;
-}
-
-

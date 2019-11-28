@@ -1,9 +1,15 @@
 <%= simple_form_for([ character, character_event ], remote: true) do |form| %>
-  <%= form.input :content, as: :text %>
-  <% if @scene %>
-    <%= form.input :scene_id, as: :hidden, input_html: {value: @scene.id} %>
-  <% else %>
-    <%= form.association :scene %>
-  <% end %>
-  <%= form.button :submit %>
+  <%= form.input :content, as: :text, label: false, placeholder: 'Character event description' %>
+  <div class = 'row' >
+    <div class="col-8">
+      <% if @scene %>
+        <%= form.input :scene_id, as: :hidden, input_html: {value: @scene.id} %>
+      <% else %>
+        <%= form.association :scene, label: false, prompt: "Scene" %>
+      <% end %>
+    </div>
+    <div class="col-4">
+      <%= form.submit "  OK  ", class: "btn btn-dark"%>
+    </div>
+  </div>
 <% end %>
