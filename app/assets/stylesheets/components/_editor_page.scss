@@ -62,7 +62,8 @@
   position: -webkit-sticky;
   top: 50px;
   height: 400px;
-  width: 300px;
+  max-width: 300px;
+  min-width: 300px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   background-color: white;
   display: block;
