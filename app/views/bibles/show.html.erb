@@ -22,22 +22,87 @@
   </div>
   <!-- Tab panels -->
   <div class="tab-content">
+
     <!-- Characters panel -->
     <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">
       <div class="row mx-0">
         <div class="list col-2 px-0">
           <ul class="list-group list-group-flush list-characters">
-            <% @characters.each do |char| %>
-              <li class="list-group-item" data-charac-id=<%= char.id %> >
-                <%= link_to character_path(char), class: "char-item", remote: true do %>
-                  <%= char.first_name %> <%= char.last_name %>
-                <% end %>
+            <% @characters.each_with_index do |char, index| %>
+              <li class="list-group-item" data-char="char-<%= index+1 %>" >
+                <%#= link_to character_path(char), class: "char-item", remote: true do %>
+                <p><%= char.first_name %> <%= char.last_name %></p>
+                <%# end %>
               </li>
             <% end %>
           </ul>
         </div>
+        <!-- _________________________________________Character show iteration________________________________________________ -->
         <div class="col-10 px-0" id="char-show">
-          <!-- Ici nous yieldons le HTML de charactersController#show avec AJAX -->
+          <% @characters.each_with_index do |character, index| %>
+            <% index += 1 %>
+            <div class="char-description" id="char-<%= index %>">
+              <!-------------------- CHARACTER INFOS -------------------->
+              <div class="character-container p-4">
+                <!---------------------- Avatar & infos générales -------------------->
+                <div class="character-infos mb-3">
+                  <div class="character-image pr-3">
+                    <img src="https://vignette.wikia.nocookie.net/uvm-mock-trial/images/8/89/00060bq0.jpg/revision/latest?cb=20140817200436" alt="<%= character.last_name %>" class="charavatar"><!-- INSRER IMAGE CARRE -->
+                  </div>
+                  <div class="character-basics">
+                    <div class="character-name mt-3">
+                      <h1><%= character.first_name %> <strong><%= character.last_name.upcase %></strong></h1>
+                    </div>
+                    <div class="character-generals mt-2 mb-2">
+                      <i class="fas fa-venus-mars"></i> <%= character.genre %> &nbsp;&nbsp; <i class="fas fa-birthday-cake"></i> <%= character.birthdate.strftime("%d/%m/%Y") %>
+                    </div>
+                  </div>
+                </div>
+                <!-------------------- Description -------------------->
+                <div class="character-description">
+                  <p><%= character.description %></p>
+                </div>
+                <hr class="dashed-separator"> <!-- Separateur -->
+                <!-------------------- Logs -------------------->
+                <div class="logs-area">
+                  <!-- Insérer tableau des logs ici -->
+                </div>
+              </div>
+              <!-------------------- CHARACTER EVENTS -------------------->
+              <div class="right-part"> <!-- Liste des events -->
+                <div class="right-part-title"> <!-- Titre et bouton -->
+                  <p><button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-plus"></i></button> Main Character events</p>
+                </div>
+                <div class="right-part-events pt-3 pl-4">
+                  <% if character.character_events.blank? %>
+                  <p><i>No main event yet for <%= character.first_name %></i></p>
+                  <% else %>
+                  <% character.character_events.each do |character_event| %>
+                  <%= render 'character_events/show', character_event: character_event %>
+                  <% end %>
+                  <% end %>
+                </div>
+              </div>
+              <!-- Modal Formulaire -->
+              <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">What's happening to <%= character.first_name %> <%= character.last_name %>?</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <%= render 'character_events/form', character: character, character_event: @character_event %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        <!-- _________________________________________Character show iteration end____________________________________________ -->
+
         </div>
       </div>
     </div>
@@ -47,7 +112,7 @@
     <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">
       <ul>
         <% @scenes.each do |scene| %>
-        <li><strong><%= scene.number %></strong> - <%= scene.title if scene.title.present? %></li>
+          <li><strong><%= scene.number %></strong> - <%= scene.title if scene.title.present? %></li>
         <% end %>
       </ul>
     </div>

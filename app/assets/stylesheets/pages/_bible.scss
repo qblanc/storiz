@@ -16,32 +16,12 @@ ul {
 }
 
 #char-show {
-  display: flex;
-  min-height: 50vh;
-  max-height: 60vh;
+  min-height: 60vh;
+  max-height: 75vh;
   background-color: white;
-  transform: translate(100%);
-  // animation-name: card-bounce;
-  transition: all 0.7s ease-in-out;
+  position: relative;
 }
 
-
-// @keyframes card-bounce {
-//   0% {
-//   transform: translate(100%);
-
-//   }
-
-//   50% {
-//   transform: translate(-100%);
-
-//   }
-
-//   100% {
-//   transform: translate(-100%);
-
-//   }
-// }
 
 /* TABS */
 .nav-link {
@@ -58,12 +38,16 @@ ul {
 .list-group-item {
   text-decoration: none;
   border: none;
-
-  &.link-active {
-    background-color: $gray-600;
-    border-bottom: 2px solid black;
-    border-top: 2px solid black;
+  cursor: pointer;
+  color: $gray-600;
+  &.actif {
+    background-color: $gray-200;
+    // border-bottom: 1px solid black;
+    // border-top: 1px solid black;
     color: black;
+  }
+  p {
+    margin: 0;
   }
 }
 
@@ -74,6 +58,21 @@ a.char-item {
   &:hover {
     color: $gray-900;
   }
+}
+
+.char-description {
+  display: flex;
+  height: 100%;
+  position: absolute;
+  transform: translate(100%);
+  transition: all 0.7s ease-in-out;
+  width: 100%;
+  background: white;
+}
+
+.char-description.slide {
+  transform: translate(0%);
+  transition: all 0.7s ease-in-out;
 }
 
 .name-active {            // Ne fonctionne pas :(

@@ -1,27 +1,62 @@
-// console.log('heeh')
-
-
 const initDisplayCharShowOnClick = () => {
 
-  window.addEventListener("load", function(event) {
+  const menuLinks = document.querySelectorAll(".list-group li");
 
-    console.log("Toutes les ressources sont chargées !");
+  document.querySelector("#char-show .char-description:first-child").classList.add("slide");
+  document.querySelector(".list-group-item:first-child").classList.add("actif");
 
+  menuLinks.forEach((link) => {
 
-    var linkChar = $(".list-group-item");
-    console.log(linkChar);
+    link.addEventListener('click', (event) => {
 
-    linkChar.each(function() {
-      $(this).click(function() {
-        $(".link-active").removeClass("link-active");
-        $(this).addClass("link-active");
+      if (document.querySelector(".actif") == null) {
+        event.currentTarget.classList.add("actif");
+      } else {
+        document.querySelector(".actif").classList.remove("actif");
+        document.querySelector(".slide").classList.remove("slide");
 
-        var charBox = $('#char-show');
-        // charBox.css({'transform': "translate(100%)", "animation-name":"card-bounce" });
-        charBox.css('transform', "translate(0%)");
-      });
+        event.currentTarget.classList.add("actif");
+
+        const charId = event.currentTarget.dataset.char;
+        const charDetails = document.querySelector(`#char-show #${charId}`);
+
+        charDetails.classList.add("slide");
+      }
+
     });
 
+  });
+
+};
+
+export { initDisplayCharShowOnClick };
+
+
+
+
+// const initSelectionInNameList = () => {
+
+
+//   // window.addEventListener("load", function(event) {
+
+//   //   console.log("Toutes les ressources sont chargées !");
+
+
+//     var linkChar = $(".list-group-item");
+//     console.log(linkChar);
+
+//     linkChar.each(function() {
+//       $(this).click(function() {
+//         $(".link-active").removeClass("link-active");
+//         $(this).addClass("link-active");
+
+//         var charBox = $('#char-show');
+//         // charBox.css({'transform': "translate(100%)", "animation-name":"card-bounce" });
+//         charBox.css('transform', "translate(0%)");
+//       });
+//     });
+
+// };
 
 
 
@@ -77,13 +112,10 @@ const initDisplayCharShowOnClick = () => {
     // });
 
 
-  });
-
-};
+  // });
 
           // console.log("nul");
 
-export { initDisplayCharShowOnClick };
 
 
 // countries.forEach((item) => {
