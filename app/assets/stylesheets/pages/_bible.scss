@@ -1,6 +1,11 @@
+ul {
+  list-style-type: none;
+}
+
 .bible {
   margin-top: 20px;
 }
+
 .reduced-container {
   max-width: 75vh;
   margin: 0 auto;
@@ -10,18 +15,16 @@
   min-height: 50vh;
 }
 
-ul {
-  list-style-type: none;
-}
-
 #char-show {
-  display: flex;
-  min-height: 50vh;
-  max-height: 60vh;
+  min-height: 60vh;
+  max-height: 75vh;
   background-color: white;
+  position: relative;
 }
 
-a.nav-link {
+
+/* TABS */
+.nav-link {
   text-decoration: none;
   color: $gray-600;
 
@@ -31,12 +34,45 @@ a.nav-link {
   }
 }
 
+
+.list-group-item {
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  color: $gray-600;
+  &.actif {
+    background-color: $gray-200;
+    // border-bottom: 1px solid black;
+    // border-top: 1px solid black;
+    color: black;
+  }
+  p {
+    margin: 0;
+  }
+}
+
 a.char-item {
   text-decoration: none;
   color: $gray-600;
+  display: block;
   &:hover {
     color: $gray-900;
   }
+}
+
+.char-description {
+  display: flex;
+  height: 100%;
+  position: absolute;
+  transform: translate(100%);
+  transition: all 0.7s ease-in-out;
+  width: 100%;
+  background: white;
+}
+
+.char-description.slide {
+  transform: translate(0%);
+  transition: all 0.7s ease-in-out;
 }
 
 .name-active {            // Ne fonctionne pas :(
@@ -47,11 +83,11 @@ a.char-item {
 // Create scroolBar and hide it
 .list {
   overflow-y: scroll;
-  -ms-overflow-style: none;  /* Internet Explorer 10+ */
-  scrollbar-width: none;  /* Firefox */
-}
-.list::-webkit-scrollbar {
-    display: none;  /* Safari and Chrome */
+//   -ms-overflow-style: none;  /* Internet Explorer 10+ */
+//   scrollbar-width: none;  /* Firefox */
+// }
+// .list::-webkit-scrollbar {
+//     display: none;  /* Safari and Chrome */
 }
 
 .tab-content {

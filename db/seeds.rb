@@ -70,6 +70,39 @@ character4 = Character.new(first_name: "Hubert", last_name: "Bonnisseur de la Ba
 character4.project = project1
 character4.save!
 
+character6 = Character.new(first_name: "Barbe", last_name: "Bleue", birthdate: "Thu, 29 Apr 1954 11:10:03 UTC +00:00", genre: "Male", description: "Barbe bleue pue sacrément de la gueule mais c'est parce qu'il mange des merdes commme toi tous les matins, alors aie un peu de respect espèce de sandwich au shampooing de mes deux. La vie en plus à son éposue elle était pas facile, pas de brosse à dents ni de dentifrice; le gonz il perdait ses chicots à tour de bras c'était gerbant sa mère, mais il s'est fait des couilles en or en butant du merdeux comme toi, s'pèce de bourge, coq en pâte, marin d'eau douce. Palsambleu, modère-toi, n'est-ce pas?")
+character6.project = project1
+character6.save!
+
+character7 = Character.new(first_name: "Raymond", last_name: "Depardon", birthdate: "Thu, 29 Apr 1954 11:10:03 UTC +00:00", genre: "Male", description: "Raymond il est né ")
+character7.project = project1
+character7.save!
+
+character8 = Character.new(first_name: "Omar", last_name: "Little", birthdate: "Thu, 29 Apr 1954 11:10:03 UTC +00:00", genre: "Male", description: "Omar Devone Little is a notorious Baltimore stick-up man, who frequently robs street-level drug dealers. He is legendary around Baltimore for his characteristic duster, under which he hides his shotgun, large caliber handgun, and bulletproof vest, as well as for his facial scar. Omar has a strict moral code, which involves refusal to harm innocent civilians and distaste (usually) for profanity, setting him apart from other street-level characters.")
+character8.project = project1
+character8.save!
+
+character9 = Character.new(first_name: "Omar", last_name: "Little", birthdate: "Thu, 29 Apr 1954 11:10:03 UTC +00:00", genre: "Male", description: "Omar Devone Little is a notorious Baltimore stick-up man, who frequently robs street-level drug dealers. He is legendary around Baltimore for his characteristic duster, under which he hides his shotgun, large caliber handgun, and bulletproof vest, as well as for his facial scar. Omar has a strict moral code, which involves refusal to harm innocent civilians and distaste (usually) for profanity, setting him apart from other street-level characters.")
+character9.project = project1
+character9.save!
+
+character10 = Character.new(first_name: "Omar", last_name: "Little", birthdate: "Thu, 29 Apr 1954 11:10:03 UTC +00:00", genre: "Male", description: "Omar Devone Little is a notorious Baltimore stick-up man, who frequently robs street-level drug dealers. He is legendary around Baltimore for his characteristic duster, under which he hides his shotgun, large caliber handgun, and bulletproof vest, as well as for his facial scar. Omar has a strict moral code, which involves refusal to harm innocent civilians and distaste (usually) for profanity, setting him apart from other street-level characters.")
+character10.project = project1
+character10.save!
+
+character11 = Character.new(first_name: "Omar", last_name: "Little", birthdate: "Thu, 29 Apr 1954 11:10:03 UTC +00:00", genre: "Male", description: "Omar Devone Little is a notorious Baltimore stick-up man, who frequently robs street-level drug dealers. He is legendary around Baltimore for his characteristic duster, under which he hides his shotgun, large caliber handgun, and bulletproof vest, as well as for his facial scar. Omar has a strict moral code, which involves refusal to harm innocent civilians and distaste (usually) for profanity, setting him apart from other street-level characters.")
+character11.project = project1
+character11.save!
+
+character12 = Character.new(first_name: "Omar", last_name: "Little", birthdate: "Thu, 29 Apr 1954 11:10:03 UTC +00:00", genre: "Male", description: "Omar Devone Little is a notorious Baltimore stick-up man, who frequently robs street-level drug dealers. He is legendary around Baltimore for his characteristic duster, under which he hides his shotgun, large caliber handgun, and bulletproof vest, as well as for his facial scar. Omar has a strict moral code, which involves refusal to harm innocent civilians and distaste (usually) for profanity, setting him apart from other street-level characters.")
+character12.project = project1
+character12.save!
+
+character13 = Character.new(first_name: "Omar", last_name: "Little", birthdate: "Thu, 29 Apr 1954 11:10:03 UTC +00:00", genre: "Male", description: "Omar Devone Little is a notorious Baltimore stick-up man, who frequently robs street-level drug dealers. He is legendary around Baltimore for his characteristic duster, under which he hides his shotgun, large caliber handgun, and bulletproof vest, as well as for his facial scar. Omar has a strict moral code, which involves refusal to harm innocent civilians and distaste (usually) for profanity, setting him apart from other street-level characters.")
+character13.project = project1
+character13.save!
+
+
 scene1 = Scene.new(title: "Scene stylée", number: 1, content: "Ceci est une scène d'amour entre superchiotte et Jean Valjean")
 scene1.project = project1
 scene1.save!
