@@ -70,19 +70,19 @@ character4 = Character.new(first_name: "Hubert", last_name: "Bonnisseur de la Ba
 character4.project = project1
 character4.save!
 
-scene1 = Scene.new(title: "Scene stylée", content: "Ceci est une scène d'amour entre superchiotte et Jean Valjean")
+scene1 = Scene.new(title: "Scene stylée", number: 1, content: "Ceci est une scène d'amour entre superchiotte et Jean Valjean")
 scene1.project = project1
 scene1.save!
 
-scene2 = Scene.new(title: "Scene mega stylée", content: "Ceci est une scène qui se passe dans l'espace")
+scene2 = Scene.new(title: "Scene mega stylée", number: 2, content: "Ceci est une scène qui se passe dans l'espace")
 scene2.project = project1
 scene2.save!
 
-scene3 = Scene.new(title: "Rebondissement innatendu", content: "Dans cette scène, l'enfant-tronc que tout le monde méprisait prend sa revanche sur le monde en remportant de manière épique un combat de boxe contre le champion du monde en titre.")
+scene3 = Scene.new(title: "Rebondissement innatendu", number: 3, content: "Dans cette scène, l'enfant-tronc que tout le monde méprisait prend sa revanche sur le monde en remportant de manière épique un combat de boxe contre le champion du monde en titre.")
 scene3.project = project1
 scene3.save!
 
-scene4 = Scene.new(title: "Scene mega stylée", content: "Ceci est une scène qui se passe dans l'espace")
+scene4 = Scene.new(title: "Scene mega stylée", number: 1, content: "Ceci est une scène qui se passe dans l'espace")
 scene4.project = project2
 scene4.save!
 
