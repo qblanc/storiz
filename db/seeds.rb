@@ -10,6 +10,10 @@ Character.destroy_all
 Scene.destroy_all
 Project.destroy_all
 User.destroy_all
+Mood.destroy_all
+Mooditem.destroy_all
+
+
 
 user1 = User.new(email: "superconnard@geaimail.com", password: "azerty")
 user1.save!
@@ -73,5 +77,15 @@ scene1.save!
 scene2 = Scene.new(title: "Scene mega stylée", number: 2, content: "Ceci est une scène qui se passe dans l'espace")
 scene2.project = project1
 scene2.save!
+
+mood1 = Mood.new()
+mood1.project = project1
+mood1.save!
+
+file = URI.open('https://meme.eq8.eu/noidea.jpg')
+mooditem1 = Mooditem.new(left: 0, top: 0)
+mooditem1.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
+mooditem1.mood = mood1
+mooditem1.save!
 
 puts "Super seeds, finished, thanks for your time."

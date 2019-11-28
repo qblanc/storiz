@@ -4,6 +4,7 @@ class Scene < ApplicationRecord
   has_many :characters, through: :charascenes
   has_many :character_events, dependent: :destroy
   has_rich_text :content
+  has_one :mood
 
   validates :number, presence: true
   after_initialize :set_defaults

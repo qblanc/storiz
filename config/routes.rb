@@ -9,7 +9,12 @@ Rails.application.routes.draw do
     resources :scenes, only: [:new, :create]
     resources :characters, only: [:new, :create]
   end
+
+  resources :moods, only: [:new, :create, :show, :edit, :update] do
+    resources :mooditems, only: [:show, :new, :create, :edit, :update, :destroy]
+  end
   resources :scenes, only: [:edit, :update, :show, :destroy]
+  resources :mooditems, only: [:destroy]
   resources :characters, only: [:edit, :update, :show, :index, :destroy] do
     resources :character_events, only: [:create]
   end
