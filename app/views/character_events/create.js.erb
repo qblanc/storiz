@@ -9,7 +9,10 @@ function refreshForm(innerHTML) {
 
 function addCharacterEvent(characterEventHTML) {
   const characterEvents = document.querySelector(".right-part-events[data-event='<%= @character.id %>']");
-  characterEvents.insertAdjacentHTML('beforeend', characterEventHTML);
+  characterEvents.insertAdjacentHTML('afterbegin', characterEventHTML);
+  if (document.querySelector('#empty-notice')) {
+    document.querySelector('#empty-notice').remove();
+  };
 }
 
 <% if @character_event.errors.any? %>
