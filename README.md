@@ -1,1 +1,10 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+Storiz
+
+Storiz is a website that intent to help everyobody to write a narrative project by making the fear of the white page go away. It offers collaborative and crowd-collaboration features.
+
+Find us at : http://www.storiz.club/
+
+Features
+
+    Create and easily access the writer bible of your project
+    Ask the community for feedbacks or ideas
