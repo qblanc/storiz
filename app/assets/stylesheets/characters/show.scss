@@ -6,6 +6,11 @@
 //   border-radius: 6px;
 //   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 // }
+#btn-addevent {
+  border-radius: 0 !important;
+  border-left: 0;
+  border-right: 0;
+}
 
 .character-container{
   overflow-y: scroll;
@@ -68,8 +73,8 @@
 }
 
 .right-part-title{
-  background-color: #343A40;
-  color: white;
+  // background-color: #343A40;
+  background-color: white;
 }
 
 .right-part-events{
