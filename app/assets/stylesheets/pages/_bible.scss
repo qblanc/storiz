@@ -1,29 +1,57 @@
-.bible {
-  margin-top: 20px;
-}
-.reduced-container {
-  max-width: 75vh;
-  margin: 0 auto;
+@keyframes fade-in {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
 }
 
-.tab-pane {
-  min-height: 50vh;
+.tab-pane.active {
+    animation: fade-in 0.7s ease-out;
 }
 
 ul {
   list-style-type: none;
 }
 
-#char-show {
-  display: flex;
-  min-height: 50vh;
-  max-height: 60vh;
-  background-color: white;
+.bible {
+  margin-top: 2vh;
 }
 
-a.nav-link {
+.reduced-container {
+  max-width: 60vw;
+  margin: 0 auto;
+}
+
+.tab-pane {
+  min-height: 50vh;
+  max-height: 75vh;
+  height: 60vh;
+    transition: all 0.7s ease-in-out;
+}
+
+.charac-div {
+  height: 100%;
+}
+
+.tab-content {
+  min-height: 60vh;
+  max-height: 75vh;
+  background-color: white;
+
+}
+
+#char-show {
+  background-color: white;
+  position: relative;
+}
+
+/* NAV - TABS */
+.nav-link {
   text-decoration: none;
   color: $gray-600;
+  &:hover{
+    transition: all 0.1s ease-in-out;
+    color: black;
+    border-bottom: 1px solid black;
+  }
 
   &.active {
     border-bottom: 2px solid black;
@@ -31,29 +59,46 @@ a.nav-link {
   }
 }
 
-a.char-item {
+
+.list-group-item {
   text-decoration: none;
+  border: none;
+  cursor: pointer;
   color: $gray-600;
-  &:hover {
-    color: $gray-900;
+  &.actif {
+    background-color: $gray-200;
+    color: black;
+  }
+  p {
+    margin: 0;
   }
 }
 
-.name-active {            // Ne fonctionne pas :(
-  background-color: red;  // Ne fonctionne pas :(
-  color: red;             // Ne fonctionne pas :(
-}                         // Ne fonctionne pas :(
+.list-characters{
+  height: 100%;
+  overflow-y: scroll;
+  // -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  // scrollbar-width: none;  /* Firefox */
+}
 
-// Create scroolBar and hide it
+.char-description {
+  display: flex;
+  height: 100%;
+  position: absolute;
+  transform: translate(100%);
+  transition: all 0.7s ease-in-out;
+  width: 100%;
+  background: white;
+}
+
+.char-description.slide {
+  transform: translate(0%);
+  transition: all 0.7s ease-in-out;
+}
+
+// Create scroolBar
 .list {
   overflow-y: scroll;
-  -ms-overflow-style: none;  /* Internet Explorer 10+ */
-  scrollbar-width: none;  /* Firefox */
-}
-.list::-webkit-scrollbar {
-    display: none;  /* Safari and Chrome */
+  height: 100%;
 }
 
-.tab-content {
-  background-color: white;
-}
