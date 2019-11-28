@@ -6,6 +6,7 @@ class ScenesController < ApplicationController
     @project = @scene.project
     @scenes = @project.scenes.order(:number)
 
+
   end
 
   def new
@@ -27,7 +28,6 @@ class ScenesController < ApplicationController
   def edit
     @project = @scene.project
     @scenes = @project.scenes.order(:number)
-
   end
 
   def update
