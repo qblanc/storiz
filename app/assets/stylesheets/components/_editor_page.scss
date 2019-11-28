@@ -34,7 +34,7 @@
 
 .editor {
   min-width: 600px;
-  width: 60vw;
+  flex-grow: 1;
   margin-bottom: 20px;
 }
 
@@ -57,11 +57,12 @@
 .scene-bible {
   font-family: 'Lekton', sans-serif;
   margin-left: 20px;
+  margin-right: 10px;
   position: sticky;
   position: -webkit-sticky;
   top: 50px;
   height: 400px;
-  width: 256px;
+  width: 300px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   background-color: white;
   display: block;
