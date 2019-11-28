@@ -1,8 +1,16 @@
 <div id="full-background2">
-  <div class="d-none">
-  <%= simple_form_for(@project) do |f| %>
-    <%= f.input :pitch, label: false, placeholder: "Describe your project in a few words..." %>
-    <%= f.button :submit, "  OK  ", class: 'btn btn-dark' %>
-  <% end %>
+  <div class="pitch-form">
+    <form class="simple_form edit_project" id=<%= "/edit_project_#{@project.id}"%> novalidate="novalidate" action=<%= "/projects/#{@project.id}"%> accept-charset="UTF-8" method="post">
+      <input type="hidden" name="_method" value="patch">
+      <input type="hidden" name="authenticity_token" value="AZWI8UK4p55m+nEhZdTYRRXjgDUa8eKNwUD2uZ87O1sdiQkibyrlsLmWx7mv/DpzedzMr2MXJfASVssVe6B0vA==">
+      <div class="form-group text optional project_pitch" data-children-count="1">
+        <textarea class="form-control text optional transparent-input " id="project_pitch" placeholder="Describe your project in a few words..." name="project[pitch]" id="project_pitch"></textarea>
+      </div>
+      <div class="row">
+      <div class="col-12 offset-9">
+      <input type="submit" name="commit" value="               OK               " class="btn btn btn-dark pt-2 pb-2" data-disable-with="OK">
+      </div>
+      </div>
+    </form>
   </div>
 </div>
