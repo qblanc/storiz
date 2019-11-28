@@ -49,7 +49,7 @@ class MooditemsController < ApplicationController
   private
 
   def mooditem_params
-    params.require(:mooditem).permit(:left, :top, :photo)
+    params.require(:mooditem).permit(:left, :top, :height, :width, :depth, :photo)
   end
 
   def find_mood

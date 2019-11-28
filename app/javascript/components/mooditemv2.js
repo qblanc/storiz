@@ -1,4 +1,5 @@
 function resizedragdrop(){
+
   function resizeableImage(image_target) {
 
     function startResize(e){
@@ -82,11 +83,19 @@ function resizedragdrop(){
           // Without this Firefox will not re-calculate the the image dimensions until drag end
           $container.offset({'left': left, 'top': top});
         }
+
+        let deltaWidth = width;
+        console.log(deltaWidth);
+        let deltaHeight = height;
+        console.log(deltaHeight);
+        widthInput.value = deltaWidth;
+        heightInput.value = deltaHeight;
     }
 
     function resizeImage(width, height){
         $(image_target).css('width', width);
         $(image_target).css('height', height);
+        form.submit();
         // resize_canvas.width = width;
         // resize_canvas.height = height;
         // resize_canvas.getContext('2d').drawImage(orig_src, 0, 0, width, height);
@@ -102,9 +111,9 @@ function resizedragdrop(){
     };
 
     function endMoving(e){
-        e.preventDefault();
         $(document).off('mouseup', endMoving);
         $(document).off('mousemove', moving);
+        form.submit();
     };
 
     function moving(e){
@@ -117,6 +126,16 @@ function resizedragdrop(){
             'left': mouse.x - ( event_state.mouse_x - event_state.container_left ),
             'top': mouse.y - ( event_state.mouse_y - event_state.container_top )
         });
+        var deltaX = mouse.x - ( event_state.mouse_x - event_state.container_left );
+        console.log('deltaX');
+        console.log(deltaX);
+        var deltaY = mouse.y - ( event_state.mouse_y - event_state.container_top );
+        console.log('deltaY');
+        console.log(deltaY);
+        var leftInput = deltaX;
+        var topInput = deltaY;
+        leftInput.value = deltaX;
+        // topInput.value = deltaY;
     };
 
     var $container,
@@ -131,12 +150,18 @@ function resizedragdrop(){
     resize_canvas = document.createElement('canvas');
 
     function init(){
-        image_target.setAttribute('allowTaint', 'true')
-        image_target.setAttribute('crossOrigin', 'Anonymous')
+        // image_target.setAttribute('allowTaint', 'true')
+        // image_target.setAttribute('crossOrigin', 'Anonymous')
         // Create a new image with a copy of the original src
         // When resizing, we will always use this original copy as the base
         orig_src.src = image_target.src;
-
+        const form = document.querySelector(image_target.dataset.form)
+        const topInput = form.querySelector('#mooditem_top')
+        const leftInput = form.querySelector('#mooditem_left')
+        const heightInput = form.querySelector('#mooditem_height')
+        const widthInput = form.querySelector('#mooditem_width')
+        const depthInput = form.querySelector('#mooditem_depth')
+        console.log(form)
         // Add resize handles
         $(image_target).wrap('<div class="resize-container"></div>')
         .before('<span class="resize-handle resize-handle-nw"></span>')

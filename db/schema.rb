@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_27_112853) do
+ActiveRecord::Schema.define(version: 2019_11_28_155514) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -83,6 +83,9 @@ ActiveRecord::Schema.define(version: 2019_11_27_112853) do
     t.bigint "mood_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "width"
+    t.integer "height"
+    t.integer "depth"
     t.index ["mood_id"], name: "index_mooditems_on_mood_id"
   end
 
