@@ -1,5 +1,8 @@
 <h4 class="ml-5 mt-3 mb-0">Scene n°<%= @scene.number %></h4>
-<h2 class="mb-5 scene-title"><%= @scene.title %></h2>
+<h2 class="mb-5 scene-title">
+<%= simple_form_for @scene do |f| %>
+    <%= f.input :title, label: false %>
+</h2>
 <div class="d-flex">
   <div class="indexx">
     <div class="index mr-3">
@@ -16,8 +19,9 @@
   </div>
 
   <div class="editor" data-scene-id="<%= @scene.id %>">
-  <%= link_to "Edit title", edit_scene_path(@scene), class: "btn btn-sm btn-info edit-btn" %>
-  <%= link_to "Delete scene", scene_path(@scene), method: :delete, class: "btn btn-sm btn-danger delete-btn", :data => {:confirm => 'Are you sure?'} %>
+        <%= f.button :submit, "Confirm ", class: 'btn btn-sm btn-info confirm-btn'%>
+    <% end %>
+        <%= link_to "Delete scene", scene_path(@scene), method: :delete, class: "btn btn-sm btn-danger delete-btn", :data => {:confirm => 'Are you sure?'} %>
     <%= simple_form_for @scene, remote: true do |f| %>
         <%= f.rich_text_area :content %>
         <%= f.button :submit, class: 'btn btn-info update-btn' %>

@@ -1,8 +1,8 @@
 class Scene < ApplicationRecord
   belongs_to :project
-  has_many :charascenes
+  has_many :charascenes, dependent: :destroy
   has_many :characters, through: :charascenes
-  has_many :character_events
+  has_many :character_events, dependent: :destroy
   has_rich_text :content
   has_one :mood
 
