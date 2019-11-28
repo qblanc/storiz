@@ -49,10 +49,10 @@ class ScenesController < ApplicationController
     @scenes.each do |scene|
       scene.number = x
       scene.save!
-      if num == x && num < @scenes.length
-        @id = scene.id
-      elsif num == x
+      if num == @scenes.length + 1
         @id = @scenes[num - 2].id
+      else
+        @id = scene.id
       end
       x += 1
     end
