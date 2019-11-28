@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-puts "Strat seeding super seeds..."
+puts "Start seeding super seeds..."
 Character.destroy_all
 Scene.destroy_all
 Project.destroy_all
@@ -70,7 +70,7 @@ character4 = Character.new(first_name: "Hubert", last_name: "Bonnisseur de la Ba
 character4.project = project1
 character4.save!
 
-character6 = Character.new(first_name: "Barbe", last_name: "Bleue", birthdate: "Thu, 29 Apr 1954 11:10:03 UTC +00:00", genre: "Male", description: "Barbe bleue pue sacrément de la gueule mais c'est parce qu'il mange des merdes commme toi tous les matins, alors aie un peu de respect espèce de sandwich au shampooing de mes deux. La vie en plus à son éposue elle était pas facile, pas de brosse à dents ni de dentifrice; le gonz il perdait ses chicots à tour de bras c'était gerbant sa mère, mais il s'est fait des couilles en or en butant du merdeux comme toi, s'pèce de bourge, coq en pâte, marin d'eau douce. Palsambleu, modère-toi, n'est-ce pas?")
+character6 = Character.new(first_name: "Barbe", last_name: "Bleue", birthdate: "Thu, 29 Apr 1954 11:10:03 UTC +00:00", genre: "Male", description: "Barbe bleue pue sacrément de la gueule mais c'est parce qu'il mange des merdes tous les matins. La vie à son époque était pas facile, pas de brosse à dents ni de dentifrice; le gonz il perdait ses chicots à tour de bras c'était gerbant sa mère, mais il s'est fait des couilles en or en butant du merdeux.")
 character6.project = project1
 character6.save!
 
