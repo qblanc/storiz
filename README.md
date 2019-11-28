@@ -6,5 +6,5 @@ Storiz is a website that intent to **help everyobody to write a narrative projec
 
 ## Features
 
-    Create and easily access the writer bible of your project
-    Ask the community for feedbacks or ideas
+    - Create and easily access the writer bible of your project
+    - Ask the community for feedbacks or ideas
