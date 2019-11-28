@@ -37,18 +37,17 @@
   padding: 10px 20px;
   font-family: sans-serif, Arial;
   font-size: 16px;
-  border: 1px solid #18587a;
-  border-radius: 4px;
+  // border: 1px solid #18587a;
   margin-top: 15px;
 }
 
-.form-check label:hover {
-  opacity: 0.5;
-}
+// .form-check label:hover {
+//   opacity: 0.5;
+// }
 
 .form-check input[type="radio"]:checked + label {
-  background-color: #18587a;
-  color: white;
+
+  color: #15b7b9;
 }
 
 input.transparent-input{
@@ -94,3 +93,9 @@ input.transparent-input{
 .custom-width-btn {
     width: 100px !important;
 }
+
+.btn-primary:hover {
+  background-color: #15b7b9;
+  border-color: #15b7b9;
+}
+
