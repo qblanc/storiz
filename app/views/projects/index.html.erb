@@ -1,6 +1,6 @@
 <p>Choose the project you want the bible from</p>
 <% @projects.each do |project| %>
-  <%= link_to project_bibles_path(project) do %>
+  <%= link_to project_path(project) do %>
     <%= project.title %>
   <% end %>
 <% end %>
