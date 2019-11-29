@@ -5,9 +5,8 @@
       <%= cl_image_tag(item.photo.key, width: 300, height: 300, crop: "limit",
         class: 'resize-image',
         data: { left: item.left, top: item.top, z: item.depth, height: item.height, width: item.width, form: "#edit_mooditem_#{item.id}"}) %>
-       <!--  <div class= "d-none"> -->
     </div>
-        <div>
+        <div class= "d-none">
           <%= simple_form_for([@mood, item], remote: true) do |f| %>
             <%= f.input :top %>
             <%= f.input :left %>
