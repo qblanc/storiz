@@ -1,6 +1,6 @@
 class ScenesController < ApplicationController
   before_action :find_project, only: [:new, :create]
-  before_action :find_scene, only: [:show, :edit, :update, :destroy]
+  before_action :find_scene, only: [:show, :edit, :update, :update_rank, :destroy]
 
   def show
     @project = @scene.project
@@ -37,6 +37,35 @@ class ScenesController < ApplicationController
         redirect_to scene_path(@scene)
       end
       format.js
+    end
+  end
+
+  def update_rank
+    @project = Scene.find(params[:id]).project
+    @scenes = @project.scenes.order(:number)
+    oldIndex = params[:truc][:oldIndex].to_i
+    newIndex = params[:truc][:newIndex].to_i
+    @scenes[oldIndex].update(number: newIndex + 1)
+    if oldIndex > newIndex
+      while oldIndex > newIndex
+        @scenes[newIndex].number += 1
+        @scenes[newIndex].save!
+        newIndex += 1
+      end
+    elsif oldIndex < newIndex
+      while oldIndex < newIndex
+        @scenes[newIndex].number -= 1
+        @scenes[newIndex].save!
+        newIndex -=1
+      end
+    end
+    @scenes = @project.scenes.order(:number)
+    @scene = Scene.find(params[:id])
+    respond_to do |format|
+      format.html do
+        redirect_to scene_path(@scene)
+      end
+      format.js { }
     end
   end
 
