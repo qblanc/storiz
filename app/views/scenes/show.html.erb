@@ -14,6 +14,23 @@
           <%= render 'scenes/scenes_list', scenes: @scenes %>
         </ul>
     </div>
+    <a class="btn btn-warning mt-3 ml-3 mr-n4" data-toggle="collapse" href="#newScene" role="button" aria-expanded="false" aria-controls="newScene">
+              <i class="fas fa-plus"></i> Add a new scene
+            </a>
+                <div class="collapse mt-3" id="newScene">
+                  <%# <div class="card card-body"> %>
+                  <%= simple_form_for @scene do |f| %>
+                    <div class = 'justify-content-center' >
+                      <div class="">
+                        <%= f.input :title, :label => false, :placeholder => "Title", input_html: { class: 'form-new-scene' } %>
+                      </div>
+                      <div class="">
+                        <%= f.button :submit, "Create", class:"btn btn-warning" %>
+                      </div>
+                    </div>
+                  <% end %>
+                  <%# </div> %>
+                </div>
     <%= link_to "Back to project", project_path(@scene.project), class: "btn btn-warning index-btn mt-3 ml-4" %>
     <div class="d-none">
       <%= simple_form_for :truc, url: update_rank_scene_path, method: :post, remote: true do |f| %>
@@ -25,7 +42,7 @@
   </div>
 
   <div class="editor" data-scene-id="<%= @scene.id %>">
-    <%= simple_form_for @scene, remote:true do |f| %>
+    <%= simple_form_for @scene, remote: true, html: { id: 'text-save' } do |f| %>
         <%= f.rich_text_area :content %>
         <%= f.button :submit, class: 'btn btn-info update-btn' %>
     <% end %>
