@@ -1,14 +1,9 @@
 <div class="container-fluid">
   <div class="moodimages">
-  <!-- <div class="position-relative resize-image moodimages"> -->
-    <% [@mood.mooditems.first].each do |item| %>
-      <%#= cl_image_tag(item.photo.key, :width=>300, :height=>300, :crop=>"limit",
-        class: 'draggable position-absolute',
-        data: { x: item.left, y: item.top, form: "#edit_mooditem_#{item.id}"}) %>
-      <%= cl_image_tag(item.photo.key, :width=>300, :height=>300, :crop=>"limit",
-        class: 'resize-image', :key => "value", crossorigin: 'anonymous', 'allowTaint': true,
+    <% @mood.mooditems.each do |item| %>
+      <%= cl_image_tag(item.photo.key, width: 300, height: 300, crop: "limit",
+        class: 'resize-image',
         data: { x: item.left, y: item.top, z: item.depth, height: item.height, width: item.width, form: "#edit_mooditem_#{item.id}"}) %>
-<!--         <div class="d-none"> -->
         <div >
           <%= simple_form_for([@mood, item], remote: true) do |f| %>
             <%= f.input :top %>
@@ -31,4 +26,3 @@
 
   </div>
 </div>
-

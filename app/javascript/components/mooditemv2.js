@@ -1,3 +1,10 @@
+function positionItem(mooditem){
+  mooditem.style.left = `${mooditem.dataset.x}px`
+  mooditem.style.top = `${mooditem.dataset.y}px`
+  mooditem.style.width = `${mooditem.dataset.width}px`
+  mooditem.style.height = `${mooditem.dataset.height}px`
+}
+
 function resizedragdrop(){
 
   function resizeableImage(image_target) {
@@ -84,22 +91,24 @@ function resizedragdrop(){
           $container.offset({'left': left, 'top': top});
         }
 
-        let deltaWidth = width;
-        console.log(deltaWidth);
-        let deltaHeight = height;
-        console.log(deltaHeight);
-        widthInput.value = deltaWidth;
-        heightInput.value = deltaHeight;
+        // let deltaWidth = width;
+        // console.log(deltaWidth);
+        // let deltaHeight = height;
+        // console.log(deltaHeight);
+        // widthInput.value = deltaWidth;
+        // heightInput.value = deltaHeight;
     }
 
     function resizeImage(width, height){
         $(image_target).css('width', width);
         $(image_target).css('height', height);
-        form.submit();
-        // resize_canvas.width = width;
-        // resize_canvas.height = height;
-        // resize_canvas.getContext('2d').drawImage(orig_src, 0, 0, width, height);
-        // $(image_target).attr('src', resize_canvas.toDataURL("image/png"));
+        const form = document.querySelector($(image_target).data('form'))
+        const heightInput = form.querySelector('#mooditem_height')
+        const widthInput = form.querySelector('#mooditem_width')
+        heightInput.value = height
+        widthInput.value = width
+        const formBtn = form.querySelector('[type="submit"]')
+        formBtn.click();
     };
 
     function startMoving(e){
@@ -113,10 +122,16 @@ function resizedragdrop(){
     function endMoving(e){
         $(document).off('mouseup', endMoving);
         $(document).off('mousemove', moving);
-        form.submit();
+        const form = document.querySelector($(image_target).data('form'))
+        const formBtn = form.querySelector('[type="submit"]')
+        formBtn.click();
     };
 
     function moving(e){
+        const form = document.querySelector(image_target.dataset.form)
+        const topInput = form.querySelector('#mooditem_top')
+        const leftInput = form.querySelector('#mooditem_left')
+
         var  mouse={};
         e.preventDefault();
         e.stopPropagation();
@@ -127,15 +142,9 @@ function resizedragdrop(){
             'top': mouse.y - ( event_state.mouse_y - event_state.container_top )
         });
         var deltaX = mouse.x - ( event_state.mouse_x - event_state.container_left );
-        console.log('deltaX');
-        console.log(deltaX);
         var deltaY = mouse.y - ( event_state.mouse_y - event_state.container_top );
-        console.log('deltaY');
-        console.log(deltaY);
-        var leftInput = deltaX;
-        var topInput = deltaY;
         leftInput.value = deltaX;
-        // topInput.value = deltaY;
+        topInput.value = deltaY;
     };
 
     var $container,
@@ -161,7 +170,8 @@ function resizedragdrop(){
         const heightInput = form.querySelector('#mooditem_height')
         const widthInput = form.querySelector('#mooditem_width')
         const depthInput = form.querySelector('#mooditem_depth')
-        console.log(form)
+        positionItem(image_target)
+
         // Add resize handles
         $(image_target).wrap('<div class="resize-container"></div>')
         .before('<span class="resize-handle resize-handle-nw"></span>')

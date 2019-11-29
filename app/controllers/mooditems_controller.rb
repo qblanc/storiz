@@ -34,9 +34,7 @@ class MooditemsController < ApplicationController
   def update
     @mooditem.update(mooditem_params)
     respond_to do |format|
-      format.html do
-        redirect_to mood_path(@mooditem.mood)
-      end
+      format.html { redirect_to mood_path(@mooditem.mood) }
       format.js
     end
   end
