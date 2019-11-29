@@ -5,6 +5,7 @@ class ScenesController < ApplicationController
   def show
     @project = @scene.project
     @scenes = @project.scenes.order(:number)
+    @characters = Character.all
 
 
   end

@@ -33,21 +33,22 @@
 
   <div class="scene-bible">
     <div class="bible-events-title">
-      <h4>Jacques Chirac</h4>
+      <h4>Project bible</h4>
     </div>
-    <div class="bible-events">
-      <p>Jacques naît</p>
-      <p>Jacques grandit</p>
-      <p>Jacques prend confiance</p>
-      <p>Jacques travaille</p>
-      <p>Jacques est élu</p>
-      <p>Jacques travaille encore</p>
-      <p>Jacques accède aux plus hautes fonctions de l'état</p>
-      <p>Jacques fatigue</p>
-      <p>Jacques vieillit</p>
-      <p>Jacques décède</p>
-      <p>Jacques est inhumé</p>
-      <p>Jacques est vivant à jamais dans nos coeurs</p>
+    <div class="search-bar">
+      <%= form_tag characters_path, class: "", remote: true, method: :get do %>
+        <div class="d-flex align-items-center scene-search-form">
+          <%= text_field_tag :query,
+            params[:query],
+            class: "search-input form-control",
+            placeholder: "..."
+          %>
+          <%= submit_tag "Rechercher", class: "search-btn btn btn-info" %>
+        </div>
+      <% end %>
+    </div>
+    <div class="bible-events" id="bible-scene-show">
+      <!-- INSERER LE RESULTAT DE RECHERCHE ICI -->
     </div>
   </div>
 </div>
