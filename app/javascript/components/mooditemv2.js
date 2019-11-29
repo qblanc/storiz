@@ -1,6 +1,8 @@
-function positionItem(mooditem){
-  mooditem.style.left = `${mooditem.dataset.x}px`
-  mooditem.style.top = `${mooditem.dataset.y}px`
+function positionItem(mooditem, container){
+  console.log(mooditem)
+  console.log(container[0])
+  container[0].style.left = `${mooditem.dataset.left}px`
+  container[0].style.top = `${mooditem.dataset.top}px`
   mooditem.style.width = `${mooditem.dataset.width}px`
   mooditem.style.height = `${mooditem.dataset.height}px`
 }
@@ -90,23 +92,16 @@ function resizedragdrop(){
           // Without this Firefox will not re-calculate the the image dimensions until drag end
           $container.offset({'left': left, 'top': top});
         }
-
-        // let deltaWidth = width;
-        // console.log(deltaWidth);
-        // let deltaHeight = height;
-        // console.log(deltaHeight);
-        // widthInput.value = deltaWidth;
-        // heightInput.value = deltaHeight;
     }
 
     function resizeImage(width, height){
         $(image_target).css('width', width);
         $(image_target).css('height', height);
-        const form = document.querySelector($(image_target).data('form'))
+        const form = document.querySelector(image_target.dataset.form)
         const heightInput = form.querySelector('#mooditem_height')
         const widthInput = form.querySelector('#mooditem_width')
-        heightInput.value = height
-        widthInput.value = width
+        widthInput.value = ($(image_target).width())
+        heightInput.value = ($(image_target).height())
         const formBtn = form.querySelector('[type="submit"]')
         formBtn.click();
     };
@@ -122,9 +117,6 @@ function resizedragdrop(){
     function endMoving(e){
         $(document).off('mouseup', endMoving);
         $(document).off('mousemove', moving);
-        const form = document.querySelector($(image_target).data('form'))
-        const formBtn = form.querySelector('[type="submit"]')
-        formBtn.click();
     };
 
     function moving(e){
@@ -143,8 +135,14 @@ function resizedragdrop(){
         });
         var deltaX = mouse.x - ( event_state.mouse_x - event_state.container_left );
         var deltaY = mouse.y - ( event_state.mouse_y - event_state.container_top );
+        console.log('leftInput.value');
+        console.log(leftInput.value);
+        console.log('topInput.value');
+        console.log(topInput.value);
         leftInput.value = deltaX;
         topInput.value = deltaY;
+        const formBtn = form.querySelector('[type="submit"]')
+        formBtn.click();
     };
 
     var $container,
@@ -170,7 +168,6 @@ function resizedragdrop(){
         const heightInput = form.querySelector('#mooditem_height')
         const widthInput = form.querySelector('#mooditem_width')
         const depthInput = form.querySelector('#mooditem_depth')
-        positionItem(image_target)
 
         // Add resize handles
         $(image_target).wrap('<div class="resize-container"></div>')
@@ -181,6 +178,9 @@ function resizedragdrop(){
 
         // Get a variable for the container
         $container =  $(image_target).parent('.resize-container');
+
+        positionItem(image_target, $container)
+
 
         // Add events
         $container.on('mousedown', '.resize-handle', startResize);

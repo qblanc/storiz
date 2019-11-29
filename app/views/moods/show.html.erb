@@ -1,10 +1,13 @@
-<div class="container-fluid">
+<div class="container-fluid" style = "position: relative;">
   <div class="moodimages">
     <% @mood.mooditems.each do |item| %>
+    <div class="moodimage">
       <%= cl_image_tag(item.photo.key, width: 300, height: 300, crop: "limit",
         class: 'resize-image',
-        data: { x: item.left, y: item.top, z: item.depth, height: item.height, width: item.width, form: "#edit_mooditem_#{item.id}"}) %>
-        <div >
+        data: { left: item.left, top: item.top, z: item.depth, height: item.height, width: item.width, form: "#edit_mooditem_#{item.id}"}) %>
+       <!--  <div class= "d-none"> -->
+    </div>
+        <div>
           <%= simple_form_for([@mood, item], remote: true) do |f| %>
             <%= f.input :top %>
             <%= f.input :left %>

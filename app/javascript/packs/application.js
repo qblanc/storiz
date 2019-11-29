@@ -22,7 +22,7 @@ if (document.querySelector('#char-show')) {
 // initMoodBoard();
 resizedragdrop();
 TextSave();
-StickyToolbar();
+// StickyToolbar();
 
 if (document.querySelector('.index-list')) {
 initSortable();
