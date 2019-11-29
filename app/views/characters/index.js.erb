@@ -1,0 +1,7 @@
+function insertCharIndex(charIndexHTML) {
+  const div = document.getElementById('bible-scene-show');
+  div.innerHTML = "";
+  div.innerHTML = charIndexHTML;
+};
+
+insertCharShow("<%= j render "characters/index", character: @character %>");
