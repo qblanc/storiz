@@ -2,7 +2,7 @@ function positionItem(mooditem, container){
   console.log(mooditem)
   console.log(container[0])
   container[0].style.left = `${mooditem.dataset.left}px`
-  container[0].style.top = `${mooditem.dataset.top}px`
+  container[0].style.top = `${mooditem.dataset.top - 60}px`
   mooditem.style.width = `${mooditem.dataset.width}px`
   mooditem.style.height = `${mooditem.dataset.height}px`
 }

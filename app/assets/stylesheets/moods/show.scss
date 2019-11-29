@@ -1,11 +1,16 @@
 .moodimages{
-  height: calc(100vh - 66px);
-  position: relative;
+  height: 0px;
   // must equal navbar height can't use calc with $variable
 }
+
+.moodimage {
+  height: 0px;
+}
+
+
 #new_mooditem{
   bottom: 10px;
-  position: relative;
+  position: absolute;
 }
 
 // .iframe-container{
