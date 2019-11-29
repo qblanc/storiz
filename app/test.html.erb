@@ -1,0 +1,23 @@
+
+
+<div id="home-banner" class="d-flex justify-content-center align-items-center">
+  <div class="banner-content container d-flex flex-column align-items-center justify-content-around h-50">
+    <h1>STORIZ</h1>
+    <div class="btns-home-banner d-flex justify-content-around">
+      <%= link_to "Nouveau projet", new_project_path, class: "btn-home btn btn-outline-light"%>
+      <%= link_to "Explorer les projets", projects_path, class: "btn-home btn btn-outline-light"  %>
+    </div>
+  </div>
+</div>
+
+
+<div class="home-content">
+  <h2 class="text-center">Trending projects</h2>
+  <div class="project-home-cards row">
+    <% @projects.each do |project| %>
+      <div class="project-card">
+        <%= link_to project.title, project_path(project) %>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,5 +1,3 @@
-editor page
-
 .indexx {
   position: sticky;
   top:50px;
@@ -9,11 +7,12 @@ editor page
 .index {
   width: 200px;
   background: white;
-  border-radius: 5px;
+  // border-radius: 5px;
   height: 100%;
   max-height: calc(100vh - 270px);
   overflow-y: scroll;
-  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+
   li {
     margin-top:18px;
     list-style: none;
@@ -33,9 +32,8 @@ editor page
   background-color: white;
 }
 
-
 .editor {
-  min-width: 600px;
+  min-width: 800px;
   flex-grow: 1;
   margin-bottom: 20px;
 }
@@ -56,29 +54,3 @@ editor page
   margin: 0;
 }
 
-.scene-bible {
-  font-family: 'Lekton', sans-serif;
-  margin-left: 20px;
-  margin-right: 10px;
-  position: sticky;
-  position: -webkit-sticky;
-  top: 50px;
-  height: 400px;
-  max-width: 300px;
-  min-width: 300px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  background-color: white;
-  display: block;
-  border-radius: 5px;
-}
-
-.bible-events-title {
- text-align: center;
- margin-top: 15px;
-}
-
-.bible-events {
-  margin-left: 13px;
-  height: 330px;
-  overflow-y: scroll;
-}

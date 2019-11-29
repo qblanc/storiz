@@ -1,12 +1,24 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  height: 60px;
 }
 
-.navbar-lewagon .navbar-collapse {
+.navbar-transparent {
+  justify-content: space-between;
+  background: transparent;
+  height: 60px;
+}
+
+.navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
+.navbar-brand img {
   width: 40px;
+}
+
+
+body#projects-new .navbar-lewagon, body#projects-edit_pitch .navbar-lewagon  {
+  background: transparent;
 }

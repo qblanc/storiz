@@ -1,0 +1,9 @@
+console.log('coucou')
+
+function insertCharIndex(charIndexHTML) {
+  const div = document.getElementById('bible-scene-show');
+  div.innerHTML = "";
+  div.innerHTML = charIndexHTML;
+};
+
+insertCharIndex("<%= j render "characters/index", characters: @characters %>");

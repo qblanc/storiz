@@ -1,5 +1,7 @@
 <div class="d-flex">
-  <h4 class="ml-5 mt-3 mb-0">Scene n°<%= @scene.number %></h4>
+  <div class="scene-number">
+    <%= render 'scenes/scene_number', scene: @scene %>
+  </div>
   <%= link_to "Edit title", edit_scene_path(@scene), class: "btn btn-sm btn-info edit-btn" %>
   <%= link_to "Delete scene", scene_path(@scene), method: :delete, class: "btn btn-sm btn-danger delete-btn", :data => {:confirm => 'Are you sure?'} %>
 </div>
@@ -9,18 +11,21 @@
     <div class="index mr-3">
     <h4 class="text-center mt-1">Scenes list</h4>
         <ul class="overflow-scroll index-list">
-          <% @scenes.order(:number).each do |scene| %>
-            <li>
-              <%= link_to "#{scene.number}. #{scene.title}", scene_path(scene) %>
-            </li>
-          <% end %>
+          <%= render 'scenes/scenes_list', scenes: @scenes %>
         </ul>
     </div>
     <%= link_to "Back to project", project_path(@scene.project), class: "btn btn-warning index-btn mt-3 ml-4" %>
+    <div class="d-none">
+      <%= simple_form_for :truc, url: update_rank_scene_path, method: :post, remote: true do |f| %>
+          <%= f.input :oldIndex %>
+          <%= f.input :newIndex %>
+          <%= f.button :submit, class: "update-rank-btn" %>
+      <% end %>
+    </div>
   </div>
 
   <div class="editor" data-scene-id="<%= @scene.id %>">
-    <%= simple_form_for @scene, remote: true do |f| %>
+    <%= simple_form_for @scene, remote:true do |f| %>
         <%= f.rich_text_area :content %>
         <%= f.button :submit, class: 'btn btn-info update-btn' %>
     <% end %>
@@ -28,21 +33,22 @@
 
   <div class="scene-bible">
     <div class="bible-events-title">
-      <h4>Jacques Chirac</h4>
+      <h4>Project bible</h4>
     </div>
-    <div class="bible-events">
-      <p>Jacques naît</p>
-      <p>Jacques grandit</p>
-      <p>Jacques prend confiance</p>
-      <p>Jacques travaille</p>
-      <p>Jacques est élu</p>
-      <p>Jacques travaille encore</p>
-      <p>Jacques accède aux plus hautes fonctions de l'état</p>
-      <p>Jacques fatigue</p>
-      <p>Jacques vieillit</p>
-      <p>Jacques décède</p>
-      <p>Jacques est inhumé</p>
-      <p>Jacques est vivant à jamais dans nos coeurs</p>
+    <div class="search-bar">
+      <%= form_tag characters_path, class: "", remote: true, method: :get do %>
+        <div class="d-flex align-items-center scene-search-form">
+          <%= text_field_tag :query,
+            params[:query],
+            class: "search-input form-control",
+            placeholder: "..."
+          %>
+          <%= submit_tag "Rechercher", class: "search-btn btn btn-info" %>
+        </div>
+      <% end %>
+    </div>
+    <div class="bible-events" id="bible-scene-show">
+      <!-- INSERER LE RESULTAT DE RECHERCHE ICI -->
     </div>
   </div>
 </div>

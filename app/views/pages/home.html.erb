@@ -1,15 +1,18 @@
-<h1>STORIZ</h1>
-<p>Un site web qu'il est agréable pour écrire des trucs.</p>
-
-<%= link_to "Nouveau projet", new_project_path, class: "btn btn-success m-5"%>
-
-<h4>Mes projets en cours</h4>
-<% @projects.each do |project| %>
-  <ul>
-    <li>
-      <%= link_to project.title, project_path(project) %>
-    </li>
-  </ul>
-<% end %>
-
-
+<div class="home-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1485498128961-422168ba5f87?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2002&q=80);">
+  <div class="container">
+    <div class="banner-content">
+      <h1 class="mb-3 title-logo">STORIZ</h1>
+      <p class="mb-4">Masterpieces made easy.</p>
+      <% if user_signed_in? %>
+        <div class="d-flex mb-4 justify-content-center">
+          <%= link_to "Créer un projet", new_project_path, class: 'btn btn-info btn-lg mr-4' %>
+          <%= link_to "Voir mes projets", projects_path, class: 'btn btn-info btn-lg ml-4' %>
+        </div>
+      <% else %>
+        <div class="d-flex mb-4 justify-content-center">
+          <%= link_to "Créer un compte", new_user_registration_path, class: 'btn btn-info btn-lg' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

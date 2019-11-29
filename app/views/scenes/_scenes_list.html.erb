@@ -1,0 +1,5 @@
+<% scenes.order(:number).each do |scene| %>
+  <li>
+    <%= link_to "#{scene.number}. #{scene.title}", scene_path(scene) %>
+  </li>
+<% end %>

@@ -1,0 +1,33 @@
+.scene-bible {
+  font-family: 'Lekton', sans-serif;
+  margin-left: 20px;
+  margin-right: 10px;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 50px;
+  min-height: 400px;
+  height: 50vh;
+  max-width: 300px;
+  min-width: 300px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  background-color: white;
+  display: block;
+  // border-radius: 5px;
+}
+
+.bible-events-title {
+ text-align: center;
+ margin-top: 15px;
+ margin-bottom: 15px;
+}
+
+.bible-events {
+  margin-left: 13px;
+  height: 85%;
+  overflow-y: scroll;
+}
+
+.scene-search-form {
+    max-width: 250px;
+  min-width: 250px;
+}
