@@ -60,7 +60,7 @@ class ScenesController < ApplicationController
       end
     end
     @scenes = @project.scenes.order(:number)
-    @scene = @scenes[oldIndex]
+    @scene = Scene.find(params[:id])
     respond_to do |format|
       format.html do
         redirect_to scene_path(@scene)
