@@ -1,6 +1,13 @@
-<p>Choose the project you want the bible from</p>
-<% @projects.each do |project| %>
-  <%= link_to project_bibles_path(project) do %>
-    <%= project.title %>
-  <% end %>
-<% end %>
+<div class="projects-index-title">
+  <h2>SELECT A PROJECT</h2>
+</div>
+
+<div class="projects-index">
+  <ul>
+    <% @projects.each do |project| %>
+      <li> <%= link_to project_bibles_path(project) do %>
+        <%= project.title %> </li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>
