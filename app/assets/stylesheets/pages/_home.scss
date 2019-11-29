@@ -1,4 +1,49 @@
-// Specific CSS for your home-page
 body {
   overflow-x: hidden;
+}
+
+#home-banner {
+  height: 80vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(200, 200, 200, 0.2)), url(https://images.unsplash.com/photo-1457369804613-52c61a468e7d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3750&q=80);
+  background-position: top;
+  background-size: cover;
+    h1 {
+    color: white;
+    font-size: 12vh;
+    margin-top: -10vh;
+    letter-spacing: 2vh;
+  }
+}
+
+.banner-content {
+
+}
+
+.btns-home-banner{
+  width: 100%;
+}
+
+.btn-home {
+  width: 30vh;
+  padding: 3vh;
+}
+
+.home-content {
+  margin-top: 2vh;
+    h2 {
+      font-size: 6vh;
+      letter-spacing: 1.5vh;
+    }
+}
+
+.project-home-cards {
+  margin-top: 2vh;
+
+}
+
+.project-card {
+  width: 20vw;
+  height: 13vh;
+  text-align: center;
+  background-color: green;
 }
