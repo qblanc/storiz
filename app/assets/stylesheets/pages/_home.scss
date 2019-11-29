@@ -43,10 +43,15 @@ body {
     font-size: 75px;
     color: $white;
     margin-left: -4px;
+    font-family: $logo-font;
+    font-weight: bolder;
+    font-size: 6rem;
   }
   p {
     color: white;
     font-size: 25px;
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: 2px;
   }
   .signup {
     width: 220px;

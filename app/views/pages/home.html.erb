@@ -5,12 +5,12 @@
       <p class="mb-4">Masterpieces made easy.</p>
       <% if user_signed_in? %>
         <div class="d-flex mb-4 justify-content-center">
-          <%= link_to "Créer un projet", new_project_path, class: 'btn btn-info btn-lg mr-4' %>
-          <%= link_to "Voir mes projets", projects_path, class: 'btn btn-info btn-lg ml-4' %>
+          <%= link_to "Create a project", new_project_path, class: 'btn btn-info btn-lg mr-4' %>
+          <%= link_to "Browse my projects", projects_path, class: 'btn btn-info btn-lg ml-4' %>
         </div>
       <% else %>
         <div class="d-flex mb-4 justify-content-center">
-          <%= link_to "Créer un compte", new_user_registration_path, class: 'btn btn-info btn-lg' %>
+          <%= link_to "Create an account", new_user_registration_path, class: 'btn btn-info btn-lg' %>
         </div>
       <% end %>
     </div>
