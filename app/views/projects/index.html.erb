@@ -6,7 +6,7 @@
 <div class="projects-index">
   <ul>
     <% @projects.each do |project| %>
-      <li> <%= link_to project_bibles_path(project) do %>
+      <li> <%= link_to project_path(project) do %>
         <%= project.title %> </li>
       <% end %>
     <% end %>
