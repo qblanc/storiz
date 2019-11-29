@@ -18,8 +18,15 @@ Rails.start();
 if (document.querySelector('#char-show')) {
   initDisplayCharShowOnClick();
 }
-resizedragdrop();
-TextSave();
+
+if (document.querySelector('.moodimages')) {
+  resizedragdrop();
+};
+
+if (document.querySelector('.editor')) {
+  TextSave();
+};
+
 StickyToolbar();
 
 if (document.querySelector('.index-list')) {

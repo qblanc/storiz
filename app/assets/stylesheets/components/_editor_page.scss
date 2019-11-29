@@ -9,7 +9,7 @@
   background: white;
   // border-radius: 5px;
   height: 100%;
-  max-height: calc(100vh - 270px);
+  max-height: calc(100vh - 330px);
   overflow-y: scroll;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 
@@ -54,3 +54,7 @@
   margin: 0;
 }
 
+.form-new-scene {
+  width: 200px;
+  margin-right: -200px;
+}
