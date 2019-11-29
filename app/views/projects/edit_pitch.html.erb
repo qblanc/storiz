@@ -1,4 +1,4 @@
-<div id="full-background2">
+<div id="full-background">
   <div class="pitch-form">
     <form class="simple_form edit_project" id=<%= "/edit_project_#{@project.id}"%> novalidate="novalidate" action=<%= "/projects/#{@project.id}"%> accept-charset="UTF-8" method="post">
       <input type="hidden" name="_method" value="patch">
@@ -7,7 +7,7 @@
         <textarea class="form-control text optional transparent-input " id="project_pitch" placeholder="Describe your project in a few words..." name="project[pitch]" id="project_pitch"></textarea>
       </div>
       <div class="row">
-      <div class="col-12 offset-9">
+      <div class="col-1 ml-3">
       <input type="submit" name="commit" value="OK" class="btn btn btn-primary pr-5 pl-5 pt-2 pb-2" data-disable-with="OK">
       </div>
       </div>
