@@ -1,12 +1,22 @@
+#moods-show .container-fluid {
+ padding: 0 !important;
+}
+
+
 .moodimages{
-  height: calc(100vh - 66px);
+  height: 0px;
   // must equal navbar height can't use calc with $variable
 }
+
+.moodimage {
+  height: 0px;
+}
+
+
 #new_mooditem{
   bottom: 10px;
   position: absolute;
 }
-
 
 // .iframe-container{
 //   position: relative;
@@ -51,25 +61,25 @@
 }
 ​
 .resize-handle-nw {
-    top: -5px;
-    left: -5px;
+    top: 5px;
+    left: 5px;
     cursor: nw-resize;
 }
 ​
 .resize-handle-sw {
-    bottom: -5px;
-    left: -5px;
+    bottom: 5px;
+    left: 5px;
     cursor: sw-resize;
 }
 ​
 .resize-handle-ne {
-    top: -5px;
-    right: -5px;
+    top: 5px;
+    right: 5px;
     cursor: ne-resize;
 }
 ​
 .resize-handle-se {
-    bottom: -5px;
-    right: -5px;
+    bottom: 5px;
+    right: 5px;
     cursor: se-resize;
 }

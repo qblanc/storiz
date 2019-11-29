@@ -1,6 +1,5 @@
 import "bootstrap";
 import { initDisplayCharShowOnClick } from '../pages/bible';
-import { initMoodBoard } from '../components/mooditem';
 import { resizedragdrop } from '../components/mooditemv2';
 import { TextSave } from '../components/text_save';
 import { StickyToolbar } from '../components/sticky_toolbar'
@@ -19,11 +18,15 @@ Rails.start();
 if (document.querySelector('#char-show')) {
   initDisplayCharShowOnClick();
 }
-// initMoodBoard();
-resizedragdrop();
+
+if (document.querySelector('.moodimages')) {
+  resizedragdrop();
+};
+
 if (document.querySelector('.editor')) {
   TextSave();
 };
+
 StickyToolbar();
 
 if (document.querySelector('.index-list')) {
