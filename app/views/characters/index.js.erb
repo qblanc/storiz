@@ -4,4 +4,4 @@ function insertCharIndex(charIndexHTML) {
   div.innerHTML = charIndexHTML;
 };
 
-insertCharShow("<%= j render "characters/index", character: @character %>");
+insertCharShow("<%= j render "characters/index", characters: @characters %>");
