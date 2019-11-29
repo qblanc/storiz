@@ -21,7 +21,7 @@ if (document.querySelector('#char-show')) {
 }
 // initMoodBoard();
 resizedragdrop();
-TextSave();
+// TextSave();
 StickyToolbar();
 
 if (document.querySelector('.index-list')) {
