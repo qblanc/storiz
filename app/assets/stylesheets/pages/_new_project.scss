@@ -61,6 +61,11 @@ input.transparent-input{
   width: 45%;
   margin-left: 45%;
   padding-top: 120px;
+  p {
+    color: #18587a;
+    font-family: 'Lekton', sans-serif;
+    font-size: 20px;
+  }
 }
 
 #project_title:focus {
@@ -84,8 +89,16 @@ input.transparent-input{
   padding-top: 30px;
   textarea {
     width: 100%;
-    height: 450px;
+    height: 350px;
     resize: none;
+  }
+  p {
+    color: #18587a;
+    font-family: 'Lekton', sans-serif;
+    font-size: 20px;
+  }
+  p.small {
+    font-size: 16px;
   }
 }
 
@@ -96,5 +109,10 @@ input.transparent-input{
 .btn-primary:hover {
   background-color: #15b7b9;
   border-color: #15b7b9;
+}
+
+.btn-primary{
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 

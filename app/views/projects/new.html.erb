@@ -1,9 +1,11 @@
 <div id="full-background">
 
   <div class="blank-space">
+
   </div>
 
   <div class="title-form">
+    <p class="ml-3 mb-4">Alright. Let's start with something easy...</p>
     <form class="simple_form new_project" id="new_project" novalidate="novalidate" action="/projects" accept-charset="UTF-8" method="post">
       <input type="hidden" name="authenticity_token" value="n7iPYQQ3BbnHIhiZOZ5sgNnNXnQ1zb9haWUij2kQUqawiDXmktcRMTZ6HJlQy+GNQ+JalpdvedLR043+7A0a6A==">
       <div class="form-group string required project_title" data-children-count="1">
@@ -14,7 +16,7 @@
           <abbr title="required"></abbr>
         </legend>
         <input type="hidden" name="project[category]" value="">
-        <div class="row mt-3 mb-3">
+        <div class="row mt-1 mb-3">
           <div class="form-check col-3" data-children-count="1">
             <input class="form-check-input radio_buttons required btn-block bto" type="radio" value="Book" name="project[category]" id="project_category_book">
             <label class="form-check-label collection_radio_buttons radio-inline btn-block draw-border bto" for="project_category_book">Book</label>
@@ -27,9 +29,11 @@
             <input class="form-check-input radio_buttons required btn-block bto" type="radio" value="TV Show" name="project[category]" id="project_category_tv_show">
             <label class="form-check-label collection_radio_buttons radio-inline btn-block draw-border bto" for="project_category_tv_show">TV Show</label>
           </div>
+          <div class="col-3 mt-2">
+            <input type="submit" name="commit" value="Get to work" class="btn btn-primary" data-disable-with="Start">
+          </div>
         </div>
       </fieldset>
-      <input type="submit" name="commit" value="Get to work" class="btn btn-primary ml-1 mt-4 col-3 col-offset-3" data-disable-with="Start">
     </form>
   </div>
 
