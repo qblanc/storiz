@@ -1,0 +1,18 @@
+
+function refreshList(innerHTML) {
+  const newList = document.querySelector('.index-list');
+  newList.innerHTML = innerHTML;
+}
+
+function refreshTitle(innerHTML) {
+  const newTitle = document.querySelector('.scene-number');
+  newTitle.innerHTML = innerHTML;
+}
+
+refreshList('<%= j render "scenes/scenes_list", scenes: @scenes %>');
+refreshTitle('<%= j render "scenes/scene_number", scene: @scene %>');
+
+<%# const initNewNum = () => {
+  document.querySelector('.index-list');
+
+} %>
