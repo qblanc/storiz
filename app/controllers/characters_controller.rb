@@ -2,7 +2,11 @@ class CharactersController < ApplicationController
   before_action :set_character, only: [:show, :edit, :update, :destroy]
 
   def index
-    @characters = Character.all
+    if params[:query].present?
+      @characters = Character.global_search(params[:query])
+    else
+      @characters = Character.all
+    end
   end
 
   def show

@@ -2,12 +2,18 @@ body {
   overflow-x: hidden;
 }
 
-#home-banner {
-  height: 80vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(200, 200, 200, 0.2)), url(https://images.unsplash.com/photo-1457369804613-52c61a468e7d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3750&q=80);
+.home-banner {
+  background-size: cover;
+  // background-position: 0px -390px;
+  // padding: 150px;
+  height: 100vh;
+  margin-top: -60px;
+  display: flex;
+  align-items: center;
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1485498128961-422168ba5f87?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2002&q=80);
   background-position: top;
   background-size: cover;
-    h1 {
+      h1 {
     color: white;
     font-size: 12vh;
     margin-top: -10vh;
@@ -15,35 +21,64 @@ body {
   }
 }
 
+// #home-banner {
+//   height: 80vh;
+//   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(200, 200, 200, 0.2)), url(https://images.unsplash.com/photo-1457369804613-52c61a468e7d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3750&q=80);
+//   background-position: top;
+//   background-size: cover;
+//   top: 0;
+//     h1 {
+//     color: white;
+//     font-size: 12vh;
+//     margin-top: -10vh;
+//     letter-spacing: 2vh;
+//   }
+// }
+
 .banner-content {
-
-}
-
-.btns-home-banner{
-  width: 100%;
-}
-
-.btn-home {
-  width: 30vh;
-  padding: 3vh;
-}
-
-.home-content {
-  margin-top: 2vh;
-    h2 {
-      font-size: 6vh;
-      letter-spacing: 1.5vh;
-    }
-}
-
-.project-home-cards {
-  margin-top: 2vh;
-
-}
-
-.project-card {
-  width: 20vw;
-  height: 13vh;
+  vertical-align: middle;
   text-align: center;
-  background-color: green;
+  margin-top: 50vh;
+  h1 {
+    font-size: 75px;
+    color: $white;
+    margin-left: -4px;
+  }
+  p {
+    color: white;
+    font-size: 25px;
+  }
+  .signup {
+    width: 220px;
+    font-size: 1.3rem;
+  }
 }
+
+// .btns-home-banner{
+//   width: 100%;
+// }
+
+// .btn-home {
+//   width: 30vh;
+//   padding: 3vh;
+// }
+
+// .home-content {
+//   margin-top: 2vh;
+//     h2 {
+//       font-size: 6vh;
+//       letter-spacing: 1.5vh;
+//     }
+// }
+
+// .project-home-cards {
+//   margin-top: 2vh;
+
+// }
+
+// .project-card {
+//   width: 20vw;
+//   height: 13vh;
+//   text-align: center;
+//   background-color: green;
+// }
