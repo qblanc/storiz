@@ -132,19 +132,19 @@ scene3 = Scene.new(title: "Rebondissement inattendu", number: 3, content: "Dans 
 scene3.project = project1
 scene3.save!
 
-scene4 = Scene.new(title: "Retournement", number: 1, content: "Le manège tourne dans l'autre sens")
+scene4 = Scene.new(title: "Retournement", number: 4, content: "Le manège tourne dans l'autre sens")
 scene4.project = project1
 scene4.save!
 
-scene4 = Scene.new(title: "Francois P. tue Jean V.", number: 1, content: "Francois P. tue Jean V.")
+scene4 = Scene.new(title: "Francois P. tue Jean V.", number: 5, content: "Francois P. tue Jean V.")
 scene4.project = project1
 scene4.save!
 
-scene4 = Scene.new(title: "Scene finale - Le cheval fait du poney", number: 1, content: "Ceci est une scène qui se passe dans l'espace")
+scene4 = Scene.new(title: "Scene finale - Le cheval fait du poney", number: 7, content: "Ceci est une scène qui se passe dans l'espace")
 scene4.project = project1
 scene4.save!
 
-scene4 = Scene.new(title: "Scène super finale - La poney fait du manège avec le cheval sur le dos", number: 1, content: "Ceci est une scène qui se passe dans l'espace")
+scene4 = Scene.new(title: "Scène super finale - La poney fait du manège avec le cheval sur le dos", number: 8, content: "Ceci est une scène qui se passe dans l'espace")
 scene4.project = project1
 scene4.save!
 
