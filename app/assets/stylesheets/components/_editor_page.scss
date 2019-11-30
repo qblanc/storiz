@@ -10,14 +10,13 @@
   background: white;
   // border-radius: 5px;
   height: 100%;
-  max-height: calc(100vh - 300px);
+  max-height: calc(100vh - 280px);
   overflow-y: scroll;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 
   li {
     list-style: none;
-    // border: 1px solid gray;
-    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
   }
   .index-btn {
     display: inline-block;

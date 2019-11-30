@@ -4,7 +4,7 @@
   </div>
   <%# <%= link_to "Edit title", edit_scene_path(@scene), class: "btn btn-sm btn-info edit-btn" %>
 </div>
-<h2 class="mb-5 scene-title"><%= @scene.title %></h2>
+<h2 class="scene-title"><%= @scene.title %></h2>
 
 <%#---------------------------------- Scenes list -----------------------------------------------%>
 <div class="d-flex">
@@ -15,7 +15,7 @@
           <%= render 'scenes/scenes_list', scenes: @scenes %>
         </ul>
     </div>
-    <a class="btn btn-info mt-3 ml-3 mr-n4" data-toggle="collapse" href="#newScene" role="button" aria-expanded="false" aria-controls="newScene">
+    <a class="btn btn-info mt-4 ml-3 mr-n4" data-toggle="collapse" href="#newScene" role="button" aria-expanded="false" aria-controls="newScene">
       <i class="fas fa-plus"></i> Add a new scene
     </a>
     <div class="collapse mt-3" id="newScene">
