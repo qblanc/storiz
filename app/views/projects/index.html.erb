@@ -1,14 +1,24 @@
 
 <div class="projects-index-title">
-  <h2>SELECT A PROJECT</h2>
+  <h2>What are we working on today ?</h2>
 </div>
 
-<div class="projects-index">
-  <ul>
+<div class="card-deck">
+  <div class="projects-index">
     <% @projects.each do |project| %>
-      <li> <%= link_to project_path(project) do %>
-        <%= project.title %> </li>
+      <%= link_to project_path(project) do %>
+      <div class="card border-dark mb-3" style="max-width: 18rem;">
+        <div class="card-header">
+          <%= project.title %>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">Last updated 3 days ago</small>
+        </div>
+      </div>
       <% end %>
     <% end %>
-  </ul>
+  </div>
 </div>
+
+<!-- link_to project_path(project) do
+  project.title -->
