@@ -3,22 +3,23 @@
   <h2>What are we working on today ?</h2>
 </div>
 
-<div class="card-deck">
-  <div class="projects-index">
-    <% @projects.order(:created_at).each do |project| %>
-      <%= link_to project_path(project) do %>
-      <div class="card border-dark mb-3" style="max-width: 18rem;">
-        <div class="card-header">
-          <%= project.title %>
-        </div>
-        <div class="card-footer">
-          <small class="text-muted">Last updated 3 days ago</small>
-        </div>
+<div class="projects-container">
+  <% @projects.order(:created_at).each do |project| %>
+    <%= link_to project_path(project) do %>
+      <div class="project-box mb-4">
+        <p><% if project.category == "Book" %>
+          <i class="fas fa-book"></i>
+        <% elsif project.category == "Movie" %>
+          <i class="fas fa-film"></i>
+        <% else %>
+          <i class="fas fa-tv"></i>
+        <% end %>
+        <strong><%= project.title %></strong></p>
       </div>
-      <% end %>
     <% end %>
-  </div>
+  <% end %>
 </div>
 
 <!-- link_to project_path(project) do
   project.title -->
+
