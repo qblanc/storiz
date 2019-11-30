@@ -5,7 +5,7 @@
 
 <div class="card-deck">
   <div class="projects-index">
-    <% @projects.each do |project| %>
+    <% @projects.order(:created_at).each do |project| %>
       <%= link_to project_path(project) do %>
       <div class="card border-dark mb-3" style="max-width: 18rem;">
         <div class="card-header">

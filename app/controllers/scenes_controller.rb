@@ -6,12 +6,6 @@ class ScenesController < ApplicationController
     @project = @scene.project
     @scenes = @project.scenes.order(:number)
     @characters = Character.all
-
-
-  end
-
-  def new
-    @scene = Scene.new
   end
 
   def create

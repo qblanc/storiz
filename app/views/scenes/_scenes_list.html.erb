@@ -1,8 +1,5 @@
 <% scenes.order(:number).each do |scene| %>
   <li class="d-flex justify-content-between list-group-item">
     <%= link_to "#{scene.number}. #{scene.title}", scene_path(scene) %>
-      <%= link_to scene_path(@scene), method: :delete, :data => {:confirm => 'Are you sure?'} do %>
-        <i class="fas fa-trash-alt"></i>
-      <% end %>
   </li>
 <% end %>

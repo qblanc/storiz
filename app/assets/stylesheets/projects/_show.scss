@@ -1,76 +1,168 @@
-.cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
-}
-
-// Smallest device
-@media (min-width: 100px) and (max-width: 575px) {
-  .cards {
-    grid-template-columns: 1fr;
-  }
-}
-
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {
-  .cards {
-    grid-template-columns: 1fr;
-  }
-}
-
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
-  .cards {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
-  .cards {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
-
-// Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
-  .cards {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
-
-.banner {
+body#projects-show {
+  background: url("https://cdn.pixabay.com/photo/2017/04/11/15/13/paper-2221812_1280.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
-  background-position: center;
-  padding: 50px 0;
-  margin-top: 25px;
 }
 
-.banner h1 {
-  margin: 0;
-  color: white;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
-  font-weight: bold;
+.link-box {
+  width: 50%;
+  .pitch, .moodboard, .synopsis, .bible {
+    width:100%;
+  }
 }
 
-.banner p {
-  font-size: 20px;
-  color: white;
-  opacity: .7;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+.pitch, .moodboard {
+  margin-top: 50px;
+  margin-left: 30px;
+  margin-right: 30px;
+
+  h2 {
+    padding: 3px 0 0 5px;
+    display: inline-block;
+    border-left: 3px solid $info;
+    border-top: 3px solid $info;
+    border-radius: 2px;
+  }
+  h4 {
+    padding-left: 25px;
+    margin-top: -5px;
+    font-size: 1.25rem;
+  }
 }
 
-.btn-ghost {
-  color: #FFFFFF;
-  border: 1px solid #4A4A4A;
-  padding: 8px 24px;
-  border-radius: 50px;
-  font-weight: bold;
-  opacity: 0.6;
-  transition: opacity 0.3s ease;
+.synopsis, .bible {
+  margin-top: 50px;
+  margin-left: 30px;
+  margin-left: 30px;
+  h2 {
+    padding: 3px 0 0 5px;
+    display: inline-block;
+    border-left: 3px solid $info;
+    border-top: 3px solid $info;
+    border-radius: 2px;
+  }
+  h4 {
+    padding-left: 25px;
+    margin-top: -5px;
+    font-size: 1.25rem;
+  }
 }
 
-.btn-ghost:hover {
-  opacity: 1;
+.scenes-table {
+  background-color: green;
+  margin-top: 20px;
+  border-radius: 10px;
+  margin-bottom: 10px;
 }
+
+.scene {
+  // width: auto;
+  height: 20px;
+  &:last-child {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+}
+
+.scene-2, .scene-4, .scene-5 {
+  background-color: rgb(177, 68, 68);
+}
+
+.scenes {
+  margin-top: 50px;
+  margin-left: 30px;
+  h2 {
+    padding: 3px 0 0 5px;
+    display: inline-block;
+    border-left: 3px solid $info;
+    border-top: 3px solid $info;
+    border-radius: 2px;
+  }
+  h4 {
+    font-size: 1.25rem;
+  }
+}
+
+.last-scenes {
+    padding-left: 25px;
+    margin-top: -5px;
+}
+
+// .cards {
+//   display: grid;
+//   grid-template-columns: 1fr 1fr 1fr;
+//   grid-gap: 16px;
+// }
+
+// // Smallest device
+// @media (min-width: 100px) and (max-width: 575px) {
+//   .cards {
+//     grid-template-columns: 1fr;
+//   }
+// }
+
+// // Small devices (landscape phones, 576px and up)
+// @media (min-width: 576px) {
+//   .cards {
+//     grid-template-columns: 1fr;
+//   }
+// }
+
+// // Medium devices (tablets, 768px and up)
+// @media (min-width: 768px) {
+//   .cards {
+//     grid-template-columns: 1fr 1fr;
+//   }
+// }
+
+// // Large devices (desktops, 992px and up)
+// @media (min-width: 992px) {
+//   .cards {
+//     grid-template-columns: 1fr 1fr 1fr;
+//   }
+// }
+
+// // Extra large devices (large desktops, 1200px and up)
+// @media (min-width: 1200px) {
+//   .cards {
+//     grid-template-columns: 1fr 1fr 1fr;
+//   }
+// }
+
+// .banner {
+//   background-size: cover;
+//   background-position: center;
+//   padding: 50px 0;
+//   margin-top: 25px;
+// }
+
+// .banner h1 {
+//   margin: 0;
+//   color: white;
+//   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+//   font-size: 32px;
+//   font-weight: bold;
+// }
+
+// .banner p {
+//   font-size: 20px;
+//   color: white;
+//   opacity: .7;
+//   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+// }
+
+// .btn-ghost {
+//   color: #FFFFFF;
+//   border: 1px solid #4A4A4A;
+//   padding: 8px 24px;
+//   border-radius: 50px;
+//   font-weight: bold;
+//   opacity: 0.6;
+//   transition: opacity 0.3s ease;
+// }
+
+// .btn-ghost:hover {
+//   opacity: 1;
+// }
