@@ -10,13 +10,14 @@
   background: white;
   // border-radius: 5px;
   height: 100%;
-  max-height: calc(100vh - 330px);
+  max-height: calc(100vh - 300px);
   overflow-y: scroll;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 
   li {
-    margin-top:18px;
     list-style: none;
+    // border: 1px solid gray;
+    border: 1px solid rgba(0, 0, 0, 0.125);
   }
   .index-btn {
     display: inline-block;
@@ -43,19 +44,24 @@
   display: none;
 }
 
-.edit-btn {
-  margin-left:20px;
-}
 
 .confirm-btn {
-  margin: 0;
-}
-
-.delete-btn {
   margin: 0;
 }
 
 .form-new-scene {
   width: 200px;
   margin-right: -200px;
+}
+
+.fa-trash-alt {
+  font-size: 0.8rem;
+}
+
+.back-btn {
+  color: $info;
+}
+
+.scene-number {
+  margin-left: 260px;
 }
