@@ -15,29 +15,17 @@ Mooditem.destroy_all
 
 
 
-user1 = User.new(email: "grrmartin@gmail.com", password: "azerty")
-user1.save!
-
-user2 = User.new(email: "superinspiration@gmail.com", password: "azerty")
+user2 = User.new(email: "grrmartin@gmail.com", password: "azerty")
 user2.save!
 
-project1 = Project.new(title: "Le petit Cheval de Manège", pitch: "Un super livre", category: "Movie", synopsis: "Coucou les gens")
+user1 = User.new(email: "quentin.blanc@gmail.com", password: "123456789AZERTYU")
+user1.save!
+
+project1 = Project.new(title: "Le petit Cheval de Manège", pitch: "Un super livre", category: "TV Show", synopsis: "Coucou les gens")
 project1.user = user1
 project1.save!
 
-project2 = Project.new(title: "Le petit Cheval de Manège - 2, Le Retour", pitch: "Super books", category: "Movie", synopsis: "Une gomme devient magique parce que c'est comme ca, fin.")
-project2.user = user1
-project2.save!
-
-project2 = Project.new(title: "La gomme magique", pitch: "Super books", category: "Movie", synopsis: "Une gomme devient magique parce que c'est comme ca, fin.")
-project2.user = user1
-project2.save!
-
-project2 = Project.new(title: "La Horde du Contrevent", pitch: "Super books", category: "Movie", synopsis: "Une gomme devient magique parce que c'est comme ca, fin.")
-project2.user = user1
-project2.save!
-
-project2 = Project.new(title: "L'Assassin Royal", pitch: "Super books", category: "Movie", synopsis: "Une gomme devient magique parce que c'est comme ca, fin.")
+project2 = Project.new(title: "La gomme magique", pitch: "Super books", category: "Book", synopsis: "Une gomme devient magique parce que c'est comme ca, fin.")
 project2.user = user1
 project2.save!
 
