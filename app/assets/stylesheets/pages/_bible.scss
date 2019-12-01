@@ -38,6 +38,10 @@ ul {
 
 }
 
+.table th, .table td {
+  border: none;
+}
+
 #char-show {
   background-color: white;
   position: relative;
@@ -98,6 +102,6 @@ ul {
 
 // Create scroolBar
 .list {
-  overflow-y: scroll;
+  // overflow-y: scroll;
   height: 100%;
 }

@@ -1,9 +1,14 @@
 body#projects-show {
-  background: url("https://cdn.pixabay.com/photo/2017/04/11/15/13/paper-2221812_1280.jpg") no-repeat center center fixed;
+  background: linear-gradient(rgba(0,0,0,0.05),rgba(0,0,0,0.05)), url("shutterstock_1032873352.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+    margin-left: 38vw;
+}
+
+.project-container {
+  margin-right:5vw;
 }
 
 .cabin-dashboard {
@@ -13,8 +18,9 @@ body#projects-show {
 .link-box {
   width: 50%;
   .pitch, .moodboard, .synopsis, .bible {
-    width:100%;
-  }
+    width:100%;  }
+  .pitch, .moodboard {
+    padding-right: 20px;  }
 }
 
 .pitch, .moodboard {
@@ -59,11 +65,12 @@ body#projects-show {
   margin-top: 20px;
   border-radius: 10px;
   margin-bottom: 10px;
+  border: none;
 }
 
 .scene {
   // width: auto;
-  height: 20px;
+  height: 15px;
   &:last-child {
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;

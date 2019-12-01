@@ -2,8 +2,8 @@ const TextSave = () => {
   const formBtn = document.querySelector(".edit_scene input[type='submit']");
   if (formBtn) {
     setInterval (() => {
-      const textSaveForm = document.querySelector("#textSaveForm");
-      textSaveForm.submit();
+      const textSaveForm = document.querySelector(".update-btn");
+      textSaveForm.click();
     }, 10000)
   }
 }

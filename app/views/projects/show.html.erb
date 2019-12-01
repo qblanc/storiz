@@ -1,5 +1,5 @@
-<div class="container">
-  <h1 class="cabin cabin-dashboard"><%= @project.title %></h1>
+<div class="project-container">
+  <h1 class="cabin text-center"><%= @project.title %></h1>
   <div class="d-flex justify-content-between">
     <%= link_to project_pitch_edit_path(@project), class:"link-box" do %>
       <div class="pitch">
@@ -31,10 +31,10 @@
   </div>
 
   <div class="scenes">
-    <%= link_to scene_path(@project), class:"" do %>
+    <%= link_to scene_path(@project.scenes.order(:updated_at).last), class:"" do %>
         <h2>Scenario</h2>
         <div class="d-flex align-items-center flex-column">
-          <table class="table table-bordered table-sm col-sm-12 col-lg-8 text-center scenes-table">
+          <table class="table table-sm col-sm-12 col-lg-8 text-center scenes-table">
             <tbody>
               <tr>
                   <% @project.scenes.order(:number).each do |scene| %>
@@ -48,10 +48,17 @@
           <h4><%= @project.scenes.length %> scenes</h4>
         </div>
     <% end %>
+      <% updated_scene = @scenes.order(updated_at: :desc).limit(1).first %>
+      <%= link_to scene_path(updated_scene), class:"" do %>
+      <h4 class="last-scenes text-center mt-2"><strong>Last updated scene</strong></h4>
+      <div class="last-scenes text-center">
+        <%= updated_scene.number %>. <%= updated_scene.title %> - Updated on <%= updated_scene.updated_at %>
+      </div>
+      <% end %>
     <% last_scene = @scenes.order(created_at: :desc).limit(1).first %>
     <%= link_to scene_path(last_scene), class:"" do %>
-      <h4 class="last-scenes mt-4"><strong>Last added scene</strong></h4>
-      <div class="last-scenes">
+      <h4 class="last-scenes text-center mt-2"><strong>Last added scene</strong></h4>
+      <div class="last-scenes text-center">
         <%= last_scene.number %>. <%= last_scene.title %> - Created on <%= last_scene.created_at %>
       </div>
     <% end %>
