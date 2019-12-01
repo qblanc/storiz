@@ -1,3 +1,10 @@
+<div>
+  <%= simple_form_for([@mood, Mooditem.new], remote: true) do |f| %>
+    <%= f.input :photo, as: :file, label: false %>
+    <%= f.button :submit, class: 'btn btn-primary' %>
+  <% end %>
+</div>
+
 <div class="container-fluid" style = "position: relative;">
   <div class="moodimages">
     <% @mood.mooditems.each do |item| %>
@@ -20,11 +27,5 @@
           <% end %>
         </div>
     <% end %>
-
-    <%= simple_form_for([@mood, Mooditem.new], remote: true) do |f| %>
-      <%= f.input :photo, as: :file %>
-      <%= f.button :submit, class: 'btn btn-primary' %>
-    <% end %>
-
   </div>
 </div>
