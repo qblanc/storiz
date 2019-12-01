@@ -27,7 +27,9 @@ if (document.querySelector('.editor')) {
   TextSave();
 };
 
+if (document.querySelector('.editor')) {
 StickyToolbar();
+};
 
 if (document.querySelector('.index-list')) {
 initSortable();

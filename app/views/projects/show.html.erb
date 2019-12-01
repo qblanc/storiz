@@ -1,5 +1,6 @@
 <div class="project-container">
   <h1 class="cabin text-center"><%= @project.title %></h1>
+  <div class="dashboard-content">
   <div class="d-flex justify-content-between">
     <%= link_to project_pitch_edit_path(@project), class:"link-box" do %>
       <div class="pitch">
@@ -62,5 +63,6 @@
         <%= last_scene.number %>. <%= last_scene.title %> - Created on <%= last_scene.created_at %>
       </div>
     <% end %>
+  </div>
   </div>
 </div>
