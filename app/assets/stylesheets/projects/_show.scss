@@ -1,5 +1,5 @@
 body#projects-show {
-  background: linear-gradient(rgba(0,0,0,0.05),rgba(0,0,0,0.05)), image-url("zen_desk.jpg"), no-repeat center center fixed;
+  background: linear-gradient(rgba(0,0,0,0.05),rgba(0,0,0,0.05)), image-url("zen_desk_light.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -28,7 +28,6 @@ body#projects-show {
   margin-top: 50px;
   margin-left: 30px;
   margin-right: 30px;
-
   h2 {
     padding: 3px 0 0 5px;
     display: inline-block;
