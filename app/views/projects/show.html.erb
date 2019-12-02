@@ -14,22 +14,14 @@
       <h4>Develop your story in one page or a few pages</h4>
     </div>
     <% end %>
-  </div>
-
-  <div class="d-flex justify-content-end">
-    <%= link_to mood_path(@project), class:"link-box" do %>
-      <div class="moodboard">
-        <h2>Inspirations</h2>
-        <h4>Write down ideas & store inspiring pics, musics or videos</h4>
-      </div>
-    <% end %>
     <%= link_to project_bibles_path(@project), class:"link-box" do %>
       <div class="bible-project">
         <h2>Bible</h2>
-        <h4>Store in one place the important infos on your characters, plots or locations</h4>
+        <h4>Keep tracks on your characters, plots or locations</h4>
       </div>
     <% end %>
   </div>
+
 
   <div class="scenes">
     <% if @project.scenes.any? %>
@@ -96,4 +88,12 @@
   <% end %>
 </div>
 
-
+<br><br><br><br><br>
+  <div class="d-flex justify-content-end">
+    <%= link_to mood_path(@project), class:"link-box" do %>
+      <div class="moodboard">
+        <h2>Inspirations</h2>
+        <h4>Write down ideas & store inspiring pics, musics or videos</h4>
+      </div>
+    <% end %>
+  </div>
