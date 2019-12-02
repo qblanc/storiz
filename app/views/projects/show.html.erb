@@ -23,7 +23,7 @@
   </div>
 
 
-  <div class="scenes">
+  <div class="scenes mt-4">
     <% if @project.scenes.any? %>
       <%= link_to scene_path(@project.scenes.order(:updated_at).last) do %>
         <div>
@@ -73,7 +73,6 @@
         <i class="fas fa-plus"></i> Create your first scene
       </a>
       <div class="collapse" id="newScene">
-        <%# <div class="card card-body"> %>
         <%= simple_form_for [@project, @scene] do |f| %>
           <div class="mt-3">
             <%= f.input :title, :label => false, :placeholder => "Title", input_html: { class: '' } %>
@@ -82,18 +81,7 @@
             </div>
           </div>
         <% end %>
-        <%# </div> %>
       </div>
     </div>
   <% end %>
 </div>
-
-<br><br><br><br><br>
-  <div class="d-flex justify-content-end">
-    <%= link_to mood_path(@project), class:"link-box" do %>
-      <div class="moodboard">
-        <h2>Inspirations</h2>
-        <h4>Write down ideas & store inspiring pics, musics or videos</h4>
-      </div>
-    <% end %>
-  </div>
