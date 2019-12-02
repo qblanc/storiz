@@ -50,7 +50,7 @@
 }
 
 .draw-border {
-  @include btn-border-drawing(transparent, #15b7b9, 4px, bottom, right);
+  @include btn-border-drawing(transparent, #15b7b9, 2px, bottom, right);
 }
 
 //=== Button styling, semi-ignore
@@ -64,3 +64,32 @@
   margin-right: 25px;
   text-decoration: none;
 }
+
+// BUTTON NEW PROJECT START
+
+.start-btn {
+  display: inline-flex;
+  border: 2px solid #17587A;
+  color: #17587A;
+  text-decoration: none;
+  letter-spacing: 1.5px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  font-family: "Lekton";
+  font-size: 19px;
+}
+
+a {
+  color: #17587A;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.start-btn:hover {
+  border: 2px solid #15b7b9;
+  color: #15b7b9;
+  transition: all .2s ease-in-out;
+  bottom: 0;
+}
+

@@ -14,6 +14,14 @@ body#projects-edit_pitch {
   background-size: cover;
 }
 
+body#projects-pitch {
+  background: url("https://images.unsplash.com/photo-1518655048521-f130df041f66?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 #full-background {
   display: flex;
   height: calc(100vh - 60px);
@@ -29,10 +37,12 @@ body#projects-edit_pitch {
   display: inline-block;
   color: #18587a;
   padding: 10px 20px;
-  font-family: sans-serif, Arial;
-  font-size: 16px;
+  font-family: "Lekton";
+  font-size: 17px;
   // border: 1px solid #18587a;
   margin-top: 15px;
+  margin-right: 15px;
+  width: 150px;
 }
 
 // .form-check label:hover {
@@ -60,7 +70,7 @@ input.transparent-input{
 .title-form {
   width: 45%;
   margin-left: 45%;
-  padding-top: 120px;
+  padding-top: 100px;
   p {
     color: #18587a;
     font-family: 'Lekton', sans-serif;
@@ -116,3 +126,12 @@ input.transparent-input{
   padding-bottom: 8px;
 }
 
+.pitch-text {
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.small-edit {
+  font-size: 12px;
+  color: #15b7b9;
+}

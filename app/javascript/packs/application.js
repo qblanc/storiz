@@ -7,6 +7,7 @@ import { initSortable } from '../components/dragdrop';
 import { showDetailsOnClickSceneBible } from '../components/scene_bible';
 import Rails from '@rails/ujs';
 import $ from 'jquery';
+// import { A } from '../projects/new_project';
 
 window.jQuery = $;
 window.$ = $;

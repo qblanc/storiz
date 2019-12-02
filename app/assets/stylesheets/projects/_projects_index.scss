@@ -1,5 +1,5 @@
 .projects-index-title {
-  margin-top: 20px;
+  margin-top: 10px;
   text-align: center;
   h2 {
   font-family: 'Lekton', sans-serif;
@@ -18,18 +18,22 @@ body#projects-index {
 }
 
 .projects-container {
-  margin-left :30%;
-  margin-right: 30%;
-  margin-top: 30px;
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 80%;
+  margin: auto;
 }
 
 .project-box {
   padding-top: 18px;
   border: solid 1px black;
   background-color: #E9EAE5;
-  opacity: 0.7;
+  opacity: 0.9;
   text-align: center;
   border-radius: 2px;
+  width: 450px;
 }
 
 .project-box:hover {
@@ -38,3 +42,4 @@ body#projects-index {
     color: #15b7b9;
   }
 }
+
