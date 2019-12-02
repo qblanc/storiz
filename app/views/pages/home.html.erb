@@ -1,18 +1,22 @@
-<div class="home-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1485498128961-422168ba5f87?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2002&q=80);">
+<div class="home-banner">
   <div class="container">
     <div class="banner-content">
       <h1 class="mb-0 title-logo">STORIZ</h1>
-      <p class="mb-5">Masterpieces made easy.</p>
+      <p class="mb-5 subtitle">Masterpieces made easy</p>
       <% if user_signed_in? %>
         <div class="d-flex mb-4 justify-content-center">
-          <%= link_to "Create a project", new_project_path, class: 'btn btn-info btn-lg mr-4 home-buttons' %>
-          <%= link_to "Browse my projects", projects_path, class: 'btn btn-info btn-lg ml-4 home-buttons' %>
+          <%= link_to "Create a project", new_project_path, class: 'mr-4 home-button-1' %>
+          <%= link_to "Browse my projects", projects_path, class: 'ml-4 home-button-2' %>
         </div>
       <% else %>
         <div class="d-flex mb-4 justify-content-center">
-          <%= link_to "Create an account", new_user_registration_path, class: 'btn btn-info btn-lg' %>
+          <%= link_to "Create an account", new_user_registration_path, class: 'home-button-1' %>
+          <%= link_to "Log in", projects_path, class: 'ml-4 home-button-2' %>
         </div>
       <% end %>
+      <%# <p class="club">Collaborate with other <span class="backcolor">creative</span> people</p> %>
     </div>
   </div>
+      <h4 class="club-text">Too afraid to write your project ?</h4>
+      <h4 class="club-text2">Join the Storiz Club !</h4>
 </div>
