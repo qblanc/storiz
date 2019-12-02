@@ -1,2 +1,7 @@
-<h1>MAIS QUEL SUPER PITCH NOUS AVONS LA !</h1>
-<%= @project.pitch %>
+
+<div class="pitch-form">
+  <h1><strong><%= @project.title %></strong>'s pitch <%= link_to "edit", project_pitch_edit_path(@project), class: "small-edit" %></h1>
+  <div class="pitch-text">
+    <%= @project.pitch %>
+  </div>
+</div>

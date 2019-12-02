@@ -1,5 +1,16 @@
 <div class="">
-  <% characters.each do |character| %>
-    <p><%= character.first_name %> <%= character.last_name %></p>
-  <% end %>
+  <div class="result-list-group">
+    <% characters.each do |character| %>
+      <div class="search-scene-results" data-searchlist="char-<%= character.id %>">
+        <%= character.first_name %> <%= character.last_name %>
+      </div>
+    <% end %>
+  </div>
+  <div class="result-details-group position-relative">
+    <% characters.each do |character| %>
+      <div class="search-scene-details position-absolute" data-searchdetails="char-<%= character.id %>">
+        <%= render 'characters/show', character: character %>
+      </div>
+    <% end %>
+  </div>
 </div>

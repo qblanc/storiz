@@ -16,7 +16,7 @@
         </ul>
     </div>
     <a class="btn btn-info mt-4 ml-3 mr-n4" data-toggle="collapse" href="#newScene" role="button" aria-expanded="false" aria-controls="newScene">
-      <i class="fas fa-plus"></i> Add a new scene
+      <i class="slide-down-char-details fas fa-plus"></i> Add a new scene
     </a>
     <div class="collapse mt-3" id="newScene">
       <%# <div class="card card-body"> %>
@@ -53,15 +53,19 @@
     <div class="bible-events-title">
       <h4>Project bible</h4>
     </div>
-    <div class="search-bar">
+    <div class="search-bar scene-bible-search">
       <%= form_tag characters_path, class: "", remote: true, method: :get do %>
         <div class="d-flex align-items-center scene-search-form">
           <%= text_field_tag :query,
             params[:query],
             class: "search-input form-control",
+            id: "input-search-bible-scene",
             placeholder: "..."
           %>
-          <%= submit_tag "Rechercher", class: "search-btn btn btn-info" %>
+          <%#= submit_tag "Rechercher", class: "search-btn btn btn-info" %>
+          <%= button_tag type: 'submit', class: "search-btn btn btn-info", id: "btn-search-bible-scene" do %>
+              <i class="fa fa-search" aria-hidden="true"></i>
+          <% end %>
         </div>
       <% end %>
     </div>
@@ -70,3 +74,25 @@
     </div>
   </div>
 </div>
+
+<!-- Modal Formulaire -->
+<% @characters.each do |character| %>
+
+  <div class="modal fade bd-example-modal-lg" id="charModal<%= character.id %>" tabindex="-1" role="dialog" aria-labelledby="charModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="charModalLabel">What's happening to <%= character.first_name %> <%= character.last_name %>?</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <%= render 'character_events/form', character: character, character_event: CharacterEvent.new %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+<!-- Modal Formulaire end-->
+
