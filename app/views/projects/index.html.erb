@@ -5,21 +5,14 @@
 
 <div class="projects-container">
   <% @projects.each do |project| %>
-    <%= link_to project_path(project) do %>
-      <div class="project-box mb-4">
-        <p><% if project.category == "Book" %>
-          <i class="fas fa-book"></i>
-        <% elsif project.category == "Movie" %>
-          <i class="fas fa-film"></i>
-        <% else %>
-          <i class="fas fa-tv"></i>
-        <% end %>
-        <strong><%= project.title %></strong></p>
+    <div class="project-card">
+      <div class="project-card-body">
+        <h5 class="card-title"><%= project.title %></h5>
       </div>
-    <% end %>
+      <div class="project-card-footer">
+      <% updated = Time.now.strftime("%Y%j").to_i - project.updated_at.strftime("%Y%j").to_i %>
+      <small class="text-muted">Last updated <%= updated %> days ago</small>
+      </div>
+    </div>
   <% end %>
 </div>
-
-<!-- link_to project_path(project) do
-  project.title -->
-

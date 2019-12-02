@@ -6,6 +6,7 @@ import { StickyToolbar } from '../components/sticky_toolbar'
 import { initSortable } from '../components/dragdrop';
 import Rails from '@rails/ujs';
 import $ from 'jquery';
+// import { A } from '../projects/new_project';
 
 window.jQuery = $;
 window.$ = $;

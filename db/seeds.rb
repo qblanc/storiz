@@ -18,7 +18,7 @@ Mooditem.destroy_all
 user2 = User.new(email: "grrmartin@gmail.com", password: "azerty")
 user2.save!
 
-user1 = User.new(email: "quentin.blanc@gmail.com", password: "123456789AZERTYU")
+user1 = User.new(email: "quentin.blanc@gmail.com", password: "12345678azertyu")
 user1.save!
 
 project1 = Project.new(title: "Le petit Cheval de Manège", pitch: "Un super livre", category: "TV Show", synopsis: "Coucou les gens")
