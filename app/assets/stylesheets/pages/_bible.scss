@@ -18,6 +18,14 @@ ul {
 .reduced-container {
   max-width: 60vw;
   margin: 0 auto;
+  position: relative;
+}
+
+.go-back-btn {
+  position: absolute;
+  left: -169px;
+  top: 10px;
+  color: grey;
 }
 
 .tab-pane {
@@ -105,3 +113,8 @@ ul {
   // overflow-y: scroll;
   height: 100%;
 }
+
+
+// body#bibles-show {
+//   background: linear-gradient(rgba(244,244,244,0.6),rgba(244, 244, 244,0.4));
+// }
