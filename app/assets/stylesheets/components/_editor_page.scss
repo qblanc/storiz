@@ -1,12 +1,22 @@
+.elements-container {
+  width: 100vw;
+}
+
 .indexx {
   position: sticky;
+    position: -webkit-sticky;
+
+  left: 0;
   top:50px;
   height: 100%;
-  width: 220px;
+  // width: 220px;
+  min-width: 17vw;
+  max-width: 250px;
 }
 
 .index {
-  width: 200px;
+    min-width: 17vw;
+  max-width: 250px;
   background: white;
   // border-radius: 5px;
   height: 100%;
@@ -39,9 +49,10 @@
 }
 
 .editor {
-  min-width: 800px;
-  flex-grow: 1;
-  margin-bottom: 20px;
+  min-width: 58vw;
+  // flex-grow: 1;
+  // max-width: 58vw;
+  margin: 0 1rem 1rem 1rem;
 }
 
 .update-btn {
