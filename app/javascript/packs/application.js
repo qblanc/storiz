@@ -30,9 +30,9 @@ if (document.querySelector('.moodimages')) {
   resizedragdrop();
 };
 
-if (document.querySelector('.editor')) {
-    TextSave();
-};
+// if (document.querySelector('.editor')) {
+//     TextSave();
+// };
 
 if (document.querySelector('.editor')) {
 StickyToolbar();

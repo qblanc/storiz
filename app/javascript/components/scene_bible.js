@@ -22,6 +22,7 @@ const showDetailsOnClickSceneBible = () => {
           setTimeout(function(){
             charDetailsScene.classList.add("slideY");
             charDetailsScene.style.top = `-${searchSceneResultsHeight}px`;
+            document.querySelector('.result-list-group').classList.add('hide-results-bible-scene')
           }, 150);
 
           // Hide Char Details
@@ -32,6 +33,7 @@ const showDetailsOnClickSceneBible = () => {
             const sceneToHide = document.querySelector(`.search-scene-details[data-searchdetails="${charHideId}"]`);
 
             button.addEventListener('click', (event) => {
+              document.querySelector('.result-list-group').classList.remove('hide-results-bible-scene')
               sceneToHide.classList.remove("slideY");
               setTimeout(function(){
                 sceneToHide.style.display = 'none';

@@ -59,7 +59,7 @@
 }
 
 #bible-scene-show {
-  padding: 15px;
+  padding: 0px 15px 15px 15px;
 }
 
 .character-container-scene {
@@ -83,10 +83,13 @@
   border-right: none;
 }
 
+.hide-results-bible-scene {
+  opacity: 0%;
+  transition: all 0.6s ease;
+}
 
-
-
-
-
+.scene-bible-search {
+  margin-bottom: 15px;
+}
 
 
