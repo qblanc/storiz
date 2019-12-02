@@ -3,6 +3,7 @@
 }
 
 .indexx {
+  margin-top: 26px;
   position: sticky;
     position: -webkit-sticky;
 
@@ -10,13 +11,11 @@
   top:50px;
   height: 100%;
   // width: 220px;
-  min-width: 17vw;
-  max-width: 250px;
+  width: 230px;
 }
 
 .index {
-    min-width: 17vw;
-  max-width: 250px;
+  width: 230px;
   background: white;
   // border-radius: 5px;
   height: 100%;
@@ -50,9 +49,8 @@
 
 .editor {
   min-width: 58vw;
-  // flex-grow: 1;
-  // max-width: 58vw;
-  margin: 0 1rem 1rem 1rem;
+  flex-grow: 1;
+  margin: -20px 1rem 1rem 1rem;
 }
 
 .update-btn {
