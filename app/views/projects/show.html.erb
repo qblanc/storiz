@@ -33,6 +33,7 @@
 
   <div class="scenes">
     <%= link_to scene_path(@project.scenes.order(:updated_at).last), class:"" do %>
+    <div>
         <h2>Scenario</h2>
         <div class="d-flex align-items-center flex-column">
           <table class="table table-sm col-sm-12 col-lg-8 text-center scenes-table">
@@ -48,6 +49,7 @@
           </table>
           <h4><%= @project.scenes.length %> scenes</h4>
         </div>
+    </div>
     <% end %>
       <% updated_scene = @scenes.order(updated_at: :desc).limit(1).first %>
       <%= link_to scene_path(updated_scene), class:"" do %>

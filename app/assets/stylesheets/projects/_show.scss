@@ -22,41 +22,58 @@ body#projects-show {
     width:100%;  }
   .pitch, .moodboard {
     padding-right: 20px;  }
+    &:hover {
+    h4 {
+      opacity: 1;
+    }
+  }
+}
+
+.pitch, .synopsis {
+  margin-top:50px;
+}
+
+.bible {
+  margin-top: 0;
 }
 
 .pitch, .moodboard {
-  margin-top: 50px;
+  // margin-top: 50px;
   margin-left: 30px;
   margin-right: 30px;
+  text-align: center;
   h2 {
     padding: 3px 0 0 5px;
     display: inline-block;
-    border-left: 3px solid $info;
-    border-top: 3px solid $info;
-    border-radius: 2px;
+    // border-left: 3px solid $info;
+    border-bottom: 4px solid $info;
+    // border-radius: 2px;
   }
   h4 {
     padding-left: 25px;
-    margin-top: -5px;
+    margin-top: 10px;
     font-size: 1.25rem;
+    opacity: 0;
   }
 }
 
 .synopsis, .bible {
-  margin-top: 50px;
+  // margin-top: 50px;
   margin-left: 30px;
   margin-left: 30px;
+  text-align: center;
   h2 {
     padding: 3px 0 0 5px;
     display: inline-block;
-    border-left: 3px solid $info;
-    border-top: 3px solid $info;
-    border-radius: 2px;
+    // border-left: 3px solid $info;
+    border-bottom: 4px solid $info;
+    // border-radius: 2px;
   }
   h4 {
     padding-left: 25px;
-    margin-top: -5px;
+    margin-top: 10px;
     font-size: 1.25rem;
+    opacity: 0;
   }
 }
 
@@ -82,14 +99,15 @@ body#projects-show {
 }
 
 .scenes {
-  margin-top: 50px;
+  margin-top: 10px;
   margin-left: 30px;
+  text-align: center;
   h2 {
-    padding: 3px 0 0 5px;
+    padding: 5px 8px 3px 8px;
     display: inline-block;
-    border-left: 3px solid $info;
-    border-top: 3px solid $info;
-    border-radius: 2px;
+    // border-left: 3px solid $info;
+    border: 5px solid $info;
+    border-radius: 4px;
   }
   h4 {
     font-size: 1.25rem;

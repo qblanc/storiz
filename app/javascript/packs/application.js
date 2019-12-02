@@ -24,7 +24,7 @@ if (document.querySelector('.moodimages')) {
 };
 
 if (document.querySelector('.editor')) {
-  TextSave();
+    TextSave();
 };
 
 if (document.querySelector('.editor')) {
