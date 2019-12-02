@@ -1,5 +1,5 @@
 .projects-index-title {
-  margin-top: 20px;
+  margin-top: 10px;
   text-align: center;
   h2 {
   font-family: 'Lekton', sans-serif;
@@ -18,37 +18,28 @@ body#projects-index {
 }
 
 .projects-container {
-  margin-top: 6%;
-  padding: 40px;
-  overflow-x: scroll;
-  overflow-y: hidden;
-  white-space: nowrap;
-  background-color: rgba(50, 50, 50, 0.1);
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 80%;
+  margin: auto;
 }
 
-.project-card {
-  display: inline-block;
-  border: solid 1px grey;
-  border-radius: 3px;
-  width: 350px;
-  height: 100px;
-  margin-right: 20px;
-  overflow: hidden;
-  position: relative;
-}
-
-.project-card-footer{
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  text-align: right;
-  padding-right: 5px;
-  padding-left: 5px;
-}
-
-.project-card-body {
-  position: absolute;
-  top: 40%;
+.project-box {
+  padding-top: 18px;
+  border: solid 1px black;
+  background-color: #E9EAE5;
+  opacity: 0.9;
   text-align: center;
-  width: 100%;
+  border-radius: 2px;
+  width: 450px;
 }
+
+.project-box:hover {
+  border-color: #15b7b9;
+  .fas {
+    color: #15b7b9;
+  }
+}
+
