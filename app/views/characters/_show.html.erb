@@ -21,11 +21,28 @@
                                   </div>
                                 </div>
                               </div>
+                              <hr>
+                              <!-------------------- CHARACTER EVENTS -------------------->
+                              <div class="right-part-scene"> <!-- Liste des events -->
+                                <div class="right-part-title-scene d-flex"> <!-- Titre et bouton -->
+                                  <button id="btn-addevent-scene" type="button" class="btn btn-outline-dark flex-fill" data-toggle="modal" data-target="#charModal<%= character.id %>"><i class="fas fa-plus"></i> Add event</button>
+                                </div>
+                                <div data-event="<%= character.id %>" class="right-part-events-scene pt-3 pl-4">
+                                  <% if character.character_events.blank? %>
+                                    <p id="empty-notice-scene"><i>No main event yet for <%= character.first_name %></i></p>
+                                  <% else %>
+                                    <% character.character_events.each do |character_event| %>
+                                      <%= render 'character_events/show', character_event: character_event %>
+                                    <% end %>
+                                  <% end %>
+                                </div>
+                              </div>
+                              <hr>
                               <!-------------------- Description -------------------->
                               <div class="character-description-scene">
                                 <p><%= character.description %></p>
                               </div>
-                              <hr class="dashed-separator"> <!-- Separateur -->
+                              <hr> <!-- Separateur -->
 
                               <!-------------------- Logs -------------------->
                               <div class="logs-area-scene">
@@ -34,21 +51,6 @@
                             </div>
                             <!-------------------- CHARACTER INFOS END-------------------->
 
-                            <!-------------------- CHARACTER EVENTS -------------------->
-                            <div class="right-part-scene"> <!-- Liste des events -->
-                              <div class="right-part-title-scene d-flex"> <!-- Titre et bouton -->
-                                <button id="btn-addevent-scene" type="button" class="btn btn-outline-dark flex-fill" data-toggle="modal" data-target="#charModal<%= character.id %>"><i class="fas fa-plus"></i> Add event</button>
-                              </div>
-                              <div data-event="<%= character.id %>" class="right-part-events-scene pt-3 pl-4">
-                                <% if character.character_events.blank? %>
-                                  <p id="empty-notice-scene"><i>No main event yet for <%= character.first_name %></i></p>
-                                <% else %>
-                                  <% character.character_events.each do |character_event| %>
-                                    <%= render 'character_events/show', character_event: character_event %>
-                                  <% end %>
-                                <% end %>
-                              </div>
-                            </div>
                 </div>
         </div>
 </div>
