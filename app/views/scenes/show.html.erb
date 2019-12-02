@@ -20,14 +20,10 @@
     </a>
     <div class="collapse mt-3" id="newScene">
       <%# <div class="card card-body"> %>
-      <%= simple_form_for @scene do |f| %>
-        <div class = 'justify-content-center' >
-          <div class="">
-            <%= f.input :title, :label => false, :placeholder => "Title", input_html: { class: 'form-new-scene' } %>
-          </div>
-          <div class="">
+      <%= simple_form_for [@project, @new_scene] do |f| %>
+          <div class="input-new">
+            <%= f.input :title, :label => false, :placeholder => "Title", autofocus: true, input_html: { class: 'form-new-scene' } %>
             <%= f.button :submit, "Create", class:"btn btn-info" %>
-          </div>
         </div>
       <% end %>
       <%# </div> %>

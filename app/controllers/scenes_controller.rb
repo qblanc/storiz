@@ -6,6 +6,7 @@ class ScenesController < ApplicationController
     @project = @scene.project
     @scenes = @project.scenes.order(:number)
     @characters = Character.all
+    @new_scene = Scene.new
   end
 
   def create
@@ -73,14 +74,18 @@ class ScenesController < ApplicationController
     @scenes.each do |scene|
       scene.number = x
       scene.save!
-      if num == @scenes.length + 1
-        @id = @scenes[num - 2].id
+      if num == @scenes.length
+        @id = @scenes.last.id
       else
-        @id = scene.id
+        @id = @scenes[num - 1].id
       end
       x += 1
     end
-    redirect_to scene_path(@id)
+    if @scenes.length < 1
+      redirect_to project_path(@project)
+    else
+      redirect_to scene_path(@id)
+    end
   end
 
   private
