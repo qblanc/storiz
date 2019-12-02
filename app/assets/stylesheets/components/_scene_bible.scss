@@ -31,3 +31,21 @@
     max-width: 250px;
   min-width: 250px;
 }
+
+.search-scene-details {
+  transform: translatey(100%);
+  min-height: 0px;
+  background: white;
+  display: none;
+  transition: all 0.3s ease;
+}
+
+.search-scene-details.slideY {
+  transform: translatey(0%);
+  min-height: auto;
+  transition: all 0.3s ease;
+}
+
+.search-scene-results {
+  cursor: pointer;
+}
