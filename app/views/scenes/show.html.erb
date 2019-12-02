@@ -7,9 +7,9 @@
 <h2 class="scene-title"><%= @scene.title %></h2>
 
 <%#---------------------------------- Scenes list -----------------------------------------------%>
-<div class="d-flex">
+<div class="d-flex elements-container">
   <div class="indexx">
-    <div class="index mr-3">
+    <div class="index">
     <h4 class="text-center scenes-list mt-1">Scenes list</h4>
         <ul class="overflow-scroll index-list list-group">
           <%= render 'scenes/scenes_list', scenes: @scenes %>
