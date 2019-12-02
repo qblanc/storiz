@@ -22,12 +22,71 @@
 }
 
 .bible-events {
-  margin-left: 13px;
   height: 75%;
   overflow-y: scroll;
 }
 
 .scene-search-form {
-    max-width: 250px;
-  min-width: 250px;
+  width: 80%;
+  margin: 0 auto;
 }
+
+.search-scene-details {
+  transform: translatey(100%);
+  min-height: 0px;
+  background: white;
+  display: none;
+  transition: all 0.6s ease;
+}
+
+.search-scene-details.slideY {
+  transform: translatey(0%);
+  min-height: auto;
+  transition: all 0.6s ease;
+}
+
+.hide-details-scene-bible {
+  cursor: pointer;
+  height: 30px;
+}
+
+.search-scene-results {
+  cursor: pointer;
+  padding: 5px;
+  &:hover {
+    color: $gray-600;
+  }
+}
+
+#bible-scene-show {
+  padding: 15px;
+}
+
+.character-container-scene {
+  padding: 10px;
+  width: 120%;
+  padding-top: 0 !important;
+}
+
+.btn-addevent-scene {
+  border-radius: 0 !important;
+  border-left: 0;
+  border-right: 0;
+}
+
+#btn-search-bible-scene {
+  border-radius: 0 2px 2px 0;
+}
+
+#input-search-bible-scene {
+  border-radius: 2px 0 0 2px;
+  border-right: none;
+}
+
+
+
+
+
+
+
+
