@@ -16,7 +16,7 @@
         </ul>
     </div>
     <a class="btn btn-info mt-4 ml-3 mr-n4" data-toggle="collapse" href="#newScene" role="button" aria-expanded="false" aria-controls="newScene">
-      <i class="fas fa-plus"></i> Add a new scene
+      <i class="slide-down-char-details fas fa-plus"></i> Add a new scene
     </a>
     <div class="collapse mt-3" id="newScene">
       <%# <div class="card card-body"> %>
@@ -63,9 +63,13 @@
           <%= text_field_tag :query,
             params[:query],
             class: "search-input form-control",
+            id: "input-search-bible-scene",
             placeholder: "..."
           %>
-          <%= submit_tag "Rechercher", class: "search-btn btn btn-info" %>
+          <%#= submit_tag "Rechercher", class: "search-btn btn btn-info" %>
+          <%= button_tag type: 'submit', class: "search-btn btn btn-info", id: "btn-search-bible-scene" do %>
+              <i class="fa fa-search" aria-hidden="true"></i>
+          <% end %>
         </div>
       <% end %>
     </div>
@@ -74,3 +78,4 @@
     </div>
   </div>
 </div>
+
