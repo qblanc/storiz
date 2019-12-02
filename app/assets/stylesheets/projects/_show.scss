@@ -1,24 +1,22 @@
 body#projects-show {
-  background: linear-gradient(rgba(0,0,0,0.05),rgba(0,0,0,0.05)), image-url("zen_desk_light.jpg") no-repeat center center fixed;
+  background: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), image-url("creative_desk") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-    margin-left: 38vw;
 }
 
-
-.project-container {
-  margin-right:5vw;
+.cabin-margin {
+  margin-top: 15vh;
 }
 
-.cabin-dashboard {
-  margin-left: 20%;
-}
+// .project-container {
+//   margin-right:5vw;
+// }
 
 .link-box {
   width: 50%;
-  .pitch, .moodboard, .synopsis, .bible {
+  .pitch, .moodboard, .synopsis, .bible-project {
     width:100%;  }
   .pitch, .moodboard {
     padding-right: 20px;  }
@@ -33,7 +31,7 @@ body#projects-show {
   margin-top:50px;
 }
 
-.bible {
+.bible-project {
   margin-top: 0;
 }
 
@@ -57,7 +55,7 @@ body#projects-show {
   }
 }
 
-.synopsis, .bible {
+.synopsis, .bible-project {
   // margin-top: 50px;
   margin-left: 30px;
   margin-left: 30px;
@@ -99,7 +97,7 @@ body#projects-show {
 }
 
 .scenes {
-  margin-top: 10px;
+  // margin-top: 10px;
   margin-left: 30px;
   text-align: center;
   h2 {
@@ -117,6 +115,7 @@ body#projects-show {
 .last-scenes {
     padding-left: 25px;
     margin-top: -5px;
+    font-size: 1.2rem;
 }
 
 // .cards {
