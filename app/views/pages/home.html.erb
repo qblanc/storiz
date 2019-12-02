@@ -5,8 +5,8 @@
       <p class="mb-5">Masterpieces made easy.</p>
       <% if user_signed_in? %>
         <div class="d-flex mb-4 justify-content-center">
-          <%= link_to "Create a project", new_project_path, class: 'btn btn-info btn-lg mr-4' %>
-          <%= link_to "Browse my projects", projects_path, class: 'btn btn-info btn-lg ml-4' %>
+          <%= link_to "Create a project", new_project_path, class: 'btn btn-info btn-lg mr-4 home-buttons' %>
+          <%= link_to "Browse my projects", projects_path, class: 'btn btn-info btn-lg ml-4 home-buttons' %>
         </div>
       <% else %>
         <div class="d-flex mb-4 justify-content-center">

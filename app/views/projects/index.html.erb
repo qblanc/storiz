@@ -4,7 +4,7 @@
 </div>
 
 <div class="projects-container">
-  <% @projects.each do |project| %>
+  <% @projects.order(:created_at).each do |project| %>
     <%= link_to project_path(project) do %>
       <div class="project-box mb-4">
         <p><% if project.category == "Book" %>

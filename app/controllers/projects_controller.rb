@@ -15,7 +15,7 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @project = Project.new(user: current_user, category: project_params[:category], title: project_params[:title].capitalize)
+    @project = Project.new(user: current_user, category: project_params[:category], title: project_params[:title])
     if @project.valid?
       @project.save!
       redirect_to project_pitch_edit_path(@project)
