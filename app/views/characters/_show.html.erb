@@ -1,72 +1,50 @@
-<!-------------------- CHARACTER INFOS -------------------->
+        <div class="row">
+          <div class="col-10 px-0" id="char-show-scene">
+            <% randomImageLinks = ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQinrz7mI6Fy31Y8e5idX1-g7WJyvy1mOUfRKa7vn4BbD2xVCDw&s", "https://digitalpainting.school/wp-content/uploads/2017/01/irakli_nadar_digital_painting0.jpg", "https://www.gouvernement.fr/sites/default/files/styles/illustration-centre/public/contenu/illustration/2017/07/img_3371_720p.jpg?itok=0vBgR2N_", "https://i.pinimg.com/236x/42/52/12/425212bc3bf536c60dddaf03ad3447ab--square.jpg", "https://www.thephoblographer.com/wp-content/uploads/2018/02/754e4d784683.55d97bba9eb7e-770x770.jpg", "https://i.pinimg.com/236x/f9/9f/e6/f99fe64c9bf9f8fce8fc693815e0fb31--film-photography-square.jpg"] %>
+              <% index += 1 %>
+              <div class="char-description-scene" id="char-<%= index %>">
+                <!-------------------- CHARACTER INFOS -------------------->
+                <div class="character-container-scene p-4">
+                  <!---------------------- Avatar & infos générales -------------------->
+                  <div class="character-infos-scene mb-3">
+                    <div class="character-image-scene pr-3">
+                      <img src=<%= randomImageLinks.sample %> alt=<%= character.last_name %> class="charavatar"><!-- INSRER IMAGE CARRE -->
+                    </div>
+                    <div class="character-basics-scene">
+                      <div class="character-name-scene mt-3">
+                        <h4><%= character.first_name.capitalize %> <strong><%= character.last_name.capitalize %></strong></h4>
+                      </div>
+                      <div class="character-generals-scene mt-2 mb-2">
+                        <i class="fas fa-venus-mars"></i> <%= character.genre %> &nbsp;&nbsp; <i class="fas fa-birthday-cake"></i> <%= character.birthdate.strftime("%d/%m/%Y") %>
+                      </div>
+                    </div>
+                  </div>
+                  <!-------------------- Description -------------------->
+                  <div class="character-description-scene">
+                    <p><%= character.description %></p>
+                  </div>
+                  <hr class="dashed-separator"> <!-- Separateur -->
 
-<div class="character-container p-4">
-
-  <!---------------------- Avatar & infos générales -------------------->
-  <div class="character-infos mb-3">
-
-    <div class="character-image pr-3">
-      <img src="https://vignette.wikia.nocookie.net/uvm-mock-trial/images/8/89/00060bq0.jpg/revision/latest?cb=20140817200436" alt="<%= @character.last_name %>" class="charavatar"><!-- INSRER IMAGE CARRE -->
-    </div>
-
-    <div class="character-basics">
-      <div class="character-name mt-3">
-        <h1><%= character.first_name %> <strong><%= character.last_name.upcase %></strong></h1>
-      </div>
-
-      <div class="character-generals mt-2 mb-2">
-        <i class="fas fa-venus-mars"></i> <%= character.genre %> &nbsp;&nbsp; <i class="fas fa-birthday-cake"></i> <%= character.birthdate.strftime("%d/%m/%Y") %>
-      </div>
-    </div>
-  </div>
-
-  <!-------------------- Description -------------------->
-
-  <div class="character-description">
-    <p><%= character.description %></p>
-  </div>
-
-  <hr class="dashed-separator"> <!-- Separateur -->
-
-  <!-------------------- Logs -------------------->
-
-  <div class="logs-area">
-    <!-- Insérer tableau des logs ici -->
-  </div>
-</div>
-
-<!-------------------- CHARACTER EVENTS -------------------->
-
-<div class="right-part"> <!-- Liste des events -->
-  <div class="right-part-title"> <!-- Titre et bouton -->
-    <p><button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-plus"></i></button> Main Character events</p>
-  </div>
-
-  <div class="right-part-events pt-3 pl-4">
-    <% if @character.character_events.blank? %>
-      <p><i>No main event yet for <%= @character.first_name %></i></p>
-    <% else %>
-        <% @character.character_events.each do |character_event| %>
-          <%= render 'character_events/show', character_event: character_event %>
-        <% end %>
-    <% end %>
-  </div>
-</div>
-
-
-<!-- Modal Formulaire -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">What's happening to <%= character.first_name %> <%= character.last_name %>?</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <%= render 'character_events/form', character: @character, character_event: @character_event %>
-      </div>
-    </div>
-  </div>
-</div>
+                  <!-------------------- Logs -------------------->
+                  <div class="logs-area-scene">
+                    <!-- Insérer tableau des logs ici -->
+                  </div>
+                </div>
+                <!-------------------- CHARACTER EVENTS -------------------->
+                <div class="right-part-scene"> <!-- Liste des events -->
+                  <div class="right-part-title-scene d-flex"> <!-- Titre et bouton -->
+                    <button id="btn-addevent-scene" type="button" class="btn btn-outline-dark flex-fill" data-toggle="modal" data-target="#charModal<%= character.id %>"><i class="fas fa-plus"></i> Add event</button>
+                  </div>
+                  <div data-event="<%= character.id %>" class="right-part-events-scene pt-3 pl-4">
+                    <% if character.character_events.blank? %>
+                      <p id="empty-notice-scene"><i>No main event yet for <%= character.first_name %></i></p>
+                    <% else %>
+                      <% character.character_events.each do |character_event| %>
+                        <%= render 'character_events/show', character_event: character_event %>
+                      <% end %>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
