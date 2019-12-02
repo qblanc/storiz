@@ -57,7 +57,7 @@
     <div class="bible-events-title">
       <h4>Project bible</h4>
     </div>
-    <div class="search-bar">
+    <div class="search-bar scene-bible-search">
       <%= form_tag characters_path, class: "", remote: true, method: :get do %>
         <div class="d-flex align-items-center scene-search-form">
           <%= text_field_tag :query,
@@ -78,4 +78,25 @@
     </div>
   </div>
 </div>
+
+<!-- Modal Formulaire -->
+<% @characters.each do |character| %>
+
+  <div class="modal fade bd-example-modal-lg" id="charModal<%= character.id %>" tabindex="-1" role="dialog" aria-labelledby="charModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="charModalLabel">What's happening to <%= character.first_name %> <%= character.last_name %>?</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <%= render 'character_events/form', character: character, character_event: CharacterEvent.new %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+<!-- Modal Formulaire end-->
 
