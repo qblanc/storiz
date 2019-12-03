@@ -83,8 +83,11 @@
                   </div>
                   <!-- Edit and Delete -->
                   <div id="edit-delete-char d-flex align-items-start flex-column">
-                    <i class="fas fa-edit d-block mb-3"></i>
-                    <i class="fas fa-trash d-block"></i>
+
+                      <i class="edit-delete-btns-char fas fa-edit d-block mb-3"></i>
+                    <%= link_to character_path(character), method: :delete do %>
+                      <i class="edit-delete-btns-char fas fa-trash d-block"></i>
+                    <% end %>
                   </div>
                 </div>
                 <!-------------------- Description -------------------->
