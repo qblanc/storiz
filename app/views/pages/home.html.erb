@@ -28,7 +28,7 @@
 <div id="storiz-club">
   <div class="banner-club">
     <h1 class="title-club">STORIZ CLUB</h1>
-    <%# <p class="mb-5 subtitle">Put your brick in the wall</p> %>
+    <p class="help">Help others on their projects</p>
     <h5 class="pop-projects">Popular projects</h5>
       <div class="not-carrousel">
         <div class="pagination d-flex">
@@ -45,24 +45,36 @@
       </div>
     <h5 class="pop-categories">Trending categories</h5>
     <div class="home-categories">
-      <div class="home-category science-fi">
-        Science-fi
-      </div>
-      <div class="home-category comedy">
-        Comedy
-      </div>
-      <div class="home-category thriller">
-        Thriller
-      </div>
-      <div class="home-category fanfic">
-        Fan-fiction
-      </div>
-      <div class="home-category adventure">
-        Adventure
-      </div>
-      <div class="home-category history">
-        Historical
-      </div>
+      <a href="#">
+        <div class="home-category science-fi">
+          Science-fi
+        </div>
+      </a>
+        <a href="#">
+          <div class="home-category comedy">
+            Comedy
+          </div>
+        </a>
+        <a href="#">
+          <div class="home-category thriller">
+            Thriller
+          </div>
+        </a>
+        <a href="#">
+          <div class="home-category fanfic">
+            Fan-fiction
+          </div>
+        </a>
+        <a href="#">
+          <div class="home-category adventure">
+            Adventure
+          </div>
+        </a>
+        <a href="#">
+          <div class="home-category history">
+            Historical
+          </div>
+        </a>
     </div>
     <div class="cta d-flex justify-content-center">
       <%= link_to "Browse projects", new_user_registration_path, class: 'club-cta' %>

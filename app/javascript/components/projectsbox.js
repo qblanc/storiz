@@ -4,7 +4,7 @@ const initBoxSlide = () => {
   var moveCard = document.querySelector(".home-projects .project-card:first-child");
   var widthMargin = 0;
   var widthCard = document.querySelector(".home-projects .project-card:first-child").offsetWidth;
-  widthCard += 8; //pour l'espacement entre les cartes
+  widthCard += 15; //pour l'espacement entre les cartes
 
   nextBtn.addEventListener("click", (event) => {
     console.log("next");

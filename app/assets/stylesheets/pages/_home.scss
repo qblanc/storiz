@@ -116,7 +116,7 @@ body {
 
 .banner-club {
   margin: 0 5vw 5vh 5vw;
-  padding-top: 5vh;
+  padding-top: 3vh;
   vertical-align: middle;
   text-align: center;
   max-width: 100vw;
@@ -127,7 +127,8 @@ body {
     font-weight: bolder;
     font-size: 6rem;
     text-align: center;
-    letter-spacing: 2vh;
+    letter-spacing: 2vw;
+    margin-bottom: -2vh;
   }
   // p {
   //   color: white;
@@ -172,6 +173,12 @@ body {
   transform: rotate(15deg);
 }
 
+.help {
+  color: white;
+  font-size: 1.7rem;
+  letter-spacing: 3px;
+}
+
 .home-project {
   font-size: 0.85rem;
   padding:0 1rem;
@@ -196,6 +203,11 @@ body {
 
 .home-projects {
   display: flex;
+  a {
+    &:hover {
+      opacity: 1;
+    }
+  }
   .project-card {
     margin-right: 15px;
     border: none;
@@ -203,13 +215,21 @@ body {
     background: $success;
     display: inline-block;
     white-space: normal;
+    transition: all 0.7s ease;
     &:first-child {
     margin-left: 0px;
+    }
+    &:hover {
+      .project-pic {
+        p {
+          opacity: 1;
+        }
+      }
     }
   }
   .project-text {
     padding-top: 0.8rem;
-    height: 140px;
+    height: 120px;
     width: 250px;
   }
   .project-pic {
@@ -227,18 +247,29 @@ body {
       background: $success;
       color: $info;
     }
+    p {
+      color:white;
+      background: rgba(128, 128, 128, 0.425) ;
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 1px 5px;
+      opacity:0;
+    }
   }
 }
 
 .home-categories {
   display: flex;
+  a {
+    margin-right: 30px;
+  }
   .home-category {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 12vh;
     width: 13vw;
-    margin-right: 30px;
     background-position: center;
     background-size: cover;
     color: $success;
