@@ -1,0 +1,33 @@
+function closeModal() {
+  $('#addCharModal').modal('hide')
+}
+
+closeModal();
+
+// var closeAddCharModal = document.querySelector('#close-add-char-modal');
+// console.log(closeAddCharModal)
+
+// document.querySelector('#btn-ok-char-modal').addEventListener('click', {
+
+//   closeAddCharModal.click();
+// })
+
+// function refreshAddCharForm(innerHtml) {
+//   const newCharacterForm = document.querySelector('.add-char-modal-body');
+//   newCharacterForm.innerHTML = innerHTML;
+// };
+
+function addNewCharacter(characterHTML) {
+  const characters = document.querySelector('.list-characters');
+  characters.insertAdjacentHTML('beforeend', characterHTML);
+  if (document.querySelector('#char-empty-notice')) {
+    document.querySelector('.#char-empty-notice').remove();
+  };
+};
+
+// <%# if @character.errors.any? %>
+//   refreshAddCharForm('<%#= j render "characters/new", project: @project %>');
+// <%# else %>
+  // addNewCharacter('<%#= j render "characters/show", project: @project %>');
+//   refreshAddCharForm('<%#= j render "characters/new", project: @project %>');
+// <%# end %>

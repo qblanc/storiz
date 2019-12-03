@@ -1,0 +1,37 @@
+#char-modal-content {
+  padding: 5px 25px 25px 25px;
+}
+
+#names-char-modal {
+  margin-top: 25px;
+}
+
+.character_first_name {
+  flex-grow: 1;
+  margin-right: 10px;
+}
+
+.character_last_name {
+  flex-grow: 1;
+  margin-left: 10px;
+}
+
+.add-photo-char-modal {
+  width: 100%;
+}
+
+#character_birthdate_3i {
+  margin-left: 0 !important;
+}
+
+#character_birthdate_1i {
+  margin-right: 0 !important;
+}
+
+#character_description {
+  height: 150px;
+}
+
+#btn-ok-char-modal {
+  width: 100%;
+}

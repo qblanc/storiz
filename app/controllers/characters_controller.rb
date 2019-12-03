@@ -27,9 +27,15 @@ class CharactersController < ApplicationController
     @project = Project.find(params[:project_id])
     @character.project = @project
     if @character.save!
-      redirect_to character_path(@character)
+      respond_to do |format|
+        format.html { redirect_to character_path(@character) }
+        format.js
+      end
     else
-      render :new
+      respond_to do |format|
+        format.html { render :new }
+        format.js
+      end
     end
   end
 
@@ -57,3 +63,4 @@ class CharactersController < ApplicationController
     params.require(:character).permit(:first_name, :last_name, :birthdate, :genre, :description)
   end
 end
+
