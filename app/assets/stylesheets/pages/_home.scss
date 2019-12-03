@@ -97,8 +97,10 @@ body {
 }
 
 .home-button-1 {
-  width: 32vh;
-  padding: 2.4vh 2.2vh 2vh 2.2vh;
+  display: flex;
+  width: 18vw;
+  justify-content: center;
+  align-items: center;
   background: $info;
   color: $success;
   font-family: 'Lekton';
@@ -112,7 +114,7 @@ body {
   }
 }
 .home-button-2 {
-  width: 32vh;
+  width: 18vw;
   padding: 2.4vh 2.2vh 2vh 2.2vh;
   border: 3px solid $success;
   color: $success;
