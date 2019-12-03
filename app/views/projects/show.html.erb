@@ -49,6 +49,8 @@
           <% created = Time.now.strftime("%Y%j").to_i - last_scene.created_at.strftime("%Y%j").to_i %>
           <% if created == 0 %>
             Scene <%= last_scene.number %><p class="d-inline text-muted"> - Today</p>
+          <% elsif created == 1 %>
+            Scene <%= last_scene.number %><p class="d-inline text-muted"> - <%= created %> day ago</p>
           <% else %>
             Scene <%= last_scene.number %><p class="d-inline text-muted"> - <%= created %> days ago</p>
           <% end %>
@@ -61,6 +63,8 @@
           <% updated = Time.now.strftime("%Y%j").to_i - updated_scene.updated_at.strftime("%Y%j").to_i %>
           <% if updated == 0 %>
             Scene <%= updated_scene.number %><p class="d-inline text-muted"> - Today</p>
+          <% elsif updated == 1 %>
+            Scene <%= updated_scene.number %><p class="d-inline text-muted"> - 1 day ago</p>
           <% else %>
             Scene <%= updated_scene.number %><p class="d-inline text-muted"> - <%= updated %> days ago</p>
           <% end %>

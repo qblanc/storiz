@@ -4,6 +4,7 @@ import { resizedragdrop } from '../components/mooditemv2';
 import { TextSave } from '../components/text_save';
 import { StickyToolbar } from '../components/sticky_toolbar'
 import { initSortable } from '../components/dragdrop';
+import { initScroll } from '../components/bannerscroll'
 import { showDetailsOnClickSceneBible } from '../components/scene_bible';
 import Rails from '@rails/ujs';
 import $ from 'jquery';
@@ -25,14 +26,17 @@ if (document.querySelector('#scenes-show')) {
   showDetailsOnClickSceneBible();
 }
 
+if (document.querySelector('#storiz-club')) {
+  initScroll();
+}
 
 if (document.querySelector('.moodimages')) {
   resizedragdrop();
 };
 
-// if (document.querySelector('.editor')) {
-//     TextSave();
-// };
+if (document.querySelector('.editor')) {
+    TextSave();
+};
 
 if (document.querySelector('.editor')) {
 StickyToolbar();

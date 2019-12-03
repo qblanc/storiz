@@ -4,5 +4,6 @@ class BiblesController < ApplicationController
     @characters = Character.where(project_id: params[:project_id])
     @scenes = Scene.where(project_id: params[:project_id])
     @character_event = CharacterEvent.new
+    @character = Character.new
   end
 end
