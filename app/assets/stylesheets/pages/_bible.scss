@@ -147,3 +147,43 @@ ul {
 // body#bibles-show {
 //   background: linear-gradient(rgba(244,244,244,0.6),rgba(244, 244, 244,0.4));
 // }
+
+
+#btn-addevent {
+  position: relative;
+}
+
+#btn-addevent::after {
+  position: absolute;
+  content: "";
+  height: 1px;
+  width: 50px;
+  background: #040404;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%);
+  transition: all 0.5s ease;
+}
+
+#btn-addevent:hover::after {
+  width: 75px;
+  transition: all 0.5s ease;
+}
+
+.character-container {
+  position: relative;
+}
+
+.character-container::after {
+
+    position: absolute;
+    content: "";
+    height: 80%;
+    width: 1px;
+    background:
+
+    black;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+}
