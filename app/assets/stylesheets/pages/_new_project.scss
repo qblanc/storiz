@@ -28,12 +28,12 @@ body#projects-pitch {
 }
 
 
-.form-check input[type="radio"] {
+.form-checkzz input[type="radio"] {
   opacity: 0;
   width: 0;
 }
 
-.form-check label {
+.form-checkzz label {
   display: inline-block;
   color: #18587a;
   padding: 10px 20px;
@@ -49,7 +49,7 @@ body#projects-pitch {
 //   opacity: 0.5;
 // }
 
-.form-check input[type="radio"]:checked + label {
+.form-checkzz input[type="radio"]:checked + label {
 
   color: #15b7b9;
 }
