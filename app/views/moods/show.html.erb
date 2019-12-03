@@ -1,7 +1,18 @@
+<div class="mood-form">
+  <h1><strong><%= @mood.project.title %></strong>'s moodboard</h1>
+  <%= link_to project_path(@mood.project) do %>
+    <div class="">
+      <p><i class="fas fa-arrow-circle-left"></i>  Back </p>
+    </div>
+  <% end %>
+</div>
+
 <div>
   <%= simple_form_for([@mood, Mooditem.new], remote: true) do |f| %>
-    <%= f.input :photo, as: :file, label: false %>
-    <%= f.button :submit, class: 'btn btn-primary' %>
+    <div class="d-flex">
+      <%= f.input :photo, as: :file, label: false %>
+      <%= f.button :submit, class: 'btn btn-primary' %>
+    </div>
   <% end %>
 </div>
 

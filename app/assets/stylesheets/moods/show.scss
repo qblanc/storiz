@@ -38,11 +38,11 @@
     cursor: move;
     margin: 0 auto;
 }
-​
+
 .resize-container img {
-    display: block
+    display: block;
 }
-​
+
 .resize-container:hover img,
 .resize-container:active img {
     outline: 2px dashed rgba(222,60,80,.9);
@@ -55,30 +55,65 @@
     display: block;
     width: 10px;
     height: 10px;
-    background: rgba(222,60,80,.9);
+    background: orange;
     z-index: 999;
 }
-​
+
 .resize-handle-nw {
-    top: 5px;
-    left: 5px;
+    top: 0px;
+    left: 0px;
     cursor: nw-resize;
+    background: blue;
 }
-​
 .resize-handle-sw {
-    bottom: 5px;
-    left: 5px;
+    bottom: 0px;
+    left: 0px;
     cursor: sw-resize;
+    background: blue;
 }
-​
 .resize-handle-ne {
-    top: 5px;
-    right: 5px;
+    top: 0px;
+    right: 0px;
     cursor: ne-resize;
+    background: blue;
 }
-​
 .resize-handle-se {
-    bottom: 5px;
-    right: 5px;
+    bottom: 0px;
+    right: 0px;
     cursor: se-resize;
+    background: blue;
+}
+
+.mood-form {
+  width: 60%;
+  margin-left: 50px;
+  padding-top: 30px;
+  textarea {
+    width: 100%;
+    height: 350px;
+    resize: none;
+  }
+  p {
+    color: #18587a;
+    font-family: 'Lekton', sans-serif;
+    font-size: 20px;
+  }
+  p.small {
+    font-size: 16px;
+  }
+}
+
+body {
+  background: url("https://marketplace.canva.com/MADGyEsrVdY/4/screen_2x/canva-minimal-work-space---creative-flat-lay-photo-of-workspace-desk-w-MADGyEsrVdY.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  z-index: 1;
+}
+
+.reduced-container {
+  max-width: 60vw;
+  margin: 0 auto;
+  position: relative;
 }
