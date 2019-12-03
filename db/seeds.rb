@@ -29,7 +29,7 @@ project1.save!
 
 character1 = Character.new(first_name: "Larry", last_name: "Dimmick", birthdate: Time.now, genre: "Male", description: "Mr. White. Originally from Milwaukee, Minnesota, he's brought on Joe Cabot's current jewelry heist through prior association. Yet, he has reserves about doing it, because he feels he's jinxed. The last job he worked on, almost got him pinched by the cops. Dimmick becomes a sort of surrogate father to young recruit Mr. Orange as they plan the job over a few days. The two become so close that he lets detials of his personal life slip like his hometown and his specialty as a criminal.")
 character1.project = project1
-file1 = file = URI.open('https://res.cloudinary.com/diewz4u97/image/upload/v1575382304/Reservoir%20Dogs%20Characters/Mr._White_mb4knr.jpg')
+file1 = file = URI.open('https://res.cloudinary.com/diewz4u97/image/upload/v1575391869/WHIIITE_qwvtbl.png')
 character1.photo.attach(io: file1, filename: "Larry.jpg", content_type: 'image/jpg')
 character1.save!
 
@@ -47,7 +47,7 @@ character3.save!
 
 character4 = Character.new(first_name: "Mr.", last_name: "Pink", birthdate: Time.now, genre: "Male", description: "He has known Joe Cabot as a youth and believed that Joe had something to do with the set-up. He recalls one time when he wanted to refuse to do a job but didn't because of the money. He quit smoking, but restarted it during the film. When given his name 'Mr. Pink', he objects and says how it sounds like 'Mr. Pussy', and requests to have his name changed to something less weak like 'Mr. Purple', or to trade names with Mr. White.")
 character4.project = project1
-file4 = file = URI.open('https://res.cloudinary.com/diewz4u97/image/upload/v1575382304/Reservoir%20Dogs%20Characters/Mr._Pink_sabdkv.jpg')
+file4 = file = URI.open('https://res.cloudinary.com/diewz4u97/image/upload/v1575391869/PINKY_ofhayq.png')
 character4.photo.attach(io: file4, filename: "Pink.jpg", content_type: 'image/jpg')
 character4.save!
 
