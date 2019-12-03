@@ -19,6 +19,23 @@ body {
   }
 }
 
+#storiz-club {
+  background-size: cover;
+  height: 100vh;
+  // margin-top: -60px;
+  display: flex;
+  // align-items: center;
+  background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(https://images.unsplash.com/photo-1533327325824-76bc4e62d560?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
+  background-position: top;
+  background-size: cover;
+      h1 {
+    color: white;
+    font-size: 12vh;
+    margin-top: -10vh;
+    letter-spacing: 2vh;
+  }
+}
+
 .home-banner::after {
   content: '';
   display: block;
@@ -37,7 +54,6 @@ body {
   h1 {
     font-size: 75px;
     color: $white;
-    margin-left: -4px;
     font-family: $logo-font;
     font-weight: bolder;
     font-size: 6rem;
@@ -49,6 +65,31 @@ body {
     letter-spacing: 10px;
     margin-top:-10px;
   }
+  .signup {
+    width: 220px;
+    font-size: 1.3rem;
+  }
+}
+
+.banner-club {
+  vertical-align: middle;
+  text-align: center;
+  margin-top: 15vh;
+  h1 {
+    font-size: 75px;
+    color: $white;
+    font-family: $logo-font;
+    font-weight: bolder;
+    font-size: 6rem;
+    text-align: center;
+  }
+  // p {
+  //   color: white;
+  //   font-size: 25px;
+  //   font-family: 'Raleway', sans-serif;
+  //   letter-spacing: 10px;
+  //   margin-top:-10px;
+  // }
   .signup {
     width: 220px;
     font-size: 1.3rem;
@@ -122,4 +163,77 @@ body {
   background-color: $info;
   padding: 0 5px;
   transform: rotate(15deg);
+}
+
+.home-project {
+  font-size: 0.85rem;
+}
+
+.club-container {
+  width: 100vw;
+  margin: 0px 5vw 0px 5vw;
+}
+
+.home-projects {
+  display: flex;
+  justify-content: space-between;
+  overflow-x: visible;
+  margin-left: 5vw;
+  .card {
+    margin-right: 15px;
+    border: none;
+    height: 270px;
+  }
+  .card-body {
+    padding: 1rem;
+  }
+}
+
+.home-categories {
+  display: flex;
+  .home-category {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 12vh;
+    width: 13vw;
+    background: $success;
+    margin-right: 30px;
+    &:first-child {
+      margin-left: 7vw;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.club-cta {
+  width: 32vh;
+  padding: 2.4vh 2.2vh 2vh 2.2vh;
+  background: $info;
+  color: $success;
+  font-family: 'Lekton';
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  border-radius: 3px;
+  margin: 30px 0;
+  &:hover {
+    opacity:0.9;
+    color: $success;
+    // transition: 0.1s;
+  }
+}
+
+.pop-projects {
+  color: white;
+  text-align: left;
+  margin-left: 6vw;
+}
+
+.pop-categories {
+  color: white;
+  text-align: left;
+  margin-left: 6vw;
+  margin-top: 30px;
 }
