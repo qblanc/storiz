@@ -6,7 +6,7 @@
   <label class="add-photo-char-modal btn btn-outline-info">
     Add a portrait
     <span style="display:none;">
-      <%= f.file_field :photo, required: true, name: 'Portrait' %>
+      <%= f.input :photo, as: :file, required: true, name: 'Portrait' %>
     </span>
   </label>
 

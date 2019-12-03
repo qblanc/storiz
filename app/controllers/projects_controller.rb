@@ -7,7 +7,7 @@ class ProjectsController < ApplicationController
   end
 
   def index
-    @projects = Project.all
+    @projects = Project.all.where(user: current_user)
   end
 
   def new

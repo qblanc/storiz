@@ -2,6 +2,20 @@ function closeModal() {
   $('#addCharModal').modal('hide')
 }
 
+
+// a voir mercredi
+
+// $('#close-add-char-modal').on('click', function() {
+//   console.log("salut ici");
+// })
+
+
+// $('#close-add-char-modal').addEventListener('click', function () {
+//     console.log('FOO!');
+// }, false);
+
+// a voir mercredi end
+
 closeModal();
 
 // var closeAddCharModal = document.querySelector('#close-add-char-modal');
@@ -17,13 +31,13 @@ closeModal();
 //   newCharacterForm.innerHTML = innerHTML;
 // };
 
-function addNewCharacter(characterHTML) {
-  const characters = document.querySelector('.list-characters');
-  characters.insertAdjacentHTML('beforeend', characterHTML);
-  if (document.querySelector('#char-empty-notice')) {
-    document.querySelector('.#char-empty-notice').remove();
-  };
-};
+// function addNewCharacter(characterHTML) {
+//   const characters = document.querySelector('.list-characters');
+//   characters.insertAdjacentHTML('beforeend', characterHTML);
+//   if (document.querySelector('#char-empty-notice')) {
+//     document.querySelector('.#char-empty-notice').remove();
+//   };
+// };
 
 // <%# if @character.errors.any? %>
 //   refreshAddCharForm('<%#= j render "characters/new", project: @project %>');

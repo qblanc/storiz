@@ -68,7 +68,7 @@
                 <div class="character-infos mb-3">
                   <div class="character-image pr-3">
                     <% if character.photo.present? %>
-                      <%= cl_image_tag character.photo.key, alt: "photo #{character.last_name}" %>
+                      <%= cl_image_tag character.photo.key, height: 120, width: 120, crop: :thumb, :radius => 3, alt: "photo #{character.last_name}" %>
                     <% else %>
                       <img src=<%= randomImageLinks.sample %> alt=<%= character.last_name %> class="charavatar"><!-- INSRER IMAGE CARRE -->
                     <% end %>
@@ -83,8 +83,11 @@
                   </div>
                   <!-- Edit and Delete -->
                   <div id="edit-delete-char d-flex align-items-start flex-column">
-                    <i class="fas fa-edit d-block mb-3"></i>
-                    <i class="fas fa-trash d-block"></i>
+
+                      <i class="edit-delete-btns-char fas fa-edit d-block mb-3"></i>
+                    <%= link_to character_path(character), method: :delete do %>
+                      <i class="edit-delete-btns-char fas fa-trash d-block"></i>
+                    <% end %>
                   </div>
                 </div>
                 <!-------------------- Description -------------------->

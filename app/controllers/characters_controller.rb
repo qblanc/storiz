@@ -49,8 +49,9 @@ class CharactersController < ApplicationController
   end
 
   def destroy
+    project = @character.project
     @character.destroy
-    redirect_to characters_path
+    redirect_to project_bibles_path(project)
   end
 
   private
@@ -60,7 +61,7 @@ class CharactersController < ApplicationController
   end
 
   def character_params
-    params.require(:character).permit(:first_name, :last_name, :birthdate, :genre, :description)
+    params.require(:character).permit(:first_name, :last_name, :birthdate, :genre, :description, :photo)
   end
 end
 

@@ -6,8 +6,20 @@
 
 .scene_title {
   width: 300px;
+
 }
 
 .scenes-list {
   font-family: 'Cabin Sketch';
+}
+
+.relative-title {
+    position: relative;
+}
+
+.absolute-title {
+  position: absolute;
+  left: 80px;
+  top: 10px;
+  color: grey;
 }
