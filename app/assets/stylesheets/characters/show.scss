@@ -10,6 +10,7 @@
   border-radius: 0 !important;
   border-left: 0;
   border-right: 0;
+  border-top: 0;
 }
 
 .character-container{
@@ -66,7 +67,7 @@
 .right-part{
   height: 100%;
   width: 30%;
-  border-left: 1px solid #343A40;
+  // border-left: 1px solid #343A40;
     h4 {
     font-family: 'Bitter', serif;
     text-align: center;

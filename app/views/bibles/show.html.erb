@@ -36,14 +36,22 @@
     <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">
       <div class="row charac-div mx-0">
         <div class="list col-2 px-0">
+          <!-- Bouton ajouter un personnage -->
+                <div class="right-part-title d-flex">
+                  <button id="btn-addevent" type="button" class="btn btn-outline-dark flex-fill" data-toggle="modal" data-target="#addCharModal"><i class="fas fa-plus"></i>  Add Character</button>
+                </div>
+          <!-- Bouton ajouter un personnage end-->
           <ul class="list-group list-group-flush list-characters example">
-
-            <% @characters.each_with_index do |char, index| %>
-              <li class="list-group-item" data-char="char-<%= index+1 %>" >
-                <%#= link_to character_path(char), class: "char-item", remote: true do %>
-                <p><%= char.first_name %> <%= char.last_name %></p>
-                <%# end %>
-              </li>
+            <% if @characters.blank? %>
+              <p class="list-group-item" id="char-empty-notice"><em>This project doesn't have any character yet.</em></p>
+            <% else %>
+              <% @characters.each_with_index do |char, index| %>
+                <li class="list-group-item" data-char="char-<%= index+1 %>" >
+                  <%#= link_to character_path(char), class: "char-item", remote: true do %>
+                  <p><%= char.first_name %> <%= char.last_name %></p>
+                  <%# end %>
+                </li>
+              <% end %>
             <% end %>
           </ul>
         </div>
@@ -68,6 +76,11 @@
                       <i class="fas fa-venus-mars"></i> <%= character.genre %> &nbsp;&nbsp; <i class="fas fa-birthday-cake"></i> <%= character.birthdate.strftime("%d/%m/%Y") %>
                     </div>
                   </div>
+                  <!-- Edit and Delete -->
+                  <div id="edit-delete-char d-flex align-items-start flex-column">
+                    <i class="fas fa-edit"></i>
+                    <i class="fas fa-trash"></i>
+                  </div>
                 </div>
                 <!-------------------- Description -------------------->
                 <div class="character-description">
@@ -85,7 +98,7 @@
               <!-------------------- CHARACTER EVENTS -------------------->
               <div class="right-part"> <!-- Liste des events -->
                 <div class="right-part-title d-flex"> <!-- Titre et bouton -->
-                  <button id="btn-addevent" type="button" class="btn btn-outline-dark flex-fill" data-toggle="modal" data-target="#charModal<%= character.id %>"><i class="fas fa-plus"></i> Add event</button>
+                  <button id="btn-addevent" type="button" class="btn btn-outline-dark flex-fill" data-toggle="modal" data-target="#charModal<%= character.id %>"><i class="fas fa-plus"></i>  Add event</button>
                 </div>
                 <div data-event="<%= character.id %>" class="right-part-events pt-3 pl-4">
                   <% if character.character_events.blank? %>
@@ -124,9 +137,8 @@
 
 </div>
 
-<!-- Modal Formulaire -->
+<!-- Modal Add Character Events Formulaire -->
 <% @characters.each do |character| %>
-
   <div class="modal fade bd-example-modal-lg" id="charModal<%= character.id %>" tabindex="-1" role="dialog" aria-labelledby="charModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
       <div class="modal-content">
@@ -143,7 +155,25 @@
     </div>
   </div>
 <% end %>
-<!-- Modal Formulaire end-->
+<!-- Modal Add Character Events Formulaire end-->
+
+<!-- Modal add character -->
+<div class="modal fade bd-example-modal-lg" id="addCharModal" tabindex="-1" role="dialog" aria-labelledby="addCharModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div id="char-modal-content" class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addCharModalLabel">Add a character to the project "<%= @project.title %>"</h5>
+        <button id="close-add-char-modal" type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="add-char-modal-body">
+        <%= render 'characters/new', project: @project %>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal add character end -->
 
 
 
