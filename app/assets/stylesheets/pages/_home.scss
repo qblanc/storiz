@@ -19,22 +19,6 @@ body {
   }
 }
 
-#storiz-club {
-  background-size: cover;
-  height: 100vh;
-  // margin-top: -60px;
-  display: flex;
-  // align-items: center;
-  background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(https://images.unsplash.com/photo-1533327325824-76bc4e62d560?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
-  background-position: top;
-  background-size: cover;
-      h1 {
-    color: white;
-    font-size: 12vh;
-    margin-top: -10vh;
-    letter-spacing: 2vh;
-  }
-}
 
 .home-banner::after {
   content: '';
@@ -71,17 +55,30 @@ body {
   }
 }
 
+#storiz-club {
+  background-size: cover;
+  height: 100vh;
+  // margin-top: -60px;
+  // display: flex;
+  // align-items: center;
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1533327325824-76bc4e62d560?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
+  background-position: top;
+  background-size: cover;
+    }
+
 .banner-club {
+  margin-top: 5vh;
   vertical-align: middle;
   text-align: center;
-  margin-top: 15vh;
+  max-width: 100vw;
   h1 {
-    font-size: 75px;
+    font-size: 12vh;
     color: $white;
     font-family: $logo-font;
     font-weight: bolder;
     font-size: 6rem;
     text-align: center;
+    letter-spacing: 2vh;
   }
   // p {
   //   color: white;
@@ -176,13 +173,13 @@ body {
 
 .home-projects {
   display: flex;
-  justify-content: space-between;
-  overflow-x: visible;
   margin-left: 5vw;
-  .card {
+  .project-card {
     margin-right: 15px;
     border: none;
     height: 270px;
+    width: 500px;
+    flex-grow: 0;
   }
   .card-body {
     padding: 1rem;
@@ -197,8 +194,10 @@ body {
     align-items: center;
     height: 12vh;
     width: 13vw;
-    background: $success;
     margin-right: 30px;
+    background-position: center;
+    background-size: cover;
+    color: $success;
     &:first-child {
       margin-left: 7vw;
     }
@@ -237,3 +236,28 @@ body {
   margin-left: 6vw;
   margin-top: 30px;
 }
+
+.thriller {
+  background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1523712900580-a5cc2e0112ed?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
+}
+
+.comedy {
+  background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1472162072942-cd5147eb3902?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
+}
+
+.science-fi {
+  background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1446776858070-70c3d5ed6758?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80);
+}
+
+.fanfic {
+  background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1551269901-5c5e14c25df7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
+}
+
+.adventure {
+  background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1500964757637-c85e8a162699?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60);
+}
+
+.history {
+  background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1482401204742-eb3c31c24722?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1412&q=80);
+}
+
