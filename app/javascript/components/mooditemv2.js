@@ -1,6 +1,4 @@
 function positionItem(mooditem, container){
-  console.log(mooditem)
-  console.log(container[0])
   container[0].style.left = `${mooditem.dataset.left}px`
   container[0].style.top = `${mooditem.dataset.top - 60}px`
   mooditem.style.width = `${mooditem.dataset.width}px`
@@ -172,7 +170,6 @@ function resizedragdrop(){
         $container =  $(image_target).parent('.resize-container');
 
         positionItem(image_target, $container)
-
 
         // Add events
         $container.on('mousedown', '.resize-handle', startResize);
