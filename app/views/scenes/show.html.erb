@@ -4,7 +4,15 @@
   </div>
   <%# <%= link_to "Edit title", edit_scene_path(@scene), class: "btn btn-sm btn-info edit-btn" %>
 </div>
+
+<div class="relative-title">
 <h2 class="scene-title"><%= @scene.title %></h2>
+      <%= link_to project_path(@project) do %>
+        <div class="absolute-title">
+          <p><i class="fas fa-arrow-circle-left"></i>  Back </p>
+        </div>
+      <% end %>
+      </div>
 
 <%#---------------------------------- Scenes list -----------------------------------------------%>
 <div class="d-flex elements-container">
