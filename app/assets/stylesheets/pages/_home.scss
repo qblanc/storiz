@@ -261,8 +261,9 @@ body {
 
 .home-categories {
   display: flex;
+  justify-content: space-between;
   a {
-    margin-right: 30px;
+    // margin-right: 30px;
   }
   .home-category {
     display: flex;
