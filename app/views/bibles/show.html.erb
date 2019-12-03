@@ -38,7 +38,7 @@
         <div class="list col-2 px-0">
           <!-- Bouton ajouter un personnage -->
                 <div class="right-part-title d-flex">
-                  <button id="btn-addevent" type="button" class="btn btn-outline-dark flex-fill" data-toggle="modal" data-target="#addCharModal"><i class="fas fa-plus"></i>  Add Character</button>
+                  <button id="btn-addevent" type="button" class="btn flex-fill" data-toggle="modal" data-target="#addCharModal"><i class="fas fa-plus"></i>  Add Character</button>
                 </div>
           <!-- Bouton ajouter un personnage end-->
           <ul class="list-group list-group-flush list-characters example">
@@ -59,6 +59,7 @@
         <div class="col-10 px-0" id="char-show">
           <% randomImageLinks = ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQinrz7mI6Fy31Y8e5idX1-g7WJyvy1mOUfRKa7vn4BbD2xVCDw&s", "https://digitalpainting.school/wp-content/uploads/2017/01/irakli_nadar_digital_painting0.jpg", "https://www.gouvernement.fr/sites/default/files/styles/illustration-centre/public/contenu/illustration/2017/07/img_3371_720p.jpg?itok=0vBgR2N_", "https://i.pinimg.com/236x/42/52/12/425212bc3bf536c60dddaf03ad3447ab--square.jpg", "https://www.thephoblographer.com/wp-content/uploads/2018/02/754e4d784683.55d97bba9eb7e-770x770.jpg", "https://i.pinimg.com/236x/f9/9f/e6/f99fe64c9bf9f8fce8fc693815e0fb31--film-photography-square.jpg"] %>
           <% @characters.each_with_index do |character, index| %>
+
             <% index += 1 %>
             <div class="char-description" id="char-<%= index %>">
               <!-------------------- CHARACTER INFOS -------------------->
@@ -66,7 +67,11 @@
                 <!---------------------- Avatar & infos générales -------------------->
                 <div class="character-infos mb-3">
                   <div class="character-image pr-3">
-                    <img src=<%= randomImageLinks.sample %> alt=<%= character.last_name %> class="charavatar"><!-- INSRER IMAGE CARRE -->
+                    <% if character.photo.present? %>
+                      <%= cl_image_tag character.photo.key, alt: "photo #{character.last_name}" %>
+                    <% else %>
+                      <img src=<%= randomImageLinks.sample %> alt=<%= character.last_name %> class="charavatar"><!-- INSRER IMAGE CARRE -->
+                    <% end %>
                   </div>
                   <div class="character-basics">
                     <div class="character-name mt-3">
@@ -78,8 +83,8 @@
                   </div>
                   <!-- Edit and Delete -->
                   <div id="edit-delete-char d-flex align-items-start flex-column">
-                    <i class="fas fa-edit"></i>
-                    <i class="fas fa-trash"></i>
+                    <i class="fas fa-edit d-block mb-3"></i>
+                    <i class="fas fa-trash d-block"></i>
                   </div>
                 </div>
                 <!-------------------- Description -------------------->
@@ -98,7 +103,7 @@
               <!-------------------- CHARACTER EVENTS -------------------->
               <div class="right-part"> <!-- Liste des events -->
                 <div class="right-part-title d-flex"> <!-- Titre et bouton -->
-                  <button id="btn-addevent" type="button" class="btn btn-outline-dark flex-fill" data-toggle="modal" data-target="#charModal<%= character.id %>"><i class="fas fa-plus"></i>  Add event</button>
+                  <button id="btn-addevent" type="button" class="btn flex-fill" data-toggle="modal" data-target="#charModal<%= character.id %>"><i class="fas fa-plus"></i>  Add event</button>
                 </div>
                 <div data-event="<%= character.id %>" class="right-part-events pt-3 pl-4">
                   <% if character.character_events.blank? %>
