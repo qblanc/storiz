@@ -10,7 +10,7 @@
     </span>
   </label>
 
-  <%= f.collection_radio_buttons :genre, [['Female', 'Female'] ,['Male', 'Male']],:first, :last %>
+  <%= f.collection_radio_buttons :genre, [['Female', 'Female'] , ['Male', 'Male'] , ['Agender', 'Agender'] , ['Androgynous', 'Androgynous'] , ['Bi-gender', 'Bi-gender'] , ['Gender-fluid', 'Gender-fluid'] , ['Gender-queer', 'Gender-queer'] , ['Non-conforming', 'Non-conforming'] , ['Hijra', 'Hijra'] , ['Intersex', 'Intersex'] , ['Non-binary', 'Non-binary'] , ['Other', 'Other'] , ['Pangender', 'Pangender'] , ['Transfeminine', 'Transfeminine'] , ['Transgender', 'Transgender'] , ['Transmasculine', 'Transmasculine'] , ['Transsexual', 'Transsexual'] , ['Trans-Man', 'Trans-Man'] , ['Trans-Woman', 'Trans-Woman'] , ['Two-Spirit', 'Two-Spirit']],:first, :last %>
   <%= f.input :birthdate, as: :date, start_year: Date.today.year - 100,
                               end_year: Date.today.year + 100,
                               order: [:day, :month, :year] %>
