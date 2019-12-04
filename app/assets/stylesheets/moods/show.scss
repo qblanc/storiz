@@ -1,5 +1,8 @@
 #moods-show .container-fluid {
  padding: 0 !important;
+ position: relative;
+ // height: calc(100vh - 225px);
+ overflow: none;
 }
 
 
@@ -12,11 +15,10 @@
   height: 0px;
 }
 
-
-#new_mooditem{
-  bottom: 10px;
-  position: absolute;
-}
+// #new_mooditem{
+//   bottom: 10px;
+//   position: absolute;
+// }
 
 // .iframe-container{
 //   position: relative;
@@ -116,4 +118,23 @@ body#moods-show {
   max-width: 60vw;
   margin: 0 auto;
   position: relative;
+}
+
+#fixedModalButton {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    font-size: 4em;
+    font-weight: bold;
+}
+
+.mood-modal{
+  height: 200px;
+  width: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

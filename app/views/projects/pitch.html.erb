@@ -1,6 +1,6 @@
 
 <div class="pitch-form">
-  <h1><strong><%= @project.title %></strong>'s pitch <%= link_to "edit", project_pitch_edit_path(@project), class: "small-edit" %></h1>
+  <h1><%= @project.title %>'s pitch <%= link_to "edit", edit_project_path(@project), class: "small-edit" %></h1>
   <div class="pitch-text">
     <%= @project.pitch %>
   </div>

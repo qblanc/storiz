@@ -82,9 +82,17 @@
 
 .scene-number {
   margin-left: 260px;
+  position: relative;
 }
 
 .input-new {
   padding-left: 10px;
   text-align: center;
+}
+
+.fa-print{
+  position: absolute;
+  right: -40px;
+  top: 9px;
+  color: grey;
 }

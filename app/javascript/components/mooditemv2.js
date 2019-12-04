@@ -1,6 +1,6 @@
 function positionItem(mooditem, container){
   container[0].style.left = `${mooditem.dataset.left}px`
-  container[0].style.top = `${mooditem.dataset.top - 60}px`
+  container[0].style.top = `${mooditem.dataset.top - 191.5}px`
   mooditem.style.width = `${mooditem.dataset.width}px`
   mooditem.style.height = `${mooditem.dataset.height}px`
 }
@@ -125,10 +125,6 @@ function resizedragdrop(){
         });
         var deltaX = mouse.x - ( event_state.mouse_x - event_state.container_left );
         var deltaY = mouse.y - ( event_state.mouse_y - event_state.container_top );
-        console.log('leftInput.value');
-        console.log(leftInput.value);
-        console.log('topInput.value');
-        console.log(topInput.value);
         leftInput.value = deltaX;
         topInput.value = deltaY;
         const formBtn = form.querySelector('[type="submit"]')
