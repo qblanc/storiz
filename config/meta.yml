@@ -3,5 +3,5 @@
 meta_product_name: "Storiz"
 meta_title: "Storiz | Masterpieces made easy"
 meta_description: "Plateforme d'écriture créative collaborative et communautaire"
-meta_image: url("https://res.cloudinary.com/diewz4u97/image/upload/v1575477133/cover.png") # should exist in `app/assets/images/`
+meta_image: "cover.png" # should exist in `app/assets/images/`
 twitter_account: "@storizclub"   # required for Twitter Cards
