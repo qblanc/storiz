@@ -58,12 +58,105 @@
   </div>
 </div>
 
+<div class= "postit">
+  <ul>
+    <li>
+      <a href="#">
+<!--         <h2>Title #1</h2> -->
+        <p>Mr. White / Larry</p>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+<!--         <h2>Title #2</h2> -->
+        <p>Mr. Orange / Freddy</p>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+<!--         <h2>Title #3</h2> -->
+        <p>Mr. Blonde / Vic Vega</p>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+<!--         <h2>Title #4</h2> -->
+        <p>"Nice Guy" Eddie</p>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+<!--         <h2>Title #5</h2> -->
+        <p>Mr. Pink</p>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+<!--         <h2>Title #6</h2> -->
+        <p>Joe Cabot</p>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+<!--         <h2>Title #2</h2> -->
+        <p>Holdaway</p>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+<!--         <h2>Title #7</h2> -->
+        <p>Marvin Nash</p>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+<!--         <h2>Title #8</h2> -->
+        <p>Mr. Blue</p>
+      </a>
+    </li>
+
+    <li>
+      <a href="#">
+<!--         <h2>Title #1</h2> -->
+        <p>Mr. Brown</p>
+      </a>
+    </li>
+    <li>
+    <li>
+      <a href="#">
+<!--         <h2>Title #1</h2> -->
+        <p>Sheriff #1</p>
+      </a>
+    </li>
+    <li>
+    <li>
+      <a href="#">
+<!--         <h2>Title #1</h2> -->
+        <p>Sheriff #2</p>
+      </a>
+    </li>
+    <li>
+    <li>
+      <a href="#">
+<!--         <h2>Title #1</h2> -->
+        <p>K-Billy DJ</p>
+      </a>
+    </li>
+  </ul>
+
+</div>
+
+
+<div class= "embeddedvideo">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/vayksn4Y93A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 
 <!-- Delete button - Comment this code before demo ! -->
-<% @mood.mooditems.each do |item| %>
- <%= simple_form_for([@mood, item], remote: true) do |f| %>
-   <%= link_to "Delete", mooditem_path(item),
+<%# @mood.mooditems.each do |item| %>
+ <%#= simple_form_for([@mood, item], remote: true) do |f| %>
+   <%#= link_to "Delete", mooditem_path(item),
      method: :delete,
      data: { confirm: "Are you sure?" } %>
-     <% end %>
-<% end %>
+     <%# end %>
+<%# end %>
