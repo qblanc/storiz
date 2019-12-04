@@ -1,10 +1,7 @@
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
-  <title>It's dangerous to 404. Don't go alone</title>
+  <title>It's dangerous to go alone! Page not found.</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
     @import url(https://fonts.googleapis.com/css?family=Press+Start+2P);
@@ -18,35 +15,18 @@
 
 <body >
 
-<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
-<h2><a href="#">Stix</a></h2><h1></h1>
-
+  <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+  <h2><a href="#">404</a></h2><h1></h1>
   <script>
     var showText = function (target, message, index, interval) {
-  if (index < message.length) {
-    $(target).append(message[index++]);
-    setTimeout(function () { showText(target, message, index, interval); }, interval);
+    if (index < message.length) {
+      $(target).append(message[index++]);
+      setTimeout(function () { showText(target, message, index, interval); }, interval);
+    }
   }
-}
-$(function () {
-  showText("h1", "It's dangerous to go alone! Page not found.", 0, 80);
-});
+  $(function () {
+    showText("h1", "It's dangerous to go alone! Page not found.", 0, 80);
+  });
   </script>
 </body>
-</html> -->
-
-
-<!--             <div class="error404">
-              <span class="error404__wrapper">
-                <img class="error404__img" src="./GOG.com_files/404_ccc.3.jpg">
-                <span class="bear">
-                  <span class="bear__text">
-          The page you‘re<br>
-          trying to reach does not<br>
-          exist :(. Check the address<br>
-          or
-        </span>
-        <img class="bear__img" src="./GOG.com_files/bear.png">
-      </span>
-    </span>
-  </div> -->
+</html>
