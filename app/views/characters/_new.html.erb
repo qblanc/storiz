@@ -1,4 +1,4 @@
-<%= simple_form_for([project, @character], remote: true) do |f| %>
+<%= simple_form_for([project, @character]) do |f| %>
   <div class="d-flex justify-content-between" id="names-char-modal">
     <%= f.input :first_name, label: false, placeholder: "First Name", class: "name-input-char-modal" %>
     <%= f.input :last_name, label: false, placeholder: "Last Name", class: "name-input-char-modal" %>

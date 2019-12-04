@@ -38,7 +38,7 @@
         <div class="list col-2 px-0">
           <!-- Bouton ajouter un personnage -->
                 <div class="right-part-title d-flex">
-                  <button id="btn-addevent" type="button" class="btn flex-fill" data-toggle="modal" data-target="#addCharModal"><i class="fas fa-plus"></i>  Add Character</button>
+                  <button id="btn-addevent" type="button" class="btn flex-fill" data-toggle="modal" data-target="#addCharModal"><i class="fas fa-plus" id="cross-add"></i>  Add Character</button>
                 </div>
           <!-- Bouton ajouter un personnage end-->
           <ul class="list-group list-group-flush list-characters example">
@@ -86,7 +86,7 @@
 
                       <i class="edit-delete-btns-char fas fa-edit d-block mb-3"></i>
                     <%= link_to character_path(character), method: :delete do %>
-                      <i class="edit-delete-btns-char fas fa-trash d-block"></i>
+                      <i class="edit-delete-btns-char poubelle-char fas fa-trash d-block"></i>
                     <% end %>
                   </div>
                 </div>
@@ -106,11 +106,11 @@
               <!-------------------- CHARACTER EVENTS -------------------->
               <div class="right-part"> <!-- Liste des events -->
                 <div class="right-part-title d-flex"> <!-- Titre et bouton -->
-                  <button id="btn-addevent" type="button" class="btn flex-fill" data-toggle="modal" data-target="#charModal<%= character.id %>"><i class="fas fa-plus"></i>  Add event</button>
+                  <button id="btn-addevent" type="button" class="btn flex-fill" data-toggle="modal" data-target="#charModal<%= character.id %>"><i class="fas fa-plus" id="cross-add"></i>  Add event</button>
                 </div>
                 <div data-event="<%= character.id %>" class="right-part-events pt-3 pl-4">
                   <% if character.character_events.blank? %>
-                    <p id="empty-notice"><i>No main event yet for <%= character.first_name %></i></p>
+                    <p id="empty-notice-<%= character.id %>"><i>No main event yet for <%= character.first_name %></i></p>
                   <% else %>
                     <% character.character_events.each do |character_event| %>
                       <%= render 'character_events/show', character_event: character_event %>

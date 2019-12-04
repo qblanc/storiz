@@ -24,11 +24,14 @@ body {
   content: '';
   display: block;
   position: absolute;
-  width: 171px;
-  height: 145px;
-  bottom: 0px;
-  right: 18.5vw;
-  background-image: image-url('arrow-sm3.png')
+  width: 380px;
+  height: 279px;
+  bottom: -40px;
+  right: 1vw;
+  background-image: image-url('StorizClub.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+
 }
 
 .banner-content {
@@ -146,12 +149,12 @@ body {
 
 .club-text {
   position: absolute;
-  bottom: 140px;
+  bottom: 126px;
   right: 20px;
   font-family: 'Lekton';
   color: white;
-  font-size: 1.5rem;
-    transform: rotate(15deg);
+  font-size: 1.2rem;
+    transform: rotate(16deg);
 }
 
 #previous, #next {
@@ -163,15 +166,16 @@ body {
 
 .club-text2 {
   position: absolute;
-  bottom: 60px;
+  bottom: 70px;
   right: 20px;
   font-family: 'Lekton';
   color: $success;
   font-size: 1.5rem;
   background-color: $info;
-  padding: 0 5px;
-  transform: rotate(15deg);
+  padding: 3px 5px 1px 5px;
+  transform: rotate(18deg);
 }
+
 
 .help {
   color: white;

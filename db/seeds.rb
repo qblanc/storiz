@@ -16,14 +16,13 @@ Mooditem.destroy_all
 
 ################################################################ USER 1 ################################################################
 
-user1 = User.new(email: "tarantinus@gmail.com", password: "12345678azertyu")
+user1 = User.new(email: "tarantinus@gmail.com", password: "azerty")
 user1.save!
 
 ################################## PROJECTS ####################################
 
 project1 = Project.new(title: "Reservoir Dogs", pitch: "After a robbery is interrupted by the police, the surviving criminals — all of whom are using color-based pseudonyms, and none of whom knew the others before this job — escape to an abandoned warehouse and try to work out what went wrong, eventually deciding that there must be an undercover cop in their midst.", category: "Movie", synopsis: "Do we really need that shit ?")
 project1.user = user1
-project1.save!
 
 ################################# CHARACTERS ###################################
 
@@ -159,5 +158,6 @@ mood2.project = project2
 mood2.save!
 
 ################################################################ FIN ################################################################
+project1.save!
 
 puts "Super seeds, finished, thanks for your time."
