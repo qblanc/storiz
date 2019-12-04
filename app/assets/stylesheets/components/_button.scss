@@ -92,3 +92,12 @@
   bottom: 0;
 }
 
+.navbar-btn {
+  border-radius: 4px 0 4px 0;
+  background-color: transparent;
+  color: #15b7b9;
+  font-family: "Lekton";
+  .fa-chevron-left {
+    font-size: 15px;
+  }
+}
