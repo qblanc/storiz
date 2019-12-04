@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     resources :scenes, only: [:new, :create]
     resources :characters, only: [:new, :create]
     get 'pitch', to: 'projects#pitch'
-    get 'pitch/edit', to: "projects#edit_pitch"
+    get 'pitch/new', to: "projects#new_pitch"
   end
 
   resources :moods, only: [:new, :create, :show, :edit, :update] do

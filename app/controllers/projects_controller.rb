@@ -18,7 +18,7 @@ class ProjectsController < ApplicationController
     @project = Project.new(user: current_user, category: project_params[:category], title: project_params[:title])
     if @project.valid?
       @project.save!
-      redirect_to project_pitch_edit_path(@project)
+      redirect_to project_pitch_new_path(@project)
     else
       render :new
     end
@@ -41,7 +41,7 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:project_id])
   end
 
-  def edit_pitch
+  def new_pitch
     @project = Project.find(params[:project_id])
   end
 

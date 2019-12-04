@@ -1,0 +1,18 @@
+<div id="full-background">
+  <div class="pitch-form">
+    <p class="ml-3"><strong>Got a better idea? Go on and edit your pitch.</p>
+    <form class="simple_form edit_project" id=<%= "/edit_project_#{@project.id}"%> novalidate="novalidate" action=<%= "/projects/#{@project.id}"%> accept-charset="UTF-8" method="post">
+      <input type="hidden" name="_method" value="patch">
+      <input type="hidden" name="authenticity_token" value="AZWI8UK4p55m+nEhZdTYRRXjgDUa8eKNwUD2uZ87O1sdiQkibyrlsLmWx7mv/DpzedzMr2MXJfASVssVe6B0vA==">
+      <div class="form-group text optional project_pitch" data-children-count="1">
+        <textarea autofocus class="form-control text optional transparent-input " id="project_pitch" name="project[pitch]" id="project_pitch"><%= @project.pitch %></textarea>
+      </div>
+      <div class="row">
+      <div class="col-1 ml-3">
+      <input type="submit" name="commit" value="OK" class="btn start-btn pr-5 pl-5 pt-2 pb-2" data-disable-with="OK">
+      </div>
+      </div>
+    </form>
+  </div>
+</div>
+
