@@ -11,7 +11,7 @@ body {
   background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1485498128961-422168ba5f87?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2002&q=80);
   background-position: top;
   background-size: cover;
-      h1 {
+  h1 {
     color: white;
     font-size: 12vh;
     margin-top: -10vh;
@@ -20,16 +20,19 @@ body {
 }
 
 
-.home-banner::after {
-  content: '';
-  display: block;
-  position: absolute;
-  width: 171px;
-  height: 145px;
-  bottom: 0px;
-  right: 18.5vw;
-  background-image: image-url('arrow-sm3.png')
-}
+// .home-banner::after {
+//   content: '';
+//   display: block;
+//   position: absolute;
+//   width: 380px;
+//   height: 279px;
+//   bottom: -40px;
+//   right: 1vw;
+//   background-image: image-url('StorizClub.png');
+//   background-size: contain;
+//   background-repeat: no-repeat;
+
+// }
 
 .banner-content {
   vertical-align: middle;
@@ -85,7 +88,7 @@ body {
   font-size: 1.2rem;
   letter-spacing: 1px;
   border-radius: 3px;
-    &:hover {
+  &:hover {
     opacity: 0.85;
     color: $success;
     border: 3px solid $info;
@@ -112,7 +115,7 @@ body {
   background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1533327325824-76bc4e62d560?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
   background-position: top;
   background-size: cover;
-    }
+}
 
 .banner-club {
   margin: 0 5vw 5vh 5vw;
@@ -145,13 +148,16 @@ body {
 }
 
 .club-text {
-  position: absolute;
-  bottom: 140px;
-  right: 20px;
+  // position: absolute;
+  // bottom: 126px;
+  // right: 20px;
+  cursor: pointer;
   font-family: 'Lekton';
   color: white;
-  font-size: 1.5rem;
-    transform: rotate(15deg);
+  font-size: 1.2rem;
+  transform: rotate(16deg);
+  margin-left: 100px;
+  margin-bottom: -20px;
 }
 
 #previous, #next {
@@ -159,19 +165,69 @@ body {
   padding-top:20px;
   margin-bottom: 10px;
   font-size: 1.3rem;
+  cursor: pointer;
 }
 
-.club-text2 {
-  position: absolute;
-  bottom: 60px;
-  right: 20px;
+.club-text2 h4  {
   font-family: 'Lekton';
   color: $success;
   font-size: 1.5rem;
   background-color: $info;
-  padding: 0 5px;
-  transform: rotate(15deg);
+  transform: rotate(16deg);
+  padding: 10px;
+  margin-right: 20px;
+  margin-top: 40px;
+  cursor: pointer;
 }
+
+
+.arrow-banner {
+  height: 180px;
+  width: 180px;
+  transition: all 0.7s ease;
+  transform: translate(30px, -10px);
+}
+
+.club-btn:hover .arrow-banner {
+  animation: arrowmove;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+
+}
+
+@keyframes arrowmove {
+  0% {
+    transform: translate(30px, -10px);
+  transition: all 0.7s ease;
+  }
+
+  50% {
+    transform: translate(30px, -5px) rotate(-2deg);
+  transition: all 0.7s ease;
+  }
+
+  100% {
+    transform: translate(30px, -10px);
+    transition: all 0.7s ease;
+  }
+}
+
+.club-call {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  cursor: pointer;
+}
+
+.club-btn {
+  opacity: 1 !important;
+}
+
+.club-text2 h4 {
+  text-align: center;
+  margin-bottom: 0;
+}
+
 
 .help {
   color: white;
@@ -217,7 +273,7 @@ body {
     white-space: normal;
     transition: all 0.7s ease;
     &:first-child {
-    margin-left: 0px;
+      margin-left: 0px;
     }
     &:hover {
       .project-pic {
