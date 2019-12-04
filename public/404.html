@@ -1,67 +1,52 @@
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
-  <title>The page you were looking for doesn't exist (404)</title>
+  <title>It's dangerous to 404. Don't go alone</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
-  .rails-default-error-page {
-    background-color: #EFEFEF;
-    color: #2E2F30;
-    text-align: center;
-    font-family: arial, sans-serif;
-    margin: 0;
-  }
-
-  .rails-default-error-page div.dialog {
-    width: 95%;
-    max-width: 33em;
-    margin: 4em auto 0;
-  }
-
-  .rails-default-error-page div.dialog > div {
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-    background-color: white;
-    padding: 7px 12% 0;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
-
-  .rails-default-error-page h1 {
-    font-size: 100%;
-    color: #730E15;
-    line-height: 1.5em;
-  }
-
-  .rails-default-error-page div.dialog > p {
-    margin: 0 0 1em;
-    padding: 1em;
-    background-color: #F7F7F7;
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #999;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top-color: #DADADA;
-    color: #666;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+    @import url(https://fonts.googleapis.com/css?family=Press+Start+2P);
+    body{margin:0;padding:0;text-align:center;background: #000 url('http://stixdev.com/images/404.jpg') center no-repeat;height:855px;text-transform:uppercase;}
+    h1,h2{font-family: 'Press Start 2P', cursive;margin: 0 auto 0 auto;text-align:center;position:relative;}
+    h1{color:#fff;font-size:2em;width:902px;top:302px;line-height:37px;}
+    h2{top:40px;width:150px}
+    h2 a{color:#b73420;font-size:1.4em;text-decoration:none;margin-left:497px;}h2 a:hover{color:#fff;}
   </style>
 </head>
 
-<body class="rails-default-error-page">
-  <!-- This file lives in public/404.html -->
-  <div class="dialog">
-    <div>
-      <h1>The page you were looking for doesn't exist.</h1>
-      <p>You may have mistyped the address or the page may have moved.</p>
-    </div>
-    <p>If you are the application owner check the logs for more information.</p>
-  </div>
+<body >
+
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<h2><a href="#">Stix</a></h2><h1></h1>
+
+  <script>
+    var showText = function (target, message, index, interval) {
+  if (index < message.length) {
+    $(target).append(message[index++]);
+    setTimeout(function () { showText(target, message, index, interval); }, interval);
+  }
+}
+$(function () {
+  showText("h1", "It's dangerous to go alone! Page not found.", 0, 80);
+});
+  </script>
 </body>
-</html>
+</html> -->
+
+
+<!--             <div class="error404">
+              <span class="error404__wrapper">
+                <img class="error404__img" src="./GOG.com_files/404_ccc.3.jpg">
+                <span class="bear">
+                  <span class="bear__text">
+          The page you‘re<br>
+          trying to reach does not<br>
+          exist :(. Check the address<br>
+          or
+        </span>
+        <img class="bear__img" src="./GOG.com_files/bear.png">
+      </span>
+    </span>
+  </div> -->
