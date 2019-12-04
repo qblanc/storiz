@@ -4,6 +4,7 @@ class MoodsController < ApplicationController
 
   def show
     @mood = Mood.find(params[:id])
+    @project = @mood.project
   end
 
   def new
