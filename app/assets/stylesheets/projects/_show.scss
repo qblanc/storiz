@@ -1,5 +1,5 @@
 body#projects-show {
-  background: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), image-url("creative_desk") no-repeat center center fixed;
+  background: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), image-url("creative_desk_crop") no-repeat top center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -7,7 +7,7 @@ body#projects-show {
 }
 
 .cabin-margin {
-  margin-top: 15vh;
+  margin-top: 5vh;
 }
 
 // .project-container {
@@ -15,8 +15,12 @@ body#projects-show {
 // }
 
 .link-box {
-  width: 50%;
+  width: 13vw;
+  height: calc(13vw * 1.4);
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border: 1px solid rgb(163, 163, 163);
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 8px;
   margin-top: 20px;
   margin-bottom: 20px;
   .pitch, .synopsis, .bible-project {
@@ -38,22 +42,21 @@ body#projects-show {
 }
 
 .pitch, .bible-project, .synopsis {
-  margin-top: 50px;
+  // margin-top: 50px;
   // margin-left: 30px;
   // margin-right: 30px;
-  text-align: center;
   h2 {
-    padding: 3px 0 0 5px;
-    display: inline-block;
-    // border-left: 3px solid $info;
-    // border-bottom: 4px solid $info;
-    // border-radius: 2px;
+    text-align: center;
+    padding-top: 20%;
+    // display: inline-block;
+    font-size: 1.8rem;
   }
   h4 {
-    padding: 0 20px 10px 20px;
-    margin-top: 10px;
-    font-size: 1.25rem;
-    opacity: 0;
+    padding: 10px 20px 10px 20px;
+    // margin-top: 10px;
+    font-size: 1rem;
+    // opacity: 0;
+    text-align: left;
   }
 }
 
@@ -101,79 +104,69 @@ body#projects-show {
     font-size: 1.2rem;
 }
 
-// .cards {
-//   display: grid;
-//   grid-template-columns: 1fr 1fr 1fr;
-//   grid-gap: 16px;
-// }
+.room {
+  background: image-url('notebook.png') no-repeat top;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  width: 57vw;
+  height: 35.5vh;
+  h2 {
+    margin-top: 18vh;
+  }
+}
 
-// // Smallest device
-// @media (min-width: 100px) and (max-width: 575px) {
-//   .cards {
-//     grid-template-columns: 1fr;
-//   }
-// }
+.room-button-1 {
+  width: 12vw;
+  height: 7vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $info;
+  color: $success;
+  font-family: 'Lekton';
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  border-radius: 3px;
+  &:hover {
+    opacity:0.9;
+    color: $success;
+    // transition: 0.1s;
+  }
+}
+.room-button-2 {
+  width: 12vw;
+  height: 7vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid $info;
+  color: $info;
+  font-family: 'Lekton';
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  border-radius: 3px;
+    &:hover {
+    opacity: 0.85;
+    color: $success;
+    border: 3px solid $info;
+    // transition: 0.1s;
+  }
+}
 
-// // Small devices (landscape phones, 576px and up)
-// @media (min-width: 576px) {
-//   .cards {
-//     grid-template-columns: 1fr;
-//   }
-// }
-
-// // Medium devices (tablets, 768px and up)
-// @media (min-width: 768px) {
-//   .cards {
-//     grid-template-columns: 1fr 1fr;
-//   }
-// }
-
-// // Large devices (desktops, 992px and up)
-// @media (min-width: 992px) {
-//   .cards {
-//     grid-template-columns: 1fr 1fr 1fr;
-//   }
-// }
-
-// // Extra large devices (large desktops, 1200px and up)
-// @media (min-width: 1200px) {
-//   .cards {
-//     grid-template-columns: 1fr 1fr 1fr;
-//   }
-// }
-
-// .banner {
-//   background-size: cover;
-//   background-position: center;
-//   padding: 50px 0;
-//   margin-top: 25px;
-// }
-
-// .banner h1 {
-//   margin: 0;
-//   color: white;
-//   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-//   font-size: 32px;
-//   font-weight: bold;
-// }
-
-// .banner p {
-//   font-size: 20px;
-//   color: white;
-//   opacity: .7;
-//   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-// }
-
-// .btn-ghost {
-//   color: #FFFFFF;
-//   border: 1px solid #4A4A4A;
-//   padding: 8px 24px;
-//   border-radius: 50px;
-//   font-weight: bold;
-//   opacity: 0.6;
-//   transition: opacity 0.3s ease;
-// }
-
-// .btn-ghost:hover {
-//   opacity: 1;
-// }
+.moodboard {
+  background: image-url('inspipola2.png') no-repeat top;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  width: 29vh;
+  height: 35.5vh;
+  position: absolute;
+  top: 34vh;
+  right: 12vh;
+  transform: rotate(8deg);
+  box-shadow: 0 0 15px
+  rgba(0, 0, 0, 0.4);
+}
