@@ -7,12 +7,21 @@ body#projects-show {
 }
 
 .cabin-margin {
-  margin-top: 5vh;
+  margin-top: 10vh;
 }
 
 // .project-container {
 //   margin-right:5vw;
 // }
+
+.tabs {
+  transform: rotate(-7deg);
+  margin-right: 8vw;
+  margin-top: 13vh;
+  &:hover {
+    color:white;
+  }
+}
 
 .link-box {
   width: 13vw;
@@ -24,10 +33,26 @@ body#projects-show {
   border-bottom: 2.5px solid $info;
   border-top-right-radius: 4px;
   border-bottom-right-radius: 8px;
-  margin-top: 5vh;
+  transition: 0.5s ease;
+  background: $info;
+  color: white;
   .pitch, .synopsis, .bible-project {
     width:100%;
+    color:white;
   }
+  &:hover {
+    margin-top: -6vh;
+    transition: 0.5s ease;
+    opacity: 1;
+    h2 {
+      color:white;
+    }
+    h4 {
+      transition: 0.5s ease;
+        color:white;
+        opacity: 1;
+      }
+    }
     &:first-child {
       margin-left: 50px;
       margin-right: 20px;
@@ -36,11 +61,6 @@ body#projects-show {
       margin-left: 20px;
       margin-right: 50px;
     }
-    &:hover {
-    h4 {
-      opacity: 1;
-    }
-  }
 }
 
 .pitch, .bible-project, .synopsis {
@@ -49,17 +69,25 @@ body#projects-show {
   // margin-right: 30px;
   h2 {
     text-align: center;
-    padding-top: 20%;
+    padding-top: 10%;
     // display: inline-block;
     font-size: 1.8rem;
+    padding-bottom: 0;
   }
   h4 {
-    padding: 10px 20px 10px 20px;
+    padding: 0 20px 10px 20px;
     // margin-top: 10px;
     font-size: 1rem;
     // opacity: 0;
     text-align: left;
+    opacity: 0;
+    transition: 0.5s ease;
   }
+}
+
+.subroom {
+  margin-top: 4vh;
+  font-size: 1.3rem;
 }
 
 .scenes-table {
@@ -113,11 +141,13 @@ body#projects-show {
   -o-background-size: cover;
   background-size: cover;
   width: 57vw;
-  height: 35.5vh;
+  height: 64.5vh;
   position: fixed;
-  bottom: 0;
+  bottom: -7vh;
+  transform: rotate(-7deg);
+  margin-right: 2vw;
   h2 {
-    margin-top: 18vh;
+    margin-top: 16vh;
   }
 }
 
@@ -151,10 +181,30 @@ body#projects-show {
   font-size: 1.2rem;
   letter-spacing: 1px;
   border-radius: 3px;
-    &:hover {
+  &:hover {
     opacity: 0.7;
     color: $info;
     border: 3px solid $info;
+    // transition: 0.1s;
+  }
+}
+
+.room-button-3 {
+  width: 22vw;
+  height: 7vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid $info;
+  color: $info;
+  font-family: 'Lekton';
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  border-radius: 3px;
+  &:hover {
+    opacity: 1;
+    background: $info;
+    color: white;
     // transition: 0.1s;
   }
 }
@@ -173,4 +223,15 @@ body#projects-show {
   transform: rotate(8deg);
   box-shadow: 0 0 15px
   rgba(0, 0, 0, 0.4);
+  transition: 0.9s ease;
+  &:hover {
+    transform: rotate(15deg);
+    transition: 0.9s ease;
+  }
+}
+
+.mood-hover {
+  &:hover {
+    opacity: 1;
+  }
 }
