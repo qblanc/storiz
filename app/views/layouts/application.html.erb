@@ -29,21 +29,20 @@
   </head>
 
   <body id="<%= controller_name %>-<%= action_name %>">
-    <% if current_page? project_pitch_path(@project) %>
+
+
+    <% if (params[:controller] == 'projects' && params[:action] == "edit") || (params[:controller] == 'projects' && params[:action] == "pitch") %>
       <%= render 'shared/navbar_pitch' %>
-    <% elsif current_page? edit_project_path(@project) %>
-      <%= render 'shared/navbar_pitch' %>
-    <% elsif current_page? project_bibles_path(@project) %>
+    <% elsif (params[:controller] == 'bibles' && params[:action] == "show") %>
       <%= render 'shared/navbar_bible' %>
-    <% elsif current_page? mood_path %>
+    <% elsif (params[:controller] == 'moods' && params[:action] == "show") %>
       <%= render 'shared/navbar_mood' %>
-    <% elsif current_page? scene_path %>
+    <% elsif (params[:controller] == 'scenes' && params[:action] == "show") %>
       <%= render 'shared/navbar_scenes' %>
-    <% elsif current_page? root_path %>
-      <%= render 'shared/navbar' %>
     <% else %>
       <%= render 'shared/navbar' %>
     <% end %>
+
     <%= render 'shared/flashes' %>
     <%= yield %>
     <%= javascript_pack_tag 'application' %>

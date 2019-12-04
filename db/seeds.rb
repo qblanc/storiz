@@ -111,9 +111,9 @@ scene4.save!
 
 #################################### MOOD ######################################
 
-# mood1 = Mood.new()
-# mood1.project = project1
-# mood1.save!
+mood1 = Mood.new()
+mood1.project = project1
+mood1.save!
 
 # file = URI.open('https://meme.eq8.eu/noidea.jpg')
 # mooditem1 = Mooditem.new(left: 0, top: 0)
