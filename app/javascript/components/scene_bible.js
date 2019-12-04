@@ -21,6 +21,8 @@ const showDetailsOnClickSceneBible = () => {
 
           setTimeout(function(){
             charDetailsScene.classList.add("slideY");
+            document.querySelector('.scene-bible').classList.add("slidebible");
+            /* document.querySelector('.scene-bible').style.offsetHeight = '400px'; */
             charDetailsScene.style.top = `-${searchSceneResultsHeight}px`;
             document.querySelector('.result-list-group').classList.add('hide-results-bible-scene')
           }, 150);

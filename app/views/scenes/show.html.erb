@@ -24,22 +24,6 @@
           <%= render 'scenes/scenes_list', scenes: @scenes %>
         </ul>
     </div>
-    <div class="d-flex flex-column align-items-center">
-      <a class="btn btn-info btn-add-scene-show" data-toggle="collapse" href="#newScene" role="button" aria-expanded="false" aria-controls="newScene">
-        <i class="slide-down-char-details fas fa-plus"></i> Add a new scene
-      </a>
-      <div class="collapse" id="newScene">
-        <%# <div class="card card-body"> %>
-        <%= simple_form_for [@project, @new_scene] do |f| %>
-            <div class="input-new">
-              <%= f.input :title, :label => false, :placeholder => "Title", autofocus: true, input_html: { class: 'form-new-scene' } %>
-              <%= f.button :submit, "Create", class:"btn btn-info" %>
-          </div>
-        <% end %>
-        <%# </div> %>
-      </div>
-      <%= link_to "Back to project", project_path(@scene.project), class: "d-block back-btn" %>
-    </div>
 <%#---------------------------------- Hidden form for reorder -----------------------------------------------%>
     <div class="d-none">
       <%= simple_form_for :truc, url: update_rank_scene_path, method: :post, remote: true do |f| %>
