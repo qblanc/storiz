@@ -6,7 +6,6 @@
   margin-top: 26px;
   position: sticky;
     position: -webkit-sticky;
-
   left: 0;
   top:50px;
   height: 100%;
@@ -21,7 +20,7 @@
   height: 100%;
   max-height: calc(100vh - 280px);
   overflow-y: scroll;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 4px 4px 7px rgba(0,0,0,0.1);
 
   li {
     list-style: none;
@@ -54,7 +53,7 @@
 .editor {
   min-width: 50vw;
   flex-grow: 1;
-  margin: -20px 1rem 1rem 1rem;
+  margin: -20px 2rem 1rem 2rem;
 }
 
 .update-btn {
@@ -81,8 +80,10 @@
 }
 
 .scene-number {
-  margin-left: 260px;
-  position: relative;
+  margin-left: 232px;
+  // position: relative;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .input-new {
@@ -99,4 +100,8 @@
 
 #newScene {
   width: 100%;
+}
+
+.dl {
+  margin-left: 50px;
 }

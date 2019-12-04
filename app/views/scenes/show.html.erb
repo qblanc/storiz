@@ -1,19 +1,13 @@
+<h1 class="text-center cabin mt-3"> <%= @project.title %></h1>
 <div class="d-flex align-items-baseline">
   <div class="scene-number">
     <a href="https://res.cloudinary.com/diewz4u97/image/upload/v1575460944/Reservoir%20Dogs%20Characters/Storiz-Reservoir_Dogs_okvbdj.pdf" download="reserv"><i class="fas fa-print"></i></a>
-    <%= render 'scenes/scene_number', scene: @scene %>
+    <div class="d-flex">
+    <%= render 'scenes/scene_number', scene: @scene %><h4 class="mt-2 mb-4 scene-title"><%= @scene.title %></h4>
+    </div>
   </div>
   <%# <%= link_to "Edit title", edit_scene_path(@scene), class: "btn btn-sm btn-info edit-btn" %>
 </div>
-
-<div class="relative-title">
-<h2 class="scene-title"><%= @scene.title %></h2>
-      <%= link_to project_path(@project) do %>
-        <div class="absolute-title">
-          <p><i class="fas fa-arrow-circle-left"></i>  Back </p>
-        </div>
-      <% end %>
-      </div>
 
 <%#---------------------------------- Scenes list -----------------------------------------------%>
 <div class="d-flex elements-container">
