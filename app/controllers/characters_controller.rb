@@ -45,8 +45,17 @@ class CharactersController < ApplicationController
   end
 
   def update
+    project = @character.project
     @character.update(character_params)
-    redirect_to character_path(@character)
+    respond_to do |format|
+      if @character.save
+        format.html
+        format.js
+      else
+        format.html { render :edit }
+        format.js
+      end
+    end
   end
 
   def destroy

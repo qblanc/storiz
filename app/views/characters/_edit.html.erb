@@ -1,0 +1,19 @@
+<%= simple_form_for( character, remote: true) do |f| %>
+  <div class="d-flex justify-content-between" id="names-char-modal">
+    <%= f.input :first_name, label: false, placeholder: "First Name", class: "name-input-char-modal" %>
+    <%= f.input :last_name, label: false, placeholder: "Last Name", class: "name-input-char-modal" %>
+  </div>
+  <label class="add-photo-char-modal btn btn-outline-info">
+    Add a portrait
+    <span style="display:none;">
+      <%= f.input :photo, as: :file, required: true, name: 'Portrait' %>
+    </span>
+  </label>
+
+  <%= f.collection_radio_buttons :genre, [['Female', 'Female'] ,['Male', 'Male']],:first, :last %>
+  <%= f.input :birthdate, as: :date, start_year: Date.today.year - 100,
+                              end_year: Date.today.year + 100,
+                              order: [:day, :month, :year] %>
+  <%= f.input :description, as: :text, label: false, placeholder: "Description" %>
+  <%= f.submit "  OK  ", class: "btn btn-dark", id: "btn-ok-char-modal" %>
+<% end %>
