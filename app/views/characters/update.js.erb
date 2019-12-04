@@ -1,0 +1,18 @@
+$('#editCharModal<%= @character.id %>').modal('hide');
+
+function insertEditedCharacter(editedHTML) {
+    const element = document.querySelector('#char-<%= @character.id %>')
+    console.log(element);
+    console.log(editedHTML);
+    element.outerHTML = editedHTML;
+    const nameList = document.querySelector("[data-char='char-<%= @character.id %>']");
+    nameList.innerHTML = "<%= @character.first_name %> <%= @character.last_name %>";
+}
+
+insertEditedCharacter('<%= j render "characters/character_show_partial_pour_la_bible", character: @character %>');
+// function clickSlide(){
+//    document.querySelector('.list-group-item[data-char="char-<%= @character.id %>"]').click();
+// console.log(document.querySelector('.list-group-item[data-char="char-<%= @character.id %>"]').click);
+// }
+
+// setTimeout(clickSlide, 2000);

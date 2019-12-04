@@ -12,7 +12,11 @@ ul {
 }
 
 .bible {
-  margin-top: 2vh;
+  margin-bottom: 0 !important;
+}
+
+.character-generals {
+  font-size: 19px !important;
 }
 
 .reduced-container {
@@ -108,9 +112,7 @@ ul {
   transition: all 0.9s ease-in-out;
 }
 
-// Create scroolBar
 .list {
-  // overflow-y: scroll;
   height: 100%;
 }
 
@@ -144,9 +146,7 @@ ul {
     transform: translate3d(2px, 0, 0);
   }
 }
-// body#bibles-show {
-//   background: linear-gradient(rgba(244,244,244,0.6),rgba(244, 244, 244,0.4));
-// }
+
 
 .edit-delete-btns-char {
   margin: 10px;
@@ -189,4 +189,8 @@ ul {
     top: 50%;
     transform: translateY(-50%);
     right: 0;
+}
+
+#cross-add {
+  margin-bottom: 6px;
 }
