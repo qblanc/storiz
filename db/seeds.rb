@@ -27,7 +27,7 @@ project1.save!
 
 ################################# CHARACTERS ###################################
 
-character1 = Character.new(first_name: "Larry", last_name: "Dimmick", birthdate: Time.now, genre: "Male", description: "Mr. White. Originally from Milwaukee, Minnesota, he's brought on Joe Cabot's current jewelry heist through prior association. Yet, he has reserves about doing it, because he feels he's jinxed. The last job he worked on, almost got him pinched by the cops. Dimmick becomes a sort of surrogate father to young recruit Mr. Orange as they plan the job over a few days. The two become so close that he lets detials of his personal life slip like his hometown and his specialty as a criminal.")
+character1 = Character.new(first_name: "Larry", last_name: "Dimmick", birthdate: "Thu, 08 Jun 1967 16:55:29 UTC +00:00", genre: "Male", description: "Mr. White. Originally from Milwaukee, Minnesota, he's brought on Joe Cabot's current jewelry heist through prior association. Yet, he has reserves about doing it, because he feels he's jinxed. The last job he worked on, almost got him pinched by the cops. Dimmick becomes a sort of surrogate father to young recruit Mr. Orange as they plan the job over a few days. The two become so close that he lets detials of his personal life slip like his hometown and his specialty as a criminal.")
 character1.project = project1
 file1 = file = URI.open('https://res.cloudinary.com/diewz4u97/image/upload/v1575391869/WHIIITE_qwvtbl.png')
 character1.photo.attach(io: file1, filename: "Larry.jpg", content_type: 'image/jpg')
