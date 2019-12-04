@@ -47,19 +47,19 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="position: absolute; top: 15px; right: 15px">
           <span aria-hidden="true" id='close-after-create'>&times;</span>
         </button>
-
         <div class= "d-flex">
           <%= simple_form_for([@mood, Mooditem.new]) do |f| %>
             <%= f.input :photo, as: :file, label: false %>
             <%= f.button :submit, class: 'btn btn-primary', id:'submit-modal-image' %>
           <% end %>
         </div>
-
       </div>
     </div>
   </div>
 </div>
 
+
+<!-- Delete button - Comment this code before demo ! -->
 <% @mood.mooditems.each do |item| %>
  <%= simple_form_for([@mood, item], remote: true) do |f| %>
    <%= link_to "Delete", mooditem_path(item),

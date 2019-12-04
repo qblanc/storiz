@@ -1,7 +1,8 @@
 #moods-show .container-fluid {
  padding: 0 !important;
  position: relative;
- height: calc(100vh - 180px);
+ // height: calc(100vh - 225px);
+ overflow: none;
 }
 
 
@@ -123,7 +124,7 @@ body#moods-show {
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    position: absolute;
+    position: fixed;
     bottom: 0px;
     right: 0px;
     font-size: 4em;
