@@ -14,17 +14,10 @@ class MooditemsController < ApplicationController
   def create
     @mooditem = Mooditem.new(mooditem_params)
     @mooditem.mood = @mood
-
     if @mooditem.save
-      respond_to do |format|
-        format.html { redirect_to mood_path(@mood) }
-        format.js
-      end
+      redirect_to mood_path(@mood)
     else
-      respond_to do |format|
-        format.html { render :new }
-        format.js
-      end
+      render :new
     end
   end
 

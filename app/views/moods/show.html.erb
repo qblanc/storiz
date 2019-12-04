@@ -11,7 +11,7 @@
   <div class="moodimages">
     <% @mood.mooditems.each do |item| %>
     <div class="moodimage">
-      <%= cl_image_tag(item.photo.key, width: 300, height: 300, crop: "limit",
+      <%= cl_image_tag(item.photo.key, width: 640, height: 480, crop: "limit",
         class: 'resize-image',
         data: { left: item.left, top: item.top, z: item.depth, height: item.height, width: item.width, form: "#edit_mooditem_#{item.id}"}) %>
     </div>
@@ -49,7 +49,7 @@
         </button>
 
         <div class= "d-flex">
-          <%= simple_form_for([@mood, Mooditem.new], remote: true) do |f| %>
+          <%= simple_form_for([@mood, Mooditem.new]) do |f| %>
             <%= f.input :photo, as: :file, label: false %>
             <%= f.button :submit, class: 'btn btn-primary', id:'submit-modal-image' %>
           <% end %>
