@@ -18,11 +18,13 @@ body#projects-show {
   width: 13vw;
   height: calc(13vw * 1.4);
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  border: 1px solid rgb(163, 163, 163);
+  border-left: 4px solid $info;
+  border-top: 4px solid $info;
+  border-right: 2.5px solid $info;
+  border-bottom: 2.5px solid $info;
   border-top-right-radius: 4px;
   border-bottom-right-radius: 8px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 5vh;
   .pitch, .synopsis, .bible-project {
     width:100%;
   }
@@ -112,6 +114,8 @@ body#projects-show {
   background-size: cover;
   width: 57vw;
   height: 35.5vh;
+  position: fixed;
+  bottom: 0;
   h2 {
     margin-top: 18vh;
   }
@@ -148,8 +152,8 @@ body#projects-show {
   letter-spacing: 1px;
   border-radius: 3px;
     &:hover {
-    opacity: 0.85;
-    color: $success;
+    opacity: 0.7;
+    color: $info;
     border: 3px solid $info;
     // transition: 0.1s;
   }

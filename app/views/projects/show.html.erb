@@ -25,11 +25,13 @@
     <div class="room">
       <h2 class="text-center">Writing Room</h2>
       <div class="d-flex justify-content-center">
-        <%= link_to "Resume", new_project_path, class: 'mr-4 mt-1 room-button-1' %>
-        <%= link_to "New scene", projects_path, class: 'ml-4 mt-1 room-button-2' %>
+        <%= link_to "Resume", scene_path(@project.scenes.order(:updated_at).last), class: 'mr-4 mt-1 room-button-1' %>
+        <%= link_to "New scene", new_project_scene_path(@project), class: 'ml-4 mt-1 room-button-2' %>
       </div>
     </div>
   </div>
-  <div class="moodboard">
-  </div>
+  <%= link_to mood_path(@project.mood) do %>
+    <div class="moodboard">
+    </div>
+  <% end %>
 </div>
