@@ -1,11 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
 puts "Start seeding super seeds..."
 Character.destroy_all
 Scene.destroy_all
@@ -16,12 +8,12 @@ Mooditem.destroy_all
 
 ################################################################ USER 1 ################################################################
 
-user1 = User.new(email: "tarantinus@gmail.com", password: "12345678azertyu")
+user1 = User.new(email: "tarantinus@gmail.com", password: "azerty")
 user1.save!
 
 ################################## PROJECTS ####################################
 
-project1 = Project.new(title: "Reservoir Dogs", pitch: "After a robbery is interrupted by the police, the surviving criminals — all of whom are using color-based pseudonyms, and none of whom knew the others before this job — escape to an abandoned warehouse and try to work out what went wrong, eventually deciding that there must be an undercover cop in their midst.", category: "Movie", synopsis: "Do we really need that shit ?")
+project1 = Project.new(title: "Reservoir Dogs", pitch: "After a robbery is interrupted by the police, the surviving criminals — all of whom are using color-based pseudonyms, and none of whom knew the others before this job — escape to an abandoned warehouse and try to work out what went wrong, eventually deciding that there must be an undercover cop in their midst.", category: "Movie", synopsis: "Reservoir dogs synopsis")
 project1.user = user1
 project1.save!
 

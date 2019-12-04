@@ -26,11 +26,12 @@ class CharactersController < ApplicationController
     @character = Character.new(character_params)
     @project = Project.find(params[:project_id])
     @character.project = @project
-    if @character.save!
-      respond_to do |format|
-        format.html { redirect_to character_path(@character) }
-        format.js
-      end
+    if @character.save
+      # respond_to do |format|
+        # format.html { redirect_to character_path(@character) }
+        # format.js
+      # end
+      redirect_to project_bibles_path(@project)
     else
       respond_to do |format|
         format.html { render :new }

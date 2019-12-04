@@ -10,8 +10,8 @@ function refreshForm(innerHTML) {
 function addCharacterEvent(characterEventHTML) {
   const characterEvents = document.querySelector(".right-part-events[data-event='<%= @character.id %>']");
   characterEvents.insertAdjacentHTML('afterbegin', characterEventHTML);
-  if (document.querySelector('#empty-notice')) {
-    document.querySelector('#empty-notice').remove();
+  if (document.querySelector('#empty-notice-<%= @character.id %>')) {
+    document.querySelector('#empty-notice-<%= @character.id %>').remove();
   };
 }
 
