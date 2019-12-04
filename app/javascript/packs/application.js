@@ -1,6 +1,7 @@
 import "bootstrap";
 import { initDisplayCharShowOnClick } from '../pages/bible';
 import { resizedragdrop } from '../components/mooditemv2';
+import { MoodModal } from '../components/moodmodal';
 import { TextSave } from '../components/text_save';
 import { StickyToolbar } from '../components/sticky_toolbar'
 import { initSortable } from '../components/dragdrop';
@@ -34,6 +35,8 @@ if (document.querySelector('#storiz-club')) {
 
 if (document.querySelector('.moodimages')) {
   resizedragdrop();
+  MoodModal();
+
 };
 
 if (document.querySelector('.editor')) {

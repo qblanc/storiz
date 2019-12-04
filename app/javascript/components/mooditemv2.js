@@ -125,10 +125,6 @@ function resizedragdrop(){
         });
         var deltaX = mouse.x - ( event_state.mouse_x - event_state.container_left );
         var deltaY = mouse.y - ( event_state.mouse_y - event_state.container_top );
-        console.log('leftInput.value');
-        console.log(leftInput.value);
-        console.log('topInput.value');
-        console.log(topInput.value);
         leftInput.value = deltaX;
         topInput.value = deltaY;
         const formBtn = form.querySelector('[type="submit"]')

@@ -7,16 +7,7 @@
   <% end %>
 </div>
 
-<div>
-  <%= simple_form_for([@mood, Mooditem.new], remote: true) do |f| %>
-    <div class="d-flex">
-      <%= f.input :photo, as: :file, label: false %>
-      <%= f.button :submit, class: 'btn btn-primary' %>
-    </div>
-  <% end %>
-</div>
-
-<div class="container-fluid" style = "position: relative;">
+<div class="container-fluid">
   <div class="moodimages">
     <% @mood.mooditems.each do |item| %>
     <div class="moodimage">
@@ -30,13 +21,49 @@
             <%= f.input :left %>
             <%= f.input :height %>
             <%= f.input :width %>
-            <%= f.input :depth %>
+            <%#= f.input :depth %>
             <%= f.submit "update coordinates" %>
-            <%= link_to "Delete", mooditem_path(item),
+            <%#= link_to "Delete", mooditem_path(item),
               method: :delete,
               data: { confirm: "Are you sure?" } %>
           <% end %>
         </div>
     <% end %>
   </div>
+
+  <div class= "d-flex">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#MoodUploadModalCenter" id="fixedModalButton">
+      <i class="fas fa-plus-circle"></i>
+    </button>
+  </div>
+
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="MoodUploadModalCenter" tabindex="-1" role="dialog" aria-labelledby="MoodUploadModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body mood-modal">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="position: absolute; top: 15px; right: 15px">
+          <span aria-hidden="true" id='close-after-create'>&times;</span>
+        </button>
+
+        <div class= "d-flex">
+          <%= simple_form_for([@mood, Mooditem.new], remote: true) do |f| %>
+            <%= f.input :photo, as: :file, label: false %>
+            <%= f.button :submit, class: 'btn btn-primary', id:'submit-modal-image' %>
+          <% end %>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<% @mood.mooditems.each do |item| %>
+ <%= simple_form_for([@mood, item], remote: true) do |f| %>
+   <%= link_to "Delete", mooditem_path(item),
+     method: :delete,
+     data: { confirm: "Are you sure?" } %>
+     <% end %>
+<% end %>
