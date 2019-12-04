@@ -1,11 +1,11 @@
 
 <div class="bible">
 
-  <div class="container">
-    <h1 class="text-center mb-3"> <%= @project.title %>'s bible </h1>
+  <div class="container mb-3">
+    <h1 class="text-center"> <%= @project.title %>'s bible </h1>
 
     <!-- Navigation tabs -->
-    <div class="reduced-container mb-5">
+    <div class="reduced-container">
       <%= link_to project_path(@project) do %>
         <div class="go-back-btn">
           <p><i class="fas fa-arrow-circle-left"></i>  Back </p>
@@ -45,8 +45,8 @@
             <% if @characters.blank? %>
               <p class="list-group-item" id="char-empty-notice"><em>This project doesn't have any character yet.</em></p>
             <% else %>
-              <% @characters.each_with_index do |char, index| %>
-                <li class="list-group-item" data-char="char-<%= index+1 %>" >
+              <% @characters.each do |char| %>
+                <li class="list-group-item" data-char="char-<%= char.id %>" >
                   <%#= link_to character_path(char), class: "char-item", remote: true do %>
                   <p><%= char.first_name %> <%= char.last_name %></p>
                   <%# end %>
@@ -58,10 +58,9 @@
         <!-- _________________________________________Character show iteration________________________________________________ -->
         <div class="col-10 px-0" id="char-show">
           <% randomImageLinks = ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQinrz7mI6Fy31Y8e5idX1-g7WJyvy1mOUfRKa7vn4BbD2xVCDw&s", "https://digitalpainting.school/wp-content/uploads/2017/01/irakli_nadar_digital_painting0.jpg", "https://www.gouvernement.fr/sites/default/files/styles/illustration-centre/public/contenu/illustration/2017/07/img_3371_720p.jpg?itok=0vBgR2N_", "https://i.pinimg.com/236x/42/52/12/425212bc3bf536c60dddaf03ad3447ab--square.jpg", "https://www.thephoblographer.com/wp-content/uploads/2018/02/754e4d784683.55d97bba9eb7e-770x770.jpg", "https://i.pinimg.com/236x/f9/9f/e6/f99fe64c9bf9f8fce8fc693815e0fb31--film-photography-square.jpg"] %>
-          <% @characters.each_with_index do |character, index| %>
+          <% @characters.each do |character| %>
 
-            <% index += 1 %>
-            <div class="char-description" id="char-<%= index %>">
+            <div class="char-description" id="char-<%= character.id %>">
               <!-------------------- CHARACTER INFOS -------------------->
               <div class="character-container p-4">
                 <!---------------------- Avatar & infos générales -------------------->
@@ -83,8 +82,9 @@
                   </div>
                   <!-- Edit and Delete -->
                   <div id="edit-delete-char d-flex align-items-start flex-column">
-
-                      <i class="edit-delete-btns-char fas fa-edit d-block mb-3"></i>
+                    <%= link_to edit_character_path(character), remote: true do %>
+                      <i class="edit-delete-btns-char fas fa-edit d-block mb-3" data-toggle="modal" data-target="#editCharModal<%= character.id %>"></i>
+                    <% end %>
                     <%= link_to character_path(character), method: :delete do %>
                       <i class="edit-delete-btns-char poubelle-char fas fa-trash d-block"></i>
                     <% end %>
@@ -181,6 +181,27 @@
     </div>
   </div>
 </div>
+<!-- Modal add character end -->
+
+
+<!-- Modal edit character -->
+<% @characters.each do |character| %>
+  <div class="modal fade bd-example-modal-lg" id="editCharModal<%= character.id %>" tabindex="-1" role="dialog" aria-labelledby="editCharModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div id="char-modal-content" class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editCharModalLabel">Edit the character infos</h5>
+          <button id="close-edit-char-modal" type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="edit-char-modal-body">
+          <%= render 'characters/edit', character: character%>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
 <!-- Modal add character end -->
 
 

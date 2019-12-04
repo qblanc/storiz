@@ -1,0 +1,56 @@
+
+            <div class="char-description slide" id="char-<%= character.id %>">
+              <!-------------------- CHARACTER INFOS -------------------->
+              <div class="character-container p-4">
+                <!---------------------- Avatar & infos générales -------------------->
+                <div class="character-infos mb-3">
+                  <div class="character-image pr-3">
+                      <%= cl_image_tag character.photo.key, height: 120, width: 120, crop: :thumb, :radius => 3, alt: "photo #{character.last_name}" %>
+                  </div>
+                  <div class="character-basics">
+                    <div class="character-name mt-3">
+                      <h1><%= character.first_name %> <strong><%= character.last_name.upcase %></strong></h1>
+                    </div>
+                    <div class="character-generals mt-2 mb-2">
+                      <i class="fas fa-venus-mars"></i> <%= character.genre %> &nbsp;&nbsp; <i class="fas fa-birthday-cake"></i> <%= character.birthdate.strftime("%d/%m/%Y") %>
+                    </div>
+                  </div>
+                  <!-- Edit and Delete -->
+                  <div id="edit-delete-char d-flex align-items-start flex-column">
+                    <%= link_to edit_character_path(character), remote: true do %>
+                      <i class="edit-delete-btns-char fas fa-edit d-block mb-3" data-toggle="modal" data-target="#editCharModal<%= character.id %>"></i>
+                    <% end %>
+                    <%= link_to character_path(character), method: :delete do %>
+                      <i class="edit-delete-btns-char poubelle-char fas fa-trash d-block"></i>
+                    <% end %>
+                  </div>
+                </div>
+                <!-------------------- Description -------------------->
+                <div class="character-description">
+                  <p><%= character.description %></p>
+                </div>
+                <hr class="dashed-separator"> <!-- Separateur -->
+
+
+
+                <!-------------------- Logs -------------------->
+                <div class="logs-area">
+                  <!-- Insérer tableau des logs ici -->
+                </div>
+              </div>
+              <!-------------------- CHARACTER EVENTS -------------------->
+              <div class="right-part"> <!-- Liste des events -->
+                <div class="right-part-title d-flex"> <!-- Titre et bouton -->
+                  <button id="btn-addevent" type="button" class="btn flex-fill" data-toggle="modal" data-target="#charModal<%= character.id %>"><i class="fas fa-plus" id="cross-add"></i>  Add event</button>
+                </div>
+                <div data-event="<%= character.id %>" class="right-part-events pt-3 pl-4">
+                  <% if character.character_events.blank? %>
+                    <p id="empty-notice-<%= character.id %>"><i>No main event yet for <%= character.first_name %></i></p>
+                  <% else %>
+                    <% character.character_events.each do |character_event| %>
+                      <%= render 'character_events/show', character_event: character_event %>
+                    <% end %>
+                  <% end %>
+                </div>
+              </div>
+            </div>
