@@ -9,7 +9,11 @@
                               <!---------------------- Avatar & infos générales -------------------->
                               <div class="character-infos-scene mb-3">
                                 <div class="d-flex justify-content-between character-image-scene pr-3">
-                                  <img src=<%= randomImageLinks.sample %> alt=<%= character.last_name %> class="charavatar"><!-- INSERER IMAGE CARREE -->
+                                  <% if character.photo.attached? %>
+                                    <%= cl_image_tag character.photo.key, height: 120, width: 120, crop: :thumb, :radius => 3, alt: "photo #{character.last_name}" %>
+                                  <% else %>
+                                    <img src=<%= randomImageLinks.sample %> alt=<%= character.last_name %> class="charavatar"><!-- INSRER IMAGE CARRE -->
+                                  <% end %>
                                   <i class="hide-details-scene-bible mt-1 ml-1 fas fa-angle-double-down" data-hidebtn="char-<%= character.id %>"></i>
                                 </div>
                                 <div class="character-basics-scene">
