@@ -38,3 +38,13 @@ body#projects-new .navbar-lewagon, body#projects-edit_pitch .navbar-lewagon  {
 .redd {
   color: #f57170;
 }
+
+
+.navbar-left-items {
+  display: flex;
+  p {
+    color: transparent;
+    cursor: default;
+  }
+}
+

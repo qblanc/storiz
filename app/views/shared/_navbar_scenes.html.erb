@@ -1,0 +1,71 @@
+<div class="navbar navbar-expand-sm navbar-light <%= current_page?(root_path) ? "navbar-transparent" : "navbar-lewagon" %>">
+
+  <div class="navbar-left-items">
+    <div class="btn-group">
+      <%= link_to project_path(@project) do %>
+        <button type="button" class="btn navbar-btn">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+      <% end %>
+
+      <div class="btn-group dropdown" role="group">
+        <button type="button" class="btn navbar-btn dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <strong>Writing Room</strong>
+        </button>
+        <div class="dropdown-menu"> <!-- Dropdown menu links -->
+          <%= link_to project_pitch_path(@project), class: "dropdown-item" do %>
+            Pitch
+          <% end %>
+          <%= link_to project_path(@project), class: "dropdown-item" do %>
+            Synopsis
+          <% end %>
+          <%= link_to project_path(@project), class: "dropdown-item" do %>
+            Moodboard
+          <% end %>
+          <%= link_to project_bibles_path(@project), class: "dropdown-item" do %>
+            Bible
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="navbar-logo-centered">
+    <%= link_to root_path, class: "navbar-brand" do %>
+      <% if current_page? new_project_path %>
+        <%= image_tag "pas_de_logo.png"%>
+      <% else %>
+        <%= image_tag "logoonly.png"%>
+      <% end %>
+    <% end %>
+  </div>
+
+
+  <div class="navbar-left-items">
+    <p>THESTORIZCLUB</p>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <% if user_signed_in? %>
+        <li class="nav-item dropdown">
+          <%= image_tag "https://avatars3.githubusercontent.com/u/46218316?s=400&v=4", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <%= link_to "New project", new_project_path, class: "dropdown-item nav-info" %>
+            <%= link_to "Profile", "#", class: "dropdown-item" %>
+            <%= link_to "My projects", projects_path, class: "dropdown-item" %>
+            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item nav-imp" %>
+          </div>
+        </li>
+      <% else %>
+        <%# <li class="nav-item">
+          <%= link_to "Login", new_user_session_path, class: "btn btn-info" %>
+        <%# </li> %>
+      <% end %>
+    </ul>
+  </div>
+  </div>
+</div>
