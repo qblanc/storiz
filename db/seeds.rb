@@ -81,31 +81,31 @@ character10.save!
 
 ################################### SCENES #####################################
 
-scene1 = Scene.new(title: "Scene 1", number: 1, content: "Scene 1")
+scene1 = Scene.new(title: "The Breakfast", number: 1, content: "Scene 1")
 scene1.project = project1
 scene1.save!
 
-scene2 = Scene.new(title: "Scene 2", number: 2, content: "Scene 2")
+scene2 = Scene.new(title: "The Getaway Car", number: 2, content: "Scene 2")
 scene2.project = project1
 scene2.save!
 
-scene3 = Scene.new(title: "Scene 3", number: 3, content: "Scene 3")
+scene3 = Scene.new(title: "Hide and Seek", number: 3, content: "Scene 3")
 scene3.project = project1
 scene3.save!
 
-scene4 = Scene.new(title: "Scene 4", number: 4, content: "Scene 4")
+scene4 = Scene.new(title: "Mistrust", number: 4, content: "Scene 4")
 scene4.project = project1
 scene4.save!
 
-scene4 = Scene.new(title: "Scene 5", number: 5, content: "Scene 5")
+scene4 = Scene.new(title: "The run away", number: 5, content: "Scene 5")
 scene4.project = project1
 scene4.save!
 
-scene4 = Scene.new(title: "Scene 6", number: 6, content: "Scene 6")
+scene4 = Scene.new(title: "Bathroom Talks", number: 6, content: "Scene 6")
 scene4.project = project1
 scene4.save!
 
-scene4 = Scene.new(title: "Scene 7", number: 7, content: "Scene 7")
+scene4 = Scene.new(title: "Mr. White Story", number: 7, content: "Scene 7")
 scene4.project = project1
 scene4.save!
 
