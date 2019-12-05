@@ -13,17 +13,17 @@
           <strong>Moodboard</strong>
         </button>
         <div class="dropdown-menu"> <!-- Dropdown menu links -->
+          <%= link_to scene_path(@project.scenes.order(:updated_at).last), class: "dropdown-item" do %>
+            Writing room
+          <% end %>
+          <%= link_to project_bibles_path(@project), class: "dropdown-item" do %>
+            Bible
+          <% end %>
           <%= link_to project_pitch_path(@project), class: "dropdown-item" do %>
             Pitch
           <% end %>
           <%= link_to project_path(@project), class: "dropdown-item" do %>
             Synopsis
-          <% end %>
-          <%= link_to project_bibles_path(@project), class: "dropdown-item" do %>
-            Bible
-          <% end %>
-          <%= link_to scene_path(@project), class: "dropdown-item" do %>
-            Writing room
           <% end %>
         </div>
       </div>
