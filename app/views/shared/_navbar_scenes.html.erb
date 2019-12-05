@@ -13,17 +13,17 @@
           <strong>Writing Room</strong>
         </button>
         <div class="dropdown-menu"> <!-- Dropdown menu links -->
+          <%= link_to project_bibles_path(@project), class: "dropdown-item" do %>
+            Bible
+          <% end %>
+          <%= link_to mood_path(@project.mood), class: "dropdown-item" do %>
+            Moodboard
+          <% end %>
           <%= link_to project_pitch_path(@project), class: "dropdown-item" do %>
             Pitch
           <% end %>
           <%= link_to project_path(@project), class: "dropdown-item" do %>
             Synopsis
-          <% end %>
-          <%= link_to project_path(@project), class: "dropdown-item" do %>
-            Moodboard
-          <% end %>
-          <%= link_to project_bibles_path(@project), class: "dropdown-item" do %>
-            Bible
           <% end %>
         </div>
       </div>

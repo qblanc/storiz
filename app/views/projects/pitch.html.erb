@@ -1,6 +1,7 @@
 
+<h1 class="text-center cabin mt-3"> <%= @project.title %> <%= link_to "edit", edit_project_path(@project), class: "small-edit" %></h1>
+
 <div class="pitch-form">
-  <h1><%= @project.title %>'s pitch <%= link_to "edit", edit_project_path(@project), class: "small-edit" %></h1>
   <div class="pitch-text">
     <%= @project.pitch %>
   </div>

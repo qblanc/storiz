@@ -32,7 +32,7 @@ class ProjectsController < ApplicationController
 
   def update
     @project.update(project_params)
-    redirect_to project_path(@project)
+    redirect_to project_pitch_path(@project)
   end
 
   def destroy
