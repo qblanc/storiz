@@ -13,8 +13,10 @@
           <strong>Bible</strong>
         </button>
         <div class="dropdown-menu"> <!-- Dropdown menu links -->
-          <%= link_to scene_path(@project.scenes.order(:updated_at).last), class: "dropdown-item" do %>
-            Writing room
+          <% if @project.scenes.any? %>
+            <%= link_to scene_path(@project.scenes.order(:updated_at).last), class: "dropdown-item" do %>
+              Writing room
+            <% end %>
           <% end %>
           <%= link_to mood_path(@project.mood), class: "dropdown-item" do %>
             Moodboard
