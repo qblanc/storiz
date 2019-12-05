@@ -1,7 +1,5 @@
-<div class="mood-form">
-  <h1><strong><%= @mood.project.title %></strong>'s moodboard</h1>
-  <%= link_to project_path(@mood.project) do %>
-  <% end %>
+<div class="container">
+  <h1 class="text-center cabin mt-3 mb-2"><%= @mood.project.title %></h1>
 </div>
 
 <div class="container-fluid">
@@ -20,17 +18,14 @@
             <%= f.input :width %>
             <%#= f.input :depth %>
             <%= f.submit "update coordinates" %>
-            <%#= link_to "Delete", mooditem_path(item),
-              method: :delete,
-              data: { confirm: "Are you sure?" } %>
           <% end %>
         </div>
     <% end %>
   </div>
 
   <div class= "d-flex">
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#MoodUploadModalCenter" id="fixedModalButton">
-      <i class="fas fa-plus-circle"></i>
+    <button type="button" class="btn" data-toggle="modal" data-target="#MoodUploadModalCenter" id="fixedModalButton">
+     <!--  <i class="fas fa-plus-circle"></i> --><p>+</p>
     </button>
   </div>
 
@@ -40,112 +35,50 @@
 <div class="modal fade" id="MoodUploadModalCenter" tabindex="-1" role="dialog" aria-labelledby="MoodUploadModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
-      <div class="modal-body mood-modal">
+      <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="position: absolute; top: 15px; right: 15px">
           <span aria-hidden="true" id='close-after-create'>&times;</span>
         </button>
-        <div class= "d-flex">
-          <%= simple_form_for([@mood, Mooditem.new]) do |f| %>
-            <%= f.input :photo, as: :file, label: false %>
-            <%= f.button :submit, class: 'btn btn-primary', id:'submit-modal-image' %>
-          <% end %>
+        <h5 class="modal-title">Add an item to your moodboard</h5>
         </div>
+      <div class="modal-body mood-modal">
+
+          <%= simple_form_for([@mood, Mooditem.new], html: {class: 'd-flex justify-content-around w-100'}) do |f| %>
+            <%= f.input :photo, as: :file, label: false %>
+            <%= f.submit 'Upload', class: 'btn btn-dark', id:'submit-modal-image' %>
+          <% end %>
       </div>
+
     </div>
   </div>
 </div>
 
 <div class= "postit">
   <ul>
-    <li>
-      <a href="#">
-<!--         <h2>Title #1</h2> -->
-        <p>Mr. White / Larry</p>
-      </a>
-    </li>
-    <li>
+      <li id="postit1">
+        <a href="#">
+  <!--         <h2>Title #1</h2> -->
+          <p>Let's stage “Reservoir Dogs” as a play instead of a movie.</p>
+        </a>
+      </li>
+    <li id="postit2">
       <a href="#">
 <!--         <h2>Title #2</h2> -->
-        <p>Mr. Orange / Freddy</p>
+        <p>The “Stuck in the Middle With You” dance should be a glamorous, erotic tango. Clowns to the left of me. Jokers to the right.</p>
       </a>
     </li>
-    <li>
+    <li id="postit3">
       <a href="#">
 <!--         <h2>Title #3</h2> -->
-        <p>Mr. Blonde / Vic Vega</p>
-      </a>
-    </li>
-    <li>
-      <a href="#">
-<!--         <h2>Title #4</h2> -->
-        <p>"Nice Guy" Eddie</p>
-      </a>
-    </li>
-    <li>
-      <a href="#">
-<!--         <h2>Title #5</h2> -->
-        <p>Mr. Pink</p>
-      </a>
-    </li>
-    <li>
-      <a href="#">
-<!--         <h2>Title #6</h2> -->
-        <p>Joe Cabot</p>
-      </a>
-    </li>
-    <li>
-      <a href="#">
-<!--         <h2>Title #2</h2> -->
-        <p>Holdaway</p>
-      </a>
-    </li>
-    <li>
-      <a href="#">
-<!--         <h2>Title #7</h2> -->
-        <p>Marvin Nash</p>
-      </a>
-    </li>
-    <li>
-      <a href="#">
-<!--         <h2>Title #8</h2> -->
-        <p>Mr. Blue</p>
-      </a>
-    </li>
-
-    <li>
-      <a href="#">
-<!--         <h2>Title #1</h2> -->
-        <p>Mr. Brown</p>
-      </a>
-    </li>
-    <li>
-    <li>
-      <a href="#">
-<!--         <h2>Title #1</h2> -->
-        <p>Sheriff #1</p>
-      </a>
-    </li>
-    <li>
-    <li>
-      <a href="#">
-<!--         <h2>Title #1</h2> -->
-        <p>Sheriff #2</p>
-      </a>
-    </li>
-    <li>
-    <li>
-      <a href="#">
-<!--         <h2>Title #1</h2> -->
-        <p>K-Billy DJ</p>
+        <p>I don't believe in tipping. Society says don't tip those guys over there, but tip these guys here... That's bullcrap!</p>
       </a>
     </li>
   </ul>
-
 </div>
 
 
 <div class= "embeddedvideo">
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/vayksn4Y93A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe width="450" height="250" src="https://www.youtube.com/embed/vayksn4Y93A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 
