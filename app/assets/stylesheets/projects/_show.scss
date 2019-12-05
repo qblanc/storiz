@@ -7,7 +7,8 @@ body#projects-show {
 }
 
 .cabin-margin {
-  margin-top: 10vh;
+  margin-top: 8vh;
+margin-bottom: 14vh;
 }
 
 // .project-container {
@@ -41,7 +42,7 @@ body#projects-show {
     color:white;
   }
   &:hover {
-    margin-top: -6vh;
+    margin-top: -8vh;
     transition: 0.5s ease;
     opacity: 1;
     h2 {
@@ -135,15 +136,15 @@ body#projects-show {
 }
 
 .room {
-  background: image-url('notebook.png') no-repeat top;
+  background: image-url('notebook-v1a.png') no-repeat top;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  width: 57vw;
+  width: 52vw;
   height: 66.5vh;
   position: fixed;
-  bottom: -7vh;
+  bottom: -8vh;
   transform: rotate(-7deg);
   margin-right: 2vw;
   h2 {
