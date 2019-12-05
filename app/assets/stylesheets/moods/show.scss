@@ -132,11 +132,15 @@ body#moods-show {
 }
 
 .mood-modal{
-  height: 200px;
+  height: 100px;
   width: 500px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+}
+
+.w-100 {
+    width: 100% !important;
 }
 
 /////////////////////////////////////////////////////////////////
@@ -154,7 +158,6 @@ body#moods-show {
   padding:0;
 }
 body{
-  font-family: 'Indie Flower', cursive;
   font-size:100%;
   margin:3em;
   background:#666;
@@ -196,7 +199,7 @@ ul li h2{
   padding-bottom:10px;
 }
 ul li p{
-  font-family:"Reenie Beanie",arial,sans-serif;
+  font-family: 'Indie Flower', cursive;
   font-size:.7rem;
 }
 ul li a{

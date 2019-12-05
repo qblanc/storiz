@@ -1,5 +1,5 @@
-<div class="mood-form">
-  <h1 class="text-center cabin mt-3 mb-2"> <%= @mood.project.title %></h1>
+<div class="container">
+  <h1 class="text-center cabin mt-3 mb-2"><%= @mood.project.title %></h1>
 </div>
 
 <div class="container-fluid">
@@ -35,17 +35,20 @@
 <div class="modal fade" id="MoodUploadModalCenter" tabindex="-1" role="dialog" aria-labelledby="MoodUploadModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
-      <div class="modal-body mood-modal">
+      <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="position: absolute; top: 15px; right: 15px">
           <span aria-hidden="true" id='close-after-create'>&times;</span>
         </button>
-        <div class= "d-flex">
-          <%= simple_form_for([@mood, Mooditem.new]) do |f| %>
-            <%= f.input :photo, as: :file, label: false %>
-            <%= f.button :submit, class: 'btn btn-primary', id:'submit-modal-image' %>
-          <% end %>
+        <h5 class="modal-title">Add an item to your moodboard</h5>
         </div>
+      <div class="modal-body mood-modal">
+
+          <%= simple_form_for([@mood, Mooditem.new], html: {class: 'd-flex justify-content-around w-100'}) do |f| %>
+            <%= f.input :photo, as: :file, label: false %>
+            <%= f.submit 'Upload', class: 'btn btn-dark', id:'submit-modal-image' %>
+          <% end %>
       </div>
+
     </div>
   </div>
 </div>
@@ -80,10 +83,10 @@
 
 
 <!-- Delete button - Comment this code before demo ! -->
-<% @mood.mooditems.each do |item| %>
- <%= simple_form_for([@mood, item], remote: true) do |f| %>
-   <%= link_to "Delete", mooditem_path(item),
+<%# @mood.mooditems.each do |item| %>
+ <%#= simple_form_for([@mood, item], remote: true) do |f| %>
+   <%#= link_to "Delete", mooditem_path(item),
      method: :delete,
      data: { confirm: "Are you sure?" } %>
-     <% end %>
-<% end %>
+     <%# end %>
+<%# end %>
