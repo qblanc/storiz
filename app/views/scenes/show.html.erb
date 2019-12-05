@@ -1,9 +1,9 @@
-<h1 class="text-center cabin mt-3"> <%= @project.title %></h1>
+<h1 id="project-title-scene" class="text-center cabin mt-1"> <%= @project.title %></h1>
 <div class="d-flex align-items-baseline">
   <div class="scene-number">
     <a href="https://res.cloudinary.com/diewz4u97/image/upload/v1575460944/Reservoir%20Dogs%20Characters/Storiz-Reservoir_Dogs_okvbdj.pdf" download="reserv"><i class="fas fa-print"></i></a>
     <div class="d-flex">
-    <%= render 'scenes/scene_number', scene: @scene %><h4 class="mt-2 mb-4 scene-title"><%= @scene.title %></h4>
+      <h4 class="mt-2 mb-4 scene-title" data-scenetitle="id-<%= @scene.id %>"><%= @scene.title %></h4>
     </div>
   </div>
   <%# <%= link_to "Edit title", edit_scene_path(@scene), class: "btn btn-sm btn-info edit-btn" %>

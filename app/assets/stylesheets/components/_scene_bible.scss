@@ -31,7 +31,7 @@
 }
 
 .bible-events {
-  height: 73%;
+  height: 300px;
   overflow-y: scroll;
 }
 
@@ -99,4 +99,8 @@
 
 .scene-bible-search {
   margin-bottom: 15px;
+}
+
+#project-title-scene {
+  margin-bottom: -5px !important;
 }
