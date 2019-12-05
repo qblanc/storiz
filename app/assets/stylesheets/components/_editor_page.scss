@@ -93,8 +93,8 @@
 
 .fa-print{
   position: absolute;
-  right: -40px;
-  top: 9px;
+  right: 465px;
+  top: 18px;
   color: grey;
 }
 
@@ -104,4 +104,8 @@
 
 .dl {
   margin-left: 50px;
+}
+
+.print-absolute {
+  position: relative;
 }
