@@ -13,17 +13,17 @@
           <strong>Writing Room</strong>
         </button>
         <div class="dropdown-menu"> <!-- Dropdown menu links -->
+          <%= link_to project_bibles_path(@project), class: "dropdown-item" do %>
+            Bible
+          <% end %>
+          <%= link_to mood_path(@project.mood), class: "dropdown-item" do %>
+            Moodboard
+          <% end %>
           <%= link_to project_pitch_path(@project), class: "dropdown-item" do %>
             Pitch
           <% end %>
           <%= link_to project_path(@project), class: "dropdown-item" do %>
             Synopsis
-          <% end %>
-          <%= link_to project_path(@project), class: "dropdown-item" do %>
-            Moodboard
-          <% end %>
-          <%= link_to project_bibles_path(@project), class: "dropdown-item" do %>
-            Bible
           <% end %>
         </div>
       </div>
@@ -41,8 +41,7 @@
   </div>
 
 
-  <div class="navbar-left-items">
-    <p>THESTORIZCLUB</p>
+  <div class="navbar-right-items">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>

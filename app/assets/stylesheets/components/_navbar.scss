@@ -42,9 +42,27 @@ body#projects-new .navbar-lewagon, body#projects-edit_pitch .navbar-lewagon  {
 
 .navbar-left-items {
   display: flex;
+  width: 20vw;
   p {
     color: transparent;
     cursor: default;
   }
 }
 
+.navbar-right-items {
+  width: 20vw;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.righty {
+  justify-content: right;
+}
+
+.navbar-logo-centered {
+  text-align: center;
+}
+
+.navbar-brand {
+  margin: 0 !important;
+}

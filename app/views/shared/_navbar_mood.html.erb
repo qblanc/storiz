@@ -13,17 +13,19 @@
           <strong>Moodboard</strong>
         </button>
         <div class="dropdown-menu"> <!-- Dropdown menu links -->
+          <% if @project.scenes.any? %>
+            <%= link_to scene_path(@project.scenes.order(:updated_at).last), class: "dropdown-item" do %>
+              Writing room
+            <% end %>
+          <% end %>
+          <%= link_to project_bibles_path(@project), class: "dropdown-item" do %>
+            Bible
+          <% end %>
           <%= link_to project_pitch_path(@project), class: "dropdown-item" do %>
             Pitch
           <% end %>
           <%= link_to project_path(@project), class: "dropdown-item" do %>
             Synopsis
-          <% end %>
-          <%= link_to project_bibles_path(@project), class: "dropdown-item" do %>
-            Bible
-          <% end %>
-          <%= link_to scene_path(@project), class: "dropdown-item" do %>
-            Writing room
           <% end %>
         </div>
       </div>
@@ -41,8 +43,7 @@
   </div>
 
 
-  <div class="navbar-left-items">
-    <p>STORIZ</p>
+  <div class="navbar-right-items">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
