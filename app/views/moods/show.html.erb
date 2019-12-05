@@ -44,7 +44,7 @@
       <div class="modal-body mood-modal">
 
           <%= simple_form_for([@mood, Mooditem.new], html: {class: 'd-flex justify-content-around w-100'}) do |f| %>
-            <%= f.input :photo, as: :file, label: false %>
+            <%= f.input :photo, as: :file, class: 'btn btn-dark', label: false %>
             <%= f.submit 'Upload', class: 'btn btn-dark', id:'submit-modal-image' %>
           <% end %>
       </div>
@@ -55,22 +55,48 @@
 
 <div class= "postit">
   <ul>
-      <li id="postit1">
-        <a href="#">
-  <!--         <h2>Title #1</h2> -->
-          <p>Let's stage “Reservoir Dogs” as a play instead of a movie.</p>
-        </a>
-      </li>
-    <li id="postit2">
-      <a href="#">
-<!--         <h2>Title #2</h2> -->
-        <p>The “Stuck in the Middle With You” dance should be a glamorous, erotic tango. Clowns to the left of me. Jokers to the right.</p>
+    <li id="postit1" style="
+    margin-top: -17px;
+    margin-left: 50px;
+    font-size:1.3rem;
+    ">
+      <a>
+        <p>Stage “Reservoir Dogs” as a play?
+          <br>
+          - Shakespeare
+          <br>
+          - Euripides
+          <br>
+          - Molière
+        </p>
       </a>
     </li>
-    <li id="postit3">
-      <a href="#">
-<!--         <h2>Title #3</h2> -->
-        <p>I don't believe in tipping. Society says don't tip those guys over there, but tip these guys here... That's bullcrap!</p>
+    <li id="postit2" style="
+    margin-top: 17px;
+    margin-left: -50px;
+    font-size:1.1rem;
+    ">
+      <a>
+        <p>Stuck in the Middle With You
+          <br>
+          - torture scene
+          <br>
+          - hot tango
+          <br>
+          - dirty warehouse
+          <br>
+          - little green bag
+        </p>
+      </a>
+    </li>
+    <li id="postit3" style="
+    margin-top: 50px;
+    margin-left: 0px;
+    font-size:1.2rem;
+    ">
+      <a>
+        <p>Replace character names with colors to confuse people</p>
+        <p><u>/!\</u> What if movie critics are colour-blind?</p>
       </a>
     </li>
   </ul>
