@@ -35,6 +35,15 @@
 .resize-container:active img {
     outline: 2px dashed $info;
 }
+
+.resize-container:active:hover:focus img {
+  box-shadow:10px 10px 7px rgba(0,0,0,.7);
+  -moz-box-shadow:10px 10px 7px rgba(0,0,0,.7);
+  -webkit-box-shadow: 10px 10px 7px rgba(0,0,0,.7);
+  position:relative;
+  z-index:5;
+}
+
 .resize-handle-ne,
 .resize-handle-se,
 .resize-handle-nw,
@@ -131,6 +140,20 @@ body#moods-show {
   }
 }
 
+
+#fixedModalButton:hover p,
+#fixedModalButton:focus p,
+#fixedModalButton:active p {
+  // -webkit-transform: scale(1.75);
+  // -moz-transform: scale(1.75);
+  // -o-transform: scale(1.75);
+  // -moz-transition:-moz-transform .15s linear;
+  // -o-transition:-o-transform .15s linear;
+  // -webkit-transition:-webkit-transform .15s linear;
+  transform: scale(1.45);
+  transition: all 0.15s ease-in-out;
+}
+
 .mood-modal{
   height: 100px;
   width: 500px;
@@ -144,7 +167,6 @@ body#moods-show {
 }
 
 /////////////////////////////////////////////////////////////////
-
 
 .postit {
   position: absolute;
@@ -164,8 +186,8 @@ body{
   color:#fff;
 }
 h2,p{
-  font-size:80%;
-  font-weight:normal;
+  font-size:100%;
+  font-weight:bolder;
 }
 ul,li{
   list-style:none;
@@ -179,8 +201,8 @@ ul li a{
   color:#000;
   background:#ffc;
   display:block;
-  height:8rem;
-  width:8rem;
+  height:12rem;
+  width:12rem;
   padding:1em;
   -moz-box-shadow:5px 5px 7px rgba(33,33,33,1);
   -webkit-box-shadow: 5px 5px 7px rgba(33,33,33,.7);
@@ -200,7 +222,7 @@ ul li h2{
 }
 ul li p{
   font-family: 'Indie Flower', cursive;
-  font-size:.7rem;
+  // font-size:1.3rem;
 }
 ul li a{
   -webkit-transform: rotate(-6deg);
@@ -278,7 +300,27 @@ ol li a{color:#fff;}
 .embeddedvideo {
   position: absolute;
   bottom: 190px;
-  right: 120px;
+  right: 80px;
+  -o-transform:rotate(5deg);
+  -webkit-transform:rotate(5deg);
+  -moz-transform:rotate(5deg);
+}
+
+.embeddedvideo :hover, .embeddedvideo :focus{
+  box-shadow:10px 10px 7px rgba(0,0,0,.7);
+  -moz-box-shadow:10px 10px 7px rgba(0,0,0,.7);
+  -webkit-box-shadow: 10px 10px 7px rgba(0,0,0,.7);
+  -webkit-transform: scale(1.25);
+  -moz-transform: scale(1.25);
+  -o-transform: scale(1.25);
+  -o-transform:rotate(5deg);
+  -webkit-transform:rotate(5deg);
+  -moz-transform:rotate(5deg);
+  -moz-transition:-moz-transform .15s linear;
+  -o-transition:-o-transform .15s linear;
+  -webkit-transition:-webkit-transform .15s linear;
+  position:relative;
+  z-index:5;
 }
 
 .embeddedvideo {
