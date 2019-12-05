@@ -26,15 +26,24 @@
       <% if @project.scenes.any? %>
         <div class="d-flex justify-content-center">
           <%= link_to "Resume", scene_path(@project.scenes.order(:updated_at).last), class: 'mr-4 mt-2 room-button-1' %>
+          <!-- #CHAPTER ? -->
           <%= link_to "New scene", new_project_scene_path(@project), class: 'ml-4 mt-2 room-button-2' %>
         </div>
+        <!-- #CHAPTER ? -->
         <h4 class="text-center subroom">Number of scenes : <%= @project.scenes.length %></h4>
         <%= render 'scene_infos' %>
       <% else %>
-        <div class="d-flex justify-content-center">
-          <%= link_to "Create my first scene", new_project_scene_path(@project), class: 'mt-3 room-button-3 text-center' %>
+        <% if @project.category == "Book" %>
+          <div class="d-flex justify-content-center">
+            <%= link_to "Write my first chapter", new_project_scene_path(@project), class: 'mt-3 room-button-3 text-center' %>
           </div>
-            <h4 class="text-center subroom">No scenes yet !</h4>
+              <h4 class="text-center subroom">No chapters yet !</h4>
+        <% else %>
+          <div class="d-flex justify-content-center">
+            <%= link_to "Create my first scene", new_project_scene_path(@project), class: 'mt-3 room-button-3 text-center' %>
+          </div>
+              <h4 class="text-center subroom">No scenes yet !</h4>
+        <% end %>
       <% end %>
     </div>
   </div>
