@@ -3,9 +3,9 @@ class CharactersController < ApplicationController
 
   def index
     if params[:query].present?
-      @characters = Character.global_search(params[:query])
+      @characters = Project.find(params[:project_id]).characters.global_search(params[:query])
     else
-      @characters = Character.all
+      @characters = Project.find(params[:project_id]).characters
     end
   end
 
