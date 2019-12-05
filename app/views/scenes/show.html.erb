@@ -44,13 +44,18 @@
       <h4>Project bible</h4>
     </div>
     <div class="search-bar scene-bible-search">
-      <%= form_tag characters_path, class: "", remote: true, method: :get do %>
+      <%= form_tag characters_path, remote: true, class: "", method: :get do %>
         <div class="d-flex align-items-center scene-search-form">
           <%= text_field_tag :query,
             params[:query],
             class: "search-input form-control",
             id: "input-search-bible-scene",
             placeholder: "..."
+          %>
+          <%= text_field_tag :project_id,
+            params[:project_id],
+            class: "d-none",
+            value: @project.id
           %>
           <%#= submit_tag "Rechercher", class: "search-btn btn btn-info" %>
           <%= button_tag type: 'submit', class: "search-btn btn btn-info", id: "btn-search-bible-scene" do %>

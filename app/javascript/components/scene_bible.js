@@ -44,7 +44,7 @@ const showDetailsOnClickSceneBible = () => {
           })
         });
       });
-    }, 150);
+    }, 200);
   })
 };
 
