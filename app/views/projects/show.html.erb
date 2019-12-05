@@ -28,7 +28,7 @@
           <%= link_to "Resume", scene_path(@project.scenes.order(:updated_at).last), class: 'mr-4 mt-2 room-button-1' %>
           <%= link_to "New scene", new_project_scene_path(@project), class: 'ml-4 mt-2 room-button-2' %>
         </div>
-        <h4 class="text-center subroom">Number of scenes : 4</h4>
+        <h4 class="text-center subroom">Number of scenes : <%= @project.scenes.length %></h4>
         <%= render 'scene_infos' %>
       <% else %>
         <div class="d-flex justify-content-center">
