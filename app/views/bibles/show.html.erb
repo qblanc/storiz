@@ -80,7 +80,7 @@
                     <%= link_to edit_character_path(character), remote: true do %>
                       <i class="edit-delete-btns-char fas fa-edit d-block mb-3" data-toggle="modal" data-target="#editCharModal<%= character.id %>"></i>
                     <% end %>
-                    <%= link_to character_path(character), method: :delete do %>
+                    <%= link_to character_path(character), method: :delete, data: { confirm: "Are you sure you want to delete #{character.first_name} #{character.last_name}'s informations?"} do %>
                       <i class="edit-delete-btns-char poubelle-char fas fa-trash d-block"></i>
                     <% end %>
                   </div>
