@@ -2,15 +2,20 @@
 function refreshList(innerHTML) {
   const newList = document.querySelector('.index-list');
   newList.innerHTML = innerHTML;
+
+  const sceneId = document.querySelector('.scene-title').dataset.scenetitle;
+  const sceneListItem = document.querySelector(`.list-group-item[data-scenelist=${sceneId}]`);
+
+  sceneListItem.classList.add('actif');
 }
 
-function refreshTitle(innerHTML) {
-  const newTitle = document.querySelector('.scene-number');
-  newTitle.innerHTML = innerHTML;
-}
+// function refreshTitle(innerHTML) {
+//   const newTitle = document.querySelector('.scene-number');
+//   newTitle.innerHTML = innerHTML;
+// }
 
 refreshList('<%= j render "scenes/scenes_list", scenes: @scenes %>');
-refreshTitle('<%= j render "scenes/scene_number", scene: @scene %>');
+// refreshTitle('<%= j render "scenes/scene_number", scene: @scene %>');
 
 <%# const initNewNum = () => {
   document.querySelector('.index-list');

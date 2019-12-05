@@ -7,7 +7,8 @@ import { StickyToolbar } from '../components/sticky_toolbar'
 import { initSortable } from '../components/dragdrop';
 import { initScroll } from '../components/bannerscroll'
 import { showDetailsOnClickSceneBible } from '../components/scene_bible';
-import { initBoxSlide } from '../components/projectsbox'
+import { initBoxSlide } from '../components/projectsbox';
+import { addActifClassToSceneList } from '../components/scene_add_actif_class';
 import Rails from '@rails/ujs';
 import $ from 'jquery';
 // import { A } from '../projects/new_project';
@@ -48,5 +49,6 @@ StickyToolbar();
 };
 
 if (document.querySelector('.index-list')) {
-initSortable();
+  addActifClassToSceneList();
+  initSortable();
 };

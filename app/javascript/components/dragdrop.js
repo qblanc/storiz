@@ -2,6 +2,7 @@
 import Sortable from 'sortablejs/modular/sortable.core.esm.js';
 
 const initSortable = () => {
+
   const el = document.querySelector('.index-list');
   Sortable.create(el, {
     onEnd: function (evt) {
@@ -13,9 +14,9 @@ const initSortable = () => {
       element1.value = evt.newIndex;
       element2.value = evt.oldIndex;
       updateBtn.click();
-    },
+    }
   });
-  }
+}
 
 export { initSortable };
 
