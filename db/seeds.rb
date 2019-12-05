@@ -8,7 +8,7 @@ Mooditem.destroy_all
 
 ################################################################ USER 1 ################################################################
 
-user1 = User.new(email: "tarantinus@gmail.com", password: "azerty")
+user1 = User.new(email: "storiz@gmail.com", password: "azerty")
 user1.save!
 
 ################################## PROJECTS ####################################
