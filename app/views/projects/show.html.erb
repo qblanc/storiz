@@ -29,9 +29,9 @@
           <!-- #CHAPTER ? -->
           <%#= link_to "New scene", new_project_scene_path(@project), class: 'ml-4 mt-2 room-button-2' %>
             <% if @project.category == "Book" %>
-              <button type="button" class="ml-4 mt-2 room-button-2" data-toggle="modal" data-target="#addScene">New Chapter</button>
+              <button id="btn-addscene" type="button" class="ml-4 mt-2 room-button-2" data-toggle="modal" data-target="#addScene">New Chapter</button>
             <% else %>
-              <button type="button" class="ml-4 mt-2 room-button-2" data-toggle="modal" data-target="#addScene">New Scene</button>
+              <button id="btn-addscene" type="button" class="ml-4 mt-2 room-button-2" data-toggle="modal" data-target="#addScene">New Scene</button>
             <% end %>
         </div>
         <!-- #CHAPTER ? -->
