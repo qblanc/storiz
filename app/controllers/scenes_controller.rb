@@ -17,7 +17,6 @@ class ScenesController < ApplicationController
     @scenes = @project.scenes.order(:number)
     @scene = Scene.new(title: params[:scene][:title], content: "<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>", number: @scenes.length + 1)
     @scene.project = @project
-    @scene.number = @scenes.length + 1
     if @project.valid?
       @scene.save
       redirect_to scene_path(@scene)
