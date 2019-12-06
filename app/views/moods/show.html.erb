@@ -6,7 +6,7 @@
   <div class="moodimages">
     <% @mood.mooditems.each do |item| %>
     <div class="moodimage">
-      <%= cl_image_tag(item.photo.key, width: 640, height: 480, crop: "limit",
+      <%= cl_image_tag(item.photo.key, width: 480, height: 320, crop: "limit",
         class: 'resize-image',
         data: { left: item.left, top: item.top, z: item.depth, height: item.height, width: item.width, form: "#edit_mooditem_#{item.id}"}) %>
     </div>
@@ -61,14 +61,7 @@
     font-size:1.3rem;
     ">
       <a>
-        <p>Stage “Reservoir Dogs” as a play?
-          <br>
-          - Shakespeare
-          <br>
-          - Euripides
-          <br>
-          - Molière
-        </p>
+        <p>Replace character names with colors to confuse people</p>
       </a>
     </li>
     <li id="postit2" style="
@@ -89,22 +82,12 @@
         </p>
       </a>
     </li>
-    <li id="postit3" style="
-    margin-top: 50px;
-    margin-left: 0px;
-    font-size:1.2rem;
-    ">
-      <a>
-        <p>Replace character names with colors to confuse people</p>
-        <p><u>/!\</u> What if movie critics are colour-blind?</p>
-      </a>
-    </li>
   </ul>
 </div>
 
 
 <div class= "embeddedvideo">
-  <iframe width="450" height="250" src="https://www.youtube.com/embed/vayksn4Y93A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe width="360" height="200" src="https://www.youtube.com/embed/ln7Vn_WKkWU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 
