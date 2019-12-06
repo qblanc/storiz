@@ -114,7 +114,7 @@ body {
   // margin-top: -60px;
   // display: flex;
   // align-items: center;
-  background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), image-url(clubdesk) no-repeat;
+  background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1533327325824-76bc4e62d560?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80) no-repeat;
   background-position: top;
   background-size: cover;
 }
@@ -236,6 +236,7 @@ body {
   color: white;
   font-size: 1.6rem;
   letter-spacing: 3px;
+  margin-top: 2vh;
   margin-bottom: 1vh;
 }
 
@@ -289,9 +290,12 @@ body {
   }
   .project-text {
     padding-top: 0.8rem;
-    height: 17vh;
+    height: 18vh;
     // max-height: 120px;
     width: 250px;
+    h5 {
+      margin-bottom: 0.2rem;
+    }
   }
   .project-pic {
     height: 17vh;
@@ -333,9 +337,10 @@ body {
     align-items: center;
     height: 12vh;
     width: 13vw;
-    background-position: center;
-    background-size: cover;
-    color: $success;
+    background: $success;
+    // background-position: center;
+    // background-size: cover;
+    color: black;
     &:first-child {
     }
     &:last-child {
@@ -357,7 +362,7 @@ body {
   letter-spacing: 1px;
   border-radius: 3px;
   position: relative;
-  top: 3vh;
+  top: 7vh;
   &:hover {
     opacity:0.9;
     color: $success;
@@ -369,6 +374,7 @@ body {
   color: white;
   text-align: left;
   margin-left: 1vw;
+  margin-top: 6vh;
 }
 
 .pop-categories {
@@ -392,27 +398,27 @@ body {
 }
 
 
-.thriller {
-  background: linear-gradient(rgba(221, 221, 221, 0.5),rgba(0,0,0,0.5)), url(https://images.unsplash.com/photo-1523712900580-a5cc2e0112ed?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
-}
+// .thriller {
+//   background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1523712900580-a5cc2e0112ed?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
+// }
 
-.comedy {
-  background: linear-gradient(rgba(221, 221, 221, 0.5),rgba(0,0,0,0.5)), url(https://images.unsplash.com/photo-1472162072942-cd5147eb3902?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
-}
+// .comedy {
+//   background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1472162072942-cd5147eb3902?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
+// }
 
-.science-fi {
-  background: linear-gradient(rgba(221, 221, 221, 0.5),rgba(0,0,0,0.5)), url(https://images.unsplash.com/photo-1446776858070-70c3d5ed6758?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80);
-}
+// .science-fi {
+//   background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1446776858070-70c3d5ed6758?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80);
+// }
 
-.fanfic {
-  background: linear-gradient(rgba(221, 221, 221, 0.5),rgba(0,0,0,0.5)), url(https://images.unsplash.com/photo-1551269901-5c5e14c25df7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
-}
+// .fanfic {
+//   background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1551269901-5c5e14c25df7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
+// }
 
-.adventure {
-  background: linear-gradient(rgba(221, 221, 221, 0.5),rgba(0,0,0,0.5)), url(https://images.unsplash.com/photo-1500964757637-c85e8a162699?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60);
-}
+// .adventure {
+//   background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1500964757637-c85e8a162699?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60);
+// }
 
-.history {
-  background: linear-gradient(rgba(221, 221, 221, 0.5),rgba(0,0,0,0.5)), url(https://images.unsplash.com/photo-1482401204742-eb3c31c24722?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1412&q=80);
-}
+// .history {
+//   background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1482401204742-eb3c31c24722?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1412&q=80);
+// }
 
