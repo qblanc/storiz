@@ -9,12 +9,16 @@ class ScenesController < ApplicationController
     @new_scene = Scene.new
   end
 
+  def new
+    @scene = Scene.new
+  end
+
   def create
     @scenes = @project.scenes.order(:number)
     @scene = Scene.new(title: params[:scene][:title], content: "<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>", number: @scenes.length + 1)
     @scene.project = @project
     if @project.valid?
-      @scene.save!
+      @scene.save
       redirect_to scene_path(@scene)
     else
       redirect_to :new

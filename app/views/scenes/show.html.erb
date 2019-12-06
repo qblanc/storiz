@@ -20,6 +20,11 @@
           <%= render 'scenes/scenes_list', scenes: @scenes %>
         </ul>
     </div>
+    <% if @project.category == "Book" %>
+      <button id="btn-addscene" type="button" class="ml-4 mt-2 room-button-2" data-toggle="modal" data-target="#addScene">New Chapter</button>
+    <% else %>
+      <button id="btn-addscene" type="button" class="ml-4 mt-2 room-button-2" data-toggle="modal" data-target="#addScene">New Scene</button>
+    <% end %>
 <%#---------------------------------- Hidden form for reorder -----------------------------------------------%>
     <div class="d-none">
       <%= simple_form_for :truc, url: update_rank_scene_path, method: :post, remote: true do |f| %>
@@ -70,7 +75,7 @@
   </div>
 </div>
 
-<!-- Modal Formulaire -->
+<!-- Modal add characterEvent Formulaire -->
 <% @characters.each do |character| %>
   <div class="modal fade bd-example-modal-lg" id="charModal<%= character.id %>" tabindex="-1" role="dialog" aria-labelledby="charModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
@@ -88,5 +93,27 @@
     </div>
   </div>
 <% end %>
-<!-- Modal Formulaire end-->
+<!-- Modal add characterEvent Formulaire end-->
+
+<!-- Modal add scene -->
+  <div class="modal fade bd-example-modal" id="addScene" tabindex="-1" role="dialog" aria-labelledby="editCharModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal" role="document">
+      <div id="scene-modal-content" class="modal-content">
+        <div class="modal-header">
+          <% if @project.category == "Book" %>
+            <h5 class="modal-title" id="addSceneLabel">Add a new chapter</h5>
+          <% else %>
+            <h5 class="modal-title" id="addSceneLabel">Add a new scene</h5>
+          <% end %>
+          <button id="close-addScene-modal" type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="addScene-modal-body">
+          <%= render 'scenes/new', project: @project, scene: @new_scene%>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- Modal add scene end -->
 
