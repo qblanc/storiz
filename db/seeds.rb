@@ -1,10 +1,10 @@
 puts "Start seeding super seeds..."
 Character.destroy_all
 Scene.destroy_all
-Project.destroy_all
-User.destroy_all
 Mood.destroy_all
 Mooditem.destroy_all
+Project.destroy_all
+User.destroy_all
 
 ################################################################ USER 1 ################################################################
 
@@ -25,7 +25,7 @@ file1 = file = URI.open('https://res.cloudinary.com/diewz4u97/image/upload/v1575
 character1.photo.attach(io: file1, filename: "Larry.jpg", content_type: 'image/jpg')
 character1.save!
 
-character2 = Character.new(first_name: "Freddy", last_name: "Newandyke", birthdate: "Sun, 08 Oct 1961 16:55:29 UTC +00:00", genre: "Male", description: "Mr. Orange. He is an undercover police officer who is assigned to infilitrate Joe Cabot's latest jewelry heist. In the midst of this heist is a ragtag team of ex-felons including Mr. White (revealed to really be Larry Dimmick), whom they also have a sheet on. Conflict of interests arise when Mr. Orange has a father-son relationship with Mr. White. Mr. Orange is the alias of an undercover police officer named Freddy Newandyke who is assigned to infilitrate Joe Cabot's latest jewelry heist. In the midst of this heist is a ragtag team of ex-felons including Mr. White (revealed to really be Larry Dimmick), whom they also have a sheet on. Conflict of interests arise when Mr. Orange has a father-son relationship with Mr. White.")
+character2 = Character.new(first_name: "Mr.", last_name: "Orange", birthdate: "Sun, 08 Oct 1961 16:55:29 UTC +00:00", genre: "Male", description: "His real name is Freddy Newandyke. In the midst of this heist is a ragtag team of ex-felons including Mr. White (revealed to really be Larry Dimmick), whom they also have a sheet on. Conflict of interests arise when Mr. Orange has a father-son relationship with Mr. White. Mr. Orange is the alias of an undercover police officer named Freddy Newandyke who is assigned to infilitrate Joe Cabot's latest jewelry heist. In the midst of this heist is a ragtag team of ex-felons including Mr. White (revealed to really be Larry Dimmick), whom they also have a sheet on. Conflict of interests arise when Mr. Orange has a father-son relationship with Mr. White.")
 character2.project = project1
 file2 = file = URI.open('https://res.cloudinary.com/diewz4u97/image/upload/v1575382304/Reservoir%20Dogs%20Characters/Mr._Orange_wvehin.jpg')
 character2.photo.attach(io: file2, filename: "Freddy.jpg", content_type: 'image/jpg')
