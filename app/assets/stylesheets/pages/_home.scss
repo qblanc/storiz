@@ -290,9 +290,12 @@ body {
   }
   .project-text {
     padding-top: 0.8rem;
-    height: 17vh;
+    height: 18vh;
     // max-height: 120px;
     width: 250px;
+    h5 {
+      margin-bottom: 0.2rem;
+    }
   }
   .project-pic {
     height: 17vh;
