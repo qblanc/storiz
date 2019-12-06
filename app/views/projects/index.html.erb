@@ -15,7 +15,13 @@
         <% end %>
         <strong><%= project.title %></strong></p>
         <% updated = Time.now.strftime("%Y%j").to_i - project.updated_at.strftime("%Y%j").to_i %>
-        <p><small class="text-muted">Last updated <%= updated %> days ago</small></p>
+        <% if updated <= 0 %>
+          <p><small class="text-muted">Last update: today</small></p>
+        <% elsif updated == 1 %>
+          <p><small class="text-muted">Last update: yesterday</small></p>
+        <% else %>
+          <p><small class="text-muted">Last update: <%= updated %> days ago</small></p>
+        <% end %>
       </div>
     <% end %>
   <% end %>
