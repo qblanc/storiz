@@ -27,11 +27,11 @@
         <div class="d-flex justify-content-center">
           <%= link_to "Resume", scene_path(@project.scenes.order(:updated_at).last), class: 'mr-4 mt-2 room-button-1' %>
           <!-- #CHAPTER ? -->
-           <%#= link_to "New scene", new_project_scene_path(@project), class: 'ml-4 mt-2 room-button-2' %>
+          <%#= link_to "New scene", new_project_scene_path(@project), class: 'ml-4 mt-2 room-button-2' %>
             <% if @project.category == "Book" %>
-              <button id="btn-addscene" type="button" class="ml-4 mt-2 room-button-2" data-toggle="modal" data-target="#addScene">New Chapter</button>
+              <button type="button" class="ml-4 mt-2 room-button-2" data-toggle="modal" data-target="#addScene">New Chapter</button>
             <% else %>
-              <button id="btn-addscene" type="button" class="ml-4 mt-2 room-button-2" data-toggle="modal" data-target="#addScene">New Scene</button>
+              <button type="button" class="ml-4 mt-2 room-button-2" data-toggle="modal" data-target="#addScene">New Scene</button>
             <% end %>
         </div>
         <!-- #CHAPTER ? -->
