@@ -92,10 +92,10 @@
 
 
 <!-- Delete button - Comment this code before demo ! -->
-<% @mood.mooditems.each do |item| %>
- <%= simple_form_for([@mood, item], remote: true) do |f| %>
-   <%= link_to "Delete", mooditem_path(item),
+<%# @mood.mooditems.each do |item| %>
+ <%#= simple_form_for([@mood, item], remote: true) do |f| %>
+   <%#= link_to "Delete", mooditem_path(item),
      method: :delete,
      data: { confirm: "Are you sure?" } %>
-     <% end %>
-<% end %>
+     <%# end %>
+<%# end %>
