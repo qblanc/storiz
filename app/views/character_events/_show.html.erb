@@ -1,1 +1,9 @@
-<p><em>sc. <%= character_event.scene.number %></em> - <%= character_event.content %></p>
+<div class="chara-event">
+  <p><em>S.<%= character_event.scene.number %></em> - <%= character_event.content %>
+  <%= link_to edit_character_event_path(character_event) do %>
+    <i class="fas fa-edit"></i>
+  <% end %>
+  <%= link_to character_event_path(character_event), method: :delete, data: { confirm: "Are you sure you want to delete this character event?"} do %>
+      <i class="fas fa-trash"></i>
+  <% end %></p>
+</div>

@@ -4,25 +4,28 @@
 
 <div class="projects-container">
   <% @projects.order(:created_at).each do |project| %>
-    <%= link_to project_path(project) do %>
-      <div class="project-box mb-4">
+    <div class="project-box mb-4">
+      <%= link_to project_path(project), method: :delete, :data => {:confirm => 'Are you sure?'} do %>
+        <i class="fas fa-trash-alt corbeille"></i>
+      <% end %>
+      <%= link_to project_path(project) do %>
         <p><% if project.category == "Book" %>
-          <i class="fas fa-book"></i>
+          <i class="fas fa-book pictus"></i>
         <% elsif project.category == "Movie" %>
-          <i class="fas fa-film"></i>
+          <i class="fas fa-film pictus"></i>
         <% else %>
-          <i class="fas fa-tv"></i>
+          <i class="fas fa-tv pictus"></i>
         <% end %>
         <strong><%= project.title %></strong></p>
         <% updated = Time.now.strftime("%Y%j").to_i - project.updated_at.strftime("%Y%j").to_i %>
         <% if updated <= 0 %>
-          <p><small class="text-muted">Last update: today</small></p>
+          <p><small class="text-muted"><strong><%= project.scenes.length %> scenes</strong> - Last update: today</small></p>
         <% elsif updated == 1 %>
-          <p><small class="text-muted">Last update: yesterday</small></p>
+          <p><small class="text-muted"><strong><%= project.scenes.length %> scenes</strong> - Last update: yesterday</small></p>
         <% else %>
-          <p><small class="text-muted">Last update: <%= updated %> days ago</small></p>
+          <p><small class="text-muted"><strong><%= project.scenes.length %> scenes</strong> - Last update: <%= updated %> days ago</small></p>
         <% end %>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   <% end %>
 </div>
