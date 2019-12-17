@@ -105,7 +105,7 @@
                 </div>
                 <div data-event="<%= character.id %>" class="right-part-events pt-3 pl-4">
                   <% if character.character_events.blank? %>
-                    <p id="empty-notice-<%= character.id %>"><i>No main event yet for <%= character.first_name %></i></p>
+                    <p id="empty-notice-<%= character.id %>"><i>No event yet for <%= character.first_name %> <%= character.last_name %></i></p>
                   <% else %>
                     <% character.character_events.each do |character_event| %>
                       <%= render 'character_events/show', character_event: character_event %>
@@ -198,25 +198,4 @@
   </div>
 <% end %>
 <!-- Modal add character end -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

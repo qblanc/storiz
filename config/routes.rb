@@ -24,4 +24,5 @@ Rails.application.routes.draw do
   resources :characters, only: [:edit, :update, :show, :index, :destroy] do
     resources :character_events, only: [:create]
   end
+  resources :character_events, only: [:edit, :update, :destroy]
 end
