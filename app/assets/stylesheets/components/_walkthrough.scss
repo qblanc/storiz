@@ -1,0 +1,53 @@
+// Specific CSS for your home-page
+.presentation {
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  border-radius: 2px;
+  height:300px;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+    background-clip:padding-box;
+  img {
+    height: 180px;
+  }
+}
+
+.presentation p {
+  color: white;
+  padding-bottom: 0px;
+  font-size: 1.3rem;
+}
+
+.image-home {
+  margin: auto;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+@media (min-width: 100px) and (max-width: 310px) {
+  .presentation {
+    max-width: 100%;
+    flex-grow:1;
+    height: 100%;
+    img {
+      // height: 100%;
+    }
+  }
+}
+
+@media (min-width: 100px) and (max-width: 768px) {
+  .presentation {
+    max-width: 100%;
+    flex-grow:1;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+  .presentation {
+    max-width: 45%;
+  }
+}

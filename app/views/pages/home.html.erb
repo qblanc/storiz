@@ -35,27 +35,18 @@
 <div id="storiz-club">
   <div class="banner-club">
     <h1 class="title-club">STORIZ CLUB</h1>
-    <p class="help">Help others on their projects</p>
-    <h5 class="pop-projects">Popular projects</h5>
-      <div class="not-carrousel">
-        <div class="pagination d-flex">
-          <div class="d-flex">
-            <p id="previous"><</p>
-            <p id="next">></p>
-          </div>
-        </div>
-        <div class="wrapper-cards">
-          <div class="home-projects">
-            <%= render 'shared/home_cards' %>
-          </div>
-        </div>
-      </div>
+    <p class="help">Everyone is an artist</p>
+    <div class="walkthrough d-flex flex-wrap justify-content-center mt-5 mb-4">
+      <%= render "shared/walkthrough"%>
+    </div>
+
     <%# <h5 class="pop-categories">Trending categories</h5>
     <div class="home-categories">
       <%= render 'shared/home_categories' %>
     <%# </div> %>
-    <div class="cta d-flex justify-content-center">
-      <%= link_to "Visit the club", root_path, class: 'club-cta' %>
+    <div class="d-flex justify-content-center">
+      <p class='club-cta home-button-2'>The club will open soon</p>
+      <%# <%= link_to "The club will open soon", root_path, class: 'club-cta home-button-2 disabled' %>
     </div>
   </div>
 </div>
