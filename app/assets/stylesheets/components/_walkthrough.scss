@@ -30,7 +30,7 @@
 
 @media (min-width: 100px) and (max-width: 310px) {
   .presentation {
-    max-width: 100%;
+    width: 100%;
     flex-grow:1;
     height: 100%;
     img {
@@ -41,13 +41,13 @@
 
 @media (min-width: 100px) and (max-width: 768px) {
   .presentation {
-    max-width: 100%;
+    width: 100%;
     flex-grow:1;
   }
 }
 
 @media (min-width: 768px) and (max-width: 992px) {
   .presentation {
-    max-width: 45%;
+    width: 45%;
   }
 }
