@@ -36,26 +36,29 @@ body#projects-index {
   border-radius: 2px;
   width: 450px;
   position: relative;
-  .fa-trash-alt {
+  &:hover {
+    border-color: #15b7b9;
+    .pictus {
+      color: #15b7b9;
+    }
+    .fa-trash-alt {
     opacity: 1;
   }
-}
-
-.project-box:hover {
-  border-color: #15b7b9;
-  .pictus {
-    color: #15b7b9;
   }
 }
 
 .corbeille {
-position: absolute;
-top: 5px;
-right: 5px;
-color: grey;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  color: grey;
   &:hover {
     color: #f57170;
   }
+  @media (hover: none) {
+    opacity: 1;
+  }
+  opacity: 0;
 }
 
 

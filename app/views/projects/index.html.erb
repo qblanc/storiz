@@ -3,7 +3,7 @@
 </div>
 
 <div class="projects-container">
-  <% @projects.order(:created_at).each do |project| %>
+  <% @projects.order(updated_at: :desc).each do |project| %>
     <div class="project-box mb-4">
       <%= link_to project_path(project), method: :delete, :data => {:confirm => 'Are you sure?'} do %>
         <i class="fas fa-trash-alt corbeille"></i>
