@@ -32,6 +32,12 @@ body {
   vertical-align: middle;
   text-align: center;
   margin-top: 50vh;
+  @media (max-width: 440px) {
+    margin-top: 40vh;
+  }
+  @media (max-width: 340px) {
+    margin-top: 40vh;
+  }
   h1 {
     font-size: 75px;
     color: $white;
@@ -53,6 +59,10 @@ body {
     font-family: 'Raleway', sans-serif;
     letter-spacing: 10px;
     margin-top:-10px;
+    margin-bottom: 8vh;
+  @media (max-width: 1150px) {
+    margin-bottom: 4vh;
+  }
   }
   .signup {
     width: 220px;
@@ -76,7 +86,7 @@ body {
     flex-wrap: wrap;
     min-width: 40vw;
     height: auto;
-    padding: 4px 2px;
+    padding: 10px 2px;
   }
 }
 
@@ -111,7 +121,7 @@ body {
 #storiz-club {
   background-size: cover;
   min-height: 100vh;
-  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1533327325824-76bc4e62d560?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
+  background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(https://images.unsplash.com/photo-1533327325824-76bc4e62d560?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
   background-position: top;
   background-attachment: fixed;
 }
@@ -196,9 +206,28 @@ body {
   z-index: 1;
 }
 
-.club-btn {
-    @media (max-width: 1150px) {
+.club-call {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  cursor: pointer;
+  @media (max-width: 1150px) {
     display:none;
+  }
+}
+
+.club-mobile {
+  position: absolute;
+  bottom: 0;
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+  color: white;
+  @media (min-width: 1150px) {
+    display:none;
+  }
+  h5 {
+    // background: $info;
   }
 }
 
@@ -226,12 +255,6 @@ body {
   }
 }
 
-.club-call {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  cursor: pointer;
-}
 
 .club-btn {
   opacity: 1 !important;
@@ -379,7 +402,7 @@ body {
   @media (max-width: 540px) {
     flex-wrap: wrap;
     height: auto;
-    padding: 4px 2px;
+    padding: 10px 2px;
   }
 }
 
