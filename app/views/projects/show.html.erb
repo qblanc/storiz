@@ -25,9 +25,9 @@
       <h2 class="text-center">Writing Room</h2>
       <% if @project.scenes.any? %>
         <div class="d-flex justify-content-center">
-          <%= link_to "Resume", scene_path(@project.scenes.order(:updated_at).last), class: 'mr-4 mt-2 room-button-1' %>
+          <%= link_to "Resume", scene_path(@project.scenes.order(:updated_at).last), class: ' mt-2 room-button room-button-1' %>
           <!-- #CHAPTER ? -->
-          <%= link_to "New scene", new_project_scene_path(@project), class: 'ml-4 mt-2 room-button-2' %>
+          <%= link_to "New scene", new_project_scene_path(@project), class: ' mt-2 room-button room-button-2' %>
         </div>
         <!-- #CHAPTER ? -->
         <h4 class="text-center subroom">Number of scenes : <%= @project.scenes.length %></h4>

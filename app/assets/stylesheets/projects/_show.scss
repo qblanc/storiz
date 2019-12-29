@@ -26,6 +26,7 @@ margin-bottom: 15vh;
 
 .link-box {
   width: 13vw;
+  min-width: 141px;
   height: calc(13vw * 1.4);
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-left: 4px solid $info;
@@ -91,27 +92,6 @@ margin-bottom: 15vh;
   font-size: 1.3rem;
 }
 
-.scenes-table {
-  background-color: green;
-  margin-top: 20px;
-  border-radius: 10px;
-  margin-bottom: 10px;
-  border: none;
-}
-
-.scene {
-  // width: auto;
-  height: 15px;
-  &:last-child {
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-  }
-}
-
-.scene-2, .scene-4, .scene-5 {
-  background-color: rgb(177, 68, 68);
-}
-
 .scenes {
   // margin-top: 10px;
   margin-left: 30px;
@@ -142,6 +122,7 @@ margin-bottom: 15vh;
   -o-background-size: cover;
   background-size: cover;
   width: 52vw;
+  min-width: 520px;
   height: 66.5vh;
   position: fixed;
   bottom: -8vh;
@@ -152,18 +133,29 @@ margin-bottom: 15vh;
   }
 }
 
-.room-button-1 {
+.room-button {
   width: 12vw;
+  min-width: 120px;
   height: 7vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: $info;
-  color: $success;
   font-family: 'Lekton';
   font-size: 1.2rem;
   letter-spacing: 1px;
   border-radius: 3px;
+}
+
+.room-button-1 {
+  background: $info;
+  color: $success;
+  margin-right: 1.5rem;
+  @media (max-width: 1000px) {
+    margin-right: 1rem;
+  }
+  @media (max-width: 700px) {
+    margin-right: 0.7rem;
+  }
   &:hover {
     opacity:0.9;
     color: $success;
@@ -171,17 +163,15 @@ margin-bottom: 15vh;
   }
 }
 .room-button-2 {
-  width: 12vw;
-  height: 7vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   border: 3px solid $info;
   color: $info;
-  font-family: 'Lekton';
-  font-size: 1.2rem;
-  letter-spacing: 1px;
-  border-radius: 3px;
+  margin-left: 1.5rem;
+  @media (max-width: 1000px) {
+    margin-left: 1rem;
+  }
+  @media (max-width: 700px) {
+    margin-left: 0.7rem;
+  }
   &:hover {
     opacity: 0.7;
     color: $info;
@@ -232,6 +222,9 @@ margin-bottom: 15vh;
 }
 
 .mood-hover {
+  @media (max-width:900px) {
+    display: none;
+  }
   &:hover {
     opacity: 1;
   }
