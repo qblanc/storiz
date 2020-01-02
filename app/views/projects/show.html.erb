@@ -1,5 +1,5 @@
-<div class="container">
-  <h1 class="cabin cabin-margin text-center"><%= @project.title %></h1>
+<h1 class="cabin cabin-margin text-center"><%= @project.title %></h1>
+<div class="links">
   <div class="d-flex justify-content-center tabs">
     <%= link_to project_bibles_path(@project), class:"link-box" do %>
       <div class="bible-project">
@@ -47,8 +47,8 @@
       <% end %>
     </div>
   </div>
-  <%= link_to mood_path(@project.mood), class:"mood-hover" do %>
-    <div class="moodboard">
-    </div>
-  <% end %>
 </div>
+<%= link_to mood_path(@project.mood), class:"mood-hover" do %>
+  <div class="moodboard">
+  </div>
+<% end %>

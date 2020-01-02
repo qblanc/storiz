@@ -15,10 +15,19 @@ margin-bottom: 15vh;
 //   margin-right:5vw;
 // }
 
+.links {
+  position: relative;
+  width: 100vw;
+  height: 66.5vh;
+  // position: fixed;
+  // bottom: -8vh;
+}
+
 .tabs {
   transform: rotate(-7deg);
-  margin-right: 8vw;
-  margin-top: 13vh;
+  position: absolute;
+  top: 15px;
+  width: 100vw;
   &:hover {
     color:white;
   }
@@ -116,27 +125,44 @@ margin-bottom: 15vh;
 }
 
 .room {
-  background: image-url('notebook-v1a.png') no-repeat top;
+  background: image-url('proper_notebook.png') no-repeat top;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   width: 52vw;
   min-width: 520px;
+  max-width: 1100px;
   height: 66.5vh;
   position: fixed;
   bottom: -8vh;
   transform: rotate(-7deg);
   margin-right: 2vw;
+  @media (max-height: 600px) and (max-width: 900px) {
+    height: 54vh;
+    min-width: 359px;
+  }
+  @media (max-height: 700px) {
+    min-width: 434px;
+  }
   h2 {
     margin-top: 17%;
+    @media (max-height: 600px) and (max-width: 900px) {
+      margin-top: 22%;
+    }
+    @media (max-height: 800px) and (max-width: 900px) {
+      margin-top: 22%;
+    }
   }
 }
 
 .room-button {
   width: 12vw;
-  min-width: 120px;
-  height: 7vh;
+  height: 4.7vw;
+  min-width: 132px;
+  min-height: 44px;
+  max-width: 240px;
+  max-height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -227,5 +253,11 @@ margin-bottom: 15vh;
   }
   &:hover {
     opacity: 1;
+  }
+}
+
+.scene-info {
+  @media (max-height:600px) {
+    display: none;
   }
 }
