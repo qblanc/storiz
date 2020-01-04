@@ -1,54 +1,61 @@
-<div class="container">
-  <h1 class="cabin cabin-margin text-center"><%= @project.title %></h1>
-  <div class="d-flex justify-content-center tabs">
-    <%= link_to project_bibles_path(@project), class:"link-box" do %>
-      <div class="bible-project">
-        <h2>Bible</h2>
-        <h4>Characters, plots, locations & more</h4>
-      </div>
-    <% end %>
-    <%= link_to project_pitch_path(@project), class:"link-box" do %>
-      <div class="pitch">
-        <h2>Pitch</h2>
-        <h4>Describe your story in a few words</h4>
-      </div>
-    <% end %>
-    <%= link_to project_path(@project), class:"link-box" do %>
-    <div class="synopsis">
-      <h2>Synopsis</h2>
-      <h4>Develop your story in a few pages</h4>
-    </div>
-    <% end %>
+<div class="dashboard">
+  <div class="room-title">
+    <h1 class="cabin cabin-margin text-center"><%= @project.title %></h1>
   </div>
-  <div class="d-flex justify-content-center">
-    <div class="room">
-      <h2 class="text-center">Writing Room</h2>
-      <% if @project.scenes.any? %>
-        <div class="d-flex justify-content-center">
-          <%= link_to "Resume", scene_path(@project.scenes.order(:updated_at).last), class: ' mt-2 room-button room-button-1' %>
-          <!-- #CHAPTER ? -->
-          <%= link_to "New scene", new_project_scene_path(@project), class: ' mt-2 room-button room-button-2' %>
+  <div class="links">
+    <div class="d-flex justify-content-center tabs">
+      <%= link_to project_bibles_path(@project), class:"link-box bible-link" do %>
+        <div class="bible-project">
+          <h2>Bible</h2>
+          <h4>Characters, plots, locations & more</h4>
         </div>
-        <!-- #CHAPTER ? -->
-        <h4 class="text-center subroom">Number of scenes : <%= @project.scenes.length %></h4>
-        <%= render 'scene_infos' %>
-      <% else %>
-        <% if @project.category == "Book" %>
-          <div class="d-flex justify-content-center">
-            <%= link_to "Write my first chapter", new_project_scene_path(@project), class: 'mt-3 room-button-3 text-center' %>
-          </div>
-              <h4 class="text-center subroom">No chapters yet !</h4>
-        <% else %>
-          <div class="d-flex justify-content-center">
-            <%= link_to "Create my first scene", new_project_scene_path(@project), class: 'mt-3 room-button-3 text-center' %>
-          </div>
-              <h4 class="text-center subroom">No scenes yet !</h4>
-        <% end %>
+      <% end %>
+      <%= link_to project_pitch_path(@project), class:"link-box" do %>
+        <div class="pitch">
+          <h2>Pitch</h2>
+          <h4>Describe your story in a few words</h4>
+        </div>
+      <% end %>
+      <%= link_to project_path(@project), class:"link-box" do %>
+      <div class="synopsis">
+        <h2>Synopsis</h2>
+        <h4>Develop your story in a few pages</h4>
+      </div>
       <% end %>
     </div>
-  </div>
-  <%= link_to mood_path(@project.mood), class:"mood-hover" do %>
-    <div class="moodboard">
+    <div class="d-flex justify-content-center room-container">
+      <div class="room">
+        <h2 class="text-center">Writing Room</h2>
+        <% if @project.scenes.any? %>
+          <div class="d-flex justify-content-center">
+            <%= link_to "Resume", scene_path(@project.scenes.order(:updated_at).last), class: ' mt-2 room-button room-button-1' %>
+            <!-- #CHAPTER ? -->
+            <%= link_to "New scene", new_project_scene_path(@project), class: ' mt-2 room-button room-button-2' %>
+          </div>
+          <!-- #CHAPTER ? -->
+          <h4 class="text-center subroom">Number of scenes : <%= @project.scenes.length %></h4>
+          <%= render 'scene_infos' %>
+        <% else %>
+          <% if @project.category == "Book" %>
+            <div class="d-flex justify-content-center">
+              <%= link_to "Write my first chapter", new_project_scene_path(@project), class: 'mt-3 room-button-3 text-center' %>
+            </div>
+                <h4 class="text-center subroom">No chapters yet !</h4>
+          <% else %>
+            <div class="d-flex justify-content-center">
+              <%= link_to "Create my first scene", new_project_scene_path(@project), class: 'mt-3 room-button-3 text-center' %>
+            </div>
+                <h4 class="text-center subroom">No scenes yet !</h4>
+          <% end %>
+        <% end %>
+        <div class="d-flex justify-content-center mt-3 bible-mobile">
+          <%= link_to "Bible", project_bibles_path(@project), class:"room-button room-button-2" %>
+        </div>
+      </div>
     </div>
-  <% end %>
+  </div>
 </div>
+<%= link_to mood_path(@project.mood), class:"mood-hover" do %>
+  <div class="moodboard">
+  </div>
+<% end %>

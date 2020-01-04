@@ -1,3 +1,4 @@
+<div class="scene-info">
   <% if @project.scenes.any? %>
     <div class="text-center">
       <% last_scene = @scenes.order(created_at: :desc).limit(1).first %>
@@ -30,3 +31,4 @@
       <% end %>
     </div>
   <% end %>
+</div>
