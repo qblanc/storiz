@@ -195,6 +195,10 @@ body#projects-show {
 
 .room-button-3 {
   width: 22vw;
+  min-width: 264px;
+  max-width: 480px;
+  min-height: 44px;
+  max-height: 80px;
   height: 7vh;
   display: flex;
   align-items: center;
@@ -228,6 +232,7 @@ body#projects-show {
   box-shadow: 0 0 15px
   rgba(0, 0, 0, 0.4);
   transition: 0.9s ease;
+  z-index: 3;
   &:hover {
     transform: rotate(15deg);
     transition: 0.9s ease;
@@ -312,6 +317,29 @@ body#projects-show {
   }
 }
 
+@media (max-height: 500px) {
+  .room-title {
+    height: 20vh;
+  }
+  .cabin-margin {
+    margin: 0 5%;
+    font-size: 2.2rem;
+  }
+  .pitch h2, .bible-project h2, .synopsis h2 {
+    padding-top: 8%;
+    font-size: 1.5rem;
+  }
+  .room {
+    margin-top: 24px;
+    h2 {
+      margin-top: 19%;
+    }
+  }
+  .subroom {
+    margin-top: 3vh;
+  }
+
+}
 
 @media (min-width: 1900px) {
   .tabs {

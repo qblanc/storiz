@@ -38,12 +38,12 @@
         <% else %>
           <% if @project.category == "Book" %>
             <div class="d-flex justify-content-center">
-              <%= link_to "Write my first chapter", new_project_scene_path(@project), class: 'mt-3 room-button-3 text-center' %>
+              <%= link_to "Write my first chapter", new_project_scene_path(@project), class: 'mt-2 room-button-3 text-center' %>
             </div>
                 <h4 class="text-center subroom">No chapters yet !</h4>
           <% else %>
             <div class="d-flex justify-content-center">
-              <%= link_to "Create my first scene", new_project_scene_path(@project), class: 'mt-3 room-button-3 text-center' %>
+              <%= link_to "Create my first scene", new_project_scene_path(@project), class: 'mt-2 room-button-3 text-center' %>
             </div>
                 <h4 class="text-center subroom">No scenes yet !</h4>
           <% end %>
