@@ -351,3 +351,14 @@ ol li a{color:#fff;}
   background: rgba(0,0,0,0.5);
   z-index: 10;
 }
+
+.betamood {
+  margin: 15% auto;
+  @media (max-width: 600px) {
+    width: 300px;
+  }
+}
+
+.coming-soon {
+  justify-content: center;
+}
