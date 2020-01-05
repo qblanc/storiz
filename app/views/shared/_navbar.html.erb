@@ -1,9 +1,9 @@
 <div class="navbar navbar-expand-sm navbar-light <%= current_page?(root_path) ? "navbar-transparent" : "navbar-lewagon" %>">
   <%= link_to root_path, class: "navbar-brand" do %>
     <% if current_page? new_project_path %>
-      <%= image_tag "pas_de_logo.png"%>
+      <%= image_tag "pas_de_logo.png", class: "logo-transparent" %>
     <% else %>
-      <%= image_tag "logoonly.png"%>
+      <%= image_tag "logo_beta.png"%>
     <% end %>
   <% end %>
 

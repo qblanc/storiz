@@ -10,12 +10,20 @@
   height: 60px;
 }
 
+.logo-transparent {
+  width: 0px !important;
+}
+
 .navbar-collapse {
   flex-grow: 0;
 }
 
 .navbar-brand img {
-  width: 40px;
+  width: 70px;
+}
+
+.navbar-brand-center img {
+  width: 105px;
 }
 
 
@@ -53,6 +61,7 @@ body#projects-new .navbar-lewagon, body#projects-edit_pitch .navbar-lewagon  {
   width: 20vw;
   display: flex;
   justify-content: flex-end;
+  align-items: center;
 }
 
 .righty {
@@ -63,6 +72,6 @@ body#projects-new .navbar-lewagon, body#projects-edit_pitch .navbar-lewagon  {
   text-align: center;
 }
 
-.navbar-brand {
+.navbar-brand, .navbar-brand-center {
   margin: 0 !important;
 }

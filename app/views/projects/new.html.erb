@@ -1,6 +1,6 @@
 <div id="full-background">
 
-  <div class="title-form">
+  <div class="title-form d-flex flex-column justify-content-center">
     <p class="ml-3 mb-4">Let's do this! First, give your project a title...</p>
     <form class="simple_form new_project" id="new_project" novalidate="novalidate" action="/projects" accept-charset="UTF-8" method="post">
       <input type="hidden" name="authenticity_token" value="n7iPYQQ3BbnHIhiZOZ5sgNnNXnQ1zb9haWUij2kQUqawiDXmktcRMTZ6HJlQy+GNQ+JalpdvedLR043+7A0a6A==">
@@ -11,9 +11,9 @@
         <legend class="col-form-label pt-0">
           <abbr title="required"></abbr>
         </legend>
-        <p class="ml-3 mb-4">... and choose a category :</p>
+        <p class="ml-3 mb-4 choose">... and choose a category :</p>
         <input type="hidden" name="project[category]" value="">
-        <div class="row mt-1 mb-3">
+        <div class="row mt-1 mb-3 categoriz">
           <div class="form-checkzz col-3" data-children-count="1">
             <input class="form-check-input radio_buttons required btn-block bto" type="radio" value="Book" name="project[category]" id="project_category_book">
             <label class="form-check-label collection_radio_buttons radio-inline btn-block draw-border bto" for="project_category_book"><i class="fas fa-book"></i> Book</label>
@@ -27,7 +27,7 @@
             <label class="form-check-label collection_radio_buttons radio-inline btn-block draw-border bto" for="project_category_tv_show"><i class="fas fa-tv"></i> TV Show</label>
           </div>
         </div>
-          <div class="col-2 mt-5 slide">
+          <div class="col-2 mt-5 slide confirmz">
             <input type="submit" name="commit" value="Get to work" class="btn start-btn" data-disable-with="Get to work">
           </div>
       </fieldset>
