@@ -167,9 +167,9 @@ body {
   // }
 }
 
-// .title-club {
-//   margin-top: 5vh;
-// }
+.title-club {
+  margin-top: 2vh;
+}
 
 .club {
   display: inline-block;
@@ -412,7 +412,7 @@ body {
   border-radius: 3px;
   text-align: inherit;
   cursor: pointer;
-  // margin-bottom: 50px;
+  margin-bottom: 5vh;
   @media (max-width: 540px) {
     flex-wrap: wrap;
     height: auto;
