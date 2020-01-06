@@ -3,5 +3,5 @@
 meta_product_name: "Storiz"
 meta_title: "Storiz | Masterpieces made easy"
 meta_description: "The creative writing platform that help you organize your work and allow you to share it with the community"
-meta_image: "storiz_homepage.jpg" # should exist in `app/assets/images/`
+meta_image: "storiz_homepage_og.jpg" # should exist in `app/assets/images/`
 twitter_account: "@storizclub"   # required for Twitter Cards
