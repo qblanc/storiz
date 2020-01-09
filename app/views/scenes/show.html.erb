@@ -21,9 +21,9 @@
         </ul>
     </div>
     <% if @project.category == "Book" %>
-      <button id="btn-addscene" type="button" class="ml-4 mt-2 room-button room-button-1" data-toggle="modal" data-target="#addSceneFromWritingRoom">New Chapter</button>
+      <%= link_to 'New Chapter', "#", class: 'mt-2 room-button room-button-1', data: {toggle: "modal", target: "#addSceneFromWritingRoom"} %>
     <% else %>
-      <button id="btn-addscene" type="button" class="ml-4 mt-2 room-button room-button-1" data-toggle="modal" data-target="#addSceneFromWritingRoom">New Scene</button>
+      <%= link_to 'New Scene', "#", class: 'mt-2 room-button room-button-1', data: {toggle: "modal", target: "#addSceneFromWritingRoom"} %>
     <% end %>
 <%#---------------------------------- Hidden form for reorder -----------------------------------------------%>
     <div class="d-none">

@@ -31,9 +31,9 @@
             <%= link_to "Resume", scene_path(@project.scenes.order(:updated_at).last), class: ' mt-2 room-button room-button-1' %>
             <!-- #CHAPTER ? -->
             <% if @project.category == "Book" %>
-              <button id="btn-addscene" type="button" class="ml-4 mt-2 room-button-1" data-toggle="modal" data-target="#addSceneFromProject">New Chapter</button>
+              <%= link_to 'New Chapter', "#", class: 'mt-2 room-button room-button-1', data: {toggle: "modal", target: "#addSceneFromProject"} %>
             <% else %>
-              <button id="btn-addscene" type="button" class="ml-4 mt-2 room-button-1" data-toggle="modal" data-target="#addSceneFromProject">New Scene</button>
+              <%= link_to 'New Scene', "#", class: 'mt-2 room-button room-button-1', data: {toggle: "modal", target: "#addSceneFromProject"} %>
             <% end %>
           </div>
           <!-- #CHAPTER ? -->
@@ -42,14 +42,12 @@
         <% else %>
           <% if @project.category == "Book" %>
             <div class="d-flex justify-content-center">
-              <%#= link_to "Write my first chapter", new_project_scene_path(@project), class: 'mt-2 room-button-3 text-center' %>
-              <button id="btn-addscene-lg" type="button" class="mt-2 room-button-1" data-toggle="modal" data-target="#addSceneFromProject">First Chapter</button>
+              <%= link_to 'First Chapter', "#", class: 'mt-2 room-button-3 text-center', data: {toggle: "modal", target: "#addSceneFromProject"} %>
             </div>
                 <h4 class="text-center subroom">No chapters yet !</h4>
           <% else %>
             <div class="d-flex justify-content-center">
-              <%#= link_to "Create my first scene", new_project_scene_path(@project), class: 'mt-2 room-button-3 text-center' %>
-              <button id="btn-addscene-lg" type="button" class="mt-2 room-button-1" data-toggle="modal" data-target="#addSceneFromProject">First Scene</button>
+              <%= link_to 'First Chapter', "#", class: 'mt-2 room-button-3 text-center', data: {toggle: "modal", target: "#addSceneFromProject"} %>
             </div>
                 <h4 class="text-center subroom">No scenes yet !</h4>
           <% end %>
