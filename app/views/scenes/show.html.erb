@@ -20,6 +20,11 @@
           <%= render 'scenes/scenes_list', scenes: @scenes %>
         </ul>
     </div>
+    <% if @project.category == "Book" %>
+      <%= link_to 'New Chapter', "#", class: 'mt-2 room-button room-button-1', data: {toggle: "modal", target: "#addSceneFromWritingRoom"} %>
+    <% else %>
+      <%= link_to 'New Scene', "#", class: 'mt-2 room-button room-button-1', data: {toggle: "modal", target: "#addSceneFromWritingRoom"} %>
+    <% end %>
 <%#---------------------------------- Hidden form for reorder -----------------------------------------------%>
     <div class="d-none">
       <%= simple_form_for :truc, url: update_rank_scene_path, method: :post, remote: true do |f| %>
@@ -70,7 +75,7 @@
   </div>
 </div>
 
-<!-- Modal Formulaire -->
+<!-- Modal Formulaire AddEvent on Character-->
 <% @characters.each do |character| %>
   <div class="modal fade bd-example-modal-lg" id="charModal<%= character.id %>" tabindex="-1" role="dialog" aria-labelledby="charModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
@@ -88,5 +93,54 @@
     </div>
   </div>
 <% end %>
-<!-- Modal Formulaire end-->
+<!-- Modal Formulaire AddEvent on Character end-->
+
+<!-- Add Scene MODAL -->
+
+  <div id="addSceneFromWritingRoom" class="modal fade bd-example-modal" tabindex="-1" role="dialog" aria-labelledby="addSceneFromWritingRoomModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal" role="document">
+      <div id="add-scene-from-writing-room-modal-content" class="modal-content">
+        <div class="modal-header">
+          <% if @project.category == "Book" %>
+            <h5 class="modal-title" id="addSceneFromWritingRoomLabel">Add a new Chapter</h5>
+          <% else %>
+            <h5 class="modal-title" id="addSceneFromWritingRoomLabel">Add a new Scene</h5>
+          <% end %>
+          <button id="close-addSceneFromWritingRoom-modal" type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="addSceneFromWritingRoom-modal-body">
+          <%= render 'scenes/new', project: @project, scene: @new_scene %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Add Scene MODAL end -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

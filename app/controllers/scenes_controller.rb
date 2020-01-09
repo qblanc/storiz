@@ -14,7 +14,7 @@ class ScenesController < ApplicationController
     @scene = Scene.new(title: params[:scene][:title], content: "<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>", number: @scenes.length + 1)
     @scene.project = @project
     if @scene.valid?
-      @scene.save!
+      @scene.save
       redirect_to scene_path(@scene)
     else
       redirect_to :new

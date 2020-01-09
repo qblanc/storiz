@@ -1,0 +1,17 @@
+<%= simple_form_for [project, scene] do |f| %>
+    <% if @project.category == "Book" %>
+      <div class="text-center">
+        <div class="d-flex justify-content-center scene-input">
+          <%= f.input :title, label: false, placeholder: "Chapter title", class: "scene-input" %>
+        </div>
+        <%= f.submit "  OK  ", class: "btn btn-dark", id: "btn-ok-scene-modal" %>
+      </div>
+    <% else %>
+      <div class="text-center">
+        <div class="d-flex justify-content-center scene-input">
+          <%= f.input :title, label: false, placeholder: "Scene title", class: "scene-input" %>
+        </div>
+        <%= f.submit "  OK  ", class: "btn btn-dark", id: "btn-ok-scene-modal" %>
+      </div>
+    <% end %>
+<% end %>
