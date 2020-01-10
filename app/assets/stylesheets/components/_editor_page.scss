@@ -9,8 +9,9 @@
   left: 0;
   top:50px;
   height: 100%;
-  // width: 220px;
   width: 200px;
+  display: flex;
+  flex-direction: column;
 }
 
 .index {
@@ -108,4 +109,14 @@
 
 .print-absolute {
   position: relative;
+}
+
+.new-button {
+  width: 80%;
+  background: $info;
+  color: white;
+  text-align: center;
+  margin: 0 auto;
+  padding: 8px 20px;
+  border-radius: 3px;
 }

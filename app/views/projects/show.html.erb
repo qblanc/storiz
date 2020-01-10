@@ -31,9 +31,9 @@
             <%= link_to "Resume", scene_path(@project.scenes.order(:updated_at).last), class: ' mt-2 room-button room-button-1' %>
             <!-- #CHAPTER ? -->
             <% if @project.category == "Book" %>
-              <%= link_to 'New Chapter', "#", class: 'mt-2 room-button room-button-1', data: {toggle: "modal", target: "#addSceneFromProject"} %>
+              <%= link_to 'New Chapter', "#", class: 'mt-2 room-button room-button-2', data: {toggle: "modal", target: "#addSceneFromProject"} %>
             <% else %>
-              <%= link_to 'New Scene', "#", class: 'mt-2 room-button room-button-1', data: {toggle: "modal", target: "#addSceneFromProject"} %>
+              <%= link_to 'New Scene', "#", class: 'mt-2 room-button room-button-2', data: {toggle: "modal", target: "#addSceneFromProject"} %>
             <% end %>
           </div>
           <!-- #CHAPTER ? -->
