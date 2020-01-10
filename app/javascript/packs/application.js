@@ -30,6 +30,13 @@ if (document.querySelector('.pop-show')) {
   })
 }
 
+if (document.querySelector('.call-btn')) {
+  $('.call-btn').popover({
+    trigger: 'hover',
+    html: true
+  })
+}
+
 if (document.querySelector('#char-show')) {
   initDisplayCharShowOnClick();
 }
