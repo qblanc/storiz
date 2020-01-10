@@ -23,7 +23,7 @@
     <% if @project.category == "Book" %>
       <%= link_to 'New Chapter', "#", class: 'mt-2 new-button', data: {toggle: "modal", target: "#addSceneFromWritingRoom"} %>
     <% else %>
-      <%= link_to 'New Scene new-button', "#", class: 'mt-2', data: {toggle: "modal", target: "#addSceneFromWritingRoom"} %>
+      <%= link_to 'New Scene', "#", class: 'mt-2 new-button', data: {toggle: "modal", target: "#addSceneFromWritingRoom"} %>
     <% end %>
 <%#---------------------------------- Hidden form for reorder -----------------------------------------------%>
     <div class="d-none">
