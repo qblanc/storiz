@@ -16,10 +16,19 @@ import $ from 'jquery';
 window.jQuery = $;
 window.$ = $;
 
+//= require bootstrap/bootstrap-rails-tooltip
+//= require bootstrap/bootstrap-rails-popover
 require("trix")
 require("@rails/actiontext")
 
+
 Rails.start();
+
+if (document.querySelector('.pop-show')) {
+  $('.pop-show').popover({
+    trigger: 'hover'
+  })
+}
 
 if (document.querySelector('#char-show')) {
   initDisplayCharShowOnClick();

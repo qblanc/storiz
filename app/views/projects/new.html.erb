@@ -22,10 +22,10 @@
             <input class="form-check-input radio_buttons required btn-block bto" type="radio" value="Movie" name="project[category]" id="project_category_movie">
             <label class="form-check-label collection_radio_buttons radio-inline btn-block draw-border bto" for="project_category_movie"><i class="fas fa-film"></i> Movie</label>
           </div>
-          <%# <div class="form-checkzz col-3" data-children-count="1">
-            <input class="form-check-input radio_buttons required btn-block bto" type="radio" value="TV Show" name="project[category]" id="project_category_tv_show">
-            <label class="form-check-label collection_radio_buttons radio-inline btn-block draw-border bto" for="project_category_tv_show" ><i class="fas fa-tv" ></i> TV Show</label>
-          </div> %>
+          <div class="form-checkzz col-3 pop-show" data-children-count="1" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Coming soon !">
+            <input disabled="true" style="pointer-events: none;" class="form-check-input radio_buttons required btn-block bto pop-show" type="radio" value="TV Show" name="project[category]" id="project_category_tv_show">
+            <label class="form-check-label collection_radio_buttons radio-inline btn-block draw-border bto" for="project_category_tv_show"><i class="fas fa-tv"></i> TV Show</label>
+          </div>
         </div>
           <div class="col-2 mt-5 slide confirmz">
             <input type="submit" name="commit" value="Get to work" class="btn start-btn" data-disable-with="Get to work">
